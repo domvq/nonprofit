@@ -3,39 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Standard EMS Education | [Organization Name]</title>
-<meta name="description" content="An overview of the four levels of EMS licensure — EMR, EMT, AEMT, and Paramedic — and what each stage of training actually covers.">
+
+<title>EMS Education | [Organization Name]</title>
+
+<meta
+  name="description"
+  content="Learn about the four levels of EMS education in the United States: Emergency Medical Responder, Emergency Medical Technician, Advanced EMT, and Paramedic."
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
 <style>
+
 /* =========================================================
-   Design tokens — plain, warm, single-accent nonprofit system
-   Modeled after a clean modern nonprofit page: lots of
-   whitespace, one accent color doing all the work, a stat
-   strip under the hero, and simple list-style content blocks
-   instead of heavy bordered cards.
-   ========================================================= */
+   DESIGN TOKENS
+========================================================= */
+
 :root{
-  --paper:      #FFFFFF;   /* base page background */
-  --tint:       #FDF6EC;   /* soft tinted section background */
-  --card:       #FFFFFF;
-  --ink:        #211D17;   /* body text */
-  --ink-soft:   #6B6459;   /* secondary text */
-  --accent:     #E2811E;   /* single primary accent — warm amber/orange */
+  --paper:#FFFFFF;
+  --tint:#FDF6EC;
+  --ink:#211D17;
+  --ink-soft:#6B6459;
+
+  --accent:#E2811E;
   --accent-deep:#B9650F;
-  --rescue:     #C1443B;   /* used only for the emergency / urgent CTA */
-  --line:       #ECE3D2;   /* hairline borders */
-  --line-soft:  #F3ECDD;
 
-  --sans: "Plus Jakarta Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --rescue:#C1443B;
 
-  --max: 1100px;
-  --radius: 10px;
+  --line:#ECE3D2;
+  --line-soft:#F3ECDD;
+
+  --sans:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
+
+  --max:1100px;
+  --radius:10px;
 }
 
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--paper);
@@ -45,12 +67,30 @@ body{
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
-img{ max-width:100%; display:block; }
-a{ color:var(--accent-deep); text-decoration:none; }
-a:hover{ text-decoration:underline; }
-:focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
 
-h1,h2,h3,h4{
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:var(--accent-deep);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:2px;
+}
+
+h1,
+h2,
+h3,
+h4{
   font-family:var(--sans);
   color:var(--ink);
   margin:0 0 .5em;
@@ -58,26 +98,69 @@ h1,h2,h3,h4{
   line-height:1.15;
   letter-spacing:-.01em;
 }
-h1{ font-size:clamp(2.1rem, 4.6vw, 3.1rem); }
-h2{ font-size:clamp(1.5rem, 2.8vw, 2rem); }
-h3{ font-size:1.15rem; font-weight:700; }
-p{ margin:0 0 1.1em; max-width:38em; font-weight:400; }
-.lede{ font-size:1.1rem; color:var(--ink-soft); max-width:34em; }
 
-.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
-
-@media (prefers-reduced-motion: reduce){
-  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+h1{
+  font-size:clamp(2.1rem,4.6vw,3.1rem);
 }
 
-/* ---------- Skip link ---------- */
+h2{
+  font-size:clamp(1.5rem,2.8vw,2rem);
+}
+
+h3{
+  font-size:1.15rem;
+  font-weight:700;
+}
+
+p{
+  margin:0 0 1.1em;
+  max-width:38em;
+  font-weight:400;
+}
+
+.lede{
+  font-size:1.1rem;
+  color:var(--ink-soft);
+  max-width:38em;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+.small{
+  font-size:.9rem;
+  color:var(--ink-soft);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
 .skip-link{
-  position:absolute; left:-999px; top:0;
-  background:var(--accent); color:#fff; padding:10px 16px; z-index:200; border-radius:0 0 8px 0;
+  position:absolute;
+  left:-999px;
+  top:0;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  z-index:200;
+  border-radius:0 0 8px 0;
 }
-.skip-link:focus{ left:0; top:0; }
 
-/* ---------- Top bar ---------- */
+.skip-link:focus{
+  left:0;
+  top:0;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
 .topbar{
   background:var(--tint);
   color:var(--ink-soft);
@@ -85,373 +168,1499 @@ p{ margin:0 0 1.1em; max-width:38em; font-weight:400; }
   padding:8px 0;
   border-bottom:1px solid var(--line);
 }
-.topbar .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-.topbar a{ color:var(--accent-deep); font-weight:600; }
 
-/* ---------- Nav ---------- */
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.topbar a{
+  color:var(--accent-deep);
+  font-weight:600;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 header.site-header{
   background:var(--paper);
   border-bottom:1px solid var(--line);
-  position:sticky; top:0; z-index:100;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
+
 .nav-row{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:16px 0;
   gap:20px;
 }
+
 .brand{
-  display:flex; align-items:center; gap:10px;
-  font-size:1.1rem; font-weight:800; color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.1rem;
+  font-weight:800;
+  color:var(--ink);
 }
-.brand:hover{ text-decoration:none; }
-.brand .mark{ width:32px; height:32px; flex:none; }
+
+.brand:hover{
+  text-decoration:none;
+}
+
+.brand .mark{
+  width:32px;
+  height:32px;
+  flex:none;
+}
+
 .brand .name em{
-  font-style:normal; color:var(--ink-soft); font-size:.6em; font-weight:600; display:block;
-  letter-spacing:.01em; margin-top:1px;
+  font-style:normal;
+  color:var(--ink-soft);
+  font-size:.6em;
+  font-weight:600;
+  display:block;
+  letter-spacing:.01em;
+  margin-top:1px;
 }
-nav.primary{ display:flex; }
+
+nav.primary{
+  display:flex;
+}
+
 nav.primary ul{
-  display:flex; flex-wrap:wrap; gap:2px 4px;
-  list-style:none; margin:0; padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2px 4px;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
+
 nav.primary a{
-  color:var(--ink); font-size:.95rem; font-weight:600; padding:9px 14px;
-  border-radius:999px; display:inline-block;
+  color:var(--ink);
+  font-size:.95rem;
+  font-weight:600;
+  padding:9px 14px;
+  border-radius:999px;
+  display:inline-block;
 }
-nav.primary a:hover{ background:var(--tint); text-decoration:none; }
+
+nav.primary a:hover{
+  background:var(--tint);
+  text-decoration:none;
+}
+
 nav.primary a[aria-current="page"]{
-  background:var(--ink); color:#fff;
-}
-.nav-toggle{ display:none; }
-
-@media (max-width: 880px){
-  .nav-toggle{
-    display:inline-flex; align-items:center; gap:8px;
-    background:none; border:1px solid var(--line); border-radius:999px;
-    padding:8px 14px; font-family:var(--sans); font-weight:600; font-size:.95rem; color:var(--ink);
-    cursor:pointer;
-  }
-  nav.primary{ display:none; width:100%; order:3; }
-  nav.primary.open{ display:block; }
-  nav.primary ul{ flex-direction:column; padding:10px 0 18px; }
-  .nav-row{ flex-wrap:wrap; }
+  background:var(--ink);
+  color:#fff;
 }
 
-/* ---------- Hero ---------- */
-.hero{ padding:60px 0 8px; position:relative; overflow:hidden; }
-.hero .wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
+.nav-toggle{
+  display:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  padding:70px 0 30px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+  align-items:center;
+}
+
 .hero .eyebrow-tab{
-  display:inline-block; color:var(--accent-deep);
-  font-size:.85rem; font-weight:700; letter-spacing:.01em;
+  display:inline-block;
+  color:var(--accent-deep);
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.01em;
   margin-bottom:14px;
 }
-.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; align-items:center; }
-.hero-figure{ position:relative; }
-@media (max-width: 880px){
-  .hero .wrap{ grid-template-columns:1fr; }
-  .hero-figure{ order:-1; }
-}
 
-/* ---------- Buttons ---------- */
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .btn{
-  display:inline-block; font-family:var(--sans); font-weight:700; font-size:.96rem;
-  padding:13px 24px; border-radius:999px; border:2px solid transparent;
+  display:inline-block;
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:.96rem;
+  padding:13px 24px;
+  border-radius:999px;
+  border:2px solid transparent;
   cursor:pointer;
 }
-.btn:hover{ text-decoration:none; }
-.btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
-.btn-primary:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
-.btn-outline{ background:transparent; color:var(--ink); border-color:var(--line); }
-.btn-outline:hover{ background:var(--tint); }
-.btn-urgent{ background:var(--rescue); color:#fff; border-color:var(--rescue); }
-.btn-urgent:hover{ background:#9c352e; border-color:#9c352e; }
 
-/* ---------- Sections ---------- */
-section{ padding:52px 0; }
-section.tinted{ background:var(--tint); }
-section.navy{ background:var(--tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-section.navy h2, section.navy h3{ color:var(--ink); }
-section.navy p{ color:var(--ink-soft); }
-.section-head{ max-width:44em; margin-bottom:32px; }
-.tab-label{
-  display:inline-block; font-size:.85rem; font-weight:700;
-  color:var(--accent-deep); margin-bottom:10px;
+.btn:hover{
+  text-decoration:none;
 }
-section.navy .tab-label{ color:var(--accent-deep); }
 
-.pulse-divider{ width:100%; height:34px; display:block; margin:8px 0 0; }
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
+}
 
-/* ---------- Cards → plain list-style modules ---------- */
-.grid{ display:grid; gap:28px; }
-.grid-2{ grid-template-columns:repeat(2,1fr); }
-.grid-3{ grid-template-columns:repeat(3,1fr); }
-.grid-4{ grid-template-columns:repeat(4,1fr); }
-@media (max-width: 900px){ .grid-3, .grid-4{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width: 620px){ .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; } }
+.btn-primary:hover{
+  background:var(--accent-deep);
+  border-color:var(--accent-deep);
+}
+
+.btn-outline{
+  background:transparent;
+  color:var(--ink);
+  border-color:var(--line);
+}
+
+.btn-outline:hover{
+  background:var(--tint);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+  padding:60px 0;
+}
+
+section.tinted{
+  background:var(--tint);
+}
+
+section.navy{
+  background:var(--tint);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.section-head{
+  max-width:44em;
+  margin-bottom:36px;
+}
+
+.tab-label{
+  display:inline-block;
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  margin-bottom:10px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid{
+  display:grid;
+  gap:28px;
+}
+
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+
+
+/* =========================================================
+   EDUCATION CARDS
+========================================================= */
 
 .card{
   background:transparent;
   border:0;
   border-top:2px solid var(--ink);
-  padding:16px 0 0;
+  padding:18px 0 0;
   border-radius:0;
 }
-.card.sage, .card.rescue{ border-top-color:var(--accent); }
-.card h3{ margin-bottom:.35em; }
-.card .meta{ font-size:.82rem; color:var(--accent-deep); font-weight:700; margin-bottom:8px; display:block; }
 
-/* app / tool feature card */
-.tool-card{
-  background:var(--tint); border:0; padding:26px; border-radius:var(--radius);
-  display:flex; flex-direction:column; gap:10px; height:100%;
-}
-.tool-card .tool-kicker{ font-size:.78rem; color:var(--accent-deep); font-weight:700; }
-.tool-card a.tool-link{ margin-top:auto; font-weight:700; }
-
-/* ---------- Tables (kept simple/plain) ---------- */
-.ref-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); }
-table.ref-table{ width:100%; border-collapse:collapse; background:var(--paper); min-width:620px; }
-table.ref-table caption{ text-align:left; padding:14px 18px 0; font-size:1.05rem; font-weight:800; color:var(--ink); }
-table.ref-table th, table.ref-table td{
-  padding:12px 16px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; font-size:.95rem;
-}
-table.ref-table thead th{
-  background:var(--tint); color:var(--ink); font-weight:700; font-size:.85rem;
-}
-table.ref-table tbody tr:last-child td{ border-bottom:none; }
-.badge{
-  display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:12px;
-  color:#fff; white-space:nowrap; background:var(--accent);
+.card.sage{
+  border-top-color:var(--accent);
 }
 
-/* ---------- Timeline / list ---------- */
-.stack{ display:flex; flex-direction:column; gap:26px; }
-.list-check{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-.list-check li{ padding-left:26px; position:relative; }
-.list-check li::before{
-  content:""; position:absolute; left:0; top:.55em; width:8px; height:8px;
-  background:var(--accent); border-radius:50%;
+.card h3{
+  margin-bottom:.45em;
 }
 
-/* ---------- Placeholder callouts ---------- */
-.placeholder{
-  border:1.5px dashed var(--accent);
-  background:var(--tint);
-  padding:20px 22px;
-  border-radius:var(--radius);
+.card .meta{
+  font-size:.82rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  margin-bottom:8px;
+  display:block;
+}
+
+
+/* =========================================================
+   EMS PATHWAY
+========================================================= */
+
+.pathway-intro{
+  max-width:700px;
+  margin-bottom:40px;
+}
+
+.pathway{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px;
+}
+
+.pathway-step{
+  position:relative;
+  padding-top:18px;
+  border-top:3px solid var(--ink);
+}
+
+.pathway-step:nth-child(even){
+  border-top-color:var(--accent);
+}
+
+.pathway-number{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:38px;
+  height:38px;
+
+  background:var(--ink);
+  color:#fff;
+
+  border-radius:50%;
+
+  font-size:.85rem;
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+.pathway-step:nth-child(even) .pathway-number{
+  background:var(--accent);
+}
+
+.pathway-step h3{
+  font-size:1.25rem;
+  margin-bottom:8px;
+}
+
+.pathway-role{
+  display:block;
+  color:var(--accent-deep);
+  font-size:.8rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-bottom:12px;
+}
+
+.pathway-step p{
   color:var(--ink-soft);
+  font-size:.92rem;
+}
+
+.pathway-note{
+  margin-top:35px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  font-size:.85rem;
+  color:var(--ink-soft);
+}
+
+
+/* =========================================================
+   CURRICULUM
+========================================================= */
+
+.curriculum-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+
+/* =========================================================
+   CERTIFICATION SECTION
+========================================================= */
+
+.certification-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:center;
+}
+
+.certification-box{
+  background:#fff;
+  padding:28px;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.ref-table-wrap{
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+}
+
+table.ref-table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--paper);
+  min-width:620px;
+}
+
+table.ref-table caption{
+  text-align:left;
+  padding:14px 18px 0;
+  font-size:1.05rem;
+  font-weight:800;
+}
+
+table.ref-table th,
+table.ref-table td{
+  padding:12px 16px;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
   font-size:.95rem;
 }
-.placeholder strong{ color:var(--ink); }
 
-/* ---------- Case card ---------- */
-.case-card{ background:var(--tint); border:0; border-radius:var(--radius); padding:26px; }
-.case-card .case-num{ font-size:1.4rem; font-weight:800; color:var(--accent-deep); }
-.case-card dl{ margin:14px 0 0; display:grid; grid-template-columns:120px 1fr; gap:6px 14px; font-size:.93rem; }
-.case-card dt{ color:var(--ink-soft); font-weight:700; }
-.case-card dd{ margin:0; }
+table.ref-table thead th{
+  background:var(--tint);
+  font-weight:700;
+  font-size:.85rem;
+}
 
-/* ---------- Contact ---------- */
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
-@media (max-width:800px){ .contact-grid{ grid-template-columns:1fr; } }
-.info-line{ display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
-.info-line:last-child{ border-bottom:none; }
-.info-line .label{ min-width:120px; font-weight:700; color:var(--ink); }
 
-/* ---------- Stat strip (plain, inline numbers — sits right under a hero) ---------- */
-.stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px 20px; text-align:left; padding:28px 0 8px; }
-@media (max-width:700px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } }
-.stat .num{ font-size:2rem; font-weight:800; color:var(--accent); display:block; }
-.stat .label{ font-size:.85rem; color:var(--ink-soft); }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-/* ---------- Footer (plain, light) ---------- */
 footer.site-footer{
-  background:var(--tint); color:var(--ink-soft); padding:48px 0 26px; margin-top:40px;
+  background:var(--tint);
+  color:var(--ink-soft);
+  padding:48px 0 26px;
+  margin-top:40px;
   border-top:1px solid var(--line);
 }
-footer.site-footer h4{ color:var(--ink); font-size:.95rem; }
-footer.site-footer a{ color:var(--ink-soft); }
-footer.site-footer a:hover{ color:var(--accent-deep); }
-.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; }
-@media (max-width:800px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
-footer.site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
-.footer-bottom{
-  border-top:1px solid var(--line); margin-top:34px; padding-top:18px;
-  font-size:.85rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+
+footer.site-footer h4{
+  color:var(--ink);
+  font-size:.95rem;
 }
 
-/* ---------- Utility ---------- */
-.mt-0{ margin-top:0; }
-.center{ text-align:center; }
-.small{ font-size:.85rem; color:var(--ink-soft); }
-.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+footer.site-footer a{
+  color:var(--ink-soft);
+}
+
+footer.site-footer a:hover{
+  color:var(--accent-deep);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:32px;
+}
+
+footer.site-footer ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:8px;
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:34px;
+  padding-top:18px;
+  font-size:.85rem;
+
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:900px){
+
+  .pathway{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .grid-3{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .certification-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (max-width:880px){
+
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:none;
+    border:1px solid var(--line);
+    border-radius:999px;
+
+    padding:8px 14px;
+
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:.95rem;
+
+    color:var(--ink);
+
+    cursor:pointer;
+  }
+
+  nav.primary{
+    display:none;
+    width:100%;
+    order:3;
+  }
+
+  nav.primary.open{
+    display:block;
+  }
+
+  nav.primary ul{
+    flex-direction:column;
+    padding:10px 0 18px;
+  }
+
+  .nav-row{
+    flex-wrap:wrap;
+  }
+
+}
+
+@media (max-width:620px){
+
+  body{
+    font-size:16px;
+  }
+
+  .wrap{
+    padding:0 20px;
+  }
+
+  .hero{
+    padding:48px 0 25px;
+  }
+
+  section{
+    padding:48px 0;
+  }
+
+  .pathway{
+    grid-template-columns:1fr;
+  }
+
+  .grid-2,
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .curriculum-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto !important;
+    transition:none !important;
+    animation:none !important;
+  }
+
+}
 
 </style>
 </head>
+
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+
+<a class="skip-link" href="#main">
+  Skip to main content
+</a>
+
+
+<!-- =======================================================
+     TOP BAR
+======================================================= -->
+
 <div class="topbar">
+
   <div class="wrap">
-    <span>Having a medical emergency? Call 911 — this site is educational only.</span>
-    <span><a href="contact.html">Contact a certified EMT →</a></span>
+
+    <span>
+      Having a medical emergency? Call 911 — this site is educational only.
+    </span>
+
+    <span>
+      <a href="contact.html">
+        Contact a certified EMT →
+      </a>
+    </span>
+
   </div>
+
 </div>
+
+
+<!-- =======================================================
+     HEADER / NAVIGATION
+======================================================= -->
+
 <header class="site-header">
+
   <div class="wrap nav-row">
+
     <a class="brand" href="index.html">
-      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" fill="#211D17"/>
-        <path d="M4 21h6l3-8 5 15 4-11 3 4h11" fill="none" stroke="#E2811E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <svg
+        class="mark"
+        viewBox="0 0 40 40"
+        aria-hidden="true"
+      >
+
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="#211D17"
+        />
+
+        <path
+          d="M4 21h6l3-8 5 15 4-11 3 4h11"
+          fill="none"
+          stroke="#E2811E"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
       </svg>
-      <span class="name">[Organization Name]<em>EMS Education Initiative</em></span>
+
+      <span class="name">
+
+        [Organization Name]
+
+        <em>
+          EMS Education Initiative
+        </em>
+
+      </span>
+
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu ☰</button>
-    <nav class="primary" id="primary-nav" aria-label="Primary">
+
+
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      Menu ☰
+    </button>
+
+
+    <nav
+      class="primary"
+      id="primary-nav"
+      aria-label="Primary"
+    >
+
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="education.html" aria-current="page">Education</a></li>
-        <li><a href="treatments.html">Treatments</a></li>
-        <li><a href="ecg.html">ECG Reading</a></li>
-        <li><a href="ai-innovation.html">AI &amp; Innovation</a></li>
-        <li><a href="cases.html">Case Studies</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="education.html"
+            aria-current="page"
+          >
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="treatments.html">
+            Treatments
+          </a>
+        </li>
+
+        <li>
+          <a href="ecg.html">
+            ECG Reading
+          </a>
+        </li>
+
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; Innovation
+          </a>
+        </li>
+
+        <li>
+          <a href="cases.html">
+            Case Studies
+          </a>
+        </li>
+
+        <li>
+          <a href="resources.html">
+            Resources
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </nav>
+
   </div>
+
 </header>
 
+
 <main id="main">
-  <section class="hero" style="padding-bottom:20px;">
-    <div class="wrap" style="grid-template-columns:1fr;">
-      <div>
-        <span class="eyebrow-tab">Standard EMS education</span>
-        <h1>Four levels, one pathway</h1>
-        <p class="lede">
-         The National EMS Scope of Practice Model describes four nationally recognized
-         levels of EMS practice: Emergency Medical Responder (EMR), Emergency Medical
-         Technician (EMT), Advanced Emergency Medical Technician (AEMT), and Paramedic.
-         Each level builds on the previous one, expanding clinical knowledge, technical
-         skills, responsibilities, and scope of practice. Exact education requirements,
-         certification processes, and authorized interventions vary by state and medical direction.
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="wrap">
+
+    <div>
+
+      <span class="eyebrow-tab">
+        Standard EMS education
+      </span>
+
+      <h1>
+        Four levels, one pathway
+      </h1>
+
+      <p class="lede">
+        Emergency medical services education progresses through
+        four nationally recognized provider levels: Emergency
+        Medical Responder, Emergency Medical Technician,
+        Advanced EMT, and Paramedic.
+      </p>
+
+      <p class="lede">
+        Each level builds on the knowledge and skills introduced
+        at the previous stage, increasing the clinician's ability
+        to assess patients, perform interventions, administer
+        medications, and make increasingly complex clinical
+        decisions.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     FOUR LEVELS
+======================================================= -->
+
+<section class="tinted">
+
+  <div class="wrap">
+
+    <div class="pathway-intro">
+
+      <span class="tab-label">
+        The EMS pathway
+      </span>
+
+      <h2>
+        Four levels of prehospital practice
+      </h2>
+
+      <p>
+        EMS education in the United States is organized around
+        four provider levels described in the National EMS Scope
+        of Practice Model. Exact education requirements,
+        certification procedures, and authorized interventions
+        vary by state and local medical direction.
+      </p>
+
+    </div>
+
+
+    <div class="pathway">
+
+
+      <!-- STAGE 1 -->
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          01
+        </span>
+
+        <span class="pathway-role">
+          Stage 1
+        </span>
+
+        <h3>
+          Emergency Medical Responder
+        </h3>
+
+        <p>
+          EMRs provide immediate basic emergency care while
+          awaiting additional EMS resources. This level is often
+          associated with firefighters, law-enforcement personnel,
+          lifeguards, industrial responders, and other individuals
+          who may be first to reach a patient.
         </p>
-      </div>
+
+        <p>
+          Training emphasizes scene safety, patient assessment,
+          CPR, automated external defibrillation, bleeding control,
+          basic airway management, and other immediate lifesaving
+          interventions.
+        </p>
+
+      </article>
+
+
+      <!-- STAGE 2 -->
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          02
+        </span>
+
+        <span class="pathway-role">
+          Stage 2
+        </span>
+
+        <h3>
+          Emergency Medical Technician
+        </h3>
+
+        <p>
+          EMTs provide foundational ambulance-based emergency
+          care and are the most common entry-level EMS
+          professionals.
+        </p>
+
+        <p>
+          Education includes patient assessment, airway
+          management, oxygen therapy, bleeding control,
+          immobilization and splinting, emergency childbirth,
+          medical and trauma assessment, and administration of
+          medications within the provider's authorized scope.
+        </p>
+
+      </article>
+
+
+      <!-- STAGE 3 -->
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          03
+        </span>
+
+        <span class="pathway-role">
+          Stage 3
+        </span>
+
+        <h3>
+          Advanced EMT
+        </h3>
+
+        <p>
+          AEMTs build on EMT-level knowledge by adding selected
+          advanced assessment and treatment capabilities.
+        </p>
+
+        <p>
+          Depending on jurisdiction and medical direction,
+          training may include vascular access, intraosseous
+          access, additional medications, fluid administration,
+          and selected advanced airway techniques.
+        </p>
+
+      </article>
+
+
+      <!-- STAGE 4 -->
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          04
+        </span>
+
+        <span class="pathway-role">
+          Stage 4
+        </span>
+
+        <h3>
+          Paramedic
+        </h3>
+
+        <p>
+          Paramedics receive the most extensive prehospital
+          education of the four provider levels and manage
+          patients with complex medical and traumatic conditions.
+        </p>
+
+        <p>
+          Education commonly includes advanced patient
+          assessment, pharmacology, cardiac monitoring,
+          electrocardiography, advanced airway management,
+          resuscitation, critical-care concepts, and complex
+          clinical decision-making.
+        </p>
+
+      </article>
+
     </div>
-  </section>
 
-  <section class="tinted">
-    <div class="wrap">
-      <div class="grid grid-2">
 
-        <div class="card">
-          <span class="meta">Stage 1</span>
-          <h3>Emergency Medical Responder (EMR)</h3>
-          <p class="small">Often the first person on scene — firefighters, police, lifeguards, industrial responders. Roughly 40–60 hours of training. Focuses on scene safety, CPR, bleeding control, and basic airway management until an ambulance arrives.</p>
-        </div>
+    <p class="pathway-note">
 
-        <div class="card sage">
-          <span class="meta">Stage 2</span>
-          <h3>Emergency Medical Technician (EMT)</h3>
-          <p class="small">The most common EMS credential and the entry point for ambulance work. Typically 150–190 hours. Covers patient assessment, airway and oxygen therapy, splinting, childbirth, and a limited set of medications.</p>
-        </div>
+      <strong>
+        Important:
+      </strong>
 
-        <div class="card sage">
-          <span class="meta">Stage 3</span>
-          <h3>Advanced EMT (AEMT)</h3>
-          <p class="small">A bridge between EMT and Paramedic, typically 200–400 hours beyond EMT. Adds IV and IO access, a wider medication set, and some advanced airway adjuncts.</p>
-        </div>
+      Education hours, certification requirements, authorized
+      medications, procedures, and scope of practice differ
+      between states, agencies, and medical directors. Always
+      follow current state regulations, agency protocols, and
+      medical direction.
 
-        <div class="card">
-          <span class="meta">Stage 4</span>
-          <h3>Paramedic</h3>
-          <p class="small">The highest level of prehospital licensure, typically 1,200–1,800+ hours including clinical rotations. Covers advanced pharmacology, cardiac monitoring and intervention, advanced airway management, and independent clinical decision-making.</p>
-        </div>
+    </p>
 
-      </div>
-      <p class="small" style="margin-top:22px;">Hour ranges and program structure vary by state and by training institution — always confirm requirements with your state EMS office or training program.</p>
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CURRICULUM
+======================================================= -->
+
+<section>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        EMS curriculum
+      </span>
+
+      <h2>
+        Core knowledge domains
+      </h2>
+
+      <p>
+        Although the depth of education changes between provider
+        levels, EMS clinicians develop knowledge across several
+        major clinical and operational domains.
+      </p>
+
     </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <span class="tab-label">What the curriculum covers</span>
-        <h2>Core knowledge domains, at every level</h2>
-        <p>Regardless of license level, EMS education is organized around the same core domains — each level simply goes deeper into each one.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="card"><h3>Airway &amp; ventilation</h3><p class="small">Oxygen delivery, airway adjuncts, and — at advanced levels — supraglottic and advanced airway devices.</p></div>
-        <div class="card sage"><h3>Trauma</h3><p class="small">Bleeding control, splinting, spinal motion restriction, and shock recognition.</p></div>
-        <div class="card"><h3>Medical emergencies</h3><p class="small">Cardiac, respiratory, neurological, and metabolic presentations — including stroke and diabetic emergencies.</p></div>
-        <div class="card sage"><h3>Cardiac care &amp; ECG</h3><p class="small">Rhythm recognition and, at advanced levels, 12-lead interpretation and cardiac medications. See the <a href="ecg.html">ECG reading guide</a>.</p></div>
-        <div class="card"><h3>OB &amp; pediatrics</h3><p class="small">Childbirth, newborn assessment, and pediatric-specific dosing and equipment.</p></div>
-        <div class="card sage"><h3>Operations</h3><p class="small">Scene safety, triage, communications, and documentation.</p></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="navy">
-    <div class="wrap grid grid-2" style="align-items:center;">
-      <div>
-        <span class="tab-label">Certification</span>
-        <h2>Testing and national certification</h2>
-        <p>Most states use the National Registry of Emergency Medical Technicians (NREMT) cognitive and psychomotor exams to certify EMS clinicians before issuing a state license. The cognitive exam is computer-adaptive, and the psychomotor exam is a set of hands-on skill stations scored by evaluators.</p>
+    <div class="curriculum-grid">
+
+
+      <div class="card">
+
+        <h3>
+          Airway &amp; ventilation
+        </h3>
+
+        <p class="small">
+          Recognition and management of airway compromise,
+          oxygen delivery, ventilation support, airway adjuncts,
+          and advanced airway techniques at appropriate provider
+          levels.
+        </p>
+
       </div>
-      <div>
-        <p style="color:#D8CDB1;">Studying for a certification exam? See our <a href="resources.html">study guides and reference tools</a>, including our own Fisdap companion guide.</p>
-        <a class="btn btn-primary" href="resources.html">Go to study resources</a>
+
+
+      <div class="card sage">
+
+        <h3>
+          Trauma
+        </h3>
+
+        <p class="small">
+          Assessment and management of traumatic injuries,
+          hemorrhage control, shock recognition, splinting,
+          spinal considerations, burns, and other traumatic
+          emergencies.
+        </p>
+
       </div>
+
+
+      <div class="card">
+
+        <h3>
+          Medical emergencies
+        </h3>
+
+        <p class="small">
+          Assessment of cardiovascular, respiratory,
+          neurological, endocrine, toxicological, infectious,
+          and other medical emergencies.
+        </p>
+
+      </div>
+
+
+      <div class="card sage">
+
+        <h3>
+          Cardiac care &amp; ECG
+        </h3>
+
+        <p class="small">
+          Recognition of cardiac emergencies, resuscitation,
+          rhythm interpretation, and — at advanced levels —
+          12-lead ECG acquisition and interpretation.
+        </p>
+
+        <a href="ecg.html">
+          Explore ECG education →
+        </a>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Obstetrics &amp; pediatrics
+        </h3>
+
+        <p class="small">
+          Assessment and treatment considerations for pregnancy,
+          childbirth, newborns, infants, children, and other
+          age-specific emergencies.
+        </p>
+
+      </div>
+
+
+      <div class="card sage">
+
+        <h3>
+          EMS operations
+        </h3>
+
+        <p class="small">
+          Scene safety, communications, documentation, triage,
+          incident management, patient transport, teamwork,
+          and coordination with other emergency services.
+        </p>
+
+      </div>
+
+
     </div>
-  </section>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     PROGRESSION
+======================================================= -->
+
+<section class="tinted">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        Increasing responsibility
+      </span>
+
+      <h2>
+        What changes as providers advance?
+      </h2>
+
+      <p>
+        Advancement through EMS education is not simply about
+        learning more procedures. Each level introduces deeper
+        assessment skills, broader treatment capabilities,
+        additional pharmacology, and greater clinical
+        responsibility.
+      </p>
+
+    </div>
+
+
+    <div class="grid grid-4">
+
+
+      <div class="card">
+
+        <span class="meta">
+          EMR
+        </span>
+
+        <h3>
+          Immediate lifesaving care
+        </h3>
+
+        <p class="small">
+          Focuses on recognizing emergencies, initiating CPR,
+          controlling life-threatening bleeding, and providing
+          basic care until additional EMS resources arrive.
+        </p>
+
+      </div>
+
+
+      <div class="card sage">
+
+        <span class="meta">
+          EMT
+        </span>
+
+        <h3>
+          Foundational patient care
+        </h3>
+
+        <p class="small">
+          Provides structured patient assessment, basic airway
+          and respiratory support, trauma care, transport
+          preparation, and selected medications.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <span class="meta">
+          AEMT
+        </span>
+
+        <h3>
+          Advanced interventions
+        </h3>
+
+        <p class="small">
+          Adds selected advanced procedures and medications,
+          including vascular access and other interventions
+          permitted by local scope of practice.
+        </p>
+
+      </div>
+
+
+      <div class="card sage">
+
+        <span class="meta">
+          Paramedic
+        </span>
+
+        <h3>
+          Advanced clinical management
+        </h3>
+
+        <p class="small">
+          Integrates advanced assessment, pharmacology,
+          cardiovascular care, airway management, and complex
+          clinical decision-making.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CERTIFICATION
+======================================================= -->
+
+<section class="navy">
+
+  <div class="wrap certification-grid">
+
+
+    <div>
+
+      <span class="tab-label">
+        Certification
+      </span>
+
+      <h2>
+        Education, certification, and state licensure
+      </h2>
+
+      <p>
+        EMS education is only one part of becoming an authorized
+        EMS clinician. Students must meet the education and
+        examination requirements applicable to their provider
+        level and jurisdiction.
+      </p>
+
+      <p>
+        The National Registry of Emergency Medical Technicians
+        (NREMT) provides national certification examinations for
+        several EMS provider levels. State EMS authorities then
+        establish licensing requirements and determine how
+        national certification is incorporated into state
+        licensure.
+      </p>
+
+      <p>
+        Because requirements can change, students should verify
+        current requirements with their state EMS authority,
+        educational institution, and applicable medical director.
+      </p>
+
+    </div>
+
+
+    <div class="certification-box">
+
+      <h3>
+        Continue learning
+      </h3>
+
+      <p class="small">
+        Explore additional educational material covering
+        treatments, ECG interpretation, emergency cases, and
+        EMS resources.
+      </p>
+
+      <p>
+
+        <a
+          class="btn btn-primary"
+          href="resources.html"
+        >
+          View study resources
+        </a>
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     EDUCATIONAL DISCLAIMER
+======================================================= -->
+
+<section>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        Important information
+      </span>
+
+      <h2>
+        Education is not medical direction
+      </h2>
+
+      <p>
+        This website is intended for educational and informational
+        purposes. EMS clinicians and students should use current
+        training materials, agency protocols, state regulations,
+        medical direction, and manufacturer instructions when
+        making clinical decisions.
+      </p>
+
+      <p>
+        Nothing on this website replaces formal EMS education,
+        supervised clinical training, certification requirements,
+        medical direction, or emergency medical care.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 </main>
 
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer class="site-footer">
+
   <div class="wrap footer-grid">
+
+
     <div>
-      <h4>[Organization Name]</h4>
-      <p class="small">A nonprofit dedicated to open EMS education, prehospital clinical reference, and access to a certified provider when you need one.</p>
+
+      <h4>
+        [Organization Name]
+      </h4>
+
+      <p class="small">
+        A nonprofit dedicated to open EMS education,
+        prehospital clinical reference, and access to
+        certified emergency medical professionals.
+      </p>
+
     </div>
+
+
     <div>
-      <h4>Explore</h4>
+
+      <h4>
+        Explore
+      </h4>
+
       <ul>
-        <li><a href="education.html">Standard EMS education</a></li>
-        <li><a href="treatments.html">Treatment reference</a></li>
-        <li><a href="ecg.html">ECG reading</a></li>
-        <li><a href="cases.html">Case studies</a></li>
+
+        <li>
+          <a href="education.html">
+            Standard EMS education
+          </a>
+        </li>
+
+        <li>
+          <a href="treatments.html">
+            Treatment reference
+          </a>
+        </li>
+
+        <li>
+          <a href="ecg.html">
+            ECG reading
+          </a>
+        </li>
+
+        <li>
+          <a href="cases.html">
+            Case studies
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
     <div>
-      <h4>Resources</h4>
+
+      <h4>
+        Resources
+      </h4>
+
       <ul>
-        <li><a href="resources.html">Study guides &amp; tools</a></li>
-        <li><a href="ai-innovation.html">AI &amp; innovation</a></li>
-        <li><a href="contact.html">Contact a certified EMT</a></li>
+
+        <li>
+          <a href="resources.html">
+            Study guides &amp; tools
+          </a>
+        </li>
+
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; innovation
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
     <div>
-      <h4>Get in touch</h4>
+
+      <h4>
+        Get in touch
+      </h4>
+
       <ul>
-        <li><a href="mailto:info@example.org">info@example.org</a></li>
-        <li><a href="contact.html">Contact page</a></li>
+
+        <li>
+          <a href="mailto:info@example.org">
+            info@example.org
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact page
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
   </div>
+
+
   <div class="wrap footer-bottom">
-    <span>© 2026 [Organization Name]. Educational content only — not a substitute for professional medical direction, certification training, or emergency care.</span>
-    <span><a href="contact.html">Contact</a></span>
+
+    <span>
+      © 2026 [Organization Name].
+      Educational content only — not a substitute for
+      professional medical direction, certification training,
+      or emergency care.
+    </span>
+
+    <span>
+      <a href="contact.html">
+        Contact
+      </a>
+    </span>
+
   </div>
+
 </footer>
+
+
+<!-- =======================================================
+     MOBILE NAVIGATION
+======================================================= -->
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.querySelector('nav.primary');
-  if (!toggle || !nav) return;
-  toggle.addEventListener('click', function () {
-    var isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-});
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function(){
+
+    var toggle =
+      document.querySelector('.nav-toggle');
+
+    var nav =
+      document.querySelector('nav.primary');
+
+
+    if(!toggle || !nav){
+      return;
+    }
+
+
+    toggle.addEventListener(
+      'click',
+      function(){
+
+        var isOpen =
+          nav.classList.toggle('open');
+
+
+        toggle.setAttribute(
+          'aria-expanded',
+          isOpen ? 'true' : 'false'
+        );
+
+      }
+    );
+
+  }
+);
 
 </script>
+
+
 </body>
 </html>
