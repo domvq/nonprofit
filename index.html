@@ -7,587 +7,604 @@
 
 <title>EMS AI Research Initiative</title>
 
-<meta
-name="description"
-content="Advancing emergency medicine and healthcare through research, education, artificial intelligence, and responsible innovation."
-
->
+<meta name="description" content="Advancing emergency medicine and healthcare through research, education, artificial intelligence, and responsible innovation.">
 
 <style>
 
 :root {
-  --paper: #ffffff;
-  --tint: #fdf6ec;
-  --ink: #211d17;
-  --soft: #6b6459;
-  --accent: #e2811e;
-  --accent-dark: #b9650f;
-  --red: #c1443b;
-  --line: #ece3d2;
-  --max: 1100px;
+    --white: #ffffff;
+    --cream: #fdf6ec;
+    --black: #211d17;
+    --gray: #6b6459;
+    --orange: #e2811e;
+    --orange-dark: #b9650f;
+    --red: #c1443b;
+    --border: #ece3d2;
+    --max: 1100px;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
+    margin: 0;
+    background: var(--white);
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
 }
 
 a {
-  color: var(--accent-dark);
-  text-decoration: none;
+    color: var(--orange-dark);
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .wrap {
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 28px;
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
 }
 
 h1,
 h2,
-h3,
-h4 {
-  margin-top: 0;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+h3 {
+    line-height: 1.15;
+    margin-top: 0;
 }
 
 h1 {
-  font-size: clamp(2.3rem, 6vw, 4rem);
-  margin-bottom: 22px;
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    margin-bottom: 20px;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 18px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 18px;
 }
 
 h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
 }
 
 p {
-  margin-top: 0;
-  max-width: 720px;
+    max-width: 720px;
 }
 
 .small {
-  color: var(--soft);
-  font-size: .9rem;
+    color: var(--gray);
+    font-size: .92rem;
 }
+
 
 /* =========================
    TOP BAR
 ========================= */
 
 .topbar {
-  background: var(--tint);
-  border-bottom: 1px solid var(--line);
-  color: var(--soft);
-  font-size: .82rem;
-  padding: 8px 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0;
+    color: var(--gray);
+    font-size: .85rem;
 }
 
 .topbar .wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
 }
+
 
 /* =========================
    HEADER
 ========================= */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav {
-  min-height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--ink);
-  font-weight: 800;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--black);
+    font-weight: 800;
 }
 
 .brand:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .logo {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: var(--accent);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
 }
 
-.brand-text small {
-  display: block;
-  color: var(--soft);
-  font-size: 10px;
-  font-weight: 600;
+.brand small {
+    display: block;
+    color: var(--gray);
+    font-size: 10px;
+    font-weight: 600;
 }
 
 nav ul {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4px;
 }
 
 nav a {
-  display: block;
-  color: var(--ink);
-  padding: 9px 13px;
-  border-radius: 999px;
-  font-size: .9rem;
-  font-weight: 600;
+    display: block;
+    padding: 9px 13px;
+    border-radius: 999px;
+    color: var(--black);
+    font-size: .9rem;
+    font-weight: 600;
 }
 
 nav a:hover {
-  background: var(--tint);
-  text-decoration: none;
+    background: var(--cream);
+    text-decoration: none;
 }
 
-.menu {
-  display: none;
-  border: 1px solid var(--line);
-  background: white;
-  border-radius: 999px;
-  padding: 9px 15px;
-  cursor: pointer;
-  font-weight: 700;
+.menu-button {
+    display: none;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 9px 15px;
+    font-weight: 700;
+    cursor: pointer;
 }
+
 
 /* =========================
    HERO
 ========================= */
 
 .hero {
-  padding: 85px 0 60px;
+    padding: 80px 0 65px;
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 60px;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 55px;
+    align-items: center;
 }
 
 .eyebrow {
-  display: inline-block;
-  margin-bottom: 15px;
-  color: var(--accent-dark);
-  font-size: .82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .04em;
+    display: block;
+    color: var(--orange-dark);
+    font-size: .8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 14px;
 }
 
 .lede {
-  color: var(--soft);
-  font-size: 1.12rem;
+    color: var(--gray);
+    font-size: 1.12rem;
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
 }
 
 .button {
-  display: inline-block;
-  padding: 13px 22px;
-  border-radius: 999px;
-  font-weight: 700;
-  border: 2px solid transparent;
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 2px solid transparent;
 }
 
 .button:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .primary {
-  background: var(--accent);
-  color: white;
+    background: var(--orange);
+    color: white;
 }
 
 .primary:hover {
-  background: var(--accent-dark);
+    background: var(--orange-dark);
 }
 
 .secondary {
-  border-color: var(--line);
-  color: var(--ink);
+    color: var(--black);
+    border-color: var(--border);
 }
 
 .secondary:hover {
-  background: var(--tint);
+    background: var(--cream);
 }
+
 
 /* =========================
-   HERO ART
+   HERO GRAPHIC
 ========================= */
 
-.hero-art {
-  background: var(--tint);
-  border-radius: 16px;
-  padding: 20px;
+.hero-graphic {
+    background: var(--cream);
+    border-radius: 15px;
+    padding: 20px;
 }
 
-.hero-art svg {
-  width: 100%;
-  height: auto;
-  display: block;
+.hero-graphic svg {
+    display: block;
+    width: 100%;
+    height: auto;
 }
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 75px 0;
+}
+
+.cream {
+    background: var(--cream);
+}
+
+.label {
+    display: block;
+    color: var(--orange-dark);
+    font-size: .8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.intro {
+    max-width: 750px;
+    margin-bottom: 40px;
+}
+
 
 /* =========================
    STATS
 ========================= */
 
 .stats {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 25px;
-  padding: 35px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 35px 0;
 }
 
 .stat {
-  border-top: 2px solid var(--ink);
-  padding-top: 15px;
+    border-top: 2px solid var(--black);
+    padding-top: 15px;
 }
 
 .stat strong {
-  display: block;
-  color: var(--accent);
-  font-size: 1.7rem;
+    display: block;
+    color: var(--orange);
+    font-size: 1.7rem;
 }
 
 .stat span {
-  color: var(--soft);
-  font-size: .85rem;
+    color: var(--gray);
+    font-size: .85rem;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-  padding: 75px 0;
-}
-
-.tinted {
-  background: var(--tint);
-}
-
-.label {
-  display: block;
-  margin-bottom: 10px;
-  color: var(--accent-dark);
-  font-size: .8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-}
-
-.section-intro {
-  max-width: 740px;
-  margin-bottom: 40px;
-}
 
 /* =========================
    ABOUT
 ========================= */
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 35px;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
 }
 
-.card {
-  border-top: 2px solid var(--ink);
-  padding-top: 18px;
+.about-card {
+    border-top: 2px solid var(--black);
+    padding-top: 17px;
 }
 
-.card.accent {
-  border-top-color: var(--accent);
+.about-card.orange {
+    border-color: var(--orange);
 }
 
-.number {
-  color: var(--accent-dark);
-  font-size: .8rem;
-  font-weight: 800;
-}
 
 /* =========================
    MISSION
 ========================= */
 
-.mission {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: start;
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: start;
 }
 
 .mission-box {
-  background: var(--tint);
-  border-left: 5px solid var(--accent);
-  padding: 30px;
-  border-radius: 10px;
+    background: var(--cream);
+    border-left: 5px solid var(--orange);
+    border-radius: 10px;
+    padding: 30px;
 }
 
 .mission-box p {
-  margin-bottom: 20px;
-  font-size: 1.05rem;
-  font-weight: 600;
+    font-weight: 600;
 }
+
 
 /* =========================
    RESEARCH
 ========================= */
 
-.research {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.research-panel {
-  background: var(--ink);
-  color: white;
-  padding: 35px;
-  border-radius: 12px;
-}
-
-.research-panel h2 {
-  color: white;
-}
-
-.research-panel p {
-  color: #ddd6cc;
+.research-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
 }
 
 .research-list {
-  margin-top: 25px;
+    margin-top: 25px;
 }
 
-.research-list div {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
+.research-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.research-list strong {
-  display: block;
+.research-item strong {
+    display: block;
 }
 
-.research-list span {
-  color: var(--soft);
-  font-size: .88rem;
+.research-item span {
+    color: var(--gray);
+    font-size: .9rem;
 }
 
-/* =========================
-   REFERENCE LINKS
-========================= */
-
-.reference-links {
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
-  gap: 14px;
-  margin-top: 35px;
+.research-box {
+    background: var(--black);
+    color: white;
+    border-radius: 12px;
+    padding: 35px;
 }
 
-.reference-link {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 145px;
-  padding: 22px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  color: var(--ink);
-  transition: transform .15s ease, border-color .15s ease;
+.research-box h2 {
+    color: white;
 }
 
-.reference-link:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-  text-decoration: none;
+.research-box p {
+    color: #ddd6cc;
 }
 
-.reference-link strong {
-  font-size: 1rem;
-}
-
-.reference-link span {
-  color: var(--accent-dark);
-  font-size: .8rem;
-  font-weight: 800;
-}
 
 /* =========================
    EDUCATION
 ========================= */
 
-.education-intro {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-bottom: 40px;
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 40px;
 }
 
-.education-levels {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 25px;
+
+/* =========================
+   REFERENCE LINKS
+========================= */
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
 }
 
-.education-level {
-  border-top: 2px solid var(--ink);
-  padding-top: 18px;
+.reference-card {
+    min-height: 155px;
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--black);
 }
 
-.education-level strong {
-  font-size: 1.15rem;
+.reference-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-2px);
+    text-decoration: none;
 }
 
-.education-level span {
-  display: block;
-  color: var(--soft);
-  font-size: .87rem;
-  margin-top: 5px;
+.reference-card strong {
+    font-size: 1rem;
 }
+
+.reference-card span {
+    color: var(--orange-dark);
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+
+/* =========================
+   EDUCATION LEVELS
+========================= */
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 55px;
+}
+
+.level {
+    border-top: 2px solid var(--black);
+    padding-top: 16px;
+}
+
+.level strong {
+    font-size: 1.2rem;
+}
+
+.level span {
+    display: block;
+    color: var(--gray);
+    font-size: .88rem;
+}
+
+
+/* =========================
+   CASES
+========================= */
+
+.case-feature {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 40px;
+}
+
 
 /* =========================
    TOOLS
 ========================= */
 
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
 .tool {
-  background: var(--tint);
-  padding: 28px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  min-height: 250px;
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 28px;
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
 }
 
 .tool-type {
-  color: var(--accent-dark);
-  font-size: .75rem;
-  font-weight: 800;
-  text-transform: uppercase;
+    color: var(--orange-dark);
+    font-size: .75rem;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 .tool-link {
-  margin-top: auto;
-  font-weight: 800;
+    margin-top: auto;
+    font-weight: 800;
 }
+
 
 /* =========================
-   CTA
+   CONTACT
 ========================= */
 
-.cta {
-  background: var(--tint);
-  border-radius: 12px;
-  padding: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+.contact-box {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
+
 
 /* =========================
    DISCLAIMER
 ========================= */
 
 .disclaimer {
-  padding: 25px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 25px 0;
 }
 
 .disclaimer p {
-  margin: 0;
-  color: var(--soft);
-  font-size: .82rem;
+    margin: 0;
+    color: var(--gray);
+    font-size: .82rem;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-  background: var(--tint);
-  padding: 50px 0 25px;
+    background: var(--cream);
+    padding: 50px 0 25px;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
 }
 
 footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 footer li {
-  margin-bottom: 7px;
+    margin-bottom: 7px;
 }
 
 .copyright {
-  border-top: 1px solid var(--line);
-  margin-top: 35px;
-  padding-top: 18px;
-  color: var(--soft);
-  font-size: .78rem;
+    border-top: 1px solid var(--border);
+    margin-top: 35px;
+    padding-top: 18px;
+    color: var(--gray);
+    font-size: .78rem;
 }
+
 
 /* =========================
    MOBILE
@@ -595,101 +612,97 @@ footer li {
 
 @media (max-width: 950px) {
 
-  .menu {
-    display: block;
-  }
+    .menu-button {
+        display: block;
+    }
 
-  nav {
-    display: none;
-    width: 100%;
-  }
+    nav {
+        display: none;
+        width: 100%;
+    }
 
-  nav.open {
-    display: block;
-  }
+    nav.open {
+        display: block;
+    }
 
-  .nav {
-    flex-wrap: wrap;
-    padding: 15px 0;
-  }
+    .nav {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
 
-  nav ul {
-    flex-direction: column;
-    align-items: stretch;
-    padding-bottom: 10px;
-  }
+    nav ul {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
 
-  .hero-grid,
-  .mission,
-  .research,
-  .education-intro {
-    grid-template-columns: 1fr;
-  }
+    .hero-grid,
+    .mission-grid,
+    .research-grid,
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .hero-art {
-    order: -1;
-  }
+    .reference-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .reference-links {
-    grid-template-columns: repeat(2,1fr);
-  }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .education-levels {
-    grid-template-columns: repeat(2,1fr);
-  }
+    .levels {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  .stats {
-    grid-template-columns: repeat(2,1fr);
-  }
+    .tools {
+        grid-template-columns: 1fr;
+    }
 
-  .cta {
-    display: block;
-  }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .cta .button {
-    margin-top: 20px;
-  }
+    .contact-box {
+        display: block;
+    }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+    .contact-box .button {
+        margin-top: 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
 
 @media (max-width: 600px) {
 
-  body {
-    font-size: 16px;
-  }
+    .wrap {
+        padding: 0 20px;
+    }
 
-  .wrap {
-    padding: 0 20px;
-  }
+    section {
+        padding: 55px 0;
+    }
 
-  section {
-    padding: 55px 0;
-  }
+    .hero {
+        padding: 50px 0;
+    }
 
-  .hero {
-    padding: 50px 0 40px;
-  }
+    .reference-grid,
+    .stats,
+    .levels,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .stats,
-  .cards,
-  .reference-links,
-  .education-levels,
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mission-box,
-  .research-panel,
-  .cta {
-    padding: 25px;
-  }
-
-  .topbar .wrap {
-    display: block;
-  }
+    .mission-box,
+    .research-box,
+    .case-feature,
+    .contact-box {
+        padding: 25px;
+    }
 
 }
 
@@ -699,169 +712,997 @@ footer li {
 
 <body>
 
-<!-- =========================
-     TOP BAR
-========================= -->
+<!-- TOP BAR -->
 
 <div class="topbar">
 
-  <div class="wrap">
+```
+<div class="wrap">
 
+    <span>
+        Emergency? Call 911. This website is for education and research.
+    </span>
 
-<span>
-  Emergency? Call 911. This website is for education and research.
-</span>
+    <span>
+        <a href="#contact">Contact us →</a>
+    </span>
 
-<span>
-  <a href="#contact">Contact us →</a>
-</span>
-
-
-  </div>
+</div>
+```
 
 </div>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <header>
 
-  <div class="wrap nav">
+```
+<div class="wrap nav">
 
-<a class="brand" href="#top">
+    <a class="brand" href="#about">
 
-  <span class="logo">+</span>
+        <span class="logo">+</span>
 
-  <span class="brand-text">
-    EMS AI Research Initiative
-    <small>
-      Emergency Medicine • Research • Education
-    </small>
-  </span>
+        <span>
+            EMS AI Research Initiative
+            <small>Emergency Medicine • Research • Education</small>
+        </span>
 
-</a>
-
-
-<button
-  class="menu"
-  id="menuButton"
-  aria-expanded="false"
-  aria-controls="navigation">
-
-  Menu ☰
-
-</button>
+    </a>
 
 
-<nav id="navigation" aria-label="Main navigation">
+    <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false">
 
-  <ul>
+        Menu ☰
 
-    <li>
-      <a href="#about">About</a>
-    </li>
-
-    <li>
-      <a href="#mission">Mission</a>
-    </li>
-
-    <li>
-      <a href="#research">Research</a>
-    </li>
-
-    <li>
-      <a href="#education">Education</a>
-    </li>
-
-    <li>
-      <a href="#tools">Tools</a>
-    </li>
-
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
-
-  </ul>
-
-</nav>
+    </button>
 
 
-  </div>
+    <nav id="navigation">
+
+        <ul>
+
+            <li><a href="#about">About</a></li>
+
+            <li><a href="#mission">Mission</a></li>
+
+            <li><a href="#research">Research</a></li>
+
+            <li><a href="#education">Education</a></li>
+
+            <li><a href="#tools">Tools</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</div>
+```
 
 </header>
 
-<main id="top">
+<main>
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
-  <div class="wrap hero-grid">
+```
+<div class="wrap hero-grid">
+
+    <div>
+
+        <span class="eyebrow">
+            Emergency Medicine • AI • Research
+        </span>
+
+        <h1>
+            Advancing medicine through research, education, and responsible AI.
+        </h1>
+
+        <p class="lede">
+            We develop, test, and scientifically evaluate artificial
+            intelligence systems for healthcare while making research
+            and educational tools accessible to clinicians, students,
+            and the public.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button primary" href="#mission">
+                Our Mission
+            </a>
+
+            <a class="button secondary" href="#education">
+                Explore Education
+            </a>
+
+        </div>
+
+    </div>
 
 
-<div>
+    <div class="hero-graphic">
 
-  <span class="eyebrow">
-    Emergency Medicine • Artificial Intelligence • Education
-  </span>
+        <svg
+            viewBox="0 0 500 400"
+            xmlns="http://www.w3.org/2000/svg">
 
-  <h1>
-    Advancing medicine through research, education, and responsible AI.
-  </h1>
+            <rect
+                width="500"
+                height="400"
+                rx="15"
+                fill="#f7ead7"/>
 
-  <p class="lede">
-    We develop, test, and scientifically evaluate artificial intelligence
-    systems for healthcare while making research and educational tools
-    accessible to clinicians, students, and the public.
-  </p>
+            <circle
+                cx="250"
+                cy="190"
+                r="105"
+                fill="#211d17"/>
 
-  <div class="buttons">
+            <circle
+                cx="250"
+                cy="190"
+                r="80"
+                fill="none"
+                stroke="#e2811e"
+                stroke-width="2"
+                stroke-dasharray="5 8"/>
 
-    <a class="button primary" href="#mission">
-      Our mission
-    </a>
+            <path
+                d="M55 205
+                   H155
+                   L185 205
+                   L205 155
+                   L230 255
+                   L255 190
+                   L280 205
+                   H445"
+                fill="none"
+                stroke="#e2811e"
+                stroke-width="6"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
 
-    <a class="button secondary" href="#education">
-      Explore EMS education
-    </a>
+            <circle
+                cx="250"
+                cy="190"
+                r="17"
+                fill="#e2811e"/>
 
-  </div>
+            <circle
+                cx="250"
+                cy="190"
+                r="6"
+                fill="white"/>
+
+            <rect
+                x="105"
+                y="315"
+                width="290"
+                height="42"
+                rx="21"
+                fill="#211d17"/>
+
+            <text
+                x="250"
+                y="342"
+                text-anchor="middle"
+                fill="white"
+                font-family="Arial"
+                font-size="13"
+                font-weight="bold">
+
+                MEDICINE • AI • RESEARCH
+
+            </text>
+
+        </svg>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- STATS -->
+
+<div class="wrap">
+
+```
+<div class="stats">
+
+    <div class="stat">
+        <strong>AI</strong>
+        <span>Healthcare research and evaluation</span>
+    </div>
+
+    <div class="stat">
+        <strong>EMS</strong>
+        <span>Emergency and prehospital medicine</span>
+    </div>
+
+    <div class="stat">
+        <strong>OPEN</strong>
+        <span>Accessible education and research tools</span>
+    </div>
+
+    <div class="stat">
+        <strong>RIGOR</strong>
+        <span>Scientific evaluation and responsible innovation</span>
+    </div>
+
+</div>
+```
 
 </div>
 
+<!-- ABOUT -->
 
-<div class="hero-art">
+<section class="cream" id="about">
 
-  <svg
-    viewBox="0 0 500 420"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="Abstract medical artificial intelligence illustration">
+```
+<div class="wrap">
 
-    <rect
-      width="500"
-      height="420"
-      rx="12"
-      fill="#F7EAD7"/>
+    <div class="intro">
 
-    <g
-      stroke="#211D17"
-      stroke-opacity=".10"
-      stroke-width="1">
+        <span class="label">What we're about</span>
 
-      <path d="M40 80H460"/>
-      <path d="M40 140H460"/>
-      <path d="M40 200H460"/>
-      <path d="M40 260H460"/>
-      <path d="M40 320H460"/>
+        <h2>
+            Building a bridge between medicine and emerging technology.
+        </h2>
 
-      <path d="M80 40V380"/>
-      <path d="M150 40V380"/>
-      <path d="M220 40V380"/>
-      <path d="M290 40V380"/>
-      <path d="M360 40V380"/>
-      <path
+        <p>
+            We are a nonprofit focused on the intersection of emergency
+            medicine, healthcare, artificial intelligence, research,
+            and education.
+        </p>
 
+        <p>
+            We believe new technology should be developed with clinicians,
+            evaluated scientifically, and made accessible to the people
+            who can benefit from it.
+        </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <span class="label">01 — Research</span>
+
+            <h3>Study what works.</h3>
+
+            <p class="small">
+                We explore and scientifically evaluate artificial
+                intelligence systems and their potential applications
+                in healthcare.
+            </p>
+
+        </div>
+
+
+        <div class="about-card orange">
+
+            <span class="label">02 — Education</span>
+
+            <h3>Make knowledge accessible.</h3>
+
+            <p class="small">
+                We create educational resources that help clinicians,
+                students, and the public understand medicine and
+                emerging technology.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <span class="label">03 — Innovation</span>
+
+            <h3>Build responsibly.</h3>
+
+            <p class="small">
+                We believe healthcare AI should be developed with
+                transparency, clinical context, scientific integrity,
+                and patient safety in mind.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- MISSION -->
+
+<section id="mission">
+
+```
+<div class="wrap mission-grid">
+
+    <div>
+
+        <span class="label">Our Mission</span>
+
+        <h2>
+            Research with purpose. Innovation with responsibility.
+        </h2>
+
+        <p>
+            Our work is focused on advancing emergency medicine and
+            healthcare through artificial intelligence research,
+            education, scientific evaluation, and responsible innovation.
+        </p>
+
+        <p>
+            We also believe research and education should not be limited
+            to people who can afford expensive platforms or proprietary
+            tools.
+        </p>
+
+    </div>
+
+
+    <div class="mission-box">
+
+        <p>
+            To advance emergency medicine and healthcare through the
+            development, testing, and scientific evaluation of artificial
+            intelligence systems, while making research and educational
+            tools accessible to clinicians, students, and the public.
+        </p>
+
+        <p>
+            To advance artificial intelligence in medicine through
+            research, publication, education, and responsible innovation.
+        </p>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- RESEARCH -->
+
+<section class="cream" id="research">
+
+```
+<div class="wrap research-grid">
+
+    <div>
+
+        <span class="label">Research</span>
+
+        <h2>
+            From promising technology to evidence.
+        </h2>
+
+        <p>
+            Artificial intelligence is changing healthcare rapidly.
+            We believe the next step is determining which systems are
+            actually useful, reliable, safe, and worth using.
+        </p>
+
+
+        <div class="research-list">
+
+            <div class="research-item">
+
+                <strong>Development</strong>
+
+                <span>
+                    Creating AI systems for healthcare education and research.
+                </span>
+
+            </div>
+
+
+            <div class="research-item">
+
+                <strong>Testing</strong>
+
+                <span>
+                    Testing systems against defined tasks and real-world
+                    requirements.
+                </span>
+
+            </div>
+
+
+            <div class="research-item">
+
+                <strong>Scientific Evaluation</strong>
+
+                <span>
+                    Measuring whether technology actually provides
+                    meaningful value.
+                </span>
+
+            </div>
+
+
+            <div class="research-item">
+
+                <strong>Publication</strong>
+
+                <span>
+                    Sharing research and making findings accessible
+                    and understandable.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="research-box">
+
+        <span class="label" style="color:#f3a34c;">
+            AI &amp; Innovation
+        </span>
+
+        <h2>
+            Build it. Test it. Question it.
+        </h2>
+
+        <p>
+            Healthcare AI cannot be evaluated simply by how impressive
+            a demonstration looks.
+        </p>
+
+        <p>
+            We prioritize transparency, scientific evaluation,
+            clinical context, limitations, and responsible use.
+        </p>
+
+        <a
+            class="button primary"
+            href="https://domvq.github.io/older-non-profit/ai-innovation.html">
+
+            Explore AI &amp; Innovation →
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+```
+<div class="wrap">
+
+    <div class="education-grid">
+
+        <div>
+
+            <span class="label">Education</span>
+
+            <h2>
+                Open EMS education from EMR through Paramedic.
+            </h2>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                Our education resources are designed to support EMS
+                learners and providers throughout their careers.
+            </p>
+
+            <p>
+                Select a reference below to access the full resource.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTANT REFERENCE LINKS -->
+
+    <div class="reference-grid">
+
+
+        <a
+            class="reference-card"
+            href="https://domvq.github.io/older-non-profit/education.html">
+
+            <strong>EMS Education</strong>
+
+            <span>Open reference →</span>
+
+        </a>
+
+
+        <a
+            class="reference-card"
+            href="https://domvq.github.io/older-non-profit/treatments.html">
+
+            <strong>Treatments</strong>
+
+            <span>Open reference →</span>
+
+        </a>
+
+
+        <a
+            class="reference-card"
+            href="https://domvq.github.io/older-non-profit/ecg.html">
+
+            <strong>ECG Reading</strong>
+
+            <span>Open reference →</span>
+
+        </a>
+
+
+        <a
+            class="reference-card"
+            href="https://domvq.github.io/older-non-profit/ai-innovation.html">
+
+            <strong>AI &amp; Innovation</strong>
+
+            <span>Open reference →</span>
+
+        </a>
+
+
+        <a
+            class="reference-card"
+            href="https://domvq.github.io/older-non-profit/cases.html">
+
+            <strong>Real EMS Cases</strong>
+
+            <span>Open cases →</span>
+
+        </a>
+
+
+    </div>
+
+
+    <!-- EDUCATION LEVELS -->
+
+    <div class="levels">
+
+        <div class="level">
+
+            <strong>EMR</strong>
+
+            <span>
+                Emergency Medical Responder
+            </span>
+
+        </div>
+
+
+        <div class="level">
+
+            <strong>EMT</strong>
+
+            <span>
+                Emergency Medical Technician
+            </span>
+
+        </div>
+
+
+        <div class="level">
+
+            <strong>AEMT</strong>
+
+            <span>
+                Advanced Emergency Medical Technician
+            </span>
+
+        </div>
+
+
+        <div class="level">
+
+            <strong>Paramedic</strong>
+
+            <span>
+                Advanced life support education
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- REAL EMS CASES -->
+
+<section class="cream">
+
+```
+<div class="wrap">
+
+    <div class="case-feature">
+
+        <span class="label">Real EMS Cases</span>
+
+        <h2>
+            Learn from what happens in the field.
+        </h2>
+
+        <p>
+            Real-world EMS cases provide an opportunity to examine
+            patient presentation, assessment, differential diagnosis,
+            treatment, clinical reasoning, ECG findings, and outcomes.
+        </p>
+
+        <a
+            class="button primary"
+            href="https://domvq.github.io/older-non-profit/cases.html">
+
+            Explore Real EMS Cases →
+
+        </a>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- TOOLS -->
+
+<section id="tools">
+
+```
+<div class="wrap">
+
+    <div class="intro">
+
+        <span class="label">Tools</span>
+
+        <h2>
+            Technology built around learning and access.
+        </h2>
+
+        <p>
+            Our projects explore how digital tools and artificial
+            intelligence can make healthcare education and clinical
+            reference more accessible.
+        </p>
+
+    </div>
+
+
+    <div class="tools">
+
+
+        <div class="tool">
+
+            <span class="tool-type">
+                Study Tool
+            </span>
+
+            <h3>Fisdap Guide</h3>
+
+            <p class="small">
+                A companion educational guide designed to help EMS
+                students navigate coursework and prepare for exams.
+            </p>
+
+            <a
+                class="tool-link"
+                href="https://domvq.github.io/fisdap-guide-/">
+
+                Open Fisdap Guide →
+
+            </a>
+
+        </div>
+
+
+        <div class="tool">
+
+            <span class="tool-type">
+                AI Research Tool
+            </span>
+
+            <h3>Paramedic AI</h3>
+
+            <p class="small">
+                An experimental AI-powered reference system exploring
+                how retrieval-based AI can support EMS education.
+            </p>
+
+            <a
+                class="tool-link"
+                href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
+                target="_blank"
+                rel="noopener">
+
+                Explore Paramedic AI →
+
+            </a>
+
+        </div>
+
+
+        <div class="tool">
+
+            <span class="tool-type">
+                Clinical Reference
+            </span>
+
+            <h3>RUNSHEET</h3>
+
+            <p class="small">
+                A field-oriented reference platform featuring ECG
+                rhythms, assessment resources, and medication information.
+            </p>
+
+            <a
+                class="tool-link"
+                href="https://runsheet.website/"
+                target="_blank"
+                rel="noopener">
+
+                Open RUNSHEET →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+```
+<div class="wrap">
+
+    <div class="contact-box">
+
+        <div>
+
+            <span class="label">Contact</span>
+
+            <h2>
+                Help us advance medicine responsibly.
+            </h2>
+
+            <p>
+                We are building an organization around healthcare
+                research, EMS education, artificial intelligence,
+                and responsible innovation.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <a
+                class="button primary"
+                href="mailto:info@example.org">
+
+                Email us →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer">
+
+```
+<div class="wrap">
+
+    <p>
+        <strong>Important:</strong>
+        The information and tools provided by this organization are
+        intended for education, research, and general reference.
+        They are not a substitute for professional medical direction,
+        local protocols, certification training, clinical judgment,
+        or emergency medical care. AI-generated information may contain
+        errors and should be independently verified.
+    </p>
+
+</div>
+```
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+```
+<div class="wrap">
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                EMS AI Research Initiative
+            </h3>
+
+            <p class="small">
+                Advancing emergency medicine and healthcare through
+                artificial intelligence research, education, scientific
+                evaluation, and responsible innovation.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Explore</h3>
+
+            <ul>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#mission">Mission</a></li>
+
+                <li><a href="#research">Research</a></li>
+
+                <li><a href="#education">Education</a></li>
+
+                <li><a href="#tools">Tools</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>References</h3>
+
+            <ul>
+
+                <li>
+                    <a href="https://domvq.github.io/older-non-profit/education.html">
+                        EMS Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://domvq.github.io/older-non-profit/treatments.html">
+                        Treatments
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://domvq.github.io/older-non-profit/ecg.html">
+                        ECG Reading
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://domvq.github.io/older-non-profit/ai-innovation.html">
+                        AI &amp; Innovation
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://domvq.github.io/older-non-profit/cases.html">
+                        Real EMS Cases
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 EMS AI Research Initiative.
+        Educational and research content only — not medical advice.
+
+    </div>
+
+</div>
+```
+
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    var button = document.getElementById("menuButton");
+    var navigation = document.getElementById("navigation");
+
+    if (!button || !navigation) {
+        return;
+    }
+
+    button.addEventListener("click", function () {
+
+        var isOpen = navigation.classList.toggle("open");
+
+        button.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+
+
+    var links = navigation.querySelectorAll("a");
+
+    links.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navigation.classList.remove("open");
+
+            button.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
