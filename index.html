@@ -1,19 +1,21 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>EMS AI Research Initiative</title>
 
-<meta
-name="description"
-content="Advancing emergency medicine and healthcare through artificial intelligence research, education, scientific evaluation, and responsible innovation."
-
->
+  <meta
+    name="description"
+    content="Advancing emergency medicine and healthcare through artificial intelligence research, education, scientific evaluation, and responsible innovation."
+  >
 
   <style>
+
     :root {
       --paper: #ffffff;
       --tint: #fdf6ec;
@@ -93,7 +95,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.9rem;
     }
 
-    /* TOP BAR */
+    /* =========================
+       TOP BAR
+    ========================= */
 
     .topbar {
       background: var(--tint);
@@ -110,7 +114,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       flex-wrap: wrap;
     }
 
-    /* HEADER */
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
@@ -118,6 +124,7 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       z-index: 100;
       background: rgba(255, 255, 255, 0.97);
       border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
     }
 
     .nav {
@@ -151,6 +158,7 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       place-items: center;
       font-weight: 800;
       font-size: 18px;
+      flex-shrink: 0;
     }
 
     .brand-text small {
@@ -191,9 +199,60 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       padding: 9px 15px;
       cursor: pointer;
       font-weight: 700;
+      color: var(--ink);
     }
 
-    /* HERO */
+    /* =========================
+       RESOURCE NAVIGATION
+    ========================= */
+
+    .resource-nav {
+      background: var(--tint);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .resource-nav .wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      flex-wrap: wrap;
+    }
+
+    .resource-nav-label {
+      color: var(--soft);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 5px;
+    }
+
+    .resource-nav a {
+      display: inline-block;
+      color: var(--ink);
+      background: white;
+      border: 1px solid var(--line);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .resource-nav a:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 85px 0 60px;
@@ -260,7 +319,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       background: var(--tint);
     }
 
-    /* HERO ART */
+    /* =========================
+       HERO ART
+    ========================= */
 
     .hero-art {
       background: var(--tint);
@@ -274,7 +335,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       height: auto;
     }
 
-    /* STATS */
+    /* =========================
+       STATS
+    ========================= */
 
     .stats {
       display: grid;
@@ -299,7 +362,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.85rem;
     }
 
-    /* SECTIONS */
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
       padding: 75px 0;
@@ -324,7 +389,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       margin-bottom: 40px;
     }
 
-    /* MISSION */
+    /* =========================
+       MISSION
+    ========================= */
 
     .mission {
       display: grid;
@@ -346,7 +413,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-weight: 600;
     }
 
-    /* CARDS */
+    /* =========================
+       CARDS
+    ========================= */
 
     .cards {
       display: grid;
@@ -369,7 +438,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-weight: 800;
     }
 
-    /* AUDIENCE */
+    /* =========================
+       AUDIENCE
+    ========================= */
 
     .audience {
       display: grid;
@@ -393,7 +464,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.88rem;
     }
 
-    /* RESEARCH */
+    /* =========================
+       RESEARCH
+    ========================= */
 
     .research {
       display: grid;
@@ -435,7 +508,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.88rem;
     }
 
-    /* TOOLS */
+    /* =========================
+       TOOLS
+    ========================= */
 
     .tool {
       background: var(--tint);
@@ -458,7 +533,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-weight: 800;
     }
 
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
       background: var(--tint);
@@ -475,7 +552,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       color: var(--soft);
     }
 
-    /* DISCLAIMER */
+    /* =========================
+       DISCLAIMER
+    ========================= */
 
     .disclaimer {
       padding: 25px 0;
@@ -489,7 +568,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.82rem;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: var(--tint);
@@ -524,7 +605,9 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       font-size: 0.78rem;
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
 
@@ -550,6 +633,10 @@ content="Advancing emergency medicine and healthcare through artificial intellig
         flex-direction: column;
         align-items: stretch;
         padding-bottom: 10px;
+      }
+
+      nav a {
+        width: 100%;
       }
 
       .hero-grid,
@@ -585,6 +672,11 @@ content="Advancing emergency medicine and healthcare through artificial intellig
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .resource-nav .wrap {
+        justify-content: flex-start;
+      }
+
     }
 
     @media (max-width: 600px) {
@@ -625,858 +717,1356 @@ content="Advancing emergency medicine and healthcare through artificial intellig
         display: block;
         margin-bottom: 3px;
       }
+
+      .resource-nav .wrap {
+        justify-content: flex-start;
+        gap: 6px;
+      }
+
+      .resource-nav-label {
+        width: 100%;
+        margin-bottom: 2px;
+      }
+
+      .resource-nav a {
+        font-size: 0.78rem;
+        padding: 6px 10px;
+      }
+
+      .brand-text {
+        font-size: 0.9rem;
+      }
+
+      .brand-text small {
+        font-size: 8px;
+      }
+
     }
+
   </style>
 
 </head>
 
+
 <body>
 
-  <!-- TOP BAR -->
+
+  <!-- =========================
+       TOP BAR
+  ========================= -->
 
   <div class="topbar">
+
     <div class="wrap">
-      <span>Emergency? Call 911. This website is for education and research.</span>
+
+      <span>
+        Emergency? Call 911. This website is for education and research.
+      </span>
+
       <span>
         <a href="#contact">Contact us →</a>
       </span>
+
     </div>
+
   </div>
 
-  <!-- NAVIGATION -->
+
+  <!-- =========================
+       MAIN NAVIGATION
+  ========================= -->
 
   <header>
+
     <div class="wrap nav">
 
-```
-  <a class="brand" href="#top">
-    <span class="logo">+</span>
+      <a class="brand" href="#top">
 
-    <span class="brand-text">
-      EMS AI Research Initiative
-      <small>Emergency Medicine • Research • Education</small>
-    </span>
-  </a>
+        <span class="logo">+</span>
 
-  <button class="menu" id="menuButton" aria-expanded="false">
-    Menu ☰
-  </button>
+        <span class="brand-text">
 
-  <nav id="navigation">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+          EMS AI Research Initiative
 
-</div>
-```
+          <small>
+            Emergency Medicine • Research • Education
+          </small>
+
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navigation">
+
+        Menu ☰
+
+      </button>
+
+
+      <nav id="navigation">
+
+        <ul>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#mission">Mission</a>
+          </li>
+
+          <li>
+            <a href="#research">Research</a>
+          </li>
+
+          <li>
+            <a href="#education">Education</a>
+          </li>
+
+          <li>
+            <a href="#tools">Tools</a>
+          </li>
+
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
 
   </header>
 
+
+  <!-- =========================
+       RESOURCE LINKS
+  ========================= -->
+
+  <div class="resource-nav">
+
+    <div class="wrap">
+
+      <span class="resource-nav-label">
+        Explore
+      </span>
+
+
+      <a
+        href="https://domvq.github.io/older-non-profit/education.html">
+
+        Education
+
+      </a>
+
+
+      <a
+        href="https://domvq.github.io/older-non-profit/ecg.html">
+
+        ECG Reading
+
+      </a>
+
+
+      <a
+        href="https://domvq.github.io/older-non-profit/ai-innovation.html">
+
+        AI &amp; Innovation
+
+      </a>
+
+
+      <a
+        href="https://domvq.github.io/older-non-profit/cases.html">
+
+        Real EMS Cases
+
+      </a>
+
+    </div>
+
+  </div>
+
+
   <main id="top">
 
-```
-<!-- HERO -->
 
-<section class="hero">
+    <!-- =========================
+         HERO
+    ========================= -->
 
-  <div class="wrap hero-grid">
+    <section class="hero">
 
-    <div>
+      <div class="wrap hero-grid">
 
-      <span class="eyebrow">
-        Emergency Medicine • Artificial Intelligence • Education
-      </span>
-
-      <h1>
-        Advancing medicine through research, education, and responsible AI.
-      </h1>
-
-      <p class="lede">
-        We develop, test, and scientifically evaluate artificial
-        intelligence systems for healthcare while making research and
-        educational tools accessible to clinicians, students, and the public.
-      </p>
-
-      <div class="buttons">
-
-        <a class="button primary" href="#mission">
-          Our mission
-        </a>
-
-        <a class="button secondary" href="#research">
-          Explore our research
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- SIMPLE SVG ART -->
-
-    <div class="hero-art">
-
-      <svg
-        viewBox="0 0 500 420"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Abstract medical artificial intelligence illustration">
-
-        <rect
-          width="500"
-          height="420"
-          rx="12"
-          fill="#F7EAD7"/>
-
-        <g
-          stroke="#211D17"
-          stroke-opacity=".10"
-          stroke-width="1">
-
-          <path d="M40 80H460"/>
-          <path d="M40 140H460"/>
-          <path d="M40 200H460"/>
-          <path d="M40 260H460"/>
-          <path d="M40 320H460"/>
-
-          <path d="M80 40V380"/>
-          <path d="M150 40V380"/>
-          <path d="M220 40V380"/>
-          <path d="M290 40V380"/>
-          <path d="M360 40V380"/>
-          <path d="M430 40V380"/>
-
-        </g>
-
-        <circle
-          cx="250"
-          cy="205"
-          r="105"
-          fill="#211D17"/>
-
-        <circle
-          cx="250"
-          cy="205"
-          r="80"
-          fill="none"
-          stroke="#E2811E"
-          stroke-width="2"
-          stroke-dasharray="5 8"/>
-
-        <path
-          d="M65 220
-             H160
-             L185 220
-             L205 175
-             L228 270
-             L250 205
-             L272 220
-             H435"
-          fill="none"
-          stroke="#E2811E"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-
-        <circle cx="205" cy="150" r="7" fill="#fff"/>
-        <circle cx="295" cy="150" r="7" fill="#fff"/>
-        <circle cx="205" cy="260" r="7" fill="#fff"/>
-        <circle cx="295" cy="260" r="7" fill="#fff"/>
-
-        <line
-          x1="205"
-          y1="150"
-          x2="250"
-          y2="205"
-          stroke="#fff"
-          stroke-width="2"
-          opacity=".6"/>
-
-        <line
-          x1="295"
-          y1="150"
-          x2="250"
-          y2="205"
-          stroke="#fff"
-          stroke-width="2"
-          opacity=".6"/>
-
-        <line
-          x1="205"
-          y1="260"
-          x2="250"
-          y2="205"
-          stroke="#fff"
-          stroke-width="2"
-          opacity=".6"/>
-
-        <line
-          x1="295"
-          y1="260"
-          x2="250"
-          y2="205"
-          stroke="#fff"
-          stroke-width="2"
-          opacity=".6"/>
-
-        <circle
-          cx="250"
-          cy="205"
-          r="17"
-          fill="#E2811E"/>
-
-        <circle
-          cx="250"
-          cy="205"
-          r="6"
-          fill="#fff"/>
-
-        <rect
-          x="110"
-          y="330"
-          width="280"
-          height="42"
-          rx="21"
-          fill="#211D17"/>
-
-        <text
-          x="250"
-          y="357"
-          text-anchor="middle"
-          fill="white"
-          font-family="Arial, sans-serif"
-          font-size="13"
-          font-weight="bold">
-          MEDICINE • AI • RESEARCH
-        </text>
-
-      </svg>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- STATS -->
-
-<section style="padding:0;">
-
-  <div class="wrap">
-
-    <div class="stats">
-
-      <div class="stat">
-        <strong>AI</strong>
-        <span>Healthcare research and evaluation</span>
-      </div>
-
-      <div class="stat">
-        <strong>EMS</strong>
-        <span>Emergency and prehospital medicine</span>
-      </div>
-
-      <div class="stat">
-        <strong>OPEN</strong>
-        <span>Accessible education and research tools</span>
-      </div>
-
-      <div class="stat">
-        <strong>RIGOR</strong>
-        <span>Scientific evaluation and responsible innovation</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="tinted" id="about">
-
-  <div class="wrap">
-
-    <div class="section-intro">
-
-      <span class="label">What we're about</span>
-
-      <h2>
-        Building a bridge between medicine and emerging technology.
-      </h2>
-
-      <p>
-        We are an organization focused on the intersection of emergency
-        medicine, healthcare, artificial intelligence, research, and
-        education.
-      </p>
-
-      <p>
-        We believe new technology should be developed with clinicians,
-        tested scientifically, evaluated honestly, and made accessible
-        to the people who can benefit from it.
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <div class="card">
-        <span class="number">01 — RESEARCH</span>
-        <h3>Study what works</h3>
-        <p class="small">
-          We explore and scientifically evaluate artificial intelligence
-          systems and their potential applications in healthcare.
-        </p>
-      </div>
-
-      <div class="card accent">
-        <span class="number">02 — EDUCATION</span>
-        <h3>Make knowledge accessible</h3>
-        <p class="small">
-          We create educational resources that help clinicians, students,
-          and the public understand medicine and emerging technology.
-        </p>
-      </div>
-
-      <div class="card">
-        <span class="number">03 — INNOVATION</span>
-        <h3>Build responsibly</h3>
-        <p class="small">
-          We believe healthcare AI should be developed with transparency,
-          clinical context, scientific integrity, and patient safety in mind.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- MISSION -->
-
-<section id="mission">
-
-  <div class="wrap mission">
-
-    <div>
-
-      <span class="label">Our mission</span>
-
-      <h2>
-        Research with purpose. Innovation with responsibility.
-      </h2>
-
-      <p>
-        Our mission is to advance emergency medicine and healthcare by
-        exploring how artificial intelligence can be developed, tested,
-        evaluated, and responsibly applied.
-      </p>
-
-      <p>
-        We also believe that research and education should not be limited
-        to people who can afford expensive platforms or proprietary tools.
-      </p>
-
-    </div>
-
-
-    <div class="mission-box">
-
-      <p>
-        To advance emergency medicine and healthcare through the
-        development, testing, and scientific evaluation of artificial
-        intelligence systems, while making research and educational tools
-        accessible to clinicians, students, and the public.
-      </p>
-
-      <br>
-
-      <p>
-        We advance artificial intelligence in medicine through research,
-        publication, education, and responsible innovation.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- RESEARCH -->
-
-<section class="tinted" id="research">
-
-  <div class="wrap research">
-
-    <div>
-
-      <span class="label">AI &amp; Research</span>
-
-      <h2>
-        From promising technology to evidence.
-      </h2>
-
-      <p>
-        Artificial intelligence is changing healthcare rapidly. We believe
-        the next step is determining which systems are actually useful,
-        reliable, safe, and worth using.
-      </p>
-
-      <div class="research-list">
 
         <div>
-          <strong>Development</strong>
-          <span>
-            Creating AI systems for healthcare education and research.
+
+          <span class="eyebrow">
+            Emergency Medicine • Artificial Intelligence • Education
           </span>
+
+
+          <h1>
+            Advancing medicine through research, education, and responsible AI.
+          </h1>
+
+
+          <p class="lede">
+
+            We develop, test, and scientifically evaluate artificial
+            intelligence systems for healthcare while making research and
+            educational tools accessible to clinicians, students, and the public.
+
+          </p>
+
+
+          <div class="buttons">
+
+            <a
+              class="button primary"
+              href="#mission">
+
+              Our mission
+
+            </a>
+
+
+            <a
+              class="button secondary"
+              href="#research">
+
+              Explore our research
+
+            </a>
+
+          </div>
+
         </div>
 
-        <div>
-          <strong>Testing</strong>
-          <span>
-            Testing systems against defined tasks and real-world requirements.
-          </span>
-        </div>
 
-        <div>
-          <strong>Scientific evaluation</strong>
-          <span>
-            Measuring whether technology actually provides meaningful value.
-          </span>
-        </div>
+        <!-- HERO ART -->
 
-        <div>
-          <strong>Publication</strong>
-          <span>
-            Sharing research and making findings accessible and understandable.
-          </span>
+        <div class="hero-art">
+
+          <svg
+            viewBox="0 0 500 420"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Abstract medical artificial intelligence illustration">
+
+
+            <rect
+              width="500"
+              height="420"
+              rx="12"
+              fill="#F7EAD7"
+            />
+
+
+            <g
+              stroke="#211D17"
+              stroke-opacity=".10"
+              stroke-width="1">
+
+              <path d="M40 80H460"/>
+              <path d="M40 140H460"/>
+              <path d="M40 200H460"/>
+              <path d="M40 260H460"/>
+              <path d="M40 320H460"/>
+
+              <path d="M80 40V380"/>
+              <path d="M150 40V380"/>
+              <path d="M220 40V380"/>
+              <path d="M290 40V380"/>
+              <path d="M360 40V380"/>
+              <path d="M430 40V380"/>
+
+            </g>
+
+
+            <circle
+              cx="250"
+              cy="205"
+              r="105"
+              fill="#211D17"
+            />
+
+
+            <circle
+              cx="250"
+              cy="205"
+              r="80"
+              fill="none"
+              stroke="#E2811E"
+              stroke-width="2"
+              stroke-dasharray="5 8"
+            />
+
+
+            <path
+              d="M65 220
+                 H160
+                 L185 220
+                 L205 175
+                 L228 270
+                 L250 205
+                 L272 220
+                 H435"
+              fill="none"
+              stroke="#E2811E"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+
+            <circle cx="205" cy="150" r="7" fill="#fff"/>
+            <circle cx="295" cy="150" r="7" fill="#fff"/>
+            <circle cx="205" cy="260" r="7" fill="#fff"/>
+            <circle cx="295" cy="260" r="7" fill="#fff"/>
+
+
+            <line
+              x1="205"
+              y1="150"
+              x2="250"
+              y2="205"
+              stroke="#fff"
+              stroke-width="2"
+              opacity=".6"
+            />
+
+
+            <line
+              x1="295"
+              y1="150"
+              x2="250"
+              y2="205"
+              stroke="#fff"
+              stroke-width="2"
+              opacity=".6"
+            />
+
+
+            <line
+              x1="205"
+              y1="260"
+              x2="250"
+              y2="205"
+              stroke="#fff"
+              stroke-width="2"
+              opacity=".6"
+            />
+
+
+            <line
+              x1="295"
+              y1="260"
+              x2="250"
+              y2="205"
+              stroke="#fff"
+              stroke-width="2"
+              opacity=".6"
+            />
+
+
+            <circle
+              cx="250"
+              cy="205"
+              r="17"
+              fill="#E2811E"
+            />
+
+
+            <circle
+              cx="250"
+              cy="205"
+              r="6"
+              fill="#fff"
+            />
+
+
+            <rect
+              x="110"
+              y="330"
+              width="280"
+              height="42"
+              rx="21"
+              fill="#211D17"
+            />
+
+
+            <text
+              x="250"
+              y="357"
+              text-anchor="middle"
+              fill="white"
+              font-family="Arial, sans-serif"
+              font-size="13"
+              font-weight="bold">
+
+              MEDICINE • AI • RESEARCH
+
+            </text>
+
+          </svg>
+
         </div>
 
       </div>
 
-    </div>
+    </section>
 
 
-    <div class="research-panel">
+    <!-- =========================
+         STATS
+    ========================= -->
 
-      <span class="label" style="color:#f3a34c;">
-        Responsible AI
-      </span>
+    <section style="padding:0;">
 
-      <h2>
-        Build it. Test it. Question it.
-      </h2>
+      <div class="wrap">
 
-      <p>
-        Healthcare AI cannot be evaluated simply by how impressive a
-        demonstration looks.
-      </p>
+        <div class="stats">
 
-      <p>
-        We prioritize transparency, scientific evaluation, clinical
-        context, limitations, and responsible use.
-      </p>
+          <div class="stat">
 
-      <p>
-        Our goal is to help distinguish what AI
-        <strong>can do</strong> from what it has actually been
-        demonstrated to do.
-      </p>
+            <strong>AI</strong>
 
-    </div>
+            <span>
+              Healthcare research and evaluation
+            </span>
 
-  </div>
-
-</section>
+          </div>
 
 
-<!-- WHO WE SERVE -->
+          <div class="stat">
 
-<section>
+            <strong>EMS</strong>
 
-  <div class="wrap">
+            <span>
+              Emergency and prehospital medicine
+            </span>
 
-    <div class="section-intro">
-
-      <span class="label">Who we serve</span>
-
-      <h2>
-        Knowledge should be accessible to everyone.
-      </h2>
-
-      <p>
-        Our work is intended for people learning medicine, practicing
-        medicine, researching healthcare, developing technology, or simply
-        trying to understand where healthcare is headed.
-      </p>
-
-    </div>
+          </div>
 
 
-    <div class="audience">
+          <div class="stat">
 
-      <div class="audience-item">
-        <strong>EMS Students</strong>
-        <span>
-          Educational resources and clinical concepts for building
-          a strong foundation.
-        </span>
-      </div>
+            <strong>OPEN</strong>
 
-      <div class="audience-item">
-        <strong>Clinicians</strong>
-        <span>
-          Practical references and research relevant to emergency
-          and prehospital medicine.
-        </span>
-      </div>
+            <span>
+              Accessible education and research tools
+            </span>
 
-      <div class="audience-item">
-        <strong>Researchers</strong>
-        <span>
-          Opportunities to explore, test, publish, and discuss
-          emerging healthcare AI.
-        </span>
-      </div>
-
-      <div class="audience-item">
-        <strong>The Public</strong>
-        <span>
-          Accessible explanations of medicine, AI, healthcare,
-          and emerging research.
-        </span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+          </div>
 
 
-<!-- EDUCATION -->
+          <div class="stat">
 
-<section class="tinted" id="education">
+            <strong>RIGOR</strong>
 
-  <div class="wrap">
+            <span>
+              Scientific evaluation and responsible innovation
+            </span>
 
-    <div class="section-intro">
+          </div>
 
-      <span class="label">EMS Education</span>
-
-      <h2>
-        Education is where our work begins.
-      </h2>
-
-      <p>
-        Our EMS education resources are designed to support learners
-        throughout their journey—from the fundamentals of emergency care
-        through advanced clinical concepts.
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <div class="card">
-        <span class="number">EMR</span>
-        <h3>Emergency Medical Responder</h3>
-        <p class="small">
-          Foundational emergency care concepts and preparation for
-          entering EMS.
-        </p>
-      </div>
-
-      <div class="card accent">
-        <span class="number">EMT</span>
-        <h3>Emergency Medical Technician</h3>
-        <p class="small">
-          Patient assessment, treatment, anatomy, physiology,
-          operations, and exam preparation.
-        </p>
-      </div>
-
-      <div class="card">
-        <span class="number">AEMT</span>
-        <h3>Advanced EMT</h3>
-        <p class="small">
-          Advanced assessment, pharmacology, procedures, and
-          clinical decision-making concepts.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- TOOLS -->
-
-<section id="tools">
-
-  <div class="wrap">
-
-    <div class="section-intro">
-
-      <span class="label">Current projects</span>
-
-      <h2>
-        Technology built around learning and access.
-      </h2>
-
-      <p>
-        These projects represent our early work exploring how digital
-        tools and artificial intelligence can make healthcare education
-        and reference more accessible.
-      </p>
-
-    </div>
-
-
-    <div class="cards">
-
-      <div class="tool">
-
-        <span class="tool-type">Study Tool</span>
-
-        <h3>Fisdap Guide</h3>
-
-        <p class="small">
-          A companion educational guide designed to help EMS students
-          navigate coursework and prepare for exams.
-        </p>
-
-        <a
-          class="tool-link"
-          href="https://domvq.github.io/fisdap-guide-/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Open Fisdap Guide →
-        </a>
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="tool">
 
-        <span class="tool-type">AI Research Tool</span>
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
-        <h3>Paramedic AI</h3>
+    <section class="tinted" id="about">
 
-        <p class="small">
-          An experimental AI-powered reference system exploring how
-          retrieval-based AI can support EMS education.
-        </p>
+      <div class="wrap">
 
-        <a
-          class="tool-link"
-          href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Explore Paramedic AI →
-        </a>
+
+        <div class="section-intro">
+
+          <span class="label">
+            What we're about
+          </span>
+
+
+          <h2>
+            Building a bridge between medicine and emerging technology.
+          </h2>
+
+
+          <p>
+            We are an organization focused on the intersection of emergency
+            medicine, healthcare, artificial intelligence, research, and
+            education.
+          </p>
+
+
+          <p>
+            We believe new technology should be developed with clinicians,
+            tested scientifically, evaluated honestly, and made accessible
+            to the people who can benefit from it.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <div class="card">
+
+            <span class="number">
+              01 — RESEARCH
+            </span>
+
+            <h3>
+              Study what works
+            </h3>
+
+            <p class="small">
+              We explore and scientifically evaluate artificial intelligence
+              systems and their potential applications in healthcare.
+            </p>
+
+          </div>
+
+
+          <div class="card accent">
+
+            <span class="number">
+              02 — EDUCATION
+            </span>
+
+            <h3>
+              Make knowledge accessible
+            </h3>
+
+            <p class="small">
+              We create educational resources that help clinicians, students,
+              and the public understand medicine and emerging technology.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <span class="number">
+              03 — INNOVATION
+            </span>
+
+            <h3>
+              Build responsibly
+            </h3>
+
+            <p class="small">
+              We believe healthcare AI should be developed with transparency,
+              clinical context, scientific integrity, and patient safety in mind.
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="tool">
 
-        <span class="tool-type">Clinical Reference</span>
+    <!-- =========================
+         MISSION
+    ========================= -->
 
-        <h3>RUNSHEET</h3>
+    <section id="mission">
 
-        <p class="small">
-          A field-oriented reference platform featuring ECG rhythms,
-          assessment resources, and medication information.
-        </p>
+      <div class="wrap mission">
 
-        <a
-          class="tool-link"
-          href="https://runsheet.website/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Open RUNSHEET →
-        </a>
+
+        <div>
+
+          <span class="label">
+            Our mission
+          </span>
+
+
+          <h2>
+            Research with purpose. Innovation with responsibility.
+          </h2>
+
+
+          <p>
+            Our mission is to advance emergency medicine and healthcare by
+            exploring how artificial intelligence can be developed, tested,
+            evaluated, and responsibly applied.
+          </p>
+
+
+          <p>
+            We also believe that research and education should not be limited
+            to people who can afford expensive platforms or proprietary tools.
+          </p>
+
+        </div>
+
+
+        <div class="mission-box">
+
+          <p>
+            To advance emergency medicine and healthcare through the
+            development, testing, and scientific evaluation of artificial
+            intelligence systems, while making research and educational tools
+            accessible to clinicians, students, and the public.
+          </p>
+
+
+          <br>
+
+
+          <p>
+            We advance artificial intelligence in medicine through research,
+            publication, education, and responsible innovation.
+          </p>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- DISCLAIMER -->
+    <!-- =========================
+         RESEARCH
+    ========================= -->
 
-<div class="disclaimer">
+    <section class="tinted" id="research">
 
-  <div class="wrap">
-
-    <p>
-      <strong>Important:</strong>
-      The information and tools provided by this organization are intended
-      for education, research, and general reference. They are not a
-      substitute for professional medical direction, local protocols,
-      certification training, clinical judgment, or emergency medical care.
-      AI-generated information may contain errors and should be independently
-      verified before being relied upon.
-    </p>
-
-  </div>
-
-</div>
+      <div class="wrap research">
 
 
-<!-- CONTACT / CTA -->
+        <div>
 
-<section id="contact">
+          <span class="label">
+            AI &amp; Research
+          </span>
 
-  <div class="wrap">
 
-    <div class="cta">
+          <h2>
+            From promising technology to evidence.
+          </h2>
 
-      <div>
 
-        <span class="label">Get involved</span>
+          <p>
+            Artificial intelligence is changing healthcare rapidly. We believe
+            the next step is determining which systems are actually useful,
+            reliable, safe, and worth using.
+          </p>
 
-        <h2>
-          Help us advance medicine responsibly.
-        </h2>
+
+          <div class="research-list">
+
+
+            <div>
+
+              <strong>
+                Development
+              </strong>
+
+              <span>
+                Creating AI systems for healthcare education and research.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Testing
+              </strong>
+
+              <span>
+                Testing systems against defined tasks and real-world requirements.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Scientific evaluation
+              </strong>
+
+              <span>
+                Measuring whether technology actually provides meaningful value.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Publication
+              </strong>
+
+              <span>
+                Sharing research and making findings accessible and understandable.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="research-panel">
+
+          <span
+            class="label"
+            style="color:#f3a34c;">
+
+            Responsible AI
+
+          </span>
+
+
+          <h2>
+            Build it. Test it. Question it.
+          </h2>
+
+
+          <p>
+            Healthcare AI cannot be evaluated simply by how impressive a
+            demonstration looks.
+          </p>
+
+
+          <p>
+            We prioritize transparency, scientific evaluation, clinical
+            context, limitations, and responsible use.
+          </p>
+
+
+          <p>
+            Our goal is to help distinguish what AI
+            <strong>can do</strong>
+            from what it has actually been demonstrated to do.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHO WE SERVE
+    ========================= -->
+
+    <section>
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            Who we serve
+          </span>
+
+
+          <h2>
+            Knowledge should be accessible to everyone.
+          </h2>
+
+
+          <p>
+            Our work is intended for people learning medicine, practicing
+            medicine, researching healthcare, developing technology, or simply
+            trying to understand where healthcare is headed.
+          </p>
+
+        </div>
+
+
+        <div class="audience">
+
+
+          <div class="audience-item">
+
+            <strong>
+              EMS Students
+            </strong>
+
+            <span>
+              Educational resources and clinical concepts for building
+              a strong foundation.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              Clinicians
+            </strong>
+
+            <span>
+              Practical references and research relevant to emergency
+              and prehospital medicine.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              Researchers
+            </strong>
+
+            <span>
+              Opportunities to explore, test, publish, and discuss
+              emerging healthcare AI.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              The Public
+            </strong>
+
+            <span>
+              Accessible explanations of medicine, AI, healthcare,
+              and emerging research.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section class="tinted" id="education">
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            EMS Education
+          </span>
+
+
+          <h2>
+            Education is where our work begins.
+          </h2>
+
+
+          <p>
+            Our EMS education resources are designed to support learners
+            throughout their journey—from the fundamentals of emergency care
+            through advanced clinical concepts.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <div class="card">
+
+            <span class="number">
+              EMR
+            </span>
+
+            <h3>
+              Emergency Medical Responder
+            </h3>
+
+            <p class="small">
+              Foundational emergency care concepts and preparation for
+              entering EMS.
+            </p>
+
+          </div>
+
+
+          <div class="card accent">
+
+            <span class="number">
+              EMT
+            </span>
+
+            <h3>
+              Emergency Medical Technician
+            </h3>
+
+            <p class="small">
+              Patient assessment, treatment, anatomy, physiology,
+              operations, and exam preparation.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <span class="number">
+              AEMT
+            </span>
+
+            <h3>
+              Advanced EMT
+            </h3>
+
+            <p class="small">
+              Advanced assessment, pharmacology, procedures, and
+              clinical decision-making concepts.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================= -->
+
+    <section id="tools">
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            Current projects
+          </span>
+
+
+          <h2>
+            Technology built around learning and access.
+          </h2>
+
+
+          <p>
+            These projects represent our early work exploring how digital
+            tools and artificial intelligence can make healthcare education
+            and reference more accessible.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              Study Tool
+            </span>
+
+
+            <h3>
+              Fisdap Guide
+            </h3>
+
+
+            <p class="small">
+              A companion educational guide designed to help EMS students
+              navigate coursework and prepare for exams.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://domvq.github.io/fisdap-guide-/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Open Fisdap Guide →
+
+            </a>
+
+          </div>
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              AI Research Tool
+            </span>
+
+
+            <h3>
+              Paramedic AI
+            </h3>
+
+
+            <p class="small">
+              An experimental AI-powered reference system exploring how
+              retrieval-based AI can support EMS education.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Explore Paramedic AI →
+
+            </a>
+
+          </div>
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              Clinical Reference
+            </span>
+
+
+            <h3>
+              RUNSHEET
+            </h3>
+
+
+            <p class="small">
+              A field-oriented reference platform featuring ECG rhythms,
+              assessment resources, and medication information.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://runsheet.website/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Open RUNSHEET →
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================= -->
+
+    <div class="disclaimer">
+
+      <div class="wrap">
 
         <p>
-          We are building an organization around research, education,
-          healthcare technology, and responsible innovation.
+
+          <strong>Important:</strong>
+
+          The information and tools provided by this organization are intended
+          for education, research, and general reference. They are not a
+          substitute for professional medical direction, local protocols,
+          certification training, clinical judgment, or emergency medical care.
+          AI-generated information may contain errors and should be independently
+          verified before being relied upon.
+
         </p>
-
-      </div>
-
-      <div>
-
-        <a
-          class="button primary"
-          href="mailto:info@yourorganization.org">
-          Contact us
-        </a>
 
       </div>
 
     </div>
 
-  </div>
 
-</section>
-```
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+      <div class="wrap">
+
+
+        <div class="cta">
+
+
+          <div>
+
+            <span class="label">
+              Get involved
+            </span>
+
+
+            <h2>
+              Help us advance medicine responsibly.
+            </h2>
+
+
+            <p>
+              We are building an organization around research, education,
+              healthcare technology, and responsible innovation.
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <a
+              class="button primary"
+              href="mailto:info@yourorganization.org">
+
+              Contact us
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
-```
-<div class="wrap">
+    <div class="wrap">
 
-  <div class="footer-grid">
 
-    <div>
+      <div class="footer-grid">
 
-      <h4>EMS AI Research Initiative</h4>
 
-      <p class="small">
-        Advancing emergency medicine and healthcare through artificial
-        intelligence research, education, scientific evaluation, and
-        responsible innovation.
-      </p>
+        <div>
+
+          <h4>
+            EMS AI Research Initiative
+          </h4>
+
+
+          <p class="small">
+            Advancing emergency medicine and healthcare through artificial
+            intelligence research, education, scientific evaluation, and
+            responsible innovation.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Explore
+          </h4>
+
+
+          <ul>
+
+            <li>
+              <a href="#about">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#mission">
+                Mission
+              </a>
+            </li>
+
+            <li>
+              <a href="#research">
+                Research
+              </a>
+            </li>
+
+            <li>
+              <a href="#education">
+                Education
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div>
+
+          <h4>
+            Projects
+          </h4>
+
+
+          <ul>
+
+            <li>
+              <a href="#tools">
+                Current Tools
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://domvq.github.io/older-non-profit/education.html">
+
+                Education
+
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://domvq.github.io/older-non-profit/ecg.html">
+
+                ECG Reading
+
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://domvq.github.io/older-non-profit/ai-innovation.html">
+
+                AI &amp; Innovation
+
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://domvq.github.io/older-non-profit/cases.html">
+
+                Real EMS Cases
+
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact">
+                Contact
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © 2026 EMS AI Research Initiative.
+        Educational and research content only. Not medical advice.
+
+      </div>
 
     </div>
-
-
-    <div>
-
-      <h4>Explore</h4>
-
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#education">Education</a></li>
-      </ul>
-
-    </div>
-
-
-    <div>
-
-      <h4>Projects</h4>
-
-      <ul>
-        <li><a href="#tools">Current Tools</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-    </div>
-
-  </div>
-
-
-  <div class="copyright">
-
-    © 2026 EMS AI Research Initiative.
-    Educational and research content only. Not medical advice.
-
-  </div>
-
-</div>
-```
 
   </footer>
 
-  <!-- MOBILE MENU -->
+
+  <!-- =========================
+       MOBILE MENU
+  ========================= -->
 
   <script>
 
-    const menuButton = document.getElementById("menuButton");
-    const navigation = document.getElementById("navigation");
+    document.addEventListener("DOMContentLoaded", function () {
 
-    menuButton.addEventListener("click", function () {
+      const menuButton =
+        document.getElementById("menuButton");
 
-      const open = navigation.classList.toggle("open");
+      const navigation =
+        document.getElementById("navigation");
 
-      menuButton.setAttribute(
-        "aria-expanded",
-        open ? "true" : "false"
-      );
 
-    });
+      if (!menuButton || !navigation) {
+        return;
+      }
 
-    document.querySelectorAll("#navigation a").forEach(function (link) {
 
-      link.addEventListener("click", function () {
+      menuButton.addEventListener("click", function () {
 
-        navigation.classList.remove("open");
+        const open =
+          navigation.classList.toggle("open");
+
 
         menuButton.setAttribute(
           "aria-expanded",
-          "false"
+          open ? "true" : "false"
         );
+
+      });
+
+
+      const links =
+        navigation.querySelectorAll("a");
+
+
+      links.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+          navigation.classList.remove("open");
+
+          menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        });
 
       });
 
@@ -1484,5 +2074,8 @@ content="Advancing emergency medicine and healthcare through artificial intellig
 
   </script>
 
+
 </body>
+
 </html>
+
