@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Study Tools | [Organization Name]</title>
+<meta name="description" content="Study guides, flashcard platforms, and free tools built specifically for EMS students and providers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   Design tokens — plain, warm, single-accent nonprofit system
+   Modeled after a clean modern nonprofit page: lots of
+   whitespace, one accent color doing all the work, a stat
+   strip under the hero, and simple list-style content blocks
+   instead of heavy bordered cards.
+   ========================================================= */
+:root{
+  --paper:      #FFFFFF;   /* base page background */
+  --tint:       #FDF6EC;   /* soft tinted section background */
+  --card:       #FFFFFF;
+  --ink:        #211D17;   /* body text */
+  --ink-soft:   #6B6459;   /* secondary text */
+  --accent:     #E2811E;   /* single primary accent — warm amber/orange */
+  --accent-deep:#B9650F;
+  --rescue:     #C1443B;   /* used only for the emergency / urgent CTA */
+  --line:       #ECE3D2;   /* hairline borders */
+  --line-soft:  #F3ECDD;
+
+  --sans: "Plus Jakarta Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --max: 1100px;
+  --radius: 10px;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:var(--accent-deep); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+:focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
+
+h1,h2,h3,h4{
+  font-family:var(--sans);
+  color:var(--ink);
+  margin:0 0 .5em;
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:-.01em;
+}
+h1{ font-size:clamp(2.1rem, 4.6vw, 3.1rem); }
+h2{ font-size:clamp(1.5rem, 2.8vw, 2rem); }
+h3{ font-size:1.15rem; font-weight:700; }
+p{ margin:0 0 1.1em; max-width:38em; font-weight:400; }
+.lede{ font-size:1.1rem; color:var(--ink-soft); max-width:34em; }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+}
+
+/* ---------- Skip link ---------- */
+.skip-link{
+  position:absolute; left:-999px; top:0;
+  background:var(--accent); color:#fff; padding:10px 16px; z-index:200; border-radius:0 0 8px 0;
+}
+.skip-link:focus{ left:0; top:0; }
+
+/* ---------- Top bar ---------- */
+.topbar{
+  background:var(--tint);
+  color:var(--ink-soft);
+  font-size:.85rem;
+  padding:8px 0;
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.topbar a{ color:var(--accent-deep); font-weight:600; }
+
+/* ---------- Nav ---------- */
+header.site-header{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:100;
+}
+.nav-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 0;
+  gap:20px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-size:1.1rem; font-weight:800; color:var(--ink);
+}
+.brand:hover{ text-decoration:none; }
+.brand .mark{ width:32px; height:32px; flex:none; }
+.brand .name em{
+  font-style:normal; color:var(--ink-soft); font-size:.6em; font-weight:600; display:block;
+  letter-spacing:.01em; margin-top:1px;
+}
+nav.primary{ display:flex; }
+nav.primary ul{
+  display:flex; flex-wrap:wrap; gap:2px 4px;
+  list-style:none; margin:0; padding:0;
+}
+nav.primary a{
+  color:var(--ink); font-size:.95rem; font-weight:600; padding:9px 14px;
+  border-radius:999px; display:inline-block;
+}
+nav.primary a:hover{ background:var(--tint); text-decoration:none; }
+nav.primary a[aria-current="page"]{
+  background:var(--ink); color:#fff;
+}
+.nav-toggle{ display:none; }
+
+@media (max-width: 880px){
+  .nav-toggle{
+    display:inline-flex; align-items:center; gap:8px;
+    background:none; border:1px solid var(--line); border-radius:999px;
+    padding:8px 14px; font-family:var(--sans); font-weight:600; font-size:.95rem; color:var(--ink);
+    cursor:pointer;
+  }
+  nav.primary{ display:none; width:100%; order:3; }
+  nav.primary.open{ display:block; }
+  nav.primary ul{ flex-direction:column; padding:10px 0 18px; }
+  .nav-row{ flex-wrap:wrap; }
+}
+
+/* ---------- Hero ---------- */
+.hero{ padding:60px 0 8px; position:relative; overflow:hidden; }
+.hero .wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
+.hero .eyebrow-tab{
+  display:inline-block; color:var(--accent-deep);
+  font-size:.85rem; font-weight:700; letter-spacing:.01em;
+  margin-bottom:14px;
+}
+.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; align-items:center; }
+.hero-figure{ position:relative; }
+@media (max-width: 880px){
+  .hero .wrap{ grid-template-columns:1fr; }
+  .hero-figure{ order:-1; }
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-block; font-family:var(--sans); font-weight:700; font-size:.96rem;
+  padding:13px 24px; border-radius:999px; border:2px solid transparent;
+  cursor:pointer;
+}
+.btn:hover{ text-decoration:none; }
+.btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-primary:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
+.btn-outline{ background:transparent; color:var(--ink); border-color:var(--line); }
+.btn-outline:hover{ background:var(--tint); }
+.btn-urgent{ background:var(--rescue); color:#fff; border-color:var(--rescue); }
+.btn-urgent:hover{ background:#9c352e; border-color:#9c352e; }
+
+/* ---------- Sections ---------- */
+section{ padding:52px 0; }
+section.tinted{ background:var(--tint); }
+section.navy{ background:var(--tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+section.navy h2, section.navy h3{ color:var(--ink); }
+section.navy p{ color:var(--ink-soft); }
+.section-head{ max-width:44em; margin-bottom:32px; }
+.tab-label{
+  display:inline-block; font-size:.85rem; font-weight:700;
+  color:var(--accent-deep); margin-bottom:10px;
+}
+section.navy .tab-label{ color:var(--accent-deep); }
+
+.pulse-divider{ width:100%; height:34px; display:block; margin:8px 0 0; }
+
+/* ---------- Cards → plain list-style modules ---------- */
+.grid{ display:grid; gap:28px; }
+.grid-2{ grid-template-columns:repeat(2,1fr); }
+.grid-3{ grid-template-columns:repeat(3,1fr); }
+.grid-4{ grid-template-columns:repeat(4,1fr); }
+@media (max-width: 900px){ .grid-3, .grid-4{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width: 620px){ .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; } }
+
+.card{
+  background:transparent;
+  border:0;
+  border-top:2px solid var(--ink);
+  padding:16px 0 0;
+  border-radius:0;
+}
+.card.sage, .card.rescue{ border-top-color:var(--accent); }
+.card h3{ margin-bottom:.35em; }
+.card .meta{ font-size:.82rem; color:var(--accent-deep); font-weight:700; margin-bottom:8px; display:block; }
+
+/* app / tool feature card */
+.tool-card{
+  background:var(--tint); border:0; padding:26px; border-radius:var(--radius);
+  display:flex; flex-direction:column; gap:10px; height:100%;
+}
+.tool-card .tool-kicker{ font-size:.78rem; color:var(--accent-deep); font-weight:700; }
+.tool-card a.tool-link{ margin-top:auto; font-weight:700; }
+
+/* ---------- Tables (kept simple/plain) ---------- */
+.ref-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); }
+table.ref-table{ width:100%; border-collapse:collapse; background:var(--paper); min-width:620px; }
+table.ref-table caption{ text-align:left; padding:14px 18px 0; font-size:1.05rem; font-weight:800; color:var(--ink); }
+table.ref-table th, table.ref-table td{
+  padding:12px 16px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; font-size:.95rem;
+}
+table.ref-table thead th{
+  background:var(--tint); color:var(--ink); font-weight:700; font-size:.85rem;
+}
+table.ref-table tbody tr:last-child td{ border-bottom:none; }
+.badge{
+  display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:12px;
+  color:#fff; white-space:nowrap; background:var(--accent);
+}
+
+/* ---------- Timeline / list ---------- */
+.stack{ display:flex; flex-direction:column; gap:26px; }
+.list-check{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+.list-check li{ padding-left:26px; position:relative; }
+.list-check li::before{
+  content:""; position:absolute; left:0; top:.55em; width:8px; height:8px;
+  background:var(--accent); border-radius:50%;
+}
+
+/* ---------- Placeholder callouts ---------- */
+.placeholder{
+  border:1.5px dashed var(--accent);
+  background:var(--tint);
+  padding:20px 22px;
+  border-radius:var(--radius);
+  color:var(--ink-soft);
+  font-size:.95rem;
+}
+.placeholder strong{ color:var(--ink); }
+
+/* ---------- Case card ---------- */
+.case-card{ background:var(--tint); border:0; border-radius:var(--radius); padding:26px; }
+.case-card .case-num{ font-size:1.4rem; font-weight:800; color:var(--accent-deep); }
+.case-card dl{ margin:14px 0 0; display:grid; grid-template-columns:120px 1fr; gap:6px 14px; font-size:.93rem; }
+.case-card dt{ color:var(--ink-soft); font-weight:700; }
+.case-card dd{ margin:0; }
+
+/* ---------- Contact ---------- */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+@media (max-width:800px){ .contact-grid{ grid-template-columns:1fr; } }
+.info-line{ display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
+.info-line:last-child{ border-bottom:none; }
+.info-line .label{ min-width:120px; font-weight:700; color:var(--ink); }
+
+/* ---------- Stat strip (plain, inline numbers — sits right under a hero) ---------- */
+.stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px 20px; text-align:left; padding:28px 0 8px; }
+@media (max-width:700px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } }
+.stat .num{ font-size:2rem; font-weight:800; color:var(--accent); display:block; }
+.stat .label{ font-size:.85rem; color:var(--ink-soft); }
+
+/* ---------- Footer (plain, light) ---------- */
+footer.site-footer{
+  background:var(--tint); color:var(--ink-soft); padding:48px 0 26px; margin-top:40px;
+  border-top:1px solid var(--line);
+}
+footer.site-footer h4{ color:var(--ink); font-size:.95rem; }
+footer.site-footer a{ color:var(--ink-soft); }
+footer.site-footer a:hover{ color:var(--accent-deep); }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; }
+@media (max-width:800px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+footer.site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.footer-bottom{
+  border-top:1px solid var(--line); margin-top:34px; padding-top:18px;
+  font-size:.85rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+
+/* ---------- Utility ---------- */
+.mt-0{ margin-top:0; }
+.center{ text-align:center; }
+.small{ font-size:.85rem; color:var(--ink-soft); }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">
+  <div class="wrap">
+    <span>Having a medical emergency? Call 911 — this site is educational only.</span>
+    <span><a href="contact.html">Contact a certified EMT →</a></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#211D17"/>
+        <path d="M4 21h6l3-8 5 15 4-11 3 4h11" fill="none" stroke="#E2811E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="name">[Organization Name]<em>EMS Education Initiative</em></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu ☰</button>
+    <nav class="primary" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="treatments.html">Treatments</a></li>
+        <li><a href="ecg.html">ECG Reading</a></li>
+        <li><a href="ai-innovation.html">AI &amp; Innovation</a></li>
+        <li><a href="cases.html">Case Studies</a></li>
+        <li><a href="resources.html" aria-current="page">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="padding-bottom:16px;">
+    <div class="wrap" style="grid-template-columns:1fr;">
+      <span class="eyebrow-tab">Resources &amp; study tools</span>
+      <h1>Study guides, flashcards, and the tools we built because we needed them too</h1>
+      <p class="lede">A mix of free platforms every EMS student should know about, and a few tools built specifically to fill the gaps those platforms leave.</p>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Built by this nonprofit</span>
+        <h2>Our own apps, free to use</h2>
+      </div>
+      <div class="stack">
+
+        <div class="card">
+          <h3>Fisdap Guide</h3>
+          <p class="small">A plain-language companion for navigating Fisdap — the skills-tracking and testing platform most EMS programs use. Built to demystify how Fisdap scoring, comprehensive exams, and skill sheets actually work, so students spend less time confused by the platform and more time studying the material.</p>
+          <a class="tool-link" href="https://domvq.github.io/fisdap-guide-/" target="_blank" rel="noopener">Open the Fisdap Guide →</a>
+        </div>
+
+        <div class="card sage">
+          <h3>Paramedic AI</h3>
+          <p class="small">A retrieval-based AI assistant that answers EMS reference questions by pulling from a curated knowledge base rather than guessing — built to behave more like a searchable field guide than an open-ended chatbot.</p>
+          <a class="tool-link" href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/" target="_blank" rel="noopener">Try Paramedic AI →</a>
+        </div>
+
+        <div class="card">
+          <h3>RUNSHEET</h3>
+          <p class="small">A field reference built for practicing, not just reading: a patient tab with live vitals and an ECG monitor, a symptom-weighted assessment tool, a 17-rhythm scrolling ECG simulator, and a medication guide — all in one mobile-friendly page.</p>
+          <a class="tool-link" href="https://runsheet.website/" target="_blank" rel="noopener">Open RUNSHEET →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">External study platforms</span>
+        <h2>Tools worth using alongside ours</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="tool-card">
+          <span class="tool-kicker">Skills &amp; testing</span>
+          <h3>Fisdap</h3>
+          <p class="small">The platform most EMS programs use for skill tracking, comprehensive exams, and psychomotor exam prep. If your program issued you a Fisdap account, use it — the comprehensive exams are built to mirror the real NREMT cognitive exam's style and difficulty.</p>
+          <a class="tool-link" href="https://www.fisdap.net/" target="_blank" rel="noopener">fisdap.net →</a>
+        </div>
+        <div class="tool-card">
+          <span class="tool-kicker">Flashcards</span>
+          <h3>Quizlet</h3>
+          <p class="small">Search "EMT," "AEMT," or "Paramedic" plus your specific topic (e.g., "cardiac medications") to find existing decks, or build your own — the act of writing a flashcard is often better studying than reviewing someone else's.</p>
+          <a class="tool-link" href="https://quizlet.com/" target="_blank" rel="noopener">quizlet.com →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Study guides on this site</span>
+        <h2>The reference material itself</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><h3>Standard EMS education</h3><p class="small">The four levels of licensure and what each one covers.</p><a class="tool-link" href="education.html">Read the guide →</a></div>
+        <div class="card sage"><h3>Treatment &amp; medication reference</h3><p class="small">A field-chart of treatments and medications by level.</p><a class="tool-link" href="treatments.html">Read the guide →</a></div>
+        <div class="card"><h3>ECG reading guide</h3><p class="small">Waveform anatomy, the systematic approach, and a rhythm chart.</p><a class="tool-link" href="ecg.html">Read the guide →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">How to actually study this material</span>
+        <h2>Five habits that outperform re-reading</h2>
+      </div>
+      <ul class="list-check" style="color:#D8CDB1; max-width:44em;">
+        <li><strong>Spaced repetition</strong> — review material at increasing intervals instead of cramming; flashcard apps like Quizlet do this automatically if you use their spaced-repetition study modes.</li>
+        <li><strong>Practice testing over re-reading</strong> — pulling an answer out of memory (even wrong) builds stronger recall than reading it again.</li>
+        <li><strong>Interleave your topics</strong> — mix cardiac, trauma, and medical questions in one session instead of studying one topic to exhaustion.</li>
+        <li><strong>Practice the skill, not just the fact</strong> — rhythm recognition and med dosing are motor-memory-adjacent skills; use a simulator, not just flashcards.</li>
+        <li><strong>Explain it out loud</strong> — if you can't teach a concept to a study partner in plain language, you don't know it yet.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>[Organization Name]</h4>
+      <p class="small">A nonprofit dedicated to open EMS education, prehospital clinical reference, and access to a certified provider when you need one.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="education.html">Standard EMS education</a></li>
+        <li><a href="treatments.html">Treatment reference</a></li>
+        <li><a href="ecg.html">ECG reading</a></li>
+        <li><a href="cases.html">Case studies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="resources.html">Study guides &amp; tools</a></li>
+        <li><a href="ai-innovation.html">AI &amp; innovation</a></li>
+        <li><a href="contact.html">Contact a certified EMT</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="mailto:info@example.org">info@example.org</a></li>
+        <li><a href="contact.html">Contact page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 [Organization Name]. Educational content only — not a substitute for professional medical direction, certification training, or emergency care.</span>
+    <span><a href="contact.html">Contact</a></span>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('nav.primary');
+  if (!toggle || !nav) return;
+  toggle.addEventListener('click', function () {
+    var isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
+
+</script>
+</body>
+</html>
