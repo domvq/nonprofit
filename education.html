@@ -244,6 +244,61 @@ nav.primary a[aria-current="page"]{
   display:none;
 }
 
+  ```css
+/* RESOURCE / EXPLORE NAVIGATION */
+
+.resource-nav{
+  background:var(--ink);
+  color:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.resource-nav .wrap{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.resource-nav-label{
+  color:#f3a34c;
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-right:8px;
+}
+
+.resource-nav a{
+  color:#fff;
+  font-size:.86rem;
+  font-weight:600;
+  padding:6px 11px;
+  border-radius:999px;
+}
+
+.resource-nav a:hover{
+  background:#3a342d;
+  text-decoration:none;
+}
+
+@media(max-width:650px){
+
+  .resource-nav .wrap{
+    justify-content:center;
+  }
+
+  .resource-nav-label{
+    width:100%;
+    text-align:center;
+    margin-right:0;
+  }
+
+}
+
+
 /* HERO */
 
 .hero{
@@ -808,9 +863,42 @@ footer.site-footer ul{
 
   </div>
 
+```html
 </header>
 
+<!-- EXPLORE / RESOURCE NAVIGATION -->
+
+<div class="resource-nav">
+
+  <div class="wrap">
+
+    <span class="resource-nav-label">
+      Explore
+    </span>
+
+    <a href="ecg.html">
+      ECG Reading
+    </a>
+
+    <a href="ai-innovation.html">
+      AI &amp; Innovation
+    </a>
+
+    <a href="education.html">
+      Education
+    </a>
+
+    <a href="cases.html">
+      Real EMS Cases
+    </a>
+
+  </div>
+
+</div>
+
 <main id="main">
+
+
 
 <!-- HERO -->
 
