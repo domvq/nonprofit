@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,8 +8,9 @@
 <title>AI &amp; Innovation in EMS | [Organization Name]</title>
 
 <meta
-  name="description"
-  content="Where artificial intelligence is actually showing up in prehospital care right now — triage, dispatch, and digital support tools — with cited sources."
+name="description"
+content="Explore how artificial intelligence is being used in prehospital emergency medical services, including triage, dispatch, community support, education, and clinical decision support."
+
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,38 +22,25 @@
 >
 
 <style>
-/* =========================================================
-   DESIGN TOKENS
-   ========================================================= */
-
 :root{
-  --paper:#FFFFFF;
-  --tint:#FDF6EC;
-  --card:#FFFFFF;
-
-  --ink:#211D17;
-  --ink-soft:#6B6459;
-
-  --accent:#E2811E;
-  --accent-deep:#B9650F;
-
-  --rescue:#C1443B;
-
-  --line:#ECE3D2;
-  --line-soft:#F3ECDD;
-
+  --paper:#fff;
+  --tint:#fdf6ec;
+  --ink:#211d17;
+  --ink-soft:#6b6459;
+  --accent:#e2811e;
+  --accent-deep:#b9650f;
+  --rescue:#c1443b;
+  --line:#ece3d2;
   --sans:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
-
   --max:1100px;
   --radius:10px;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:100px;
 }
 
 body{
@@ -65,30 +53,19 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-img{
-  max-width:100%;
-  display:block;
-}
-
 a{
   color:var(--accent-deep);
   text-decoration:none;
 }
 
-a:hover{
-  text-decoration:underline;
-}
+a:hover{text-decoration:underline}
 
 :focus-visible{
   outline:3px solid var(--accent);
-  outline-offset:2px;
+  outline-offset:3px;
 }
 
-h1,
-h2,
-h3,
-h4{
-  font-family:var(--sans);
+h1,h2,h3,h4{
   color:var(--ink);
   margin:0 0 .5em;
   font-weight:800;
@@ -96,18 +73,9 @@ h4{
   letter-spacing:-.01em;
 }
 
-h1{
-  font-size:clamp(2.1rem,4.6vw,3.1rem);
-}
-
-h2{
-  font-size:clamp(1.5rem,2.8vw,2rem);
-}
-
-h3{
-  font-size:1.15rem;
-  font-weight:700;
-}
+h1{font-size:clamp(2.1rem,4.6vw,3.1rem)}
+h2{font-size:clamp(1.5rem,2.8vw,2rem)}
+h3{font-size:1.15rem}
 
 p{
   margin:0 0 1.1em;
@@ -117,47 +85,40 @@ p{
 .lede{
   font-size:1.1rem;
   color:var(--ink-soft);
-  max-width:34em;
+  max-width:40em;
 }
 
 .wrap{
+  width:100%;
   max-width:var(--max);
   margin:0 auto;
   padding:0 28px;
 }
 
-@media (prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
   *{
-    scroll-behavior:auto !important;
-    transition:none !important;
-    animation:none !important;
+    transition:none!important;
+    animation:none!important;
   }
 }
 
-/* =========================================================
-   SKIP LINK
-   ========================================================= */
-
+/* Skip link */
 .skip-link{
   position:absolute;
-  left:-999px;
+  left:-9999px;
   top:0;
   background:var(--accent);
   color:#fff;
   padding:10px 16px;
   z-index:200;
-  border-radius:0 0 8px 0;
 }
 
 .skip-link:focus{
   left:0;
-  top:0;
 }
 
-/* =========================================================
-   TOP BAR
-   ========================================================= */
-
+/* Top bar */
 .topbar{
   background:var(--tint);
   color:var(--ink-soft);
@@ -173,16 +134,8 @@ p{
   flex-wrap:wrap;
 }
 
-.topbar a{
-  color:var(--accent-deep);
-  font-weight:600;
-}
-
-/* =========================================================
-   MAIN NAVIGATION
-   ========================================================= */
-
-header.site-header{
+/* Header */
+.site-header{
   background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
   position:sticky;
@@ -208,9 +161,7 @@ header.site-header{
   color:var(--ink);
 }
 
-.brand:hover{
-  text-decoration:none;
-}
+.brand:hover{text-decoration:none}
 
 .brand .mark{
   width:32px;
@@ -219,20 +170,15 @@ header.site-header{
 }
 
 .brand .name em{
+  display:block;
   font-style:normal;
   color:var(--ink-soft);
   font-size:.6em;
   font-weight:600;
-  display:block;
-  letter-spacing:.01em;
   margin-top:1px;
 }
 
-nav.primary{
-  display:flex;
-}
-
-nav.primary ul{
+.primary ul{
   display:flex;
   flex-wrap:wrap;
   gap:2px 4px;
@@ -241,7 +187,7 @@ nav.primary ul{
   padding:0;
 }
 
-nav.primary a{
+.primary a{
   color:var(--ink);
   font-size:.95rem;
   font-weight:600;
@@ -250,65 +196,53 @@ nav.primary a{
   display:inline-block;
 }
 
-nav.primary a:hover{
+.primary a:hover{
   background:var(--tint);
   text-decoration:none;
 }
 
-nav.primary a[aria-current="page"]{
+.primary a[aria-current="page"]{
   background:var(--ink);
   color:#fff;
 }
 
 .nav-toggle{
   display:none;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 14px;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--ink);
+  cursor:pointer;
 }
 
-@media (max-width:880px){
+@media(max-width:880px){
+  .nav-toggle{display:inline-flex}
 
-  .nav-toggle{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:none;
-    border:1px solid var(--line);
-    border-radius:999px;
-    padding:8px 14px;
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:.95rem;
-    color:var(--ink);
-    cursor:pointer;
-  }
-
-  nav.primary{
+  .primary{
     display:none;
     width:100%;
     order:3;
   }
 
-  nav.primary.open{
-    display:block;
-  }
+  .primary.open{display:block}
 
-  nav.primary ul{
+  .primary ul{
     flex-direction:column;
     padding:10px 0 18px;
   }
 
-  nav.primary a{
-    width:100%;
-  }
+  .primary a{width:100%}
 
-  .nav-row{
-    flex-wrap:wrap;
-  }
+  .nav-row{flex-wrap:wrap}
 }
 
-/* =========================================================
-   RESOURCE NAVIGATION
-   ========================================================= */
-
+/* Resource navigation */
 .resource-nav{
   background:var(--ink);
   color:#fff;
@@ -325,7 +259,7 @@ nav.primary a[aria-current="page"]{
 }
 
 .resource-nav-label{
-  color:#F3A34C;
+  color:#f3a34c;
   font-size:.78rem;
   font-weight:800;
   text-transform:uppercase;
@@ -342,77 +276,41 @@ nav.primary a[aria-current="page"]{
 }
 
 .resource-nav a:hover{
-  background:#3A342D;
+  background:#3a342d;
   text-decoration:none;
 }
 
 @media(max-width:650px){
-
-  .resource-nav .wrap{
-    justify-content:center;
-  }
+  .resource-nav .wrap{justify-content:center}
 
   .resource-nav-label{
     width:100%;
     text-align:center;
     margin-right:0;
-    margin-bottom:2px;
   }
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/* Hero */
 .hero{
-  padding:60px 0 8px;
-  position:relative;
-  overflow:hidden;
+  padding:60px 0 24px;
 }
 
 .hero .wrap{
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:48px;
-  align-items:center;
+  grid-template-columns:1fr;
 }
 
-.hero .eyebrow-tab{
+.eyebrow-tab,
+.tab-label{
   display:inline-block;
   color:var(--accent-deep);
   font-size:.85rem;
   font-weight:700;
   letter-spacing:.01em;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
-.hero-actions{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:24px;
-  align-items:center;
-}
-
-.hero-figure{
-  position:relative;
-}
-
-@media(max-width:880px){
-
-  .hero .wrap{
-    grid-template-columns:1fr;
-  }
-
-  .hero-figure{
-    order:-1;
-  }
-}
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
+/* Buttons */
 .btn{
   display:inline-block;
   font-family:var(--sans);
@@ -421,12 +319,9 @@ nav.primary a[aria-current="page"]{
   padding:13px 24px;
   border-radius:999px;
   border:2px solid transparent;
-  cursor:pointer;
 }
 
-.btn:hover{
-  text-decoration:none;
-}
+.btn:hover{text-decoration:none}
 
 .btn-primary{
   background:var(--accent);
@@ -445,76 +340,21 @@ nav.primary a[aria-current="page"]{
   border-color:var(--line);
 }
 
-.btn-outline:hover{
-  background:var(--tint);
-}
+.btn-outline:hover{background:var(--tint)}
 
-.btn-urgent{
-  background:var(--rescue);
-  color:#fff;
-  border-color:var(--rescue);
-}
-
-.btn-urgent:hover{
-  background:#9c352e;
-  border-color:#9c352e;
-}
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-section{
-  padding:52px 0;
-}
+/* Sections */
+section{padding:52px 0}
 
 section.tinted{
   background:var(--tint);
 }
 
-section.navy{
-  background:var(--tint);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-section.navy h2,
-section.navy h3{
-  color:var(--ink);
-}
-
-section.navy p{
-  color:var(--ink-soft);
-}
-
 .section-head{
   max-width:44em;
-  margin-bottom:32px;
+  margin-bottom:30px;
 }
 
-.tab-label{
-  display:inline-block;
-  font-size:.85rem;
-  font-weight:700;
-  color:var(--accent-deep);
-  margin-bottom:10px;
-}
-
-section.navy .tab-label{
-  color:var(--accent-deep);
-}
-
-.pulse-divider{
-  width:100%;
-  height:34px;
-  display:block;
-  margin:8px 0 0;
-}
-
-/* =========================================================
-   GRID / CARDS
-   ========================================================= */
-
+/* Cards */
 .grid{
   display:grid;
   gap:28px;
@@ -528,37 +368,12 @@ section.navy .tab-label{
   grid-template-columns:repeat(3,1fr);
 }
 
-.grid-4{
-  grid-template-columns:repeat(4,1fr);
-}
-
-@media(max-width:900px){
-
-  .grid-3,
-  .grid-4{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:620px){
-
-  .grid-2,
-  .grid-3,
-  .grid-4{
-    grid-template-columns:1fr;
-  }
-}
-
 .card{
-  background:transparent;
-  border:0;
   border-top:2px solid var(--ink);
   padding:16px 0 0;
-  border-radius:0;
 }
 
-.card.sage,
-.card.rescue{
+.card.accent{
   border-top-color:var(--accent);
 }
 
@@ -566,21 +381,9 @@ section.navy .tab-label{
   margin-bottom:.35em;
 }
 
-.card .meta{
-  font-size:.82rem;
-  color:var(--accent-deep);
-  font-weight:700;
-  margin-bottom:8px;
-  display:block;
-}
-
-/* =========================================================
-   TOOL CARDS
-   ========================================================= */
-
+/* Tool cards */
 .tool-card{
   background:var(--tint);
-  border:0;
   padding:26px;
   border-radius:var(--radius);
   display:flex;
@@ -589,228 +392,50 @@ section.navy .tab-label{
   height:100%;
 }
 
-.tool-card .tool-kicker{
+.tool-kicker{
   font-size:.78rem;
   color:var(--accent-deep);
   font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
 }
 
-.tool-card a.tool-link{
+.tool-link{
   margin-top:auto;
   font-weight:700;
 }
 
-/* =========================================================
-   TABLES
-   ========================================================= */
-
-.ref-table-wrap{
-  overflow-x:auto;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-}
-
-table.ref-table{
-  width:100%;
-  border-collapse:collapse;
-  background:var(--paper);
-  min-width:620px;
-}
-
-table.ref-table caption{
-  text-align:left;
-  padding:14px 18px 0;
-  font-size:1.05rem;
-  font-weight:800;
-  color:var(--ink);
-}
-
-table.ref-table th,
-table.ref-table td{
-  padding:12px 16px;
-  text-align:left;
-  border-bottom:1px solid var(--line);
-  vertical-align:top;
-  font-size:.95rem;
-}
-
-table.ref-table thead th{
-  background:var(--tint);
-  color:var(--ink);
-  font-weight:700;
-  font-size:.85rem;
-}
-
-table.ref-table tbody tr:last-child td{
-  border-bottom:none;
-}
-
-.badge{
-  display:inline-block;
-  font-size:.72rem;
-  font-weight:700;
-  padding:2px 9px;
-  border-radius:12px;
-  color:#fff;
-  white-space:nowrap;
-  background:var(--accent);
-}
-
-/* =========================================================
-   LISTS
-   ========================================================= */
-
-.stack{
-  display:flex;
-  flex-direction:column;
-  gap:26px;
-}
-
-.list-check{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:grid;
-  gap:12px;
-}
-
-.list-check li{
-  padding-left:26px;
-  position:relative;
-}
-
-.list-check li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:.55em;
-  width:8px;
-  height:8px;
-  background:var(--accent);
-  border-radius:50%;
-}
-
-/* =========================================================
-   PLACEHOLDER
-   ========================================================= */
-
-.placeholder{
-  border:1.5px dashed var(--accent);
+/* Callout */
+.callout{
+  border-left:4px solid var(--accent);
   background:var(--tint);
   padding:20px 22px;
-  border-radius:var(--radius);
-  color:var(--ink-soft);
-  font-size:.95rem;
+  margin-top:28px;
+  border-radius:0 var(--radius) var(--radius) 0;
 }
 
-.placeholder strong{
-  color:var(--ink);
+.callout p:last-child{margin-bottom:0}
+
+/* References */
+.references{
+  border-top:1px solid var(--line);
 }
 
-/* =========================================================
-   CASE CARD
-   ========================================================= */
-
-.case-card{
-  background:var(--tint);
-  border:0;
-  border-radius:var(--radius);
-  padding:26px;
+.references ol{
+  padding-left:24px;
 }
 
-.case-card .case-num{
-  font-size:1.4rem;
-  font-weight:800;
-  color:var(--accent-deep);
+.references li{
+  margin-bottom:16px;
 }
 
-.case-card dl{
-  margin:14px 0 0;
-  display:grid;
-  grid-template-columns:120px 1fr;
-  gap:6px 14px;
-  font-size:.93rem;
-}
-
-.case-card dt{
-  color:var(--ink-soft);
-  font-weight:700;
-}
-
-.case-card dd{
-  margin:0;
-}
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-}
-
-@media(max-width:800px){
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-.info-line{
-  display:flex;
-  gap:12px;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.info-line:last-child{
-  border-bottom:none;
-}
-
-.info-line .label{
-  min-width:120px;
-  font-weight:700;
-  color:var(--ink);
-}
-
-/* =========================================================
-   STAT STRIP
-   ========================================================= */
-
-.stat-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px 20px;
-  text-align:left;
-  padding:28px 0 8px;
-}
-
-@media(max-width:700px){
-
-  .stat-strip{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-.stat .num{
-  font-size:2rem;
-  font-weight:800;
-  color:var(--accent);
-  display:block;
-}
-
-.stat .label{
-  font-size:.85rem;
+.small{
+  font-size:.86rem;
   color:var(--ink-soft);
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer.site-footer{
+/* Footer */
+.site-footer{
   background:var(--tint);
   color:var(--ink-soft);
   padding:48px 0 26px;
@@ -818,18 +443,14 @@ footer.site-footer{
   border-top:1px solid var(--line);
 }
 
-footer.site-footer h4{
+.site-footer h4{
   color:var(--ink);
   font-size:.95rem;
 }
 
-footer.site-footer a{
-  color:var(--ink-soft);
-}
+.site-footer a{color:var(--ink-soft)}
 
-footer.site-footer a:hover{
-  color:var(--accent-deep);
-}
+.site-footer a:hover{color:var(--accent-deep)}
 
 .footer-grid{
   display:grid;
@@ -837,14 +458,7 @@ footer.site-footer a:hover{
   gap:32px;
 }
 
-@media(max-width:800px){
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-footer.site-footer ul{
+.site-footer ul{
   list-style:none;
   margin:0;
   padding:0;
@@ -863,829 +477,688 @@ footer.site-footer ul{
   gap:10px;
 }
 
-/* =========================================================
-   UTILITY
-   ========================================================= */
-
-.mt-0{
-  margin-top:0;
+@media(max-width:900px){
+  .grid-3{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
 }
 
-.center{
-  text-align:center;
-}
+@media(max-width:620px){
+  .grid-2,
+  .grid-3,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 
-.small{
-  font-size:.85rem;
-  color:var(--ink-soft);
-}
+  body{font-size:16px}
 
-.sr-only{
-  position:absolute;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
+  .wrap{padding:0 20px}
+
+  .hero{padding-top:42px}
 }
 </style>
+
 </head>
 
 <body>
 
-<a class="skip-link" href="#main">
-  Skip to main content
-</a>
-
-<!-- =======================================================
-     TOP BAR
-======================================================= -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <div class="topbar">
   <div class="wrap">
-
     <span>
       Having a medical emergency? Call 911 — this site is educational only.
     </span>
 
-    <span>
-      <a href="contact.html">
-        Contact a certified EMT →
-      </a>
-    </span>
+```
+<span>
+  <a href="contact.html">Contact a certified EMT →</a>
+</span>
+```
 
   </div>
 </div>
-
-
-<!-- =======================================================
-     MAIN NAVIGATION
-======================================================= -->
 
 <header class="site-header">
-
   <div class="wrap nav-row">
 
-    <a class="brand" href="index.html">
+```
+<a class="brand" href="index.html" aria-label="[Organization Name] home">
+  <svg
+    class="mark"
+    viewBox="0 0 40 40"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="20" cy="20" r="19" fill="#211D17"/>
+    <path
+      d="M4 21h6l3-8 5 15 4-11 3 4h11"
+      fill="none"
+      stroke="#E2811E"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
 
-      <svg
-        class="mark"
-        viewBox="0 0 40 40"
-        aria-hidden="true"
-      >
-        <circle
-          cx="20"
-          cy="20"
-          r="19"
-          fill="#211D17"
-        />
+  <span class="name">
+    [Organization Name]
+    <em>EMS Education Initiative</em>
+  </span>
+</a>
 
-        <path
-          d="M4 21h6l3-8 5 15 4-11 3 4h11"
-          fill="none"
-          stroke="#E2811E"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+<button
+  class="nav-toggle"
+  aria-expanded="false"
+  aria-controls="primary-nav"
+  type="button"
+>
+  Menu ☰
+</button>
 
-      <span class="name">
-        [Organization Name]
-        <em>EMS Education Initiative</em>
-      </span>
-
-    </a>
-
-
-    <button
-      class="nav-toggle"
-      aria-expanded="false"
-      aria-controls="primary-nav"
-      type="button"
-    >
-      Menu ☰
-    </button>
-
-
-    <nav
-      class="primary"
-      id="primary-nav"
-      aria-label="Primary"
-    >
-
-      <ul>
-
-        <li>
-          <a href="index.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="education.html">
-            Education
-          </a>
-        </li>
-
-        <li>
-          <a href="treatments.html">
-            Treatments
-          </a>
-        </li>
-
-        <li>
-          <a href="ecg.html">
-            ECG Reading
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="ai-innovation.html"
-            aria-current="page"
-          >
-            AI &amp; Innovation
-          </a>
-        </li>
-
-        <li>
-          <a href="cases.html">
-            Case Studies
-          </a>
-        </li>
-
-        <li>
-          <a href="resources.html">
-            Resources
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
-
-      </ul>
-
-    </nav>
+<nav
+  class="primary"
+  id="primary-nav"
+  aria-label="Primary navigation"
+>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="ecg.html">ECG Reading</a></li>
+    <li>
+      <a href="ai-innovation.html" aria-current="page">
+        AI &amp; Innovation
+      </a>
+    </li>
+    <li><a href="cases.html">Case Studies</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+```
 
   </div>
-
 </header>
 
-
-<!-- =======================================================
-     RESOURCE NAVIGATION
-======================================================= -->
-
 <div class="resource-nav">
-
   <div class="wrap">
 
-    <span class="resource-nav-label">
-      Explore
-    </span>
+```
+<span class="resource-nav-label">Explore</span>
 
-    <a href="ecg.html">
-      ECG Reading
-    </a>
-
-    <a href="ai-innovation.html">
-      AI &amp; Innovation
-    </a>
-
-    <a href="education.html">
-      Education
-    </a>
-
-    <a href="cases.html">
-      Real EMS Cases
-    </a>
+<a href="ecg.html">ECG Reading</a>
+<a href="ai-innovation.html">AI &amp; Innovation</a>
+<a href="education.html">Education</a>
+<a href="cases.html">Real EMS Cases</a>
+```
 
   </div>
-
 </div>
-
-
-<!-- =======================================================
-     MAIN
-======================================================= -->
 
 <main id="main">
 
+  <!-- HERO -->
 
-<!-- =======================================================
-     HERO
-======================================================= -->
+  <section class="hero">
+    <div class="wrap">
 
-<section
-  class="hero"
-  style="padding-bottom:16px;"
->
+```
+  <span class="eyebrow-tab">
+    AI &amp; innovation in EMS
+  </span>
 
-  <div
-    class="wrap"
-    style="grid-template-columns:1fr;"
-  >
+  <h1>
+    Artificial intelligence in prehospital care isn't science fiction —
+    it's becoming a practical clinical tool
+  </h1>
 
-    <span class="eyebrow-tab">
-      AI &amp; innovation in EMS
+  <p class="lede">
+    AI in EMS gets talked about in extremes: either it will replace
+    clinical judgment, or it is all hype. The research paints a more
+    useful picture — specific tools being studied for specific
+    decisions in triage, dispatch, education, operations, and
+    prehospital support.
+  </p>
+
+  <div class="callout" role="note">
+    <p>
+      <strong>Important:</strong>
+      AI tools should support trained EMS professionals, established
+      protocols, medical direction, and clinical judgment. They should
+      not be treated as an independent replacement for those safeguards.
+    </p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- TRIAGE -->
+
+  <section class="tinted" id="triage">
+    <div class="wrap">
+
+```
+  <div class="section-head">
+    <span class="tab-label">
+      Triage &amp; transport decisions
     </span>
 
-    <h1>
-      Artificial intelligence in prehospital care isn't science fiction —
-      it's in this year's journals
-    </h1>
-
-    <p class="lede">
-      AI in EMS gets talked about in extremes: either it's going to
-      replace clinical judgment, or it's overhyped vaporware. The research
-      says something more useful — a set of specific, measurable tools
-      that are already improving specific decisions. Here's what's
-      actually published, not speculated.
-    </p>
-
+    <h2>
+      Getting the right patient to the right hospital, faster
+    </h2>
   </div>
 
-</section>
+  <p>
+    Deciding whether a patient needs a trauma center, stroke center,
+    or another destination is one of the highest-stakes decisions in
+    prehospital care. Traditional scoring systems can have limitations,
+    which has led researchers to investigate machine-learning approaches
+    that combine multiple patient and operational variables.
+    <sup><a href="#ref1">1</a></sup>
+  </p>
 
+  <p>
+    A 2025 review examined artificial-intelligence approaches to
+    prehospital triage and destination decisions across conditions
+    including trauma, stroke, sepsis, and cardiac presentations.
+    The review reported promising performance from machine-learning
+    models, while also emphasizing the need for validation and
+    implementation research before widespread clinical adoption.
+    <sup><a href="#ref1">1</a></sup>
+  </p>
 
-<!-- =======================================================
-     TRIAGE
-======================================================= -->
+</div>
+```
 
-<section class="tinted">
+  </section>
 
-  <div class="wrap">
+  <!-- GLOBAL SYSTEMS -->
 
-    <div class="section-head">
+  <section id="global-systems">
+    <div class="wrap">
 
-      <span class="tab-label">
-        Triage &amp; transport decisions
-      </span>
+```
+  <div class="section-head">
+    <span class="tab-label">
+      Global &amp; low-resource systems
+    </span>
 
-      <h2>
-        Getting the right patient to the right hospital, faster
-      </h2>
-
-    </div>
-
-    <p>
-      Deciding whether a patient needs a trauma center, a stroke center,
-      or the nearest emergency department is one of the highest-stakes
-      calls a crew makes — and traditional scoring tools miss more than
-      clinicians would like. A 2025 narrative review of machine learning
-      models for prehospital triage and destination decisions found that,
-      across trauma, stroke, sepsis, and cardiac presentations, machine
-      learning models consistently outperformed guideline-based scoring
-      tools.<sup><a href="#ref1">1</a></sup>
-    </p>
-
-    <p>
-      Trauma-specific models cut undertriage below 10%, and stroke-detection
-      algorithms reported accuracy scores above 0.98 — high enough to
-      meaningfully change which hospital an ambulance heads toward.<sup>
-      <a href="#ref1">1</a>
-      </sup>
-    </p>
-
+    <h2>
+      AI may be especially useful where EMS resources are limited
+    </h2>
   </div>
 
-</section>
+  <p>
+    A 2025 scoping review examined AI applications in prehospital
+    emergency-care systems in low- and middle-income countries.
+    Among the applications identified were demand forecasting,
+    call classification, and disease-risk prediction.
+    <sup><a href="#ref2">2</a></sup>
+  </p>
 
+  <p>
+    These applications are important because EMS performance depends
+    on more than bedside clinical decisions. Knowing where demand is
+    likely to increase can help services think about staffing,
+    dispatch, ambulance availability, and resource allocation.
+  </p>
 
-<!-- =======================================================
-     GLOBAL SYSTEMS
-======================================================= -->
+  <div class="grid grid-3" style="margin-top:30px;">
 
-<section>
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <span class="tab-label">
-        Global &amp; low-resource systems
-      </span>
-
-      <h2>
-        AI is doing the most where EMS infrastructure is thinnest
-      </h2>
-
-    </div>
-
-    <p>
-      A 2025 scoping review of AI use in low- and middle-income countries
-      found that the most common application wasn't diagnosis at all — it
-      was predicting call volume and dispatch demand, followed by
-      classifying incoming calls and predicting disease risk.<sup>
-      <a href="#ref2">2</a>
-      </sup>
-    </p>
-
-    <p>
-      In systems without the staffing to triage every call the way a
-      well-funded urban service can, a model that forecasts where the
-      next surge in calls is coming from can be the difference between
-      having an ambulance ready and not.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     COMMUNITY TOOLS
-======================================================= -->
-
-<section class="tinted">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <span class="tab-label">
-        Community-facing tools
-      </span>
-
-      <h2>
-        AI support networks aimed at the public, not just the crew
-      </h2>
-
-    </div>
-
-    <p>
-      Not every application lives inside the ambulance. Research published
-      in the Journal of Medical Internet Research describes an AI-enhanced
-      digital network designed to support bystanders and callers during the
-      critical minutes before EMS arrives — a reminder that "prehospital
-      care" now starts before a 911 call is even answered.<sup>
-      <a href="#ref3">3</a>
-      </sup>
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     FUTURE OF AI
-======================================================= -->
-
-<section>
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <span class="tab-label">
-        Where this goes next
-      </span>
-
-      <h2>
-        An international consensus on AI's future in EMS
-      </h2>
-
-    </div>
-
-    <p>
-      A 2026 Delphi consensus study gathered 27 international EMS experts
-      over three rounds to forecast AI's near-term impact on the field.
-      The panel reached agreement on 81 specific items spanning six
-      domains: communication, clinical care, education, management,
-      operations, and ethics.<sup><a href="#ref4">4</a></sup>
-    </p>
-
-    <p>
-      Notably, seven items didn't reach consensus — a useful reminder
-      that even the experts don't agree on everything AI should touch
-      in EMS, particularly around ethics and autonomy.<sup>
-      <a href="#ref4">4</a>
-      </sup>
-    </p>
-
-
-    <div
-      class="grid grid-3"
-      style="margin-top:28px;"
-    >
-
-      <div class="card">
-
-        <h3>
-          Communication &amp; dispatch
-        </h3>
-
-        <p class="small">
-          Smarter call triage, resource allocation, and crew-to-hospital
-          handoff.
-        </p>
-
-      </div>
-
-
-      <div class="card sage">
-
-        <h3>
-          Clinical decision support
-        </h3>
-
-        <p class="small">
-          Real-time triage and treatment-pathway suggestions layered
-          on existing protocols — not replacing them.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Education &amp; training
-        </h3>
-
-        <p class="small">
-          Adaptive study tools and simulation — the same category
-          this nonprofit's own apps sit in.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =======================================================
-     BUILDING IT OURSELVES
-======================================================= -->
-
-<section class="navy">
-
-  <div class="wrap">
-
-    <div class="section-head">
-
-      <span class="tab-label">
-        Building it ourselves
-      </span>
-
-      <h2>
-        What this looks like at the grassroots level
-      </h2>
-
-      <p>
-        Most AI-in-EMS research is happening at the health-system level —
-        hospital networks, dispatch centers, national panels. This
-        nonprofit's own tools are a smaller-scale, provider-built version
-        of the same idea: retrieval-based reference assistants and
-        adaptive study tools, built for individual students and crews
-        rather than entire systems.
+    <div class="card">
+      <h3>Demand forecasting</h3>
+      <p class="small">
+        Models can be studied for predicting when and where call
+        volume may increase.
       </p>
-
     </div>
 
+    <div class="card accent">
+      <h3>Call classification</h3>
+      <p class="small">
+        AI can help analyze incoming information and support
+        prioritization workflows.
+      </p>
+    </div>
 
-    <div class="grid grid-2">
-
-      <div class="tool-card">
-
-        <span class="tool-kicker">
-          Retrieval-based AI
-        </span>
-
-        <h3>
-          Paramedic AI
-        </h3>
-
-        <p class="small">
-          A local, retrieval-augmented assistant for looking up EMS
-          reference material — built as a practical, hands-on example
-          of the same clinical decision-support concept described in
-          the research above, scaled down to one provider's toolkit.
-        </p>
-
-        <a
-          class="tool-link"
-          href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Try it →
-        </a>
-
-      </div>
-
-
-      <div class="tool-card">
-
-        <span class="tool-kicker">
-          In-browser AI
-        </span>
-
-        <h3>
-          RUNSHEET's local assistant
-        </h3>
-
-        <p class="small">
-          RUNSHEET is integrating a local AI assistant two ways:
-          a backend pipeline for local use, and a fully in-browser
-          implementation so public visitors get the same assistant
-          with no server required.
-        </p>
-
-        <a
-          class="tool-link"
-          href="https://runsheet.website/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open RUNSHEET →
-        </a>
-
-      </div>
-
+    <div class="card">
+      <h3>Risk prediction</h3>
+      <p class="small">
+        Research is also exploring models that estimate clinical
+        risk using available patient and system data.
+      </p>
     </div>
 
   </div>
 
-</section>
+</div>
+```
 
+  </section>
 
-<!-- =======================================================
-     REFERENCES
-======================================================= -->
+  <!-- COMMUNITY -->
 
-<section>
+  <section class="tinted" id="community-tools">
+    <div class="wrap">
 
-  <div class="wrap">
+```
+  <div class="section-head">
+    <span class="tab-label">
+      Community-facing tools
+    </span>
 
-    <h2 style="font-size:1.3rem;">
-      References
+    <h2>
+      AI support can begin before the ambulance arrives
+    </h2>
+  </div>
+
+  <p>
+    Not every application lives inside the ambulance. Research
+    published in the
+    <em>Journal of Medical Internet Research</em> described an
+    AI-enhanced digital network intended to support prehospital
+    emergency response and community users.
+    <sup><a href="#ref3">3</a></sup>
+  </p>
+
+  <p>
+    This reflects a broader idea: prehospital care can involve
+    callers, bystanders, dispatchers, first responders, EMTs,
+    paramedics, and receiving hospitals. Digital tools may eventually
+    connect more of those steps while keeping trained human
+    professionals in the loop.
+  </p>
+
+</div>
+```
+
+  </section>
+
+  <!-- FUTURE -->
+
+  <section id="future">
+    <div class="wrap">
+
+```
+  <div class="section-head">
+    <span class="tab-label">
+      Where this goes next
+    </span>
+
+    <h2>
+      An international consensus on AI's future in EMS
+    </h2>
+  </div>
+
+  <p>
+    A 2026 Delphi consensus study brought together international EMS
+    experts to examine the future role of artificial intelligence in
+    emergency medical services. The study considered domains including
+    communication, clinical care, education, management, operations,
+    and ethics.
+    <sup><a href="#ref4">4</a></sup>
+  </p>
+
+  <p>
+    The important takeaway is not that AI has solved EMS problems.
+    It is that experts are beginning to define where AI may be useful,
+    where evidence is still limited, and where ethical and operational
+    questions remain unresolved.
+    <sup><a href="#ref4">4</a></sup>
+  </p>
+
+  <div class="grid grid-3" style="margin-top:30px;">
+
+    <div class="card">
+      <h3>Communication &amp; dispatch</h3>
+      <p class="small">
+        Potential applications include call triage, resource
+        allocation, documentation support, and crew-to-hospital
+        communication.
+      </p>
+    </div>
+
+    <div class="card accent">
+      <h3>Clinical decision support</h3>
+      <p class="small">
+        AI may help organize information and identify patterns while
+        leaving clinical decisions with qualified professionals.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Education &amp; training</h3>
+      <p class="small">
+        Adaptive learning, simulation, question generation, and
+        reference tools are potential educational applications.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- BUILDING -->
+
+  <section class="tinted" id="building">
+    <div class="wrap">
+
+```
+  <div class="section-head">
+
+    <span class="tab-label">
+      Building it ourselves
+    </span>
+
+    <h2>
+      What this looks like at the grassroots level
     </h2>
 
-    <ol
-      class="small"
-      style="padding-left:22px;"
-    >
+    <p>
+      Much of the published AI-in-EMS research involves health
+      systems, dispatch centers, academic institutions, or large
+      datasets. Smaller provider-built projects can explore the same
+      general concept on a much more practical scale: giving students
+      and crews better access to reference material and learning tools.
+    </p>
 
-      <li id="ref1">
+  </div>
 
-        Zarei R, Downs MC, Torgerson L.
+  <div class="grid grid-2">
 
+    <article class="tool-card">
+      <span class="tool-kicker">
+        Retrieval-based AI
+      </span>
+
+      <h3>Paramedic AI</h3>
+
+      <p class="small">
+        A local retrieval-augmented assistant for looking up EMS
+        reference material. It demonstrates how AI can be paired with
+        a defined knowledge base rather than relying solely on
+        unrestricted generated answers.
+      </p>
+
+      <a
+        class="tool-link"
+        href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Try Paramedic AI in a new tab"
+      >
+        Try it →
+      </a>
+    </article>
+
+    <article class="tool-card">
+      <span class="tool-kicker">
+        In-browser AI
+      </span>
+
+      <h3>RUNSHEET's local assistant</h3>
+
+      <p class="small">
+        RUNSHEET is exploring local AI support through both a backend
+        pipeline and an in-browser implementation. The goal is to make
+        practical reference assistance available without requiring
+        every visitor to operate a separate server.
+      </p>
+
+      <a
+        class="tool-link"
+        href="https://runsheet.website/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open RUNSHEET in a new tab"
+      >
+        Open RUNSHEET →
+      </a>
+    </article>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- SAFETY -->
+
+  <section id="safety">
+    <div class="wrap">
+
+```
+  <div class="section-head">
+    <span class="tab-label">
+      The important limitation
+    </span>
+
+    <h2>
+      AI is a tool — not medical direction
+    </h2>
+  </div>
+
+  <p>
+    A polished interface can make an AI system look more authoritative
+    than it actually is. That is particularly important in emergency
+    medicine. AI output can be incomplete, incorrect, outdated, or
+    inappropriate for a particular patient.
+  </p>
+
+  <p>
+    For that reason, educational AI tools on this site should be used
+    as reference and learning aids. They do not replace local protocols,
+    physician medical direction, certification training, or the
+    judgment of qualified EMS professionals.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>For emergencies:</strong>
+      Call 911 or use your local emergency number. Do not delay
+      emergency care while consulting an AI system or this website.
+    </p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- REFERENCES -->
+
+  <section class="references" id="references">
+    <div class="wrap">
+
+```
+  <h2 style="font-size:1.3rem;">
+    References
+  </h2>
+
+  <ol class="small">
+
+    <li id="ref1">
+      Zarei R, Downs MC, Torgerson L.
+      <em>
         Artificial Intelligence in Prehospital Emergency Care:
         Advancing Triage and Destination Decisions for Time-Critical
         Conditions.
+      </em>
+      <em>Cureus</em>. 2025.
+      <br>
+      <a
+        href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12494111/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the article on PubMed Central →
+      </a>
+    </li>
 
-        <em>Cureus</em>. 2025.
-
-        Available from:
-
-        <a
-          href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12494111/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ncbi.nlm.nih.gov/pmc/articles/PMC12494111
-        </a>
-
-      </li>
-
-
-      <li id="ref2">
-
-        Mallon O, Lippert F, Stassen W, Ong MEH, Dolkart C,
-        Krafft T, Pilot E.
-
+    <li id="ref2">
+      Mallon O, Lippert F, Stassen W, Ong MEH, Dolkart C,
+      Krafft T, Pilot E.
+      <em>
         Utilising artificial intelligence in prehospital emergency
         care systems in low- and middle-income countries:
         a scoping review.
+      </em>
+      <em>Frontiers in Public Health</em>.
+      2025;13:1604231.
+      <br>
+      <a
+        href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1604231/full"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the article on Frontiers →
+      </a>
+    </li>
 
-        <em>Frontiers in Public Health</em>.
-        2025;13:1604231.
-
-        Available from:
-
-        <a
-          href="https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1604231/full"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          frontiersin.org
-        </a>
-
-      </li>
-
-
-      <li id="ref3">
-
+    <li id="ref3">
+      <em>
         A Novel Artificial Intelligence–Enhanced Digital Network
         for Prehospital Emergency Support: Community Intervention Study.
+      </em>
+      <em>Journal of Medical Internet Research</em>.
+      2025;27:e58177.
+      <br>
+      <a
+        href="https://jmir.org/2025/1/e58177"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read the article on JMIR →
+      </a>
+    </li>
 
-        <em>Journal of Medical Internet Research</em>.
-        2025;27:e58177.
-
-        Available from:
-
-        <a
-          href="https://jmir.org/2025/1/e58177"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          jmir.org
-        </a>
-
-      </li>
-
-
-      <li id="ref4">
-
+    <li id="ref4">
+      <em>
         The Future of Artificial Intelligence in Emergency Medical
         Services by 2030: An International Consensus Report.
+      </em>
+      <em>JACEP Open</em>.
+      2026;7(3):100355.
+      <br>
+      <a
+        href="https://doi.org/10.1002/emp2.100355"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View the publication →
+      </a>
+    </li>
 
-        <em>JACEP Open</em>.
-        2026;7(3):100355.
+  </ol>
 
-      </li>
+  <p class="small">
+    Sources are provided so readers can review the underlying research
+    themselves. AI-related and clinical claims should always be
+    interpreted in the context of the original evidence, current
+    clinical guidance, and local EMS protocols.
+  </p>
 
-    </ol>
+</div>
+```
 
-
-    <p class="small">
-
-      Citations are provided so you can read the primary source rather
-      than take this page's word for it — that's good practice for any
-      clinical claim, AI-related or not.
-
-    </p>
-
-  </div>
-
-</section>
+  </section>
 
 </main>
-
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
 
 <footer class="site-footer">
 
   <div class="wrap footer-grid">
 
-    <div>
+```
+<div>
+  <h4>[Organization Name]</h4>
 
-      <h4>
-        [Organization Name]
-      </h4>
+  <p class="small">
+    A nonprofit dedicated to open EMS education, prehospital clinical
+    reference, and access to a certified provider when you need one.
+  </p>
+</div>
 
-      <p class="small">
-        A nonprofit dedicated to open EMS education, prehospital
-        clinical reference, and access to a certified provider
-        when you need one.
-      </p>
+<div>
+  <h4>Explore</h4>
 
-    </div>
+  <ul>
+    <li><a href="education.html">Standard EMS education</a></li>
+    <li><a href="treatments.html">Treatment reference</a></li>
+    <li><a href="ecg.html">ECG reading</a></li>
+    <li><a href="cases.html">Case studies</a></li>
+  </ul>
+</div>
 
+<div>
+  <h4>Resources</h4>
 
-    <div>
+  <ul>
+    <li><a href="resources.html">Study guides &amp; tools</a></li>
+    <li><a href="ai-innovation.html">AI &amp; innovation</a></li>
+    <li><a href="contact.html">Contact a certified EMT</a></li>
+  </ul>
+</div>
 
-      <h4>
-        Explore
-      </h4>
+<div>
+  <h4>Get in touch</h4>
 
-      <ul>
+  <ul>
+    <li>
+      <a href="mailto:info@example.org">
+        info@example.org
+      </a>
+    </li>
 
-        <li>
-          <a href="education.html">
-            Standard EMS education
-          </a>
-        </li>
-
-        <li>
-          <a href="treatments.html">
-            Treatment reference
-          </a>
-        </li>
-
-        <li>
-          <a href="ecg.html">
-            ECG reading
-          </a>
-        </li>
-
-        <li>
-          <a href="cases.html">
-            Case studies
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
-
-
-    <div>
-
-      <h4>
-        Resources
-      </h4>
-
-      <ul>
-
-        <li>
-          <a href="resources.html">
-            Study guides &amp; tools
-          </a>
-        </li>
-
-        <li>
-          <a href="ai-innovation.html">
-            AI &amp; innovation
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact a certified EMT
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
-
-
-    <div>
-
-      <h4>
-        Get in touch
-      </h4>
-
-      <ul>
-
-        <li>
-          <a href="mailto:info@example.org">
-            info@example.org
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact page
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
+    <li>
+      <a href="contact.html">Contact page</a>
+    </li>
+  </ul>
+</div>
+```
 
   </div>
 
-
   <div class="wrap footer-bottom">
 
-    <span>
-      © 2026 [Organization Name].
-      Educational content only — not a substitute for professional
-      medical direction, certification training, or emergency care.
-    </span>
+```
+<span>
+  © 2026 [Organization Name].
+  Educational content only — not a substitute for professional
+  medical direction, certification training, or emergency care.
+</span>
 
-    <span>
-      <a href="contact.html">
-        Contact
-      </a>
-    </span>
+<span>
+  <a href="contact.html">Contact</a>
+</span>
+```
 
   </div>
 
 </footer>
 
-
-<!-- =======================================================
-     MOBILE NAVIGATION
-======================================================= -->
-
 <script>
-
 document.addEventListener("DOMContentLoaded", function(){
 
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector("nav.primary");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#primary-nav");
 
-  if(!toggle || !nav){
-    return;
+  if(!toggle || !nav) return;
+
+  function closeMenu(){
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
   }
 
   toggle.addEventListener("click", function(){
 
-    var isOpen = nav.classList.toggle("open");
+    const isOpen = nav.classList.toggle("open");
 
     toggle.setAttribute(
       "aria-expanded",
@@ -1694,28 +1167,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
   });
 
-
-  /*
-     Close the mobile menu after selecting a page.
-  */
-
   nav.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", closeMenu);
+  });
 
-    link.addEventListener("click", function(){
+  document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+      closeMenu();
+      toggle.focus();
+    }
+  });
 
-      nav.classList.remove("open");
-
-      toggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    });
-
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 880){
+      closeMenu();
+    }
   });
 
 });
-
 </script>
 
 </body>
