@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,9 +8,8 @@
 <title>EMS Education | [Organization Name]</title>
 
 <meta
-name="description"
-content="Learn about the four levels of EMS education in the United States: Emergency Medical Responder, Emergency Medical Technician, Advanced EMT, and Paramedic."
-
+  name="description"
+  content="Learn about the four levels of EMS education in the United States: Emergency Medical Responder, Emergency Medical Technician, Advanced EMT, and Paramedic."
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,17 +21,15 @@ content="Learn about the four levels of EMS education in the United States: Emer
 >
 
 <style>
-
 :root{
-  --paper:#FFFFFF;
-  --tint:#FDF6EC;
-  --ink:#211D17;
-  --ink-soft:#6B6459;
-  --accent:#E2811E;
-  --accent-deep:#B9650F;
-  --rescue:#C1443B;
-  --line:#ECE3D2;
-  --line-soft:#F3ECDD;
+  --paper:#fff;
+  --tint:#fdf6ec;
+  --ink:#211d17;
+  --ink-soft:#6b6459;
+  --accent:#e2811e;
+  --accent-deep:#b9650f;
+  --rescue:#c1443b;
+  --line:#ece3d2;
   --sans:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
   --max:1100px;
   --radius:10px;
@@ -44,6 +41,7 @@ content="Learn about the four levels of EMS education in the United States: Emer
 
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:100px;
 }
 
 body{
@@ -72,11 +70,13 @@ a:hover{
 
 :focus-visible{
   outline:3px solid var(--accent);
-  outline-offset:2px;
+  outline-offset:3px;
 }
 
-h1,h2,h3,h4{
-  font-family:var(--sans);
+h1,
+h2,
+h3,
+h4{
   color:var(--ink);
   margin:0 0 .5em;
   font-weight:800;
@@ -94,29 +94,28 @@ h2{
 
 h3{
   font-size:1.15rem;
-  font-weight:700;
 }
 
 p{
   margin:0 0 1.1em;
   max-width:38em;
-  font-weight:400;
 }
 
 .lede{
   font-size:1.1rem;
   color:var(--ink-soft);
-  max-width:38em;
+  max-width:40em;
 }
 
 .wrap{
+  width:100%;
   max-width:var(--max);
   margin:0 auto;
   padding:0 28px;
 }
 
 .small{
-  font-size:.9rem;
+  font-size:.86rem;
   color:var(--ink-soft);
 }
 
@@ -124,7 +123,7 @@ p{
 
 .skip-link{
   position:absolute;
-  left:-999px;
+  left:-9999px;
   top:0;
   background:var(--accent);
   color:#fff;
@@ -160,9 +159,9 @@ p{
   font-weight:600;
 }
 
-/* NAVIGATION */
+/* HEADER */
 
-header.site-header{
+.site-header{
   background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
   position:sticky;
@@ -199,20 +198,15 @@ header.site-header{
 }
 
 .brand .name em{
+  display:block;
   font-style:normal;
   color:var(--ink-soft);
   font-size:.6em;
   font-weight:600;
-  display:block;
-  letter-spacing:.01em;
   margin-top:1px;
 }
 
-nav.primary{
-  display:flex;
-}
-
-nav.primary ul{
+.primary ul{
   display:flex;
   flex-wrap:wrap;
   gap:2px 4px;
@@ -221,7 +215,7 @@ nav.primary ul{
   padding:0;
 }
 
-nav.primary a{
+.primary a{
   color:var(--ink);
   font-size:.95rem;
   font-weight:600;
@@ -230,23 +224,33 @@ nav.primary a{
   display:inline-block;
 }
 
-nav.primary a:hover{
+.primary a:hover{
   background:var(--tint);
   text-decoration:none;
 }
 
-nav.primary a[aria-current="page"]{
+.primary a[aria-current="page"]{
   background:var(--ink);
   color:#fff;
 }
 
 .nav-toggle{
   display:none;
+  align-items:center;
+  gap:8px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 14px;
+  font-family:var(--sans);
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--ink);
+  cursor:pointer;
 }
 
-  ```css
-```css
-/* Resource navigation */
+/* EXPLORE / RESOURCE NAVIGATION */
+
 .resource-nav{
   background:var(--ink);
   color:#fff;
@@ -284,41 +288,25 @@ nav.primary a[aria-current="page"]{
   text-decoration:none;
 }
 
-@media(max-width:650px){
-  .resource-nav .wrap{
-    justify-content:center;
-  }
-
-  .resource-nav-label{
-    width:100%;
-    text-align:center;
-    margin-right:0;
-  }
-}
-
-
 /* HERO */
 
 .hero{
-  padding:70px 0 30px;
-  position:relative;
-  overflow:hidden;
+  padding:60px 0 24px;
 }
 
 .hero .wrap{
   display:grid;
   grid-template-columns:1fr;
-  gap:48px;
-  align-items:center;
 }
 
-.hero .eyebrow-tab{
+.eyebrow-tab,
+.tab-label{
   display:inline-block;
   color:var(--accent-deep);
   font-size:.85rem;
   font-weight:700;
   letter-spacing:.01em;
-  margin-bottom:14px;
+  margin-bottom:12px;
 }
 
 /* BUTTONS */
@@ -362,7 +350,7 @@ nav.primary a[aria-current="page"]{
 /* SECTIONS */
 
 section{
-  padding:60px 0;
+  padding:52px 0;
 }
 
 section.tinted{
@@ -377,18 +365,10 @@ section.navy{
 
 .section-head{
   max-width:44em;
-  margin-bottom:36px;
+  margin-bottom:30px;
 }
 
-.tab-label{
-  display:inline-block;
-  font-size:.85rem;
-  font-weight:700;
-  color:var(--accent-deep);
-  margin-bottom:10px;
-}
-
-/* GRID */
+/* GRIDS */
 
 .grid{
   display:grid;
@@ -410,11 +390,8 @@ section.navy{
 /* EDUCATION CARDS */
 
 .card{
-  background:transparent;
-  border:0;
   border-top:2px solid var(--ink);
-  padding:18px 0 0;
-  border-radius:0;
+  padding:16px 0 0;
 }
 
 .card.sage{
@@ -422,13 +399,15 @@ section.navy{
 }
 
 .card h3{
-  margin-bottom:.45em;
+  margin-bottom:.35em;
 }
 
 .card .meta{
-  font-size:.82rem;
+  font-size:.78rem;
   color:var(--accent-deep);
   font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
   margin-bottom:8px;
   display:block;
 }
@@ -556,7 +535,7 @@ section.navy{
 
 /* FOOTER */
 
-footer.site-footer{
+.site-footer{
   background:var(--tint);
   color:var(--ink-soft);
   padding:48px 0 26px;
@@ -564,16 +543,16 @@ footer.site-footer{
   border-top:1px solid var(--line);
 }
 
-footer.site-footer h4{
+.site-footer h4{
   color:var(--ink);
   font-size:.95rem;
 }
 
-footer.site-footer a{
+.site-footer a{
   color:var(--ink-soft);
 }
 
-footer.site-footer a:hover{
+.site-footer a:hover{
   color:var(--accent-deep);
 }
 
@@ -583,7 +562,7 @@ footer.site-footer a:hover{
   gap:32px;
 }
 
-footer.site-footer ul{
+.site-footer ul{
   list-style:none;
   margin:0;
   padding:0;
@@ -602,9 +581,9 @@ footer.site-footer ul{
   gap:10px;
 }
 
-/* MOBILE */
+/* TABLET */
 
-@media (max-width:900px){
+@media(max-width:900px){
 
   .pathway{
     grid-template-columns:repeat(2,1fr);
@@ -614,55 +593,65 @@ footer.site-footer ul{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
   .certification-grid{
     grid-template-columns:1fr;
   }
-
 }
 
-@media (max-width:880px){
+/* MOBILE NAV */
+
+@media(max-width:880px){
 
   .nav-toggle{
     display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:none;
-    border:1px solid var(--line);
-    border-radius:999px;
-    padding:8px 14px;
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:.95rem;
-    color:var(--ink);
-    cursor:pointer;
   }
 
-  nav.primary{
+  .primary{
     display:none;
     width:100%;
     order:3;
   }
 
-  nav.primary.open{
+  .primary.open{
     display:block;
   }
 
-  nav.primary ul{
+  .primary ul{
     flex-direction:column;
     padding:10px 0 18px;
   }
 
-  nav.primary a{
+  .primary a{
     width:100%;
   }
 
   .nav-row{
     flex-wrap:wrap;
   }
-
 }
 
-@media (max-width:620px){
+/* EXPLORE NAV MOBILE */
+
+@media(max-width:650px){
+
+  .resource-nav .wrap{
+    justify-content:center;
+  }
+
+  .resource-nav-label{
+    width:100%;
+    text-align:center;
+    margin-right:0;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:620px){
 
   body{
     font-size:16px;
@@ -673,44 +662,37 @@ footer.site-footer ul{
   }
 
   .hero{
-    padding:48px 0 25px;
+    padding-top:42px;
   }
 
   section{
     padding:48px 0;
   }
 
-  .pathway{
-    grid-template-columns:1fr;
-  }
-
+  .pathway,
   .grid-2,
-  .grid-3{
-    grid-template-columns:1fr;
-  }
-
-  .curriculum-grid{
-    grid-template-columns:1fr;
-  }
-
+  .grid-3,
+  .grid-4,
+  .curriculum-grid,
   .footer-grid{
     grid-template-columns:1fr;
   }
-
 }
 
-@media (prefers-reduced-motion:reduce){
+/* REDUCED MOTION */
 
-  *{
-    scroll-behavior:auto !important;
-    transition:none !important;
-    animation:none !important;
+@media(prefers-reduced-motion:reduce){
+
+  html{
+    scroll-behavior:auto;
   }
 
+  *{
+    transition:none!important;
+    animation:none!important;
+  }
 }
-
 </style>
-
 </head>
 
 <body>
@@ -722,149 +704,135 @@ footer.site-footer ul{
 <!-- TOP BAR -->
 
 <div class="topbar">
-
   <div class="wrap">
 
-```
-<span>
-  Having a medical emergency? Call 911 — this site is educational only.
-</span>
+    <span>
+      Having a medical emergency? Call 911 — this site is educational only.
+    </span>
 
-<span>
-  <a href="contact.html">
-    Contact a certified EMT →
-  </a>
-</span>
-```
+    <span>
+      <a href="contact.html">
+        Contact a certified EMT →
+      </a>
+    </span>
 
   </div>
-
 </div>
 
-<!-- HEADER / NAVIGATION -->
+<!-- HEADER -->
 
 <header class="site-header">
 
   <div class="wrap nav-row">
 
-```
-<a class="brand" href="index.html">
+    <a class="brand" href="index.html" aria-label="[Organization Name] home">
 
-  <svg
-    class="mark"
-    viewBox="0 0 40 40"
-    aria-hidden="true"
-  >
-
-    <circle
-      cx="20"
-      cy="20"
-      r="19"
-      fill="#211D17"
-    />
-
-    <path
-      d="M4 21h6l3-8 5 15 4-11 3 4h11"
-      fill="none"
-      stroke="#E2811E"
-      stroke-width="2.4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-
-  </svg>
-
-  <span class="name">
-
-    [Organization Name]
-
-    <em>
-      EMS Education Initiative
-    </em>
-
-  </span>
-
-</a>
-
-<button
-  class="nav-toggle"
-  aria-expanded="false"
-  aria-controls="primary-nav"
-  type="button"
->
-  Menu ☰
-</button>
-
-<nav
-  class="primary"
-  id="primary-nav"
-  aria-label="Primary"
->
-
-  <ul>
-
-    <li>
-      <a href="index.html">
-        Home
-      </a>
-    </li>
-
-    <li>
-      <a
-        href="education.html"
-        aria-current="page"
+      <svg
+        class="mark"
+        viewBox="0 0 40 40"
+        aria-hidden="true"
+        focusable="false"
       >
-        Education
-      </a>
-    </li>
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="#211D17"
+        />
 
-    <li>
-      <a href="treatments.html">
-        Treatments
-      </a>
-    </li>
+        <path
+          d="M4 21h6l3-8 5 15 4-11 3 4h11"
+          fill="none"
+          stroke="#E2811E"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
 
-    <li>
-      <a href="ecg.html">
-        ECG Reading
-      </a>
-    </li>
+      <span class="name">
+        [Organization Name]
+        <em>EMS Education Initiative</em>
+      </span>
 
-    <li>
-      <a href="ai-innovation.html">
-        AI &amp; Innovation
-      </a>
-    </li>
+    </a>
 
-    <li>
-      <a href="cases.html">
-        Case Studies
-      </a>
-    </li>
+    <button
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      type="button"
+    >
+      Menu ☰
+    </button>
 
-    <li>
-      <a href="resources.html">
-        Resources
-      </a>
-    </li>
+    <nav
+      class="primary"
+      id="primary-nav"
+      aria-label="Primary navigation"
+    >
 
-    <li>
-      <a href="contact.html">
-        Contact
-      </a>
-    </li>
+      <ul>
 
-  </ul>
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
 
-</nav>
-```
+        <li>
+          <a
+            href="education.html"
+            aria-current="page"
+          >
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="treatments.html">
+            Treatments
+          </a>
+        </li>
+
+        <li>
+          <a href="ecg.html">
+            ECG Reading
+          </a>
+        </li>
+
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; Innovation
+          </a>
+        </li>
+
+        <li>
+          <a href="cases.html">
+            Case Studies
+          </a>
+        </li>
+
+        <li>
+          <a href="resources.html">
+            Resources
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
 
   </div>
-
-```html
 </header>
 
-<!-- EXPLORE / RESOURCE NAVIGATION -->
+<!-- EXPLORE NAVIGATION -->
 
 <div class="resource-nav">
 
@@ -896,42 +864,34 @@ footer.site-footer ul{
 
 <main id="main">
 
-
-
 <!-- HERO -->
 
 <section class="hero">
 
   <div class="wrap">
 
-```
-<div>
+    <span class="eyebrow-tab">
+      Standard EMS education
+    </span>
 
-  <span class="eyebrow-tab">
-    Standard EMS education
-  </span>
+    <h1>
+      Four levels, one pathway
+    </h1>
 
-  <h1>
-    Four levels, one pathway
-  </h1>
+    <p class="lede">
+      Emergency medical services education progresses through
+      four nationally recognized provider levels: Emergency
+      Medical Responder, Emergency Medical Technician,
+      Advanced EMT, and Paramedic.
+    </p>
 
-  <p class="lede">
-    Emergency medical services education progresses through
-    four nationally recognized provider levels: Emergency
-    Medical Responder, Emergency Medical Technician,
-    Advanced EMT, and Paramedic.
-  </p>
-
-  <p class="lede">
-    Each level builds on the knowledge and skills introduced
-    at the previous stage, increasing the clinician's ability
-    to assess patients, perform interventions, administer
-    medications, and make increasingly complex clinical
-    decisions.
-  </p>
-
-</div>
-```
+    <p class="lede">
+      Each level builds on the knowledge and skills introduced
+      at the previous stage, increasing the clinician's ability
+      to assess patients, perform interventions, administer
+      medications, and make increasingly complex clinical
+      decisions.
+    </p>
 
   </div>
 
@@ -943,164 +903,162 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-```
-<div class="pathway-intro">
+    <div class="pathway-intro">
 
-  <span class="tab-label">
-    The EMS pathway
-  </span>
+      <span class="tab-label">
+        The EMS pathway
+      </span>
 
-  <h2>
-    Four levels of prehospital practice
-  </h2>
+      <h2>
+        Four levels of prehospital practice
+      </h2>
 
-  <p>
-    EMS education in the United States is organized around
-    four provider levels described in the National EMS Scope
-    of Practice Model. Exact education requirements,
-    certification procedures, and authorized interventions
-    vary by state and local medical direction.
-  </p>
+      <p>
+        EMS education in the United States is organized around
+        four provider levels described in the National EMS Scope
+        of Practice Model. Exact education requirements,
+        certification procedures, and authorized interventions
+        vary by state and local medical direction.
+      </p>
 
-</div>
+    </div>
 
-<div class="pathway">
+    <div class="pathway">
 
-  <article class="pathway-step">
+      <article class="pathway-step">
 
-    <span class="pathway-number">
-      01
-    </span>
+        <span class="pathway-number">
+          01
+        </span>
 
-    <span class="pathway-role">
-      Stage 1
-    </span>
+        <span class="pathway-role">
+          Stage 1
+        </span>
 
-    <h3>
-      Emergency Medical Responder
-    </h3>
+        <h3>
+          Emergency Medical Responder
+        </h3>
 
-    <p>
-      EMRs provide immediate basic emergency care while
-      awaiting additional EMS resources. This level is often
-      associated with firefighters, law-enforcement personnel,
-      lifeguards, industrial responders, and other individuals
-      who may be first to reach a patient.
+        <p>
+          EMRs provide immediate basic emergency care while
+          awaiting additional EMS resources. This level is often
+          associated with firefighters, law-enforcement personnel,
+          lifeguards, industrial responders, and other individuals
+          who may be first to reach a patient.
+        </p>
+
+        <p>
+          Training emphasizes scene safety, patient assessment,
+          CPR, automated external defibrillation, bleeding control,
+          basic airway management, and other immediate lifesaving
+          interventions.
+        </p>
+
+      </article>
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          02
+        </span>
+
+        <span class="pathway-role">
+          Stage 2
+        </span>
+
+        <h3>
+          Emergency Medical Technician
+        </h3>
+
+        <p>
+          EMTs provide foundational ambulance-based emergency
+          care and are the most common entry-level EMS
+          professionals.
+        </p>
+
+        <p>
+          Education includes patient assessment, airway
+          management, oxygen therapy, bleeding control,
+          immobilization and splinting, emergency childbirth,
+          medical and trauma assessment, and administration of
+          medications within the provider's authorized scope.
+        </p>
+
+      </article>
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          03
+        </span>
+
+        <span class="pathway-role">
+          Stage 3
+        </span>
+
+        <h3>
+          Advanced EMT
+        </h3>
+
+        <p>
+          AEMTs build on EMT-level knowledge by adding selected
+          advanced assessment and treatment capabilities.
+        </p>
+
+        <p>
+          Depending on jurisdiction and medical direction,
+          training may include vascular access, intraosseous
+          access, additional medications, fluid administration,
+          and selected advanced airway techniques.
+        </p>
+
+      </article>
+
+      <article class="pathway-step">
+
+        <span class="pathway-number">
+          04
+        </span>
+
+        <span class="pathway-role">
+          Stage 4
+        </span>
+
+        <h3>
+          Paramedic
+        </h3>
+
+        <p>
+          Paramedics receive the most extensive prehospital
+          education of the four provider levels and manage
+          patients with complex medical and traumatic conditions.
+        </p>
+
+        <p>
+          Education commonly includes advanced patient
+          assessment, pharmacology, cardiac monitoring,
+          electrocardiography, advanced airway management,
+          resuscitation, critical-care concepts, and complex
+          clinical decision-making.
+        </p>
+
+      </article>
+
+    </div>
+
+    <p class="pathway-note">
+
+      <strong>
+        Important:
+      </strong>
+
+      Education hours, certification requirements, authorized
+      medications, procedures, and scope of practice differ
+      between states, agencies, and medical directors. Always
+      follow current state regulations, agency protocols, and
+      medical direction.
+
     </p>
-
-    <p>
-      Training emphasizes scene safety, patient assessment,
-      CPR, automated external defibrillation, bleeding control,
-      basic airway management, and other immediate lifesaving
-      interventions.
-    </p>
-
-  </article>
-
-  <article class="pathway-step">
-
-    <span class="pathway-number">
-      02
-    </span>
-
-    <span class="pathway-role">
-      Stage 2
-    </span>
-
-    <h3>
-      Emergency Medical Technician
-    </h3>
-
-    <p>
-      EMTs provide foundational ambulance-based emergency
-      care and are the most common entry-level EMS
-      professionals.
-    </p>
-
-    <p>
-      Education includes patient assessment, airway
-      management, oxygen therapy, bleeding control,
-      immobilization and splinting, emergency childbirth,
-      medical and trauma assessment, and administration of
-      medications within the provider's authorized scope.
-    </p>
-
-  </article>
-
-  <article class="pathway-step">
-
-    <span class="pathway-number">
-      03
-    </span>
-
-    <span class="pathway-role">
-      Stage 3
-    </span>
-
-    <h3>
-      Advanced EMT
-    </h3>
-
-    <p>
-      AEMTs build on EMT-level knowledge by adding selected
-      advanced assessment and treatment capabilities.
-    </p>
-
-    <p>
-      Depending on jurisdiction and medical direction,
-      training may include vascular access, intraosseous
-      access, additional medications, fluid administration,
-      and selected advanced airway techniques.
-    </p>
-
-  </article>
-
-  <article class="pathway-step">
-
-    <span class="pathway-number">
-      04
-    </span>
-
-    <span class="pathway-role">
-      Stage 4
-    </span>
-
-    <h3>
-      Paramedic
-    </h3>
-
-    <p>
-      Paramedics receive the most extensive prehospital
-      education of the four provider levels and manage
-      patients with complex medical and traumatic conditions.
-    </p>
-
-    <p>
-      Education commonly includes advanced patient
-      assessment, pharmacology, cardiac monitoring,
-      electrocardiography, advanced airway management,
-      resuscitation, critical-care concepts, and complex
-      clinical decision-making.
-    </p>
-
-  </article>
-
-</div>
-
-<p class="pathway-note">
-
-  <strong>
-    Important:
-  </strong>
-
-  Education hours, certification requirements, authorized
-  medications, procedures, and scope of practice differ
-  between states, agencies, and medical directors. Always
-  follow current state regulations, agency protocols, and
-  medical direction.
-
-</p>
-```
 
   </div>
 
@@ -1112,119 +1070,117 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-  <span class="tab-label">
-    EMS curriculum
-  </span>
+      <span class="tab-label">
+        EMS curriculum
+      </span>
 
-  <h2>
-    Core knowledge domains
-  </h2>
+      <h2>
+        Core knowledge domains
+      </h2>
 
-  <p>
-    Although the depth of education changes between provider
-    levels, EMS clinicians develop knowledge across several
-    major clinical and operational domains.
-  </p>
+      <p>
+        Although the depth of education changes between provider
+        levels, EMS clinicians develop knowledge across several
+        major clinical and operational domains.
+      </p>
 
-</div>
+    </div>
 
-<div class="curriculum-grid">
+    <div class="curriculum-grid">
 
-  <div class="card">
+      <div class="card">
 
-    <h3>
-      Airway &amp; ventilation
-    </h3>
+        <h3>
+          Airway &amp; ventilation
+        </h3>
 
-    <p class="small">
-      Recognition and management of airway compromise,
-      oxygen delivery, ventilation support, airway adjuncts,
-      and advanced airway techniques at appropriate provider
-      levels.
-    </p>
+        <p class="small">
+          Recognition and management of airway compromise,
+          oxygen delivery, ventilation support, airway adjuncts,
+          and advanced airway techniques at appropriate provider
+          levels.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card sage">
+      <div class="card sage">
 
-    <h3>
-      Trauma
-    </h3>
+        <h3>
+          Trauma
+        </h3>
 
-    <p class="small">
-      Assessment and management of traumatic injuries,
-      hemorrhage control, shock recognition, splinting,
-      spinal considerations, burns, and other traumatic
-      emergencies.
-    </p>
+        <p class="small">
+          Assessment and management of traumatic injuries,
+          hemorrhage control, shock recognition, splinting,
+          spinal considerations, burns, and other traumatic
+          emergencies.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card">
+      <div class="card">
 
-    <h3>
-      Medical emergencies
-    </h3>
+        <h3>
+          Medical emergencies
+        </h3>
 
-    <p class="small">
-      Assessment of cardiovascular, respiratory,
-      neurological, endocrine, toxicological, infectious,
-      and other medical emergencies.
-    </p>
+        <p class="small">
+          Assessment of cardiovascular, respiratory,
+          neurological, endocrine, toxicological, infectious,
+          and other medical emergencies.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card sage">
+      <div class="card sage">
 
-    <h3>
-      Cardiac care &amp; ECG
-    </h3>
+        <h3>
+          Cardiac care &amp; ECG
+        </h3>
 
-    <p class="small">
-      Recognition of cardiac emergencies, resuscitation,
-      rhythm interpretation, and — at advanced levels —
-      12-lead ECG acquisition and interpretation.
-    </p>
+        <p class="small">
+          Recognition of cardiac emergencies, resuscitation,
+          rhythm interpretation, and — at advanced levels —
+          12-lead ECG acquisition and interpretation.
+        </p>
 
-    <a href="ecg.html">
-      Explore ECG education →
-    </a>
+        <a href="ecg.html">
+          Explore ECG education →
+        </a>
 
-  </div>
+      </div>
 
-  <div class="card">
+      <div class="card">
 
-    <h3>
-      Obstetrics &amp; pediatrics
-    </h3>
+        <h3>
+          Obstetrics &amp; pediatrics
+        </h3>
 
-    <p class="small">
-      Assessment and treatment considerations for pregnancy,
-      childbirth, newborns, infants, children, and other
-      age-specific emergencies.
-    </p>
+        <p class="small">
+          Assessment and treatment considerations for pregnancy,
+          childbirth, newborns, infants, children, and other
+          age-specific emergencies.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card sage">
+      <div class="card sage">
 
-    <h3>
-      EMS operations
-    </h3>
+        <h3>
+          EMS operations
+        </h3>
 
-    <p class="small">
-      Scene safety, communications, documentation, triage,
-      incident management, patient transport, teamwork,
-      and coordination with other emergency services.
-    </p>
+        <p class="small">
+          Scene safety, communications, documentation, triage,
+          incident management, patient transport, teamwork,
+          and coordination with other emergency services.
+        </p>
 
-  </div>
+      </div>
 
-</div>
-```
+    </div>
 
   </div>
 
@@ -1236,103 +1192,101 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-  <span class="tab-label">
-    Increasing responsibility
-  </span>
+      <span class="tab-label">
+        Increasing responsibility
+      </span>
 
-  <h2>
-    What changes as providers advance?
-  </h2>
+      <h2>
+        What changes as providers advance?
+      </h2>
 
-  <p>
-    Advancement through EMS education is not simply about
-    learning more procedures. Each level introduces deeper
-    assessment skills, broader treatment capabilities,
-    additional pharmacology, and greater clinical
-    responsibility.
-  </p>
+      <p>
+        Advancement through EMS education is not simply about
+        learning more procedures. Each level introduces deeper
+        assessment skills, broader treatment capabilities,
+        additional pharmacology, and greater clinical
+        responsibility.
+      </p>
 
-</div>
+    </div>
 
-<div class="grid grid-4">
+    <div class="grid grid-4">
 
-  <div class="card">
+      <div class="card">
 
-    <span class="meta">
-      EMR
-    </span>
+        <span class="meta">
+          EMR
+        </span>
 
-    <h3>
-      Immediate lifesaving care
-    </h3>
+        <h3>
+          Immediate lifesaving care
+        </h3>
 
-    <p class="small">
-      Focuses on recognizing emergencies, initiating CPR,
-      controlling life-threatening bleeding, and providing
-      basic care until additional EMS resources arrive.
-    </p>
+        <p class="small">
+          Focuses on recognizing emergencies, initiating CPR,
+          controlling life-threatening bleeding, and providing
+          basic care until additional EMS resources arrive.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card sage">
+      <div class="card sage">
 
-    <span class="meta">
-      EMT
-    </span>
+        <span class="meta">
+          EMT
+        </span>
 
-    <h3>
-      Foundational patient care
-    </h3>
+        <h3>
+          Foundational patient care
+        </h3>
 
-    <p class="small">
-      Provides structured patient assessment, basic airway
-      and respiratory support, trauma care, transport
-      preparation, and selected medications.
-    </p>
+        <p class="small">
+          Provides structured patient assessment, basic airway
+          and respiratory support, trauma care, transport
+          preparation, and selected medications.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card">
+      <div class="card">
 
-    <span class="meta">
-      AEMT
-    </span>
+        <span class="meta">
+          AEMT
+        </span>
 
-    <h3>
-      Advanced interventions
-    </h3>
+        <h3>
+          Advanced interventions
+        </h3>
 
-    <p class="small">
-      Adds selected advanced procedures and medications,
-      including vascular access and other interventions
-      permitted by local scope of practice.
-    </p>
+        <p class="small">
+          Adds selected advanced procedures and medications,
+          including vascular access and other interventions
+          permitted by local scope of practice.
+        </p>
 
-  </div>
+      </div>
 
-  <div class="card sage">
+      <div class="card sage">
 
-    <span class="meta">
-      Paramedic
-    </span>
+        <span class="meta">
+          Paramedic
+        </span>
 
-    <h3>
-      Advanced clinical management
-    </h3>
+        <h3>
+          Advanced clinical management
+        </h3>
 
-    <p class="small">
-      Integrates advanced assessment, pharmacology,
-      cardiovascular care, airway management, and complex
-      clinical decision-making.
-    </p>
+        <p class="small">
+          Integrates advanced assessment, pharmacology,
+          cardiovascular care, airway management, and complex
+          clinical decision-making.
+        </p>
 
-  </div>
+      </div>
 
-</div>
-```
+    </div>
 
   </div>
 
@@ -1344,66 +1298,64 @@ footer.site-footer ul{
 
   <div class="wrap certification-grid">
 
-```
-<div>
+    <div>
 
-  <span class="tab-label">
-    Certification
-  </span>
+      <span class="tab-label">
+        Certification
+      </span>
 
-  <h2>
-    Education, certification, and state licensure
-  </h2>
+      <h2>
+        Education, certification, and state licensure
+      </h2>
 
-  <p>
-    EMS education is only one part of becoming an authorized
-    EMS clinician. Students must meet the education and
-    examination requirements applicable to their provider
-    level and jurisdiction.
-  </p>
+      <p>
+        EMS education is only one part of becoming an authorized
+        EMS clinician. Students must meet the education and
+        examination requirements applicable to their provider
+        level and jurisdiction.
+      </p>
 
-  <p>
-    The National Registry of Emergency Medical Technicians
-    (NREMT) provides national certification examinations for
-    several EMS provider levels. State EMS authorities then
-    establish licensing requirements and determine how
-    national certification is incorporated into state
-    licensure.
-  </p>
+      <p>
+        The National Registry of Emergency Medical Technicians
+        (NREMT) provides national certification examinations for
+        several EMS provider levels. State EMS authorities then
+        establish licensing requirements and determine how
+        national certification is incorporated into state
+        licensure.
+      </p>
 
-  <p>
-    Because requirements can change, students should verify
-    current requirements with their state EMS authority,
-    educational institution, and applicable medical director.
-  </p>
+      <p>
+        Because requirements can change, students should verify
+        current requirements with their state EMS authority,
+        educational institution, and applicable medical director.
+      </p>
 
-</div>
+    </div>
 
-<div class="certification-box">
+    <div class="certification-box">
 
-  <h3>
-    Continue learning
-  </h3>
+      <h3>
+        Continue learning
+      </h3>
 
-  <p class="small">
-    Explore additional educational material covering
-    treatments, ECG interpretation, emergency cases, and
-    EMS resources.
-  </p>
+      <p class="small">
+        Explore additional educational material covering
+        treatments, ECG interpretation, emergency cases, and
+        EMS resources.
+      </p>
 
-  <p>
+      <p>
 
-    <a
-      class="btn btn-primary"
-      href="resources.html"
-    >
-      View study resources
-    </a>
+        <a
+          class="btn btn-primary"
+          href="resources.html"
+        >
+          View study resources
+        </a>
 
-  </p>
+      </p>
 
-</div>
-```
+    </div>
 
   </div>
 
@@ -1415,33 +1367,31 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-  <span class="tab-label">
-    Important information
-  </span>
+      <span class="tab-label">
+        Important information
+      </span>
 
-  <h2>
-    Education is not medical direction
-  </h2>
+      <h2>
+        Education is not medical direction
+      </h2>
 
-  <p>
-    This website is intended for educational and informational
-    purposes. EMS clinicians and students should use current
-    training materials, agency protocols, state regulations,
-    medical direction, and manufacturer instructions when
-    making clinical decisions.
-  </p>
+      <p>
+        This website is intended for educational and informational
+        purposes. EMS clinicians and students should use current
+        training materials, agency protocols, state regulations,
+        medical direction, and manufacturer instructions when
+        making clinical decisions.
+      </p>
 
-  <p>
-    Nothing on this website replaces formal EMS education,
-    supervised clinical training, certification requirements,
-    medical direction, or emergency medical care.
-  </p>
+      <p>
+        Nothing on this website replaces formal EMS education,
+        supervised clinical training, certification requirements,
+        medical direction, or emergency medical care.
+      </p>
 
-</div>
-```
+    </div>
 
   </div>
 
@@ -1453,198 +1403,196 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-```
-<div class="section-head">
+    <div class="section-head">
 
-  <span class="tab-label">
-    References
-  </span>
+      <span class="tab-label">
+        References
+      </span>
 
-  <h2>
-    Official EMS education resources
-  </h2>
+      <h2>
+        Official EMS education resources
+      </h2>
 
-  <p>
-    The following sources provide current information about
-    national EMS provider levels, certification, scope of
-    practice, and examination requirements.
-  </p>
+      <p>
+        The following sources provide current information about
+        national EMS provider levels, certification, scope of
+        practice, and examination requirements.
+      </p>
 
-</div>
+    </div>
 
-<ol class="references-list">
+    <ol class="references-list">
 
-  <li>
-    <strong>
-      National EMS Scope of Practice Model
-    </strong><br>
+      <li>
+        <strong>
+          National EMS Scope of Practice Model
+        </strong><br>
 
-    National Highway Traffic Safety Administration (NHTSA).
-    <em>
-      National EMS Scope of Practice Model.
-    </em>
-    2019.
+        National Highway Traffic Safety Administration (NHTSA).
+        <em>
+          National EMS Scope of Practice Model.
+        </em>
+        2019.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.ems.gov/assets/National_EMS_Scope_of_Practice_Model_2019.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Read the National EMS Scope of Practice Model →
-    </a>
-  </li>
+        <a
+          href="https://www.ems.gov/assets/National_EMS_Scope_of_Practice_Model_2019.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read the National EMS Scope of Practice Model →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      National Registry of Emergency Medical Technicians
-    </strong><br>
+      <li>
+        <strong>
+          National Registry of Emergency Medical Technicians
+        </strong><br>
 
-    The National Registry provides national certification
-    for Emergency Medical Responder, Emergency Medical
-    Technician, Advanced EMT, and Paramedic levels.
+        The National Registry provides national certification
+        for Emergency Medical Responder, Emergency Medical
+        Technician, Advanced EMT, and Paramedic levels.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/about/about-us"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — About the National Registry →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/about/about-us"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — About the National Registry →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      EMR Certification
-    </strong><br>
+      <li>
+        <strong>
+          EMR Certification
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Information about Emergency Medical Responder
-    certification and requirements.
+        National Registry of Emergency Medical Technicians.
+        Information about Emergency Medical Responder
+        certification and requirements.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/EMR/Certification"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — EMR Certification →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/EMR/Certification"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — EMR Certification →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      EMT Certification
-    </strong><br>
+      <li>
+        <strong>
+          EMT Certification
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Information about Emergency Medical Technician
-    certification and requirements.
+        National Registry of Emergency Medical Technicians.
+        Information about Emergency Medical Technician
+        certification and requirements.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/EMT/Certification"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — EMT Certification →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/EMT/Certification"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — EMT Certification →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      AEMT Certification
-    </strong><br>
+      <li>
+        <strong>
+          AEMT Certification
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Information about Advanced Emergency Medical Technician
-    certification and requirements.
+        National Registry of Emergency Medical Technicians.
+        Information about Advanced Emergency Medical Technician
+        certification and requirements.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/AEMT/Certification"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — AEMT Certification →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/AEMT/Certification"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — AEMT Certification →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      Paramedic Certification
-    </strong><br>
+      <li>
+        <strong>
+          Paramedic Certification
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Information about Paramedic certification and requirements.
+        National Registry of Emergency Medical Technicians.
+        Information about Paramedic certification and requirements.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/Paramedic/Certification"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — Paramedic Certification →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/Paramedic/Certification"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — Paramedic Certification →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      EMS Certification Handbooks
-    </strong><br>
+      <li>
+        <strong>
+          EMS Certification Handbooks
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Official certification handbooks and recertification
-    resources for EMS provider levels.
+        National Registry of Emergency Medical Technicians.
+        Official certification handbooks and recertification
+        resources for EMS provider levels.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/Pages/Handbook/Handbook-Landing"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — Certification Handbooks →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/Pages/Handbook/Handbook-Landing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — Certification Handbooks →
+        </a>
+      </li>
 
-  <li>
-    <strong>
-      EMS Certification Examination Information
-    </strong><br>
+      <li>
+        <strong>
+          EMS Certification Examination Information
+        </strong><br>
 
-    National Registry of Emergency Medical Technicians.
-    Official information about EMS certification examinations,
-    examination formats, and competency standards.
+        National Registry of Emergency Medical Technicians.
+        Official information about EMS certification examinations,
+        examination formats, and competency standards.
 
-    <br>
+        <br>
 
-    <a
-      href="https://www.nremt.org/Handbooks/Certification-Examinations/Overview"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      NREMT — Examination Information →
-    </a>
-  </li>
+        <a
+          href="https://www.nremt.org/Handbooks/Certification-Examinations/Overview"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NREMT — Examination Information →
+        </a>
+      </li>
 
-</ol>
+    </ol>
 
-<p class="reference-note">
-  These external resources are provided for educational
-  reference. Certification and licensure requirements may
-  change. Always verify current requirements with the
-  appropriate state EMS authority, educational institution,
-  medical director, and certification organization.
-</p>
-```
+    <p class="reference-note">
+      These external resources are provided for educational
+      reference. Certification and licensure requirements may
+      change. Always verify current requirements with the
+      appropriate state EMS authority, educational institution,
+      medical director, and certification organization.
+    </p>
 
   </div>
 
@@ -1658,130 +1606,126 @@ footer.site-footer ul{
 
   <div class="wrap footer-grid">
 
-```
-<div>
+    <div>
 
-  <h4>
-    [Organization Name]
-  </h4>
+      <h4>
+        [Organization Name]
+      </h4>
 
-  <p class="small">
-    A nonprofit dedicated to open EMS education,
-    prehospital clinical reference, and access to
-    certified emergency medical professionals.
-  </p>
+      <p class="small">
+        A nonprofit dedicated to open EMS education,
+        prehospital clinical reference, and access to
+        certified emergency medical professionals.
+      </p>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-  <h4>
-    Explore
-  </h4>
+      <h4>
+        Explore
+      </h4>
 
-  <ul>
+      <ul>
 
-    <li>
-      <a href="education.html">
-        Standard EMS education
-      </a>
-    </li>
+        <li>
+          <a href="education.html">
+            Standard EMS education
+          </a>
+        </li>
 
-    <li>
-      <a href="treatments.html">
-        Treatment reference
-      </a>
-    </li>
+        <li>
+          <a href="treatments.html">
+            Treatment reference
+          </a>
+        </li>
 
-    <li>
-      <a href="ecg.html">
-        ECG reading
-      </a>
-    </li>
+        <li>
+          <a href="ecg.html">
+            ECG reading
+          </a>
+        </li>
 
-    <li>
-      <a href="cases.html">
-        Case studies
-      </a>
-    </li>
+        <li>
+          <a href="cases.html">
+            Case studies
+          </a>
+        </li>
 
-  </ul>
+      </ul>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-  <h4>
-    Resources
-  </h4>
+      <h4>
+        Resources
+      </h4>
 
-  <ul>
+      <ul>
 
-    <li>
-      <a href="resources.html">
-        Study guides &amp; tools
-      </a>
-    </li>
+        <li>
+          <a href="resources.html">
+            Study guides &amp; tools
+          </a>
+        </li>
 
-    <li>
-      <a href="ai-innovation.html">
-        AI &amp; innovation
-      </a>
-    </li>
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; innovation
+          </a>
+        </li>
 
-    <li>
-      <a href="contact.html">
-        Contact
-      </a>
-    </li>
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
 
-  </ul>
+      </ul>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-  <h4>
-    Get in touch
-  </h4>
+      <h4>
+        Get in touch
+      </h4>
 
-  <ul>
+      <ul>
 
-    <li>
-      <a href="mailto:info@example.org">
-        info@example.org
-      </a>
-    </li>
+        <li>
+          <a href="mailto:info@example.org">
+            info@example.org
+          </a>
+        </li>
 
-    <li>
-      <a href="contact.html">
-        Contact page
-      </a>
-    </li>
+        <li>
+          <a href="contact.html">
+            Contact page
+          </a>
+        </li>
 
-  </ul>
+      </ul>
 
-</div>
-```
+    </div>
 
   </div>
 
   <div class="wrap footer-bottom">
 
-```
-<span>
-  © 2026 [Organization Name].
-  Educational content only — not a substitute for
-  professional medical direction, certification training,
-  or emergency care.
-</span>
+    <span>
+      © 2026 [Organization Name].
+      Educational content only — not a substitute for
+      professional medical direction, certification training,
+      or emergency care.
+    </span>
 
-<span>
-  <a href="contact.html">
-    Contact
-  </a>
-</span>
-```
+    <span>
+      <a href="contact.html">
+        Contact
+      </a>
+    </span>
 
   </div>
 
@@ -1790,60 +1734,55 @@ footer.site-footer ul{
 <!-- MOBILE NAVIGATION -->
 
 <script>
+document.addEventListener("DOMContentLoaded", function(){
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function(){
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#primary-nav");
 
-    var toggle =
-      document.querySelector('.nav-toggle');
+  if(!toggle || !nav) return;
 
-    var nav =
-      document.querySelector('nav.primary');
+  function closeMenu(){
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
 
-    if(!toggle || !nav){
-      return;
+  toggle.addEventListener("click", function(){
+
+    const isOpen = nav.classList.toggle("open");
+
+    toggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+  });
+
+  nav.querySelectorAll("a").forEach(function(link){
+
+    link.addEventListener("click", closeMenu);
+
+  });
+
+  document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+      closeMenu();
+      toggle.focus();
     }
 
-    toggle.addEventListener(
-      'click',
-      function(){
+  });
 
-        var isOpen =
-          nav.classList.toggle('open');
+  window.addEventListener("resize", function(){
 
-        toggle.setAttribute(
-          'aria-expanded',
-          isOpen ? 'true' : 'false'
-        );
+    if(window.innerWidth > 880){
+      closeMenu();
+    }
 
-      }
-    );
+  });
 
-    nav.querySelectorAll('a').forEach(
-      function(link){
-
-        link.addEventListener(
-          'click',
-          function(){
-
-            nav.classList.remove('open');
-
-            toggle.setAttribute(
-              'aria-expanded',
-              'false'
-            );
-
-          }
-        );
-
-      }
-    );
-
-  }
-);
-
+});
 </script>
 
 </body>
 </html>
+
