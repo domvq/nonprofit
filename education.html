@@ -21,34 +21,20 @@
 
 <style>
 
-/* =========================================================
-   DESIGN TOKENS
-========================================================= */
-
 :root{
   --paper:#FFFFFF;
   --tint:#FDF6EC;
   --ink:#211D17;
   --ink-soft:#6B6459;
-
   --accent:#E2811E;
   --accent-deep:#B9650F;
-
   --rescue:#C1443B;
-
   --line:#ECE3D2;
   --line-soft:#F3ECDD;
-
   --sans:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
-
   --max:1100px;
   --radius:10px;
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 *{
   box-sizing:border-box;
@@ -135,10 +121,7 @@ p{
   color:var(--ink-soft);
 }
 
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
+/* ACCESSIBILITY */
 
 .skip-link{
   position:absolute;
@@ -156,10 +139,7 @@ p{
   top:0;
 }
 
-
-/* =========================================================
-   TOP BAR
-========================================================= */
+/* TOP BAR */
 
 .topbar{
   background:var(--tint);
@@ -181,17 +161,15 @@ p{
   font-weight:600;
 }
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAVIGATION */
 
 header.site-header{
-  background:var(--paper);
+  background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
   position:sticky;
   top:0;
   z-index:100;
+  backdrop-filter:blur(8px);
 }
 
 .nav-row{
@@ -267,10 +245,7 @@ nav.primary a[aria-current="page"]{
   display:none;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
   padding:70px 0 30px;
@@ -294,10 +269,7 @@ nav.primary a[aria-current="page"]{
   margin-bottom:14px;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* BUTTONS */
 
 .btn{
   display:inline-block;
@@ -335,10 +307,7 @@ nav.primary a[aria-current="page"]{
   background:var(--tint);
 }
 
-
-/* =========================================================
-   SECTIONS
-========================================================= */
+/* SECTIONS */
 
 section{
   padding:60px 0;
@@ -367,10 +336,7 @@ section.navy{
   margin-bottom:10px;
 }
 
-
-/* =========================================================
-   GRID
-========================================================= */
+/* GRID */
 
 .grid{
   display:grid;
@@ -389,10 +355,7 @@ section.navy{
   grid-template-columns:repeat(4,1fr);
 }
 
-
-/* =========================================================
-   EDUCATION CARDS
-========================================================= */
+/* EDUCATION CARDS */
 
 .card{
   background:transparent;
@@ -418,10 +381,7 @@ section.navy{
   display:block;
 }
 
-
-/* =========================================================
-   EMS PATHWAY
-========================================================= */
+/* EMS PATHWAY */
 
 .pathway-intro{
   max-width:700px;
@@ -448,18 +408,13 @@ section.navy{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   width:38px;
   height:38px;
-
   background:var(--ink);
   color:#fff;
-
   border-radius:50%;
-
   font-size:.85rem;
   font-weight:800;
-
   margin-bottom:18px;
 }
 
@@ -495,10 +450,7 @@ section.navy{
   color:var(--ink-soft);
 }
 
-
-/* =========================================================
-   CURRICULUM
-========================================================= */
+/* CURRICULUM */
 
 .curriculum-grid{
   display:grid;
@@ -506,10 +458,7 @@ section.navy{
   gap:30px;
 }
 
-
-/* =========================================================
-   CERTIFICATION SECTION
-========================================================= */
+/* CERTIFICATION */
 
 .certification-grid{
   display:grid;
@@ -525,50 +474,7 @@ section.navy{
   border:1px solid var(--line);
 }
 
-
-/* =========================================================
-   TABLES
-========================================================= */
-
-.ref-table-wrap{
-  overflow-x:auto;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-}
-
-table.ref-table{
-  width:100%;
-  border-collapse:collapse;
-  background:var(--paper);
-  min-width:620px;
-}
-
-table.ref-table caption{
-  text-align:left;
-  padding:14px 18px 0;
-  font-size:1.05rem;
-  font-weight:800;
-}
-
-table.ref-table th,
-table.ref-table td{
-  padding:12px 16px;
-  text-align:left;
-  border-bottom:1px solid var(--line);
-  vertical-align:top;
-  font-size:.95rem;
-}
-
-table.ref-table thead th{
-  background:var(--tint);
-  font-weight:700;
-  font-size:.85rem;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer.site-footer{
   background:var(--tint);
@@ -610,17 +516,13 @@ footer.site-footer ul{
   margin-top:34px;
   padding-top:18px;
   font-size:.85rem;
-
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
   gap:10px;
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width:900px){
 
@@ -636,6 +538,9 @@ footer.site-footer ul{
     grid-template-columns:1fr;
   }
 
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
 
 @media (max-width:880px){
@@ -644,19 +549,14 @@ footer.site-footer ul{
     display:inline-flex;
     align-items:center;
     gap:8px;
-
     background:none;
     border:1px solid var(--line);
     border-radius:999px;
-
     padding:8px 14px;
-
     font-family:var(--sans);
     font-weight:600;
     font-size:.95rem;
-
     color:var(--ink);
-
     cursor:pointer;
   }
 
@@ -675,10 +575,13 @@ footer.site-footer ul{
     padding:10px 0 18px;
   }
 
+  nav.primary a{
+    width:100%;
+  }
+
   .nav-row{
     flex-wrap:wrap;
   }
-
 }
 
 @media (max-width:620px){
@@ -704,7 +607,8 @@ footer.site-footer ul{
   }
 
   .grid-2,
-  .grid-3{
+  .grid-3,
+  .grid-4{
     grid-template-columns:1fr;
   }
 
@@ -715,7 +619,6 @@ footer.site-footer ul{
   .footer-grid{
     grid-template-columns:1fr;
   }
-
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -725,12 +628,10 @@ footer.site-footer ul{
     transition:none !important;
     animation:none !important;
   }
-
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -738,10 +639,7 @@ footer.site-footer ul{
   Skip to main content
 </a>
 
-
-<!-- =======================================================
-     TOP BAR
-======================================================= -->
+<!-- TOP BAR -->
 
 <div class="topbar">
 
@@ -761,10 +659,7 @@ footer.site-footer ul{
 
 </div>
 
-
-<!-- =======================================================
-     HEADER / NAVIGATION
-======================================================= -->
+<!-- HEADER / NAVIGATION -->
 
 <header class="site-header">
 
@@ -808,15 +703,14 @@ footer.site-footer ul{
 
     </a>
 
-
     <button
       class="nav-toggle"
       aria-expanded="false"
       aria-controls="primary-nav"
+      type="button"
     >
       Menu ☰
     </button>
-
 
     <nav
       class="primary"
@@ -885,13 +779,9 @@ footer.site-footer ul{
 
 </header>
 
-
 <main id="main">
 
-
-<!-- =======================================================
-     HERO
-======================================================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -928,10 +818,7 @@ footer.site-footer ul{
 
 </section>
 
-
-<!-- =======================================================
-     FOUR LEVELS
-======================================================= -->
+<!-- FOUR LEVELS -->
 
 <section class="tinted">
 
@@ -957,11 +844,7 @@ footer.site-footer ul{
 
     </div>
 
-
     <div class="pathway">
-
-
-      <!-- STAGE 1 -->
 
       <article class="pathway-step">
 
@@ -994,9 +877,6 @@ footer.site-footer ul{
 
       </article>
 
-
-      <!-- STAGE 2 -->
-
       <article class="pathway-step">
 
         <span class="pathway-number">
@@ -1027,9 +907,6 @@ footer.site-footer ul{
 
       </article>
 
-
-      <!-- STAGE 3 -->
-
       <article class="pathway-step">
 
         <span class="pathway-number">
@@ -1057,9 +934,6 @@ footer.site-footer ul{
         </p>
 
       </article>
-
-
-      <!-- STAGE 4 -->
 
       <article class="pathway-step">
 
@@ -1093,7 +967,6 @@ footer.site-footer ul{
 
     </div>
 
-
     <p class="pathway-note">
 
       <strong>
@@ -1112,10 +985,7 @@ footer.site-footer ul{
 
 </section>
 
-
-<!-- =======================================================
-     CURRICULUM
-======================================================= -->
+<!-- CURRICULUM -->
 
 <section>
 
@@ -1139,9 +1009,7 @@ footer.site-footer ul{
 
     </div>
 
-
     <div class="curriculum-grid">
-
 
       <div class="card">
 
@@ -1158,7 +1026,6 @@ footer.site-footer ul{
 
       </div>
 
-
       <div class="card sage">
 
         <h3>
@@ -1174,7 +1041,6 @@ footer.site-footer ul{
 
       </div>
 
-
       <div class="card">
 
         <h3>
@@ -1188,7 +1054,6 @@ footer.site-footer ul{
         </p>
 
       </div>
-
 
       <div class="card sage">
 
@@ -1208,7 +1073,6 @@ footer.site-footer ul{
 
       </div>
 
-
       <div class="card">
 
         <h3>
@@ -1222,7 +1086,6 @@ footer.site-footer ul{
         </p>
 
       </div>
-
 
       <div class="card sage">
 
@@ -1238,17 +1101,13 @@ footer.site-footer ul{
 
       </div>
 
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =======================================================
-     PROGRESSION
-======================================================= -->
+<!-- PROGRESSION -->
 
 <section class="tinted">
 
@@ -1274,9 +1133,7 @@ footer.site-footer ul{
 
     </div>
 
-
     <div class="grid grid-4">
-
 
       <div class="card">
 
@@ -1296,7 +1153,6 @@ footer.site-footer ul{
 
       </div>
 
-
       <div class="card sage">
 
         <span class="meta">
@@ -1314,7 +1170,6 @@ footer.site-footer ul{
         </p>
 
       </div>
-
 
       <div class="card">
 
@@ -1334,7 +1189,6 @@ footer.site-footer ul{
 
       </div>
 
-
       <div class="card sage">
 
         <span class="meta">
@@ -1353,22 +1207,17 @@ footer.site-footer ul{
 
       </div>
 
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =======================================================
-     CERTIFICATION
-======================================================= -->
+<!-- CERTIFICATION -->
 
 <section class="navy">
 
   <div class="wrap certification-grid">
-
 
     <div>
 
@@ -1404,7 +1253,6 @@ footer.site-footer ul{
 
     </div>
 
-
     <div class="certification-box">
 
       <h3>
@@ -1430,15 +1278,11 @@ footer.site-footer ul{
 
     </div>
 
-
   </div>
 
 </section>
 
-
-<!-- =======================================================
-     EDUCATIONAL DISCLAIMER
-======================================================= -->
+<!-- EDUCATIONAL DISCLAIMER -->
 
 <section>
 
@@ -1474,18 +1318,13 @@ footer.site-footer ul{
 
 </section>
 
-
 </main>
 
-
-<!-- =======================================================
-     FOOTER
-======================================================= -->
+<!-- FOOTER -->
 
 <footer class="site-footer">
 
   <div class="wrap footer-grid">
-
 
     <div>
 
@@ -1500,7 +1339,6 @@ footer.site-footer ul{
       </p>
 
     </div>
-
 
     <div>
 
@@ -1538,7 +1376,6 @@ footer.site-footer ul{
 
     </div>
 
-
     <div>
 
       <h4>
@@ -1569,7 +1406,6 @@ footer.site-footer ul{
 
     </div>
 
-
     <div>
 
       <h4>
@@ -1594,9 +1430,7 @@ footer.site-footer ul{
 
     </div>
 
-
   </div>
-
 
   <div class="wrap footer-bottom">
 
@@ -1617,10 +1451,7 @@ footer.site-footer ul{
 
 </footer>
 
-
-<!-- =======================================================
-     MOBILE NAVIGATION
-======================================================= -->
+<!-- MOBILE NAVIGATION -->
 
 <script>
 
@@ -1634,11 +1465,9 @@ document.addEventListener(
     var nav =
       document.querySelector('nav.primary');
 
-
     if(!toggle || !nav){
       return;
     }
-
 
     toggle.addEventListener(
       'click',
@@ -1646,7 +1475,6 @@ document.addEventListener(
 
         var isOpen =
           nav.classList.toggle('open');
-
 
         toggle.setAttribute(
           'aria-expanded',
@@ -1656,11 +1484,30 @@ document.addEventListener(
       }
     );
 
+    nav.querySelectorAll('a').forEach(
+      function(link){
+
+        link.addEventListener(
+          'click',
+          function(){
+
+            nav.classList.remove('open');
+
+            toggle.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+          }
+        );
+
+      }
+    );
+
   }
 );
 
 </script>
-
 
 </body>
 </html>
