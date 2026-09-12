@@ -1,41 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Case Studies | [Organization Name]</title>
-<meta name="description" content="Real, cited EMS case studies used for teaching — currently being populated.">
+
+<meta
+  name="description"
+  content="EMS case studies and clinical teaching cases grounded in published medical and prehospital literature."
+>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
 <style>
+
 /* =========================================================
-   Design tokens — plain, warm, single-accent nonprofit system
-   Modeled after a clean modern nonprofit page: lots of
-   whitespace, one accent color doing all the work, a stat
-   strip under the hero, and simple list-style content blocks
-   instead of heavy bordered cards.
-   ========================================================= */
+   DESIGN TOKENS
+========================================================= */
+
 :root{
-  --paper:      #FFFFFF;   /* base page background */
-  --tint:       #FDF6EC;   /* soft tinted section background */
-  --card:       #FFFFFF;
-  --ink:        #211D17;   /* body text */
-  --ink-soft:   #6B6459;   /* secondary text */
-  --accent:     #E2811E;   /* single primary accent — warm amber/orange */
+  --paper:#FFFFFF;
+  --tint:#FDF6EC;
+  --ink:#211D17;
+  --ink-soft:#6B6459;
+
+  --accent:#E2811E;
   --accent-deep:#B9650F;
-  --rescue:     #C1443B;   /* used only for the emergency / urgent CTA */
-  --line:       #ECE3D2;   /* hairline borders */
-  --line-soft:  #F3ECDD;
 
-  --sans: "Plus Jakarta Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  --rescue:#C1443B;
 
-  --max: 1100px;
-  --radius: 10px;
+  --line:#ECE3D2;
+  --line-soft:#F3ECDD;
+
+  --sans:"Plus Jakarta Sans","Segoe UI",Helvetica,Arial,sans-serif;
+
+  --max:1100px;
+  --radius:10px;
 }
 
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--paper);
@@ -45,12 +68,30 @@ body{
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
-img{ max-width:100%; display:block; }
-a{ color:var(--accent-deep); text-decoration:none; }
-a:hover{ text-decoration:underline; }
-:focus-visible{ outline:3px solid var(--accent); outline-offset:2px; }
 
-h1,h2,h3,h4{
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:var(--accent-deep);
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+
+h1,
+h2,
+h3,
+h4{
   font-family:var(--sans);
   color:var(--ink);
   margin:0 0 .5em;
@@ -58,26 +99,68 @@ h1,h2,h3,h4{
   line-height:1.15;
   letter-spacing:-.01em;
 }
-h1{ font-size:clamp(2.1rem, 4.6vw, 3.1rem); }
-h2{ font-size:clamp(1.5rem, 2.8vw, 2rem); }
-h3{ font-size:1.15rem; font-weight:700; }
-p{ margin:0 0 1.1em; max-width:38em; font-weight:400; }
-.lede{ font-size:1.1rem; color:var(--ink-soft); max-width:34em; }
 
-.wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
-
-@media (prefers-reduced-motion: reduce){
-  *{ scroll-behavior:auto !important; transition:none !important; animation:none !important; }
+h1{
+  font-size:clamp(2.1rem,4.6vw,3.1rem);
 }
 
-/* ---------- Skip link ---------- */
+h2{
+  font-size:clamp(1.5rem,2.8vw,2rem);
+}
+
+h3{
+  font-size:1.15rem;
+  font-weight:700;
+}
+
+p{
+  margin:0 0 1.1em;
+  max-width:38em;
+}
+
+.lede{
+  font-size:1.1rem;
+  color:var(--ink-soft);
+  max-width:40em;
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+.small{
+  font-size:.88rem;
+  color:var(--ink-soft);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
 .skip-link{
-  position:absolute; left:-999px; top:0;
-  background:var(--accent); color:#fff; padding:10px 16px; z-index:200; border-radius:0 0 8px 0;
+  position:absolute;
+  left:-999px;
+  top:0;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  z-index:200;
+  border-radius:0 0 8px 0;
 }
-.skip-link:focus{ left:0; top:0; }
 
-/* ---------- Top bar ---------- */
+.skip-link:focus{
+  left:0;
+  top:0;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
 .topbar{
   background:var(--tint);
   color:var(--ink-soft);
@@ -85,361 +168,1245 @@ p{ margin:0 0 1.1em; max-width:38em; font-weight:400; }
   padding:8px 0;
   border-bottom:1px solid var(--line);
 }
-.topbar .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-.topbar a{ color:var(--accent-deep); font-weight:600; }
 
-/* ---------- Nav ---------- */
+.topbar .wrap{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.topbar a{
+  color:var(--accent-deep);
+  font-weight:600;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 header.site-header{
   background:var(--paper);
   border-bottom:1px solid var(--line);
-  position:sticky; top:0; z-index:100;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
+
 .nav-row{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
   padding:16px 0;
   gap:20px;
 }
+
 .brand{
-  display:flex; align-items:center; gap:10px;
-  font-size:1.1rem; font-weight:800; color:var(--ink);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.1rem;
+  font-weight:800;
+  color:var(--ink);
 }
-.brand:hover{ text-decoration:none; }
-.brand .mark{ width:32px; height:32px; flex:none; }
+
+.brand:hover{
+  text-decoration:none;
+}
+
+.brand .mark{
+  width:32px;
+  height:32px;
+  flex:none;
+}
+
 .brand .name em{
-  font-style:normal; color:var(--ink-soft); font-size:.6em; font-weight:600; display:block;
-  letter-spacing:.01em; margin-top:1px;
+  font-style:normal;
+  color:var(--ink-soft);
+  font-size:.6em;
+  font-weight:600;
+  display:block;
+  letter-spacing:.01em;
+  margin-top:1px;
 }
-nav.primary{ display:flex; }
+
+nav.primary{
+  display:flex;
+}
+
 nav.primary ul{
-  display:flex; flex-wrap:wrap; gap:2px 4px;
-  list-style:none; margin:0; padding:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2px 4px;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
+
 nav.primary a{
-  color:var(--ink); font-size:.95rem; font-weight:600; padding:9px 14px;
-  border-radius:999px; display:inline-block;
+  color:var(--ink);
+  font-size:.95rem;
+  font-weight:600;
+  padding:9px 14px;
+  border-radius:999px;
+  display:inline-block;
 }
-nav.primary a:hover{ background:var(--tint); text-decoration:none; }
+
+nav.primary a:hover{
+  background:var(--tint);
+  text-decoration:none;
+}
+
 nav.primary a[aria-current="page"]{
-  background:var(--ink); color:#fff;
-}
-.nav-toggle{ display:none; }
-
-@media (max-width: 880px){
-  .nav-toggle{
-    display:inline-flex; align-items:center; gap:8px;
-    background:none; border:1px solid var(--line); border-radius:999px;
-    padding:8px 14px; font-family:var(--sans); font-weight:600; font-size:.95rem; color:var(--ink);
-    cursor:pointer;
-  }
-  nav.primary{ display:none; width:100%; order:3; }
-  nav.primary.open{ display:block; }
-  nav.primary ul{ flex-direction:column; padding:10px 0 18px; }
-  .nav-row{ flex-wrap:wrap; }
+  background:var(--ink);
+  color:#fff;
 }
 
-/* ---------- Hero ---------- */
-.hero{ padding:60px 0 8px; position:relative; overflow:hidden; }
-.hero .wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:center; }
-.hero .eyebrow-tab{
-  display:inline-block; color:var(--accent-deep);
-  font-size:.85rem; font-weight:700; letter-spacing:.01em;
-  margin-bottom:14px;
-}
-.hero-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; align-items:center; }
-.hero-figure{ position:relative; }
-@media (max-width: 880px){
-  .hero .wrap{ grid-template-columns:1fr; }
-  .hero-figure{ order:-1; }
+.nav-toggle{
+  display:none;
 }
 
-/* ---------- Buttons ---------- */
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+  padding:68px 0 36px;
+}
+
+.hero .wrap{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.eyebrow-tab{
+  display:inline-block;
+  color:var(--accent-deep);
+  font-size:.85rem;
+  font-weight:700;
+  letter-spacing:.01em;
+  margin-bottom:12px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .btn{
-  display:inline-block; font-family:var(--sans); font-weight:700; font-size:.96rem;
-  padding:13px 24px; border-radius:999px; border:2px solid transparent;
+  display:inline-block;
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:.96rem;
+  padding:13px 24px;
+  border-radius:999px;
+  border:2px solid transparent;
   cursor:pointer;
 }
-.btn:hover{ text-decoration:none; }
-.btn-primary{ background:var(--accent); color:#fff; border-color:var(--accent); }
-.btn-primary:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
-.btn-outline{ background:transparent; color:var(--ink); border-color:var(--line); }
-.btn-outline:hover{ background:var(--tint); }
-.btn-urgent{ background:var(--rescue); color:#fff; border-color:var(--rescue); }
-.btn-urgent:hover{ background:#9c352e; border-color:#9c352e; }
 
-/* ---------- Sections ---------- */
-section{ padding:52px 0; }
-section.tinted{ background:var(--tint); }
-section.navy{ background:var(--tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-section.navy h2, section.navy h3{ color:var(--ink); }
-section.navy p{ color:var(--ink-soft); }
-.section-head{ max-width:44em; margin-bottom:32px; }
-.tab-label{
-  display:inline-block; font-size:.85rem; font-weight:700;
-  color:var(--accent-deep); margin-bottom:10px;
-}
-section.navy .tab-label{ color:var(--accent-deep); }
-
-.pulse-divider{ width:100%; height:34px; display:block; margin:8px 0 0; }
-
-/* ---------- Cards → plain list-style modules ---------- */
-.grid{ display:grid; gap:28px; }
-.grid-2{ grid-template-columns:repeat(2,1fr); }
-.grid-3{ grid-template-columns:repeat(3,1fr); }
-.grid-4{ grid-template-columns:repeat(4,1fr); }
-@media (max-width: 900px){ .grid-3, .grid-4{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width: 620px){ .grid-2, .grid-3, .grid-4{ grid-template-columns:1fr; } }
-
-.card{
-  background:transparent;
-  border:0;
-  border-top:2px solid var(--ink);
-  padding:16px 0 0;
-  border-radius:0;
-}
-.card.sage, .card.rescue{ border-top-color:var(--accent); }
-.card h3{ margin-bottom:.35em; }
-.card .meta{ font-size:.82rem; color:var(--accent-deep); font-weight:700; margin-bottom:8px; display:block; }
-
-/* app / tool feature card */
-.tool-card{
-  background:var(--tint); border:0; padding:26px; border-radius:var(--radius);
-  display:flex; flex-direction:column; gap:10px; height:100%;
-}
-.tool-card .tool-kicker{ font-size:.78rem; color:var(--accent-deep); font-weight:700; }
-.tool-card a.tool-link{ margin-top:auto; font-weight:700; }
-
-/* ---------- Tables (kept simple/plain) ---------- */
-.ref-table-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius); }
-table.ref-table{ width:100%; border-collapse:collapse; background:var(--paper); min-width:620px; }
-table.ref-table caption{ text-align:left; padding:14px 18px 0; font-size:1.05rem; font-weight:800; color:var(--ink); }
-table.ref-table th, table.ref-table td{
-  padding:12px 16px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; font-size:.95rem;
-}
-table.ref-table thead th{
-  background:var(--tint); color:var(--ink); font-weight:700; font-size:.85rem;
-}
-table.ref-table tbody tr:last-child td{ border-bottom:none; }
-.badge{
-  display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:12px;
-  color:#fff; white-space:nowrap; background:var(--accent);
+.btn:hover{
+  text-decoration:none;
 }
 
-/* ---------- Timeline / list ---------- */
-.stack{ display:flex; flex-direction:column; gap:26px; }
-.list-check{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-.list-check li{ padding-left:26px; position:relative; }
-.list-check li::before{
-  content:""; position:absolute; left:0; top:.55em; width:8px; height:8px;
-  background:var(--accent); border-radius:50%;
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  border-color:var(--accent);
 }
 
-/* ---------- Placeholder callouts ---------- */
-.placeholder{
-  border:1.5px dashed var(--accent);
+.btn-primary:hover{
+  background:var(--accent-deep);
+  border-color:var(--accent-deep);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section{
+  padding:58px 0;
+}
+
+section.tinted{
   background:var(--tint);
-  padding:20px 22px;
+}
+
+section.navy{
+  background:var(--tint);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.section-head{
+  max-width:44em;
+  margin-bottom:34px;
+}
+
+.tab-label{
+  display:inline-block;
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  margin-bottom:10px;
+}
+
+
+/* =========================================================
+   TEMPLATE NOTICE
+========================================================= */
+
+.placeholder{
+  border-left:4px solid var(--accent);
+  background:#fff;
+  padding:22px 24px;
   border-radius:var(--radius);
   color:var(--ink-soft);
   font-size:.95rem;
 }
-.placeholder strong{ color:var(--ink); }
 
-/* ---------- Case card ---------- */
-.case-card{ background:var(--tint); border:0; border-radius:var(--radius); padding:26px; }
-.case-card .case-num{ font-size:1.4rem; font-weight:800; color:var(--accent-deep); }
-.case-card dl{ margin:14px 0 0; display:grid; grid-template-columns:120px 1fr; gap:6px 14px; font-size:.93rem; }
-.case-card dt{ color:var(--ink-soft); font-weight:700; }
-.case-card dd{ margin:0; }
+.placeholder strong{
+  color:var(--ink);
+}
 
-/* ---------- Contact ---------- */
-.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
-@media (max-width:800px){ .contact-grid{ grid-template-columns:1fr; } }
-.info-line{ display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); }
-.info-line:last-child{ border-bottom:none; }
-.info-line .label{ min-width:120px; font-weight:700; color:var(--ink); }
 
-/* ---------- Stat strip (plain, inline numbers — sits right under a hero) ---------- */
-.stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px 20px; text-align:left; padding:28px 0 8px; }
-@media (max-width:700px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } }
-.stat .num{ font-size:2rem; font-weight:800; color:var(--accent); display:block; }
-.stat .label{ font-size:.85rem; color:var(--ink-soft); }
+/* =========================================================
+   CASE STUDIES
+========================================================= */
 
-/* ---------- Footer (plain, light) ---------- */
-footer.site-footer{
-  background:var(--tint); color:var(--ink-soft); padding:48px 0 26px; margin-top:40px;
+.case-list{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.case-card{
+  background:var(--tint);
+  border-radius:var(--radius);
+  padding:28px;
+}
+
+.case-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:22px;
+}
+
+.case-num{
+  color:var(--accent-deep);
+  font-size:.82rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  display:block;
+  margin-bottom:8px;
+}
+
+.case-card h3{
+  font-size:1.3rem;
+  margin-bottom:0;
+}
+
+.case-status{
+  flex:none;
+  display:inline-block;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--ink-soft);
+  border-radius:999px;
+  padding:5px 10px;
+  font-size:.72rem;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.case-details{
+  margin:0;
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:0;
+}
+
+.case-details dt,
+.case-details dd{
+  padding:13px 0;
   border-top:1px solid var(--line);
 }
-footer.site-footer h4{ color:var(--ink); font-size:.95rem; }
-footer.site-footer a{ color:var(--ink-soft); }
-footer.site-footer a:hover{ color:var(--accent-deep); }
-.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; }
-@media (max-width:800px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
-footer.site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
-.footer-bottom{
-  border-top:1px solid var(--line); margin-top:34px; padding-top:18px;
-  font-size:.85rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+
+.case-details dt{
+  color:var(--ink-soft);
+  font-size:.85rem;
+  font-weight:800;
 }
 
-/* ---------- Utility ---------- */
-.mt-0{ margin-top:0; }
-.center{ text-align:center; }
-.small{ font-size:.85rem; color:var(--ink-soft); }
-.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+.case-details dd{
+  margin:0;
+  color:var(--ink);
+}
+
+.case-details dd:last-child{
+  max-width:50em;
+}
+
+
+/* =========================================================
+   SOURCE GUIDANCE
+========================================================= */
+
+.source-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:16px;
+  max-width:48em;
+}
+
+.source-list li{
+  position:relative;
+  padding-left:28px;
+}
+
+.source-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.65em;
+  width:8px;
+  height:8px;
+  background:var(--accent);
+  border-radius:50%;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer.site-footer{
+  background:var(--tint);
+  color:var(--ink-soft);
+  padding:48px 0 26px;
+  margin-top:40px;
+  border-top:1px solid var(--line);
+}
+
+footer.site-footer h4{
+  color:var(--ink);
+  font-size:.95rem;
+}
+
+footer.site-footer a{
+  color:var(--ink-soft);
+}
+
+footer.site-footer a:hover{
+  color:var(--accent-deep);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:32px;
+}
+
+footer.site-footer ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:8px;
+}
+
+.footer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:34px;
+  padding-top:18px;
+  font-size:.85rem;
+
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:880px){
+
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    background:none;
+    border:1px solid var(--line);
+    border-radius:999px;
+
+    padding:8px 14px;
+
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:.95rem;
+
+    color:var(--ink);
+
+    cursor:pointer;
+  }
+
+  nav.primary{
+    display:none;
+    width:100%;
+    order:3;
+  }
+
+  nav.primary.open{
+    display:block;
+  }
+
+  nav.primary ul{
+    flex-direction:column;
+    padding:10px 0 18px;
+  }
+
+  .nav-row{
+    flex-wrap:wrap;
+  }
+
+  .case-header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .case-status{
+    align-self:flex-start;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media (max-width:620px){
+
+  body{
+    font-size:16px;
+  }
+
+  .wrap{
+    padding:0 20px;
+  }
+
+  .hero{
+    padding:48px 0 28px;
+  }
+
+  section{
+    padding:48px 0;
+  }
+
+  .case-card{
+    padding:22px;
+  }
+
+  .case-details{
+    grid-template-columns:1fr;
+  }
+
+  .case-details dt{
+    padding-bottom:3px;
+    border-bottom:0;
+  }
+
+  .case-details dd{
+    padding-top:3px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto !important;
+    transition:none !important;
+    animation:none !important;
+  }
+
+}
 
 </style>
 </head>
+
+
 <body>
-<a class="skip-link" href="#main">Skip to main content</a>
+
+<a class="skip-link" href="#main">
+  Skip to main content
+</a>
+
+
+<!-- =======================================================
+     TOP BAR
+======================================================= -->
+
 <div class="topbar">
+
   <div class="wrap">
-    <span>Having a medical emergency? Call 911 — this site is educational only.</span>
-    <span><a href="contact.html">Contact a certified EMT →</a></span>
+
+    <span>
+      Having a medical emergency? Call 911 — this site is educational only.
+    </span>
+
+    <span>
+      <a href="contact.html">
+        Contact a certified EMT →
+      </a>
+    </span>
+
   </div>
+
 </div>
+
+
+<!-- =======================================================
+     HEADER / NAVIGATION
+======================================================= -->
+
 <header class="site-header">
+
   <div class="wrap nav-row">
+
     <a class="brand" href="index.html">
-      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" fill="#211D17"/>
-        <path d="M4 21h6l3-8 5 15 4-11 3 4h11" fill="none" stroke="#E2811E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <svg
+        class="mark"
+        viewBox="0 0 40 40"
+        aria-hidden="true"
+      >
+
+        <circle
+          cx="20"
+          cy="20"
+          r="19"
+          fill="#211D17"
+        />
+
+        <path
+          d="M4 21h6l3-8 5 15 4-11 3 4h11"
+          fill="none"
+          stroke="#E2811E"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
       </svg>
-      <span class="name">[Organization Name]<em>EMS Education Initiative</em></span>
+
+      <span class="name">
+
+        [Organization Name]
+
+        <em>
+          EMS Education Initiative
+        </em>
+
+      </span>
+
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu ☰</button>
-    <nav class="primary" id="primary-nav" aria-label="Primary">
+
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      Menu ☰
+    </button>
+
+
+    <nav
+      class="primary"
+      id="primary-nav"
+      aria-label="Primary"
+    >
+
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="treatments.html">Treatments</a></li>
-        <li><a href="ecg.html">ECG Reading</a></li>
-        <li><a href="ai-innovation.html">AI &amp; Innovation</a></li>
-        <li><a href="cases.html" aria-current="page">Case Studies</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <a href="index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a href="education.html">
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="treatments.html">
+            Treatments
+          </a>
+        </li>
+
+        <li>
+          <a href="ecg.html">
+            ECG Reading
+          </a>
+        </li>
+
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; Innovation
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="cases.html"
+            aria-current="page"
+          >
+            Case Studies
+          </a>
+        </li>
+
+        <li>
+          <a href="resources.html">
+            Resources
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </nav>
+
   </div>
+
 </header>
 
+
 <main id="main">
-  <section class="hero" style="padding-bottom:16px;">
-    <div class="wrap" style="grid-template-columns:1fr;">
-      <span class="eyebrow-tab">Real cases</span>
-      <h1>Case studies, grounded in the published literature</h1>
-      <p class="lede">Real cases teach in a way that a textbook rhythm strip can't — but they only belong on this page with a real scientific citation attached. This section is being populated with case reports drawn from peer-reviewed sources.</p>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero">
+
+  <div class="wrap">
+
+    <span class="eyebrow-tab">
+      Real cases
+    </span>
+
+    <h1>
+      Case studies, grounded in the published literature
+    </h1>
+
+    <p class="lede">
+      Real cases can turn clinical concepts into memorable
+      lessons. Each case published here should be connected
+      to a verifiable scientific or professional source and
+      presented for educational purposes.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     TEMPLATE NOTICE
+======================================================= -->
+
+<section class="tinted">
+
+  <div class="wrap">
+
+    <div class="placeholder">
+
+      <strong>
+        This page is currently a template.
+      </strong>
+
+      The case entries below are placeholders and should not
+      be presented as real clinical cases until they have been
+      replaced with verified, citable material. Each published
+      case should identify its source and should avoid
+      unnecessary patient-identifying information.
+
     </div>
-  </section>
 
-  <section class="tinted">
-    <div class="wrap">
-      <div class="placeholder">
-        <strong>This section is a template, not a finished page.</strong> Each card below is a placeholder for a real, citable case — pulled from a published case report, journal article, or documented incident (with names and identifying details removed or already de-identified in the source). Replace the bracketed text in each card, and keep the citation field filled in with a real Vancouver-style reference. Delete any card you don't fill in before publishing.
-      </div>
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     CASE STUDIES
+======================================================= -->
+
+<section>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        Clinical teaching cases
+      </span>
+
+      <h2>
+        Published cases
+      </h2>
+
+      <p>
+        Use this section for concise case summaries that connect
+        field presentation, clinical management, and a specific
+        teaching point to the underlying published literature.
+      </p>
+
     </div>
-  </section>
 
-  <section>
-    <div class="wrap">
-      <div class="stack">
 
-        <div class="case-card">
-          <span class="case-num">Case 01</span>
-          <h3>[Case title — e.g., presenting complaint and key twist]</h3>
-          <dl>
-            <dt>Presentation</dt><dd>[Age/sex, chief complaint, key exam findings and vitals]</dd>
-            <dt>Field course</dt><dd>[What EMS did on scene and en route — treatments, response to treatment]</dd>
-            <dt>Teaching point</dt><dd>[The one clinical lesson this case is meant to illustrate]</dd>
-            <dt>Citation</dt><dd>[Author(s). Title. Journal. Year;Volume(Issue):pages. DOI or URL.]</dd>
-          </dl>
+    <div class="case-list">
+
+
+      <!-- CASE 01 -->
+
+      <article class="case-card">
+
+        <div class="case-header">
+
+          <div>
+
+            <span class="case-num">
+              Case 01
+            </span>
+
+            <h3>
+              [Case title — presenting complaint and key clinical twist]
+            </h3>
+
+          </div>
+
+          <span class="case-status">
+            PLACEHOLDER
+          </span>
+
         </div>
 
-        <div class="case-card">
-          <span class="case-num">Case 02</span>
-          <h3>[Case title]</h3>
-          <dl>
-            <dt>Presentation</dt><dd>[Age/sex, chief complaint, key exam findings and vitals]</dd>
-            <dt>Field course</dt><dd>[What EMS did on scene and en route]</dd>
-            <dt>Teaching point</dt><dd>[The one clinical lesson this case is meant to illustrate]</dd>
-            <dt>Citation</dt><dd>[Author(s). Title. Journal. Year;Volume(Issue):pages. DOI or URL.]</dd>
-          </dl>
+
+        <dl class="case-details">
+
+          <dt>
+            Presentation
+          </dt>
+
+          <dd>
+            [Age/sex, chief complaint, relevant history,
+            examination findings, vital signs, and initial
+            clinical impression.]
+          </dd>
+
+
+          <dt>
+            Field course
+          </dt>
+
+          <dd>
+            [Describe the EMS assessment, interventions,
+            treatment response, transport, and relevant
+            prehospital decision-making.]
+          </dd>
+
+
+          <dt>
+            Teaching point
+          </dt>
+
+          <dd>
+            [State the principal clinical lesson this case
+            is intended to illustrate.]
+          </dd>
+
+
+          <dt>
+            Citation
+          </dt>
+
+          <dd>
+            [Author(s). Title. Journal. Year;Volume(Issue):
+            pages. DOI or stable URL.]
+          </dd>
+
+        </dl>
+
+      </article>
+
+
+      <!-- CASE 02 -->
+
+      <article class="case-card">
+
+        <div class="case-header">
+
+          <div>
+
+            <span class="case-num">
+              Case 02
+            </span>
+
+            <h3>
+              [Case title]
+            </h3>
+
+          </div>
+
+          <span class="case-status">
+            PLACEHOLDER
+          </span>
+
         </div>
 
-        <div class="case-card">
-          <span class="case-num">Case 03</span>
-          <h3>[Case title]</h3>
-          <dl>
-            <dt>Presentation</dt><dd>[Age/sex, chief complaint, key exam findings and vitals]</dd>
-            <dt>Field course</dt><dd>[What EMS did on scene and en route]</dd>
-            <dt>Teaching point</dt><dd>[The one clinical lesson this case is meant to illustrate]</dd>
-            <dt>Citation</dt><dd>[Author(s). Title. Journal. Year;Volume(Issue):pages. DOI or URL.]</dd>
-          </dl>
+
+        <dl class="case-details">
+
+          <dt>
+            Presentation
+          </dt>
+
+          <dd>
+            [Age/sex, chief complaint, relevant history,
+            examination findings, vital signs, and initial
+            clinical impression.]
+          </dd>
+
+
+          <dt>
+            Field course
+          </dt>
+
+          <dd>
+            [Describe the EMS assessment, interventions,
+            treatment response, transport, and relevant
+            prehospital decision-making.]
+          </dd>
+
+
+          <dt>
+            Teaching point
+          </dt>
+
+          <dd>
+            [State the principal clinical lesson this case
+            is intended to illustrate.]
+          </dd>
+
+
+          <dt>
+            Citation
+          </dt>
+
+          <dd>
+            [Author(s). Title. Journal. Year;Volume(Issue):
+            pages. DOI or stable URL.]
+          </dd>
+
+        </dl>
+
+      </article>
+
+
+      <!-- CASE 03 -->
+
+      <article class="case-card">
+
+        <div class="case-header">
+
+          <div>
+
+            <span class="case-num">
+              Case 03
+            </span>
+
+            <h3>
+              [Case title]
+            </h3>
+
+          </div>
+
+          <span class="case-status">
+            PLACEHOLDER
+          </span>
+
         </div>
 
-      </div>
-    </div>
-  </section>
 
-  <section class="navy">
-    <div class="wrap">
-      <span class="tab-label">Where to find real, citable cases</span>
-      <h2>A few starting points</h2>
-      <ul class="list-check" style="color:#D8CDB1; max-width:44em;">
-        <li><em>Prehospital Emergency Care</em> and <em>Journal of Emergency Medical Services (JEMS)</em> both publish case reports and reviews specific to EMS.</li>
-        <li>PubMed and PubMed Central (free full text) for peer-reviewed prehospital case reports — search "EMS case report" plus the condition.</li>
-        <li>NAEMSP (National Association of EMS Physicians) and state EMS office case reviews often publish de-identified incident summaries for education.</li>
-        <li>Your own agency's quality-improvement or case-review process — with proper de-identification and any required approvals before publishing.</li>
-      </ul>
+        <dl class="case-details">
+
+          <dt>
+            Presentation
+          </dt>
+
+          <dd>
+            [Age/sex, chief complaint, relevant history,
+            examination findings, vital signs, and initial
+            clinical impression.]
+          </dd>
+
+
+          <dt>
+            Field course
+          </dt>
+
+          <dd>
+            [Describe the EMS assessment, interventions,
+            treatment response, transport, and relevant
+            prehospital decision-making.]
+          </dd>
+
+
+          <dt>
+            Teaching point
+          </dt>
+
+          <dd>
+            [State the principal clinical lesson this case
+            is intended to illustrate.]
+          </dd>
+
+
+          <dt>
+            Citation
+          </dt>
+
+          <dd>
+            [Author(s). Title. Journal. Year;Volume(Issue):
+            pages. DOI or stable URL.]
+          </dd>
+
+        </dl>
+
+      </article>
+
+
     </div>
-  </section>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     SOURCES
+======================================================= -->
+
+<section class="navy">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        Finding source material
+      </span>
+
+      <h2>
+        Where to find citable cases
+      </h2>
+
+      <p>
+        Build the case library from sources that can be checked
+        by readers rather than from anonymous internet anecdotes
+        or reconstructed scenarios presented as real events.
+      </p>
+
+    </div>
+
+
+    <ul class="source-list">
+
+      <li>
+        Search peer-reviewed EMS and emergency medicine
+        literature for published case reports, reviews,
+        and documented prehospital cases.
+      </li>
+
+      <li>
+        Use PubMed and PubMed Central to locate peer-reviewed
+        articles and freely available full-text material.
+      </li>
+
+      <li>
+        Professional EMS organizations and state EMS authorities
+        may publish de-identified educational case reviews and
+        incident analyses.
+      </li>
+
+      <li>
+        Agency quality-improvement or case-review material can
+        be educational when it has been appropriately
+        de-identified and cleared for external publication.
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     EDUCATIONAL DISCLAIMER
+======================================================= -->
+
+<section>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="tab-label">
+        Important information
+      </span>
+
+      <h2>
+        Case studies are educational material
+      </h2>
+
+      <p>
+        Published cases describe individual patients or events
+        and should not be treated as universal treatment
+        protocols. Clinical decisions should follow current
+        EMS education, applicable state and local requirements,
+        agency protocols, medical direction, and current
+        evidence.
+      </p>
+
+      <p>
+        Patient information should be presented only when
+        appropriate and should be de-identified whenever
+        possible. Do not publish protected or identifying
+        information without the necessary authorization.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 </main>
 
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer class="site-footer">
+
   <div class="wrap footer-grid">
+
+
     <div>
-      <h4>[Organization Name]</h4>
-      <p class="small">A nonprofit dedicated to open EMS education, prehospital clinical reference, and access to a certified provider when you need one.</p>
+
+      <h4>
+        [Organization Name]
+      </h4>
+
+      <p class="small">
+        A nonprofit dedicated to open EMS education,
+        prehospital clinical reference, and access to
+        certified emergency medical professionals.
+      </p>
+
     </div>
+
+
     <div>
-      <h4>Explore</h4>
+
+      <h4>
+        Explore
+      </h4>
+
       <ul>
-        <li><a href="education.html">Standard EMS education</a></li>
-        <li><a href="treatments.html">Treatment reference</a></li>
-        <li><a href="ecg.html">ECG reading</a></li>
-        <li><a href="cases.html">Case studies</a></li>
+
+        <li>
+          <a href="education.html">
+            Standard EMS education
+          </a>
+        </li>
+
+        <li>
+          <a href="treatments.html">
+            Treatment reference
+          </a>
+        </li>
+
+        <li>
+          <a href="ecg.html">
+            ECG reading
+          </a>
+        </li>
+
+        <li>
+          <a href="cases.html">
+            Case studies
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
     <div>
-      <h4>Resources</h4>
+
+      <h4>
+        Resources
+      </h4>
+
       <ul>
-        <li><a href="resources.html">Study guides &amp; tools</a></li>
-        <li><a href="ai-innovation.html">AI &amp; innovation</a></li>
-        <li><a href="contact.html">Contact a certified EMT</a></li>
+
+        <li>
+          <a href="resources.html">
+            Study guides &amp; tools
+          </a>
+        </li>
+
+        <li>
+          <a href="ai-innovation.html">
+            AI &amp; innovation
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
     <div>
-      <h4>Get in touch</h4>
+
+      <h4>
+        Get in touch
+      </h4>
+
       <ul>
-        <li><a href="mailto:info@example.org">info@example.org</a></li>
-        <li><a href="contact.html">Contact page</a></li>
+
+        <li>
+          <a href="mailto:info@example.org">
+            info@example.org
+          </a>
+        </li>
+
+        <li>
+          <a href="contact.html">
+            Contact page
+          </a>
+        </li>
+
       </ul>
+
     </div>
+
+
   </div>
+
+
   <div class="wrap footer-bottom">
-    <span>© 2026 [Organization Name]. Educational content only — not a substitute for professional medical direction, certification training, or emergency care.</span>
-    <span><a href="contact.html">Contact</a></span>
+
+    <span>
+      © 2026 [Organization Name].
+      Educational content only — not a substitute for
+      professional medical direction, certification training,
+      or emergency care.
+    </span>
+
+    <span>
+      <a href="contact.html">
+        Contact
+      </a>
+    </span>
+
   </div>
+
 </footer>
+
+
+<!-- =======================================================
+     MOBILE NAVIGATION
+======================================================= -->
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.querySelector('nav.primary');
-  if (!toggle || !nav) return;
-  toggle.addEventListener('click', function () {
-    var isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-});
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function(){
+
+    var toggle =
+      document.querySelector('.nav-toggle');
+
+    var nav =
+      document.querySelector('nav.primary');
+
+
+    if(!toggle || !nav){
+      return;
+    }
+
+
+    toggle.addEventListener(
+      'click',
+      function(){
+
+        var isOpen =
+          nav.classList.toggle('open');
+
+
+        toggle.setAttribute(
+          'aria-expanded',
+          isOpen ? 'true' : 'false'
+        );
+
+      }
+    );
+
+  }
+);
 
 </script>
+
+
 </body>
 </html>
+
