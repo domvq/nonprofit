@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Case Studies | [Organization Name]</title>
+<title>EMS Case Studies | [Organization Name]</title>
 
 <meta
-  name="description"
-  content="EMS case studies and clinical teaching cases grounded in published medical and prehospital literature."
+name="description"
+content="Real, cited EMS case studies used for education, clinical reasoning, and prehospital training."
+
 >
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +22,15 @@
 >
 
 <style>
-
 /* =========================================================
    DESIGN TOKENS
-========================================================= */
+   ========================================================= */
 
 :root{
   --paper:#FFFFFF;
   --tint:#FDF6EC;
+  --card:#FFFFFF;
+
   --ink:#211D17;
   --ink-soft:#6B6459;
 
@@ -45,11 +47,6 @@
   --max:1100px;
   --radius:10px;
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 *{
   box-sizing:border-box;
@@ -85,7 +82,7 @@ a:hover{
 
 :focus-visible{
   outline:3px solid var(--accent);
-  outline-offset:3px;
+  outline-offset:2px;
 }
 
 h1,
@@ -121,7 +118,7 @@ p{
 .lede{
   font-size:1.1rem;
   color:var(--ink-soft);
-  max-width:40em;
+  max-width:34em;
 }
 
 .wrap{
@@ -130,15 +127,17 @@ p{
   padding:0 28px;
 }
 
-.small{
-  font-size:.88rem;
-  color:var(--ink-soft);
+@media (prefers-reduced-motion:reduce){
+  *{
+    scroll-behavior:auto !important;
+    transition:none !important;
+    animation:none !important;
+  }
 }
 
-
 /* =========================================================
-   ACCESSIBILITY
-========================================================= */
+   SKIP LINK
+   ========================================================= */
 
 .skip-link{
   position:absolute;
@@ -156,10 +155,9 @@ p{
   top:0;
 }
 
-
 /* =========================================================
    TOP BAR
-========================================================= */
+   ========================================================= */
 
 .topbar{
   background:var(--tint);
@@ -181,17 +179,17 @@ p{
   font-weight:600;
 }
 
-
 /* =========================================================
-   NAVIGATION
-========================================================= */
+   MAIN NAVIGATION
+   ========================================================= */
 
 header.site-header{
-  background:var(--paper);
+  background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
   position:sticky;
   top:0;
   z-index:100;
+  backdrop-filter:blur(8px);
 }
 
 .nav-row{
@@ -267,34 +265,154 @@ nav.primary a[aria-current="page"]{
   display:none;
 }
 
+@media(max-width:880px){
+
+  .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:none;
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:8px 14px;
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:.95rem;
+    color:var(--ink);
+    cursor:pointer;
+  }
+
+  nav.primary{
+    display:none;
+    width:100%;
+    order:3;
+  }
+
+  nav.primary.open{
+    display:block;
+  }
+
+  nav.primary ul{
+    flex-direction:column;
+    padding:10px 0 18px;
+  }
+
+  nav.primary a{
+    width:100%;
+  }
+
+  .nav-row{
+    flex-wrap:wrap;
+  }
+}
+
+/* =========================================================
+   RESOURCE NAVIGATION
+   ========================================================= */
+
+.resource-nav{
+  background:var(--ink);
+  color:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.resource-nav .wrap{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+
+.resource-nav-label{
+  color:#F3A34C;
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-right:8px;
+}
+
+.resource-nav a{
+  color:#fff;
+  font-size:.86rem;
+  font-weight:600;
+  padding:6px 11px;
+  border-radius:999px;
+}
+
+.resource-nav a:hover{
+  background:#3A342D;
+  text-decoration:none;
+}
+
+@media(max-width:650px){
+
+  .resource-nav .wrap{
+    justify-content:center;
+  }
+
+  .resource-nav-label{
+    width:100%;
+    text-align:center;
+    margin-right:0;
+    margin-bottom:2px;
+  }
+}
 
 /* =========================================================
    HERO
-========================================================= */
+   ========================================================= */
 
 .hero{
-  padding:68px 0 36px;
+  padding:60px 0 8px;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero .wrap{
   display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
+  grid-template-columns:1.15fr .85fr;
+  gap:48px;
+  align-items:center;
 }
 
-.eyebrow-tab{
+.hero .eyebrow-tab{
   display:inline-block;
   color:var(--accent-deep);
   font-size:.85rem;
   font-weight:700;
   letter-spacing:.01em;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:24px;
+  align-items:center;
+}
+
+.hero-figure{
+  position:relative;
+}
+
+@media(max-width:880px){
+
+  .hero .wrap{
+    grid-template-columns:1fr;
+  }
+
+  .hero-figure{
+    order:-1;
+  }
+}
 
 /* =========================================================
    BUTTONS
-========================================================= */
+   ========================================================= */
 
 .btn{
   display:inline-block;
@@ -322,13 +440,33 @@ nav.primary a[aria-current="page"]{
   border-color:var(--accent-deep);
 }
 
+.btn-outline{
+  background:transparent;
+  color:var(--ink);
+  border-color:var(--line);
+}
+
+.btn-outline:hover{
+  background:var(--tint);
+}
+
+.btn-urgent{
+  background:var(--rescue);
+  color:#fff;
+  border-color:var(--rescue);
+}
+
+.btn-urgent:hover{
+  background:#9c352e;
+  border-color:#9c352e;
+}
 
 /* =========================================================
    SECTIONS
-========================================================= */
+   ========================================================= */
 
 section{
-  padding:58px 0;
+  padding:52px 0;
 }
 
 section.tinted{
@@ -341,9 +479,18 @@ section.navy{
   border-bottom:1px solid var(--line);
 }
 
+section.navy h2,
+section.navy h3{
+  color:var(--ink);
+}
+
+section.navy p{
+  color:var(--ink-soft);
+}
+
 .section-head{
   max-width:44em;
-  margin-bottom:34px;
+  margin-bottom:32px;
 }
 
 .tab-label{
@@ -354,139 +501,175 @@ section.navy{
   margin-bottom:10px;
 }
 
-
-/* =========================================================
-   TEMPLATE NOTICE
-========================================================= */
-
-.placeholder{
-  border-left:4px solid var(--accent);
-  background:#fff;
-  padding:22px 24px;
-  border-radius:var(--radius);
-  color:var(--ink-soft);
-  font-size:.95rem;
+section.navy .tab-label{
+  color:var(--accent-deep);
 }
 
-.placeholder strong{
-  color:var(--ink);
-}
-
-
 /* =========================================================
-   CASE STUDIES
-========================================================= */
+   GRID / CARDS
+   ========================================================= */
 
-.case-list{
-  display:flex;
-  flex-direction:column;
+.grid{
+  display:grid;
   gap:28px;
 }
 
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+
+@media(max-width:900px){
+
+  .grid-3,
+  .grid-4{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:620px){
+
+  .grid-2,
+  .grid-3,
+  .grid-4{
+    grid-template-columns:1fr;
+  }
+}
+
+.card{
+  background:transparent;
+  border:0;
+  border-top:2px solid var(--ink);
+  padding:16px 0 0;
+  border-radius:0;
+}
+
+.card.sage,
+.card.rescue{
+  border-top-color:var(--accent);
+}
+
+.card h3{
+  margin-bottom:.35em;
+}
+
+.card .meta{
+  font-size:.82rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  margin-bottom:8px;
+  display:block;
+}
+
+/* =========================================================
+   CASE CARDS
+   ========================================================= */
+
 .case-card{
   background:var(--tint);
+  border:0;
   border-radius:var(--radius);
-  padding:28px;
+  padding:26px;
+  height:100%;
 }
 
-.case-header{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:22px;
-}
-
-.case-num{
-  color:var(--accent-deep);
-  font-size:.82rem;
+.case-card .case-num{
+  font-size:.8rem;
   font-weight:800;
+  color:var(--accent-deep);
   text-transform:uppercase;
-  letter-spacing:.06em;
-  display:block;
-  margin-bottom:8px;
+  letter-spacing:.04em;
 }
 
 .case-card h3{
-  font-size:1.3rem;
-  margin-bottom:0;
+  margin-top:8px;
 }
 
-.case-status{
-  flex:none;
-  display:inline-block;
-  background:#fff;
-  border:1px solid var(--line);
-  color:var(--ink-soft);
-  border-radius:999px;
-  padding:5px 10px;
-  font-size:.72rem;
-  font-weight:700;
-  white-space:nowrap;
-}
-
-.case-details{
-  margin:0;
+.case-card dl{
+  margin:18px 0 0;
   display:grid;
-  grid-template-columns:140px 1fr;
-  gap:0;
+  grid-template-columns:120px 1fr;
+  gap:10px 16px;
+  font-size:.93rem;
 }
 
-.case-details dt,
-.case-details dd{
-  padding:13px 0;
+.case-card dt{
+  color:var(--ink-soft);
+  font-weight:700;
+}
+
+.case-card dd{
+  margin:0;
+}
+
+.case-card .citation{
+  padding-top:10px;
+  margin-top:4px;
   border-top:1px solid var(--line);
 }
 
-.case-details dt{
-  color:var(--ink-soft);
-  font-size:.85rem;
-  font-weight:800;
-}
-
-.case-details dd{
-  margin:0;
-  color:var(--ink);
-}
-
-.case-details dd:last-child{
-  max-width:50em;
-}
-
-
 /* =========================================================
-   SOURCE GUIDANCE
-========================================================= */
+   LISTS
+   ========================================================= */
 
-.source-list{
+.stack{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.list-check{
   list-style:none;
   margin:0;
   padding:0;
   display:grid;
-  gap:16px;
-  max-width:48em;
+  gap:12px;
 }
 
-.source-list li{
+.list-check li{
+  padding-left:26px;
   position:relative;
-  padding-left:28px;
 }
 
-.source-list li::before{
+.list-check li::before{
   content:"";
   position:absolute;
   left:0;
-  top:.65em;
+  top:.55em;
   width:8px;
   height:8px;
   background:var(--accent);
   border-radius:50%;
 }
 
+/* =========================================================
+   REFERENCES
+   ========================================================= */
+
+.references{
+  margin:0;
+  padding-left:22px;
+}
+
+.references li{
+  margin-bottom:16px;
+  padding-left:4px;
+}
+
+.references li:last-child{
+  margin-bottom:0;
+}
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 footer.site-footer{
   background:var(--tint);
@@ -515,6 +698,13 @@ footer.site-footer a:hover{
   gap:32px;
 }
 
+@media(max-width:800px){
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 footer.site-footer ul{
   list-style:none;
   margin:0;
@@ -528,135 +718,30 @@ footer.site-footer ul{
   margin-top:34px;
   padding-top:18px;
   font-size:.85rem;
-
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
   gap:10px;
 }
 
-
 /* =========================================================
-   MOBILE
-========================================================= */
+   UTILITY
+   ========================================================= */
 
-@media (max-width:880px){
-
-  .nav-toggle{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    background:none;
-    border:1px solid var(--line);
-    border-radius:999px;
-
-    padding:8px 14px;
-
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:.95rem;
-
-    color:var(--ink);
-
-    cursor:pointer;
-  }
-
-  nav.primary{
-    display:none;
-    width:100%;
-    order:3;
-  }
-
-  nav.primary.open{
-    display:block;
-  }
-
-  nav.primary ul{
-    flex-direction:column;
-    padding:10px 0 18px;
-  }
-
-  .nav-row{
-    flex-wrap:wrap;
-  }
-
-  .case-header{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .case-status{
-    align-self:flex-start;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-}
-
-@media (max-width:620px){
-
-  body{
-    font-size:16px;
-  }
-
-  .wrap{
-    padding:0 20px;
-  }
-
-  .hero{
-    padding:48px 0 28px;
-  }
-
-  section{
-    padding:48px 0;
-  }
-
-  .case-card{
-    padding:22px;
-  }
-
-  .case-details{
-    grid-template-columns:1fr;
-  }
-
-  .case-details dt{
-    padding-bottom:3px;
-    border-bottom:0;
-  }
-
-  .case-details dd{
-    padding-top:3px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media (prefers-reduced-motion:reduce){
-
-  *{
-    scroll-behavior:auto !important;
-    transition:none !important;
-    animation:none !important;
-  }
-
+.small{
+  font-size:.85rem;
+  color:var(--ink-soft);
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
 <a class="skip-link" href="#main">
   Skip to main content
 </a>
-
 
 <!-- =======================================================
      TOP BAR
@@ -666,562 +751,860 @@ footer.site-footer ul{
 
   <div class="wrap">
 
-    <span>
-      Having a medical emergency? Call 911 — this site is educational only.
-    </span>
+```
+<span>
+  Having a medical emergency? Call 911 — this site is educational only.
+</span>
 
-    <span>
-      <a href="contact.html">
-        Contact a certified EMT →
-      </a>
-    </span>
+<span>
+  <a href="contact.html">
+    Contact a certified EMT →
+  </a>
+</span>
+```
 
   </div>
 
 </div>
 
-
 <!-- =======================================================
-     HEADER / NAVIGATION
+     MAIN NAVIGATION
 ======================================================= -->
 
 <header class="site-header">
 
   <div class="wrap nav-row">
 
-    <a class="brand" href="index.html">
+```
+<a class="brand" href="index.html">
 
-      <svg
-        class="mark"
-        viewBox="0 0 40 40"
-        aria-hidden="true"
+  <svg
+    class="mark"
+    viewBox="0 0 40 40"
+    aria-hidden="true"
+  >
+
+    <circle
+      cx="20"
+      cy="20"
+      r="19"
+      fill="#211D17"
+    />
+
+    <path
+      d="M4 21h6l3-8 5 15 4-11 3 4h11"
+      fill="none"
+      stroke="#E2811E"
+      stroke-width="2.4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+  </svg>
+
+  <span class="name">
+
+    [Organization Name]
+
+    <em>
+      EMS Education Initiative
+    </em>
+
+  </span>
+
+</a>
+
+
+<button
+  class="nav-toggle"
+  aria-expanded="false"
+  aria-controls="primary-nav"
+  type="button"
+>
+  Menu ☰
+</button>
+
+
+<nav
+  class="primary"
+  id="primary-nav"
+  aria-label="Primary"
+>
+
+  <ul>
+
+    <li>
+      <a href="index.html">
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a href="education.html">
+        Education
+      </a>
+    </li>
+
+    <li>
+      <a href="treatments.html">
+        Treatments
+      </a>
+    </li>
+
+    <li>
+      <a href="ecg.html">
+        ECG Reading
+      </a>
+    </li>
+
+    <li>
+      <a href="ai-innovation.html">
+        AI &amp; Innovation
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="cases.html"
+        aria-current="page"
       >
+        Case Studies
+      </a>
+    </li>
 
-        <circle
-          cx="20"
-          cy="20"
-          r="19"
-          fill="#211D17"
-        />
+    <li>
+      <a href="resources.html">
+        Resources
+      </a>
+    </li>
 
-        <path
-          d="M4 21h6l3-8 5 15 4-11 3 4h11"
-          fill="none"
-          stroke="#E2811E"
-          stroke-width="2.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
+    <li>
+      <a href="contact.html">
+        Contact
+      </a>
+    </li>
 
-      </svg>
+  </ul>
 
-      <span class="name">
-
-        [Organization Name]
-
-        <em>
-          EMS Education Initiative
-        </em>
-
-      </span>
-
-    </a>
-
-
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="primary-nav"
-    >
-      Menu ☰
-    </button>
-
-
-    <nav
-      class="primary"
-      id="primary-nav"
-      aria-label="Primary"
-    >
-
-      <ul>
-
-        <li>
-          <a href="index.html">
-            Home
-          </a>
-        </li>
-
-        <li>
-          <a href="education.html">
-            Education
-          </a>
-        </li>
-
-        <li>
-          <a href="treatments.html">
-            Treatments
-          </a>
-        </li>
-
-        <li>
-          <a href="ecg.html">
-            ECG Reading
-          </a>
-        </li>
-
-        <li>
-          <a href="ai-innovation.html">
-            AI &amp; Innovation
-          </a>
-        </li>
-
-        <li>
-          <a
-            href="cases.html"
-            aria-current="page"
-          >
-            Case Studies
-          </a>
-        </li>
-
-        <li>
-          <a href="resources.html">
-            Resources
-          </a>
-        </li>
-
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
-
-      </ul>
-
-    </nav>
+</nav>
+```
 
   </div>
 
 </header>
 
+<!-- =======================================================
+     RESOURCE NAVIGATION
+======================================================= -->
+
+<div class="resource-nav">
+
+  <div class="wrap">
+
+```
+<span class="resource-nav-label">
+  Explore
+</span>
+
+<a href="ecg.html">
+  ECG Reading
+</a>
+
+<a href="ai-innovation.html">
+  AI &amp; Innovation
+</a>
+
+<a href="education.html">
+  Education
+</a>
+
+<a href="cases.html">
+  Real EMS Cases
+</a>
+```
+
+  </div>
+
+</div>
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
 
 <main id="main">
-
 
 <!-- =======================================================
      HERO
 ======================================================= -->
 
-<section class="hero">
+<section
+  class="hero"
+  style="padding-bottom:16px;"
+>
 
-  <div class="wrap">
+  <div
+    class="wrap"
+    style="grid-template-columns:1fr;"
+  >
 
-    <span class="eyebrow-tab">
-      Real cases
-    </span>
+```
+<span class="eyebrow-tab">
+  Real EMS cases
+</span>
 
-    <h1>
-      Case studies, grounded in the published literature
-    </h1>
+<h1>
+  Case studies that turn real calls into clinical lessons
+</h1>
 
-    <p class="lede">
-      Real cases can turn clinical concepts into memorable
-      lessons. Each case published here should be connected
-      to a verifiable scientific or professional source and
-      presented for educational purposes.
-    </p>
+<p class="lede">
+  Real cases teach something a textbook rhythm strip cannot:
+  how presentation, assessment, treatment, and clinical reasoning
+  unfold when the situation is moving. Every case on this page is
+  intended to be grounded in a published or documented source,
+  with identifying information removed or already de-identified.
+</p>
+```
 
   </div>
 
 </section>
 
-
 <!-- =======================================================
-     TEMPLATE NOTICE
+     CASE STUDIES
 ======================================================= -->
 
 <section class="tinted">
 
   <div class="wrap">
 
-    <div class="placeholder">
+```
+<div class="section-head">
 
-      <strong>
-        This page is currently a template.
-      </strong>
+  <span class="tab-label">
+    Published cases
+  </span>
 
-      The case entries below are placeholders and should not
-      be presented as real clinical cases until they have been
-      replaced with verified, citable material. Each published
-      case should identify its source and should avoid
-      unnecessary patient-identifying information.
+  <h2>
+    What happened — and what the crew needed to recognize
+  </h2>
 
-    </div>
+  <p>
+    These cases are presented for education and clinical reasoning.
+    They are not substitutes for local protocols, medical direction,
+    certification training, or patient-specific clinical judgment.
+  </p>
+
+</div>
+
+
+<div class="grid grid-2">
+
+
+  <!-- CASE 01 -->
+
+  <article class="case-card">
+
+    <span class="case-num">
+      Case 01
+    </span>
+
+    <h3>
+      [Case title — presenting complaint and key clinical twist]
+    </h3>
+
+    <dl>
+
+      <dt>
+        Presentation
+      </dt>
+
+      <dd>
+        [Age/sex, chief complaint, relevant history, key examination
+        findings, and initial vital signs.]
+      </dd>
+
+
+      <dt>
+        Field course
+      </dt>
+
+      <dd>
+        [What EMS assessed and performed on scene and during transport,
+        including treatments and response.]
+      </dd>
+
+
+      <dt>
+        Teaching point
+      </dt>
+
+      <dd>
+        [The central clinical lesson this case illustrates.]
+      </dd>
+
+
+      <dt>
+        Source
+      </dt>
+
+      <dd class="citation">
+        [Author(s). Title. Journal. Year;Volume(Issue):pages.
+        DOI or URL.]
+      </dd>
+
+    </dl>
+
+  </article>
+
+
+  <!-- CASE 02 -->
+
+  <article class="case-card">
+
+    <span class="case-num">
+      Case 02
+    </span>
+
+    <h3>
+      [Case title — presenting complaint and key clinical twist]
+    </h3>
+
+    <dl>
+
+      <dt>
+        Presentation
+      </dt>
+
+      <dd>
+        [Age/sex, chief complaint, relevant history, key examination
+        findings, and initial vital signs.]
+      </dd>
+
+
+      <dt>
+        Field course
+      </dt>
+
+      <dd>
+        [What EMS assessed and performed on scene and during transport,
+        including treatments and response.]
+      </dd>
+
+
+      <dt>
+        Teaching point
+      </dt>
+
+      <dd>
+        [The central clinical lesson this case illustrates.]
+      </dd>
+
+
+      <dt>
+        Source
+      </dt>
+
+      <dd class="citation">
+        [Author(s). Title. Journal. Year;Volume(Issue):pages.
+        DOI or URL.]
+      </dd>
+
+    </dl>
+
+  </article>
+
+
+  <!-- CASE 03 -->
+
+  <article class="case-card">
+
+    <span class="case-num">
+      Case 03
+    </span>
+
+    <h3>
+      [Case title — presenting complaint and key clinical twist]
+    </h3>
+
+    <dl>
+
+      <dt>
+        Presentation
+      </dt>
+
+      <dd>
+        [Age/sex, chief complaint, relevant history, key examination
+        findings, and initial vital signs.]
+      </dd>
+
+
+      <dt>
+        Field course
+      </dt>
+
+      <dd>
+        [What EMS assessed and performed on scene and during transport,
+        including treatments and response.]
+      </dd>
+
+
+      <dt>
+        Teaching point
+      </dt>
+
+      <dd>
+        [The central clinical lesson this case illustrates.]
+      </dd>
+
+
+      <dt>
+        Source
+      </dt>
+
+      <dd class="citation">
+        [Author(s). Title. Journal. Year;Volume(Issue):pages.
+        DOI or URL.]
+      </dd>
+
+    </dl>
+
+  </article>
+
+
+  <!-- CASE 04 -->
+
+  <article class="case-card">
+
+    <span class="case-num">
+      Case 04
+    </span>
+
+    <h3>
+      [Case title — presenting complaint and key clinical twist]
+    </h3>
+
+    <dl>
+
+      <dt>
+        Presentation
+      </dt>
+
+      <dd>
+        [Age/sex, chief complaint, relevant history, key examination
+        findings, and initial vital signs.]
+      </dd>
+
+
+      <dt>
+        Field course
+      </dt>
+
+      <dd>
+        [What EMS assessed and performed on scene and during transport,
+        including treatments and response.]
+      </dd>
+
+
+      <dt>
+        Teaching point
+      </dt>
+
+      <dd>
+        [The central clinical lesson this case illustrates.]
+      </dd>
+
+
+      <dt>
+        Source
+      </dt>
+
+      <dd class="citation">
+        [Author(s). Title. Journal. Year;Volume(Issue):pages.
+        DOI or URL.]
+      </dd>
+
+    </dl>
+
+  </article>
+
+</div>
+```
 
   </div>
 
 </section>
 
-
 <!-- =======================================================
-     CASE STUDIES
+     WHY CASE REPORTS MATTER
 ======================================================= -->
 
 <section>
 
   <div class="wrap">
 
-    <div class="section-head">
+```
+<div class="section-head">
 
-      <span class="tab-label">
-        Clinical teaching cases
-      </span>
+  <span class="tab-label">
+    Why case reports matter
+  </span>
 
-      <h2>
-        Published cases
-      </h2>
+  <h2>
+    A single unusual presentation can expose a major clinical lesson
+  </h2>
 
-      <p>
-        Use this section for concise case summaries that connect
-        field presentation, clinical management, and a specific
-        teaching point to the underlying published literature.
-      </p>
+</div>
 
-    </div>
+<div class="grid grid-3">
 
+  <div class="card">
 
-    <div class="case-list">
+    <h3>
+      Recognition
+    </h3>
 
+    <p class="small">
+      Case reports show how uncommon or misleading presentations
+      actually appeared at the bedside or in the field.
+    </p>
 
-      <!-- CASE 01 -->
+  </div>
 
-      <article class="case-card">
 
-        <div class="case-header">
+  <div class="card sage">
 
-          <div>
+    <h3>
+      Clinical reasoning
+    </h3>
 
-            <span class="case-num">
-              Case 01
-            </span>
+    <p class="small">
+      They make the decision process visible — what clinicians
+      considered, what changed their differential, and what happened
+      after treatment.
+    </p>
 
-            <h3>
-              [Case title — presenting complaint and key clinical twist]
-            </h3>
+  </div>
 
-          </div>
 
-          <span class="case-status">
-            PLACEHOLDER
-          </span>
+  <div class="card">
 
-        </div>
+    <h3>
+      Pattern recognition
+    </h3>
 
+    <p class="small">
+      Reviewing multiple cases helps providers connect symptoms,
+      vital signs, ECG findings, treatment response, and disposition.
+    </p>
 
-        <dl class="case-details">
+  </div>
 
-          <dt>
-            Presentation
-          </dt>
-
-          <dd>
-            [Age/sex, chief complaint, relevant history,
-            examination findings, vital signs, and initial
-            clinical impression.]
-          </dd>
-
-
-          <dt>
-            Field course
-          </dt>
-
-          <dd>
-            [Describe the EMS assessment, interventions,
-            treatment response, transport, and relevant
-            prehospital decision-making.]
-          </dd>
-
-
-          <dt>
-            Teaching point
-          </dt>
-
-          <dd>
-            [State the principal clinical lesson this case
-            is intended to illustrate.]
-          </dd>
-
-
-          <dt>
-            Citation
-          </dt>
-
-          <dd>
-            [Author(s). Title. Journal. Year;Volume(Issue):
-            pages. DOI or stable URL.]
-          </dd>
-
-        </dl>
-
-      </article>
-
-
-      <!-- CASE 02 -->
-
-      <article class="case-card">
-
-        <div class="case-header">
-
-          <div>
-
-            <span class="case-num">
-              Case 02
-            </span>
-
-            <h3>
-              [Case title]
-            </h3>
-
-          </div>
-
-          <span class="case-status">
-            PLACEHOLDER
-          </span>
-
-        </div>
-
-
-        <dl class="case-details">
-
-          <dt>
-            Presentation
-          </dt>
-
-          <dd>
-            [Age/sex, chief complaint, relevant history,
-            examination findings, vital signs, and initial
-            clinical impression.]
-          </dd>
-
-
-          <dt>
-            Field course
-          </dt>
-
-          <dd>
-            [Describe the EMS assessment, interventions,
-            treatment response, transport, and relevant
-            prehospital decision-making.]
-          </dd>
-
-
-          <dt>
-            Teaching point
-          </dt>
-
-          <dd>
-            [State the principal clinical lesson this case
-            is intended to illustrate.]
-          </dd>
-
-
-          <dt>
-            Citation
-          </dt>
-
-          <dd>
-            [Author(s). Title. Journal. Year;Volume(Issue):
-            pages. DOI or stable URL.]
-          </dd>
-
-        </dl>
-
-      </article>
-
-
-      <!-- CASE 03 -->
-
-      <article class="case-card">
-
-        <div class="case-header">
-
-          <div>
-
-            <span class="case-num">
-              Case 03
-            </span>
-
-            <h3>
-              [Case title]
-            </h3>
-
-          </div>
-
-          <span class="case-status">
-            PLACEHOLDER
-          </span>
-
-        </div>
-
-
-        <dl class="case-details">
-
-          <dt>
-            Presentation
-          </dt>
-
-          <dd>
-            [Age/sex, chief complaint, relevant history,
-            examination findings, vital signs, and initial
-            clinical impression.]
-          </dd>
-
-
-          <dt>
-            Field course
-          </dt>
-
-          <dd>
-            [Describe the EMS assessment, interventions,
-            treatment response, transport, and relevant
-            prehospital decision-making.]
-          </dd>
-
-
-          <dt>
-            Teaching point
-          </dt>
-
-          <dd>
-            [State the principal clinical lesson this case
-            is intended to illustrate.]
-          </dd>
-
-
-          <dt>
-            Citation
-          </dt>
-
-          <dd>
-            [Author(s). Title. Journal. Year;Volume(Issue):
-            pages. DOI or stable URL.]
-          </dd>
-
-        </dl>
-
-      </article>
-
-
-    </div>
+</div>
+```
 
   </div>
 
 </section>
 
+<!-- =======================================================
+     WHERE TO FIND CASES
+======================================================= -->
+
+<section class="tinted">
+
+  <div class="wrap">
+
+```
+<div class="section-head">
+
+  <span class="tab-label">
+    Finding the evidence
+  </span>
+
+  <h2>
+    Start with sources that can be checked
+  </h2>
+
+</div>
+
+<p>
+  A case is only useful for this page if another person can trace
+  the teaching point back to a credible source. Peer-reviewed
+  journals, indexed biomedical literature, professional EMS
+  organizations, and properly de-identified agency case reviews
+  are useful starting points.
+</p>
+
+
+<ul class="list-check">
+
+  <li>
+    <strong>PubMed and PubMed Central</strong> for peer-reviewed
+    case reports and freely available full-text literature.
+  </li>
+
+  <li>
+    <strong>Prehospital Emergency Care</strong> for research and
+    literature focused specifically on prehospital medicine.
+  </li>
+
+  <li>
+    <strong>Journal of Emergency Medical Services (JEMS)</strong>
+    for EMS-focused clinical education and case material.
+  </li>
+
+  <li>
+    <strong>NAEMSP and state EMS organizations</strong> for
+    professional guidance, case reviews, and educational material.
+  </li>
+
+  <li>
+    <strong>Agency quality-improvement reviews</strong> when cases
+    have been appropriately de-identified and cleared for
+    educational publication.
+  </li>
+
+</ul>
+```
+
+  </div>
+
+</section>
 
 <!-- =======================================================
-     SOURCES
+     CASE REVIEW FRAMEWORK
+======================================================= -->
+
+<section>
+
+  <div class="wrap">
+
+```
+<div class="section-head">
+
+  <span class="tab-label">
+    How to read a case
+  </span>
+
+  <h2>
+    Five questions worth asking on every call
+  </h2>
+
+</div>
+
+
+<div class="grid grid-3">
+
+  <div class="card">
+
+    <span class="meta">
+      01
+    </span>
+
+    <h3>
+      What was the initial problem?
+    </h3>
+
+    <p class="small">
+      Identify the chief complaint, immediate threats, vital signs,
+      and first impression before jumping to the final diagnosis.
+    </p>
+
+  </div>
+
+
+  <div class="card sage">
+
+    <span class="meta">
+      02
+    </span>
+
+    <h3>
+      What changed the differential?
+    </h3>
+
+    <p class="small">
+      Look for new symptoms, examination findings, ECG changes,
+      history, or treatment response that shifted clinical thinking.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <span class="meta">
+      03
+    </span>
+
+    <h3>
+      What did EMS do?
+    </h3>
+
+    <p class="small">
+      Separate assessment from intervention and consider why each
+      intervention was appropriate at that point in the call.
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <span class="meta">
+      04
+    </span>
+
+    <h3>
+      What could have been missed?
+    </h3>
+
+    <p class="small">
+      The most useful cases often contain a dangerous alternative
+      diagnosis or subtle finding that initially looked routine.
+    </p>
+
+  </div>
+
+
+  <div class="card sage">
+
+    <span class="meta">
+      05
+    </span>
+
+    <h3>
+      What should transfer to the next call?
+    </h3>
+
+    <p class="small">
+      Reduce the case to one practical recognition or decision-making
+      lesson that can be applied in the field.
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =======================================================
+     SAFETY / DISCLAIMER
 ======================================================= -->
 
 <section class="navy">
 
   <div class="wrap">
 
-    <div class="section-head">
+```
+<div class="section-head">
 
-      <span class="tab-label">
-        Finding source material
-      </span>
+  <span class="tab-label">
+    Educational use
+  </span>
 
-      <h2>
-        Where to find citable cases
-      </h2>
+  <h2>
+    Cases are for learning, not patient-specific medical direction
+  </h2>
 
-      <p>
-        Build the case library from sources that can be checked
-        by readers rather than from anonymous internet anecdotes
-        or reconstructed scenarios presented as real events.
-      </p>
+  <p>
+    Published case reports describe individual situations and should
+    not be treated as evidence that every patient with the same
+    presentation requires the same treatment. Follow current local
+    protocols, medical direction, scope of practice, and applicable
+    clinical guidelines.
+  </p>
 
-    </div>
+</div>
 
+<ul class="list-check">
 
-    <ul class="source-list">
+  <li>
+    Patient identifiers should never be added to educational
+    summaries without appropriate authorization.
+  </li>
 
-      <li>
-        Search peer-reviewed EMS and emergency medicine
-        literature for published case reports, reviews,
-        and documented prehospital cases.
-      </li>
+  <li>
+    Clinical claims should be connected to an identifiable source.
+  </li>
 
-      <li>
-        Use PubMed and PubMed Central to locate peer-reviewed
-        articles and freely available full-text material.
-      </li>
+  <li>
+    Case reports should supplement — not replace — higher-level
+    evidence and current protocols.
+  </li>
 
-      <li>
-        Professional EMS organizations and state EMS authorities
-        may publish de-identified educational case reviews and
-        incident analyses.
-      </li>
-
-      <li>
-        Agency quality-improvement or case-review material can
-        be educational when it has been appropriately
-        de-identified and cleared for external publication.
-      </li>
-
-    </ul>
+</ul>
+```
 
   </div>
 
 </section>
 
-
 <!-- =======================================================
-     EDUCATIONAL DISCLAIMER
+     REFERENCES
 ======================================================= -->
 
 <section>
 
   <div class="wrap">
 
-    <div class="section-head">
+```
+<h2 style="font-size:1.3rem;">
+  References
+</h2>
 
-      <span class="tab-label">
-        Important information
-      </span>
+<ol class="references small">
 
-      <h2>
-        Case studies are educational material
-      </h2>
+  <li>
+    <strong>
+      Placeholder reference.
+    </strong>
+    Replace this entry with the complete Vancouver-style citation
+    for the published case used in Case 01.
+  </li>
 
-      <p>
-        Published cases describe individual patients or events
-        and should not be treated as universal treatment
-        protocols. Clinical decisions should follow current
-        EMS education, applicable state and local requirements,
-        agency protocols, medical direction, and current
-        evidence.
-      </p>
+  <li>
+    <strong>
+      Placeholder reference.
+    </strong>
+    Replace this entry with the complete Vancouver-style citation
+    for the published case used in Case 02.
+  </li>
 
-      <p>
-        Patient information should be presented only when
-        appropriate and should be de-identified whenever
-        possible. Do not publish protected or identifying
-        information without the necessary authorization.
-      </p>
+  <li>
+    <strong>
+      Placeholder reference.
+    </strong>
+    Replace this entry with the complete Vancouver-style citation
+    for the published case used in Case 03.
+  </li>
 
-    </div>
+  <li>
+    <strong>
+      Placeholder reference.
+    </strong>
+    Replace this entry with the complete Vancouver-style citation
+    for the published case used in Case 04.
+  </li>
+
+</ol>
+
+<p class="small" style="margin-top:22px;">
+
+  Citations are provided so readers can review the primary source
+  rather than relying solely on this page's summary.
+
+</p>
+```
 
   </div>
 
 </section>
 
-
 </main>
-
 
 <!-- =======================================================
      FOOTER
@@ -1231,137 +1614,136 @@ footer.site-footer ul{
 
   <div class="wrap footer-grid">
 
+```
+<div>
 
-    <div>
+  <h4>
+    [Organization Name]
+  </h4>
 
-      <h4>
-        [Organization Name]
-      </h4>
+  <p class="small">
+    A nonprofit dedicated to open EMS education, prehospital
+    clinical reference, and access to a certified provider
+    when you need one.
+  </p>
 
-      <p class="small">
-        A nonprofit dedicated to open EMS education,
-        prehospital clinical reference, and access to
-        certified emergency medical professionals.
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <h4>
-        Explore
-      </h4>
-
-      <ul>
-
-        <li>
-          <a href="education.html">
-            Standard EMS education
-          </a>
-        </li>
-
-        <li>
-          <a href="treatments.html">
-            Treatment reference
-          </a>
-        </li>
-
-        <li>
-          <a href="ecg.html">
-            ECG reading
-          </a>
-        </li>
-
-        <li>
-          <a href="cases.html">
-            Case studies
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
+</div>
 
 
-    <div>
+<div>
 
-      <h4>
-        Resources
-      </h4>
+  <h4>
+    Explore
+  </h4>
 
-      <ul>
+  <ul>
 
-        <li>
-          <a href="resources.html">
-            Study guides &amp; tools
-          </a>
-        </li>
+    <li>
+      <a href="education.html">
+        Standard EMS education
+      </a>
+    </li>
 
-        <li>
-          <a href="ai-innovation.html">
-            AI &amp; innovation
-          </a>
-        </li>
+    <li>
+      <a href="treatments.html">
+        Treatment reference
+      </a>
+    </li>
 
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
+    <li>
+      <a href="ecg.html">
+        ECG reading
+      </a>
+    </li>
 
-      </ul>
+    <li>
+      <a href="cases.html">
+        Case studies
+      </a>
+    </li>
 
-    </div>
+  </ul>
+
+</div>
 
 
-    <div>
+<div>
 
-      <h4>
-        Get in touch
-      </h4>
+  <h4>
+    Resources
+  </h4>
 
-      <ul>
+  <ul>
 
-        <li>
-          <a href="mailto:info@example.org">
-            info@example.org
-          </a>
-        </li>
+    <li>
+      <a href="resources.html">
+        Study guides &amp; tools
+      </a>
+    </li>
 
-        <li>
-          <a href="contact.html">
-            Contact page
-          </a>
-        </li>
+    <li>
+      <a href="ai-innovation.html">
+        AI &amp; innovation
+      </a>
+    </li>
 
-      </ul>
+    <li>
+      <a href="contact.html">
+        Contact a certified EMT
+      </a>
+    </li>
 
-    </div>
+  </ul>
 
+</div>
+
+
+<div>
+
+  <h4>
+    Get in touch
+  </h4>
+
+  <ul>
+
+    <li>
+      <a href="mailto:info@example.org">
+        info@example.org
+      </a>
+    </li>
+
+    <li>
+      <a href="contact.html">
+        Contact page
+      </a>
+    </li>
+
+  </ul>
+
+</div>
+```
 
   </div>
 
-
   <div class="wrap footer-bottom">
 
-    <span>
-      © 2026 [Organization Name].
-      Educational content only — not a substitute for
-      professional medical direction, certification training,
-      or emergency care.
-    </span>
+```
+<span>
+  © 2026 [Organization Name].
+  Educational content only — not a substitute for professional
+  medical direction, certification training, or emergency care.
+</span>
 
-    <span>
-      <a href="contact.html">
-        Contact
-      </a>
-    </span>
+<span>
+  <a href="contact.html">
+    Contact
+  </a>
+</span>
+```
 
   </div>
 
 </footer>
-
 
 <!-- =======================================================
      MOBILE NAVIGATION
@@ -1369,44 +1751,49 @@ footer.site-footer ul{
 
 <script>
 
-document.addEventListener(
-  'DOMContentLoaded',
-  function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    var toggle =
-      document.querySelector('.nav-toggle');
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector("nav.primary");
 
-    var nav =
-      document.querySelector('nav.primary');
+  if(!toggle || !nav){
+    return;
+  }
 
+  toggle.addEventListener("click", function(){
 
-    if(!toggle || !nav){
-      return;
-    }
+    var isOpen = nav.classList.toggle("open");
 
-
-    toggle.addEventListener(
-      'click',
-      function(){
-
-        var isOpen =
-          nav.classList.toggle('open');
-
-
-        toggle.setAttribute(
-          'aria-expanded',
-          isOpen ? 'true' : 'false'
-        );
-
-      }
+    toggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
     );
 
-  }
-);
+  });
+
+
+  /*
+     Close the mobile menu after selecting a page.
+  */
+
+  nav.querySelectorAll("a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+      nav.classList.remove("open");
+
+      toggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    });
+
+  });
+
+});
 
 </script>
 
-
 </body>
 </html>
-
