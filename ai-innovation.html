@@ -21,6 +21,9 @@ content="Explore how artificial intelligence is being used in prehospital emerge
   rel="stylesheet"
 >
 
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+
 <style>
 :root{
   --paper:#fff;
@@ -416,6 +419,100 @@ section.tinted{
 
 .callout p:last-child{margin-bottom:0}
 
+/* Reports & screenshots */
+.app-block{
+  padding:30px 0;
+  border-top:1px solid var(--line);
+}
+
+.app-block:first-of-type{
+  border-top:none;
+  padding-top:6px;
+}
+
+.app-block-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+
+.app-block-head h3{
+  font-size:1.3rem;
+  margin-bottom:0;
+}
+
+.app-block .tool-link{
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.shots{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin:18px 0 22px;
+}
+
+.shots figure{
+  margin:0;
+  background:var(--tint);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.shots img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-bottom:1px solid var(--line);
+}
+
+.shots figcaption{
+  padding:8px 12px;
+  font-size:.8rem;
+  color:var(--ink-soft);
+}
+
+.report-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+
+.report-list li{
+  border-left:3px solid var(--accent);
+  padding:2px 0 2px 16px;
+}
+
+.report-list .report-title{
+  font-weight:700;
+  color:var(--ink);
+  display:block;
+  margin-bottom:2px;
+}
+
+.report-list .report-desc{
+  font-size:.92rem;
+  color:var(--ink-soft);
+  margin:2px 0 6px;
+  max-width:56em;
+}
+
+.report-list .report-dl{
+  font-weight:700;
+  font-size:.88rem;
+}
+
+@media(max-width:620px){
+  .shots{grid-template-columns:1fr}
+}
+
 /* References */
 .references{
   border-top:1px solid var(--line);
@@ -523,22 +620,14 @@ section.tinted{
 
 
 <a class="brand" href="index.html" aria-label="EMARI home">
-  <svg
+  <img
     class="mark"
-    viewBox="0 0 40 40"
-    aria-hidden="true"
-    focusable="false"
+    src="assets/img/logo-mark-128.png"
+    alt=""
+    width="32"
+    height="32"
+    loading="eager"
   >
-    <circle cx="20" cy="20" r="19" fill="#211D17"/>
-    <path
-      d="M4 21h6l3-8 5 15 4-11 3 4h11"
-      fill="none"
-      stroke="#E2811E"
-      stroke-width="2.4"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
 
   <span class="name">
     EMARI AI & Innovation
@@ -585,6 +674,7 @@ section.tinted{
 <a href="ai-innovation.html">AI &amp; Innovation</a>
 <a href="education.html">Education</a>
 <a href="cases.html">Real EMS Cases</a>
+<a href="#reports">Research Reports</a>
  
 
   </div>
@@ -864,45 +954,20 @@ section.tinted{
 
   </div>
 
-  <div class="grid grid-2">
-
-    <article class="tool-card">
-      <span class="tool-kicker">
-        Retrieval-based AI
-      </span>
-
-      <h3>Paramedic AI</h3>
-
-      <p class="small">
-        A local retrieval-augmented assistant for looking up EMS
-        reference material. It demonstrates how AI can be paired with
-        a defined knowledge base rather than relying solely on
-        unrestricted generated answers.
-      </p>
-
-      <a
-        class="tool-link"
-        href="https://paramedic-ai-final-cmxfpj3tuzuebmbtwdk5ap.streamlit.app/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Try Paramedic AI in a new tab"
-      >
-        Try it →
-      </a>
-    </article>
+  <div class="grid grid-3">
 
     <article class="tool-card">
       <span class="tool-kicker">
         In-browser AI
       </span>
 
-      <h3>RUNSHEET's local assistant</h3>
+      <h3>RUNSHEET</h3>
 
       <p class="small">
-        RUNSHEET is exploring local AI support through both a backend
-        pipeline and an in-browser implementation. The goal is to make
-        practical reference assistance available without requiring
-        every visitor to operate a separate server.
+        A self-contained field-reference tool for EMT and paramedic
+        students, combining symptom-to-impression matching, ECG rhythm
+        recognition, and medication reference with a local AI
+        assistant.
       </p>
 
       <a
@@ -915,6 +980,341 @@ section.tinted{
         Open RUNSHEET →
       </a>
     </article>
+
+    <article class="tool-card">
+      <span class="tool-kicker">
+        Retrieval-based AI
+      </span>
+
+      <h3>Paramedic AI Copilot</h3>
+
+      <p class="small">
+        A retrieval-augmented clinical copilot for EMS learners, paired
+        with a demonstration ML risk-assessment model. It shows how AI
+        can be grounded in a defined knowledge base rather than
+        unrestricted generated answers.
+      </p>
+
+      <a
+        class="tool-link"
+        href="https://paramedic-ai-copliot.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Try Paramedic AI Copilot in a new tab"
+      >
+        Try it →
+      </a>
+    </article>
+
+    <article class="tool-card">
+      <span class="tool-kicker">
+        Experimental / research
+      </span>
+
+      <h3>ECG AI</h3>
+
+      <p class="small">
+        A research prototype that turns an uploaded 12-lead ECG image
+        into machine-readable waveforms and runs an experimental AI
+        model over them. Explicitly framed as unvalidated and
+        educational only.
+      </p>
+
+      <a
+        class="tool-link"
+        href="https://ecg-ai-ml-prototype.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open the ECG AI prototype in a new tab"
+      >
+        Open ECG AI →
+      </a>
+    </article>
+
+  </div>
+
+</div>
+ 
+
+  </section>
+
+  <!-- REPORTS -->
+
+  <section id="reports">
+    <div class="wrap">
+
+ 
+  <div class="section-head">
+    <span class="tab-label">
+      Research &amp; technical reports
+    </span>
+
+    <h2>
+      What we've written up on each tool
+    </h2>
+
+    <p>
+      Every app above has been documented as a written report: how it
+      was built, what it does, and — where a study was run — how it
+      performed. These are self-published technical write-ups on
+      provider-built tools, not peer-reviewed clinical trials, and
+      should be read as that.
+    </p>
+  </div>
+
+  <!-- RUNSHEET -->
+  <div class="app-block">
+
+    <div class="app-block-head">
+      <h3>RUNSHEET</h3>
+      <a
+        class="tool-link"
+        href="https://runsheet.website/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open RUNSHEET →
+      </a>
+    </div>
+
+    <div class="shots">
+      <figure>
+        <img
+          src="assets/img/runsheet-assessment.png"
+          alt="RUNSHEET patient-assessment screen with vitals fields and symptom checkboxes grouped by system"
+          loading="lazy"
+        >
+        <figcaption>Patient assessment &amp; symptom-to-impression matching</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="assets/img/runsheet-monitor.png"
+          alt="RUNSHEET cardiac monitor and rhythm reference screen showing a live sinus-rhythm trace"
+          loading="lazy"
+        >
+        <figcaption>Cardiac monitor &amp; rhythm reference library</figcaption>
+      </figure>
+    </div>
+
+    <ul class="report-list">
+      <li>
+        <span class="report-title">
+          A Technical Study of the Development of RUNSHEET — EMS Field Reference
+        </span>
+        <p class="report-desc">
+          Walks through how RUNSHEET's assessment, rhythm-recognition, and
+          medication-reference features were likely architected, based on
+          the tool's publicly observable behavior.
+        </p>
+        <a class="report-dl" href="assets/reports/runsheet-technical-development-study.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          Evaluation of Medical Treatment Recommendation Accuracy in an
+          AI-Assisted Clinical Decision-Support System: A 50-Question
+          Benchmark Study
+        </span>
+        <p class="report-desc">
+          Benchmarks RUNSHEET's treatment recommendations against 50
+          standardized questions across eight condition categories. No
+          treatment recommendation was graded incorrect in this internal
+          benchmark.
+        </p>
+        <a class="report-dl" href="assets/reports/runsheet-treatment-accuracy-benchmark.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          RUNSHEET: Development of a Self-Contained, Browser-Based
+          Reference Tool for Medication Reconstitution and Clinical
+          Reasoning in Paramedic Education
+        </span>
+        <p class="report-desc">
+          Explains the design rationale behind RUNSHEET's medication
+          reconstitution and clinical-reasoning tools, motivated by
+          documented gaps in paramedic drug-calculation training.
+        </p>
+        <a class="report-dl" href="assets/reports/runsheet-medication-reconstitution-design.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- PARAMEDIC AI COPILOT -->
+  <div class="app-block">
+
+    <div class="app-block-head">
+      <h3>Paramedic AI Copilot</h3>
+      <a
+        class="tool-link"
+        href="https://paramedic-ai-copliot.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Try it →
+      </a>
+    </div>
+
+    <div class="shots">
+      <figure>
+        <img
+          src="assets/img/paramedic-ai-copilot.png"
+          alt="Paramedic AI Copilot interface with voice input, knowledge-manager document upload, and a chat box"
+          loading="lazy"
+        >
+        <figcaption>Voice-enabled clinical copilot &amp; knowledge manager</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="assets/img/paramedic-ai-risk.png"
+          alt="Paramedic AI patient vital-signs panel with an ML clinical risk assessment module"
+          loading="lazy"
+        >
+        <figcaption>Patient vitals &amp; ML clinical risk assessment</figcaption>
+      </figure>
+    </div>
+
+    <ul class="report-list">
+      <li>
+        <span class="report-title">
+          PARAMEDIC AI: Development of a Browser-Based Artificial
+          Intelligence and Machine-Learning Decision-Support Tool for
+          Paramedic Education
+        </span>
+        <p class="report-desc">
+          Describes the overall design of Paramedic AI: a demonstration
+          ML risk model paired with an AI clinical copilot, voice input,
+          and a document-backed knowledge base for EMS learners.
+        </p>
+        <a class="report-dl" href="assets/reports/paramedic-ai-development.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          Development and Preliminary Evaluation of a Locally Deployed
+          Python-Based Retrieval-Augmented Language AI Model for
+          Educational and EMS Decision Support
+        </span>
+        <p class="report-desc">
+          Documents the retrieval-augmented model behind the copilot's
+          question-answering, aimed at addressing hallucination and
+          source-traceability concerns common to unrestricted LLM output.
+        </p>
+        <a class="report-dl" href="assets/reports/paramedic-ai-rag-evaluation.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          Machine Learning Patient Risk Prediction Report
+        </span>
+        <p class="report-desc">
+          Documents the ML risk model behind the copilot's risk-assessment
+          module: seven vital-sign features, trained using the MIMIC-IV
+          Clinical Database Demo, producing a probability-based risk tier.
+        </p>
+        <a class="report-dl" href="assets/reports/paramedic-ai-ml-risk-report.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          Machine Learning Model Testing and Risk Prediction
+        </span>
+        <p class="report-desc">
+          A functional test of the same risk model, confirming it loads
+          correctly and returns a risk category from sample vital-sign
+          input.
+        </p>
+        <a class="report-dl" href="assets/reports/paramedic-ai-ml-risk-testing.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- ECG AI -->
+  <div class="app-block">
+
+    <div class="app-block-head">
+      <h3>ECG AI</h3>
+      <a
+        class="tool-link"
+        href="https://ecg-ai-ml-prototype.streamlit.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open ECG AI →
+      </a>
+    </div>
+
+    <div class="shots">
+      <figure>
+        <img
+          src="assets/img/ecg-ai-leads.png"
+          alt="ECG AI lead-region detection output showing isolated I, aVR, V1, V4, II, aVL, P, ST, and T lead panels"
+          loading="lazy"
+        >
+        <figcaption>12-lead region detection from an uploaded ECG image</figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="assets/img/ecg-ai-waveform.png"
+          alt="ECG AI reconstructed waveform plots for leads I, aVR, V1, and V4"
+          loading="lazy"
+        >
+        <figcaption>Experimental waveform reconstruction per lead</figcaption>
+      </figure>
+    </div>
+
+    <ul class="report-list">
+      <li>
+        <span class="report-title">
+          Development and Functional Evaluation of an Experimental ECG
+          Image Processing and Artificial Intelligence Research Prototype
+        </span>
+        <p class="report-desc">
+          Describes the prototype's pipeline — image upload, lead-region
+          detection, experimental waveform reconstruction, and AI
+          inference — and its built-in quality gating and "not clinically
+          validated" safeguards.
+        </p>
+        <a class="report-dl" href="assets/reports/ecg-ai-prototype-evaluation.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+
+      <li>
+        <span class="report-title">
+          Potential Clinical Application of an Artificial
+          Intelligence–Enabled ECG Image Analysis System: A Proposed
+          Translational Framework
+        </span>
+        <p class="report-desc">
+          A viewpoint on how a validated version of this pipeline could
+          fit into a clinician-facing workflow, and what technical and
+          ethical work would need to happen first.
+        </p>
+        <a class="report-dl" href="assets/reports/ecg-ai-translational-framework.pdf" target="_blank" rel="noopener noreferrer">
+          Read the report (PDF) →
+        </a>
+      </li>
+    </ul>
 
   </div>
 
