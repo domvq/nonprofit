@@ -137,6 +137,124 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
 .apps-nav a:hover{ background:rgba(33,29,23,.12); text-decoration:none; }
 .apps-nav a[aria-current="page"]{ background:var(--ink); color:#fff; }
 
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"− Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem;
+  margin:18px 0 6px;
+  color:var(--accent-deep);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+.report-body td, .report-body th { vertical-align: top; }
+@media(max-width:620px){
+  .report-entry summary{flex-direction:column;align-items:flex-start;gap:4px}
+}
+
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"\2212 Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem; margin:18px 0 6px; color:var(--accent-deep);
+  text-transform:uppercase; letter-spacing:.02em; font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+
 </style>
 </head>
 <body>
@@ -195,7 +313,7 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
       <p class="lede">A research prototype that turns an uploaded 12-lead ECG image into machine-readable waveforms and runs an experimental AI model over them — built to demonstrate the pipeline from image to waveform to model output, not to diagnose.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://ecg-ai-ml-prototype.streamlit.app/" target="_blank" rel="noopener noreferrer">Launch ECG AI &rarr;</a>
-        <a class="btn btn-outline" href="ai-innovation.html#app-ecg">Read the full technical report &rarr;</a>
+        <a class="btn btn-outline" href="#reports">Read the full technical reports &rarr;</a>
       </div>
     </div>
   </section>
@@ -297,15 +415,1081 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
     </div>
   </section>
 
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Full technical write-up</span>
+        <h2>Written Reports</h2>
+        <p>The complete reports behind this tool &mdash; methodology, testing, and results.</p>
+      </div>
+
+<span class="reports-label">Written reports on ECG AI</span>
+
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Development and Functional Evaluation of an Experimental ECG Image Processing and Artificial Intelligence Research Prototype</span>
+          <span class="report-meta">Prototype evaluation</span>
+        </summary>
+        <div class="report-body">
+<h6>Abstract</h6>
+<p class='rep-subhead'>Background</p>
+<p>Electrocardiography (ECG) is a fundamental diagnostic investigation used to assess cardiac electrical activity. Conventional ECG analysis generally relies on interpretation of digitally acquired signals or printed ECG recordings by trained healthcare professionals. The increasing availability of artificial intelligence (AI) methods has created opportunities for automated ECG analysis. However, the development of AI systems from ECG images introduces additional challenges, including image preprocessing, lead identification, waveform reconstruction, and conversion of visual ECG information into a representation suitable for computational inference.</p>
+<p class='rep-subhead'>Case Description</p>
+<p>This case report describes the development of an experimental software prototype designed to process a 12-lead ECG image and subsequently perform AI-based analysis. The application was implemented using Python and the Streamlit framework. The software accepts PNG, JPEG, or JPG ECG images through a graphical web interface. Following upload, the image is passed to an ECG-processing module responsible for generating a cleaned image, identifying ECG regions, and producing experimental waveform representations. The application then evaluates whether all 12 waveform outputs are sufficiently usable for downstream AI inference. If this requirement is satisfied, an AI model is loaded and supplied with the processed waveform data. The model output is presented as probabilistic scores associated with predefined findings.</p>
+<p class='rep-subhead'>Results</p>
+<p>The prototype provides an integrated workflow consisting of ECG image upload, visualization, image processing, lead-region detection, experimental waveform visualization, quality gating, AI-model loading, inference, and presentation of model probabilities. The application includes explicit safeguards indicating that the system is experimental and has not undergone clinical validation.</p>
+<p class='rep-subhead'>Conclusion</p>
+<p>The developed prototype demonstrates a modular pipeline for transforming an ECG image into computational representations and subsequently applying an AI model. Its architecture separates image processing, model loading, and inference into independent software modules, facilitating future development and testing. Nevertheless, the current implementation should be regarded strictly as a research prototype. Clinical validation, independent performance evaluation, standardized datasets, assessment of waveform reconstruction accuracy, and appropriate regulatory evaluation would be required before any consideration of clinical deployment.</p>
+<h5>1. Introduction</h5>
+<p>The electrocardiogram is a widely used method for evaluating the electrical activity of the heart. A conventional 12-lead ECG contains information distributed across multiple electrical leads, allowing cardiac electrical activity to be assessed from different anatomical perspectives.</p>
+<p>Although ECG analysis is traditionally performed using directly acquired electrical signals, ECG information is also frequently encountered in image form. Such images may originate from scanned paper ECGs, screenshots, photographs, or exported reports. An image-based ECG analysis system therefore requires an additional computational stage in which visual information is converted into a representation that can be analyzed computationally.</p>
+<p>Artificial intelligence has increasingly been investigated for automated interpretation of ECG data. However, an AI model generally requires structured numerical input rather than a conventional ECG image. Consequently, an image-based system may require several processing stages, including image preprocessing, identification of individual ECG leads, extraction of waveform information, quality assessment, and AI inference.</p>
+<p>The software described in this case report was developed as an experimental research prototype to investigate this complete workflow. Rather than directly presenting an ECG image to an AI model, the application establishes an intermediate processing pipeline in which the image is converted into experimental waveform representations before AI inference is attempted.</p>
+<p>The primary objective of the prototype is therefore not clinical diagnosis, but demonstration of a computational framework capable of connecting ECG image processing with downstream artificial intelligence analysis.</p>
+<h5>2. System Objectives</h5>
+<p>The software was designed around several functional objectives:</p>
+<ul>
+<li>Accept a 12-lead ECG image from a user.</li>
+<li>Display the original ECG image.</li>
+<li>Process the ECG image using a dedicated processing module.</li>
+<li>Generate a cleaned version of the ECG image.</li>
+<li>Detect and extract individual ECG lead regions.</li>
+<li>Generate experimental numerical waveform representations.</li>
+<li>Visualize the extracted waveforms.</li>
+<li>Determine whether all 12 leads have usable waveform outputs.</li>
+<li>Prevent AI inference when the required waveform data are incomplete.</li>
+<li>Load an AI model when the waveform requirements are satisfied.</li>
+<li>Perform model inference.</li>
+<li>Display model findings and associated probabilities.</li>
+<li>Clearly communicate that the system is experimental and not clinically validated.</li>
+</ul>
+<h5>3. Software Architecture</h5>
+<p>The prototype follows a modular software architecture. The main application acts as the user interface and orchestration layer, while specialized functions are delegated to independent modules.</p>
+<p>The principal software components are:</p>
+<ul>
+<li><strong>Streamlit interface</strong></li>
+<li><strong>ECG processing module</strong></li>
+<li><strong>Model loading module</strong></li>
+<li><strong>Inference module</strong></li>
+</ul>
+<p>The main application imports three principal functions:</p>
+<p>from ecg_processor import process_ecg</p>
+<p>from model_loader import load_model</p>
+<p>from inference import predict</p>
+<p>This design separates the user-interface layer from the computational components.</p>
+<p>Conceptually, the system can be represented as:</p>
+<p><strong>ECG Image</strong></p>
+<p>↓</p>
+<p><strong>Image Processing</strong></p>
+<p>↓</p>
+<p><strong>Lead/Region Detection</strong></p>
+<p>↓</p>
+<p><strong>Waveform Extraction</strong></p>
+<p>↓</p>
+<p><strong>Waveform Quality Check</strong></p>
+<p>↓</p>
+<p><strong>AI Model Loading</strong></p>
+<p>↓</p>
+<p><strong>AI Inference</strong></p>
+<p>↓</p>
+<p><strong>Probabilistic Research Output</strong></p>
+<p>This modular structure is advantageous because individual components can be independently modified, tested, and replaced without requiring substantial changes to the user interface.</p>
+<h5>4. Development Environment</h5>
+<p>The prototype was implemented in Python.</p>
+<p>The principal external libraries visible in the provided source code are:</p>
+<p class='rep-subhead'>4.1 Streamlit</p>
+<p>Streamlit provides the interactive web-based user interface. It is responsible for page configuration, image uploading, buttons, status messages, charts, progress indicators, and dynamic presentation of results.</p>
+<p class='rep-subhead'>4.2 NumPy</p>
+<p>NumPy is imported as:</p>
+<p>import numpy as np</p>
+<p>Although NumPy is not directly used elsewhere in the provided interface code, its presence indicates that numerical array processing is part of the intended computational environment. The actual use of NumPy may occur within the imported ECG-processing or inference modules.</p>
+<p class='rep-subhead'>4.3 Custom Python Modules</p>
+<p>Three application-specific modules form the computational core:</p>
+<p>ecg_processor.py</p>
+<p>model_loader.py</p>
+<p>inference.py</p>
+<p>Their apparent responsibilities are:</p>
+<table class='rep-table'><tr><th>Module</th><th>Function</th></tr><tr><td>ecg_processor.py</td><td>ECG image processing and waveform/region generation</td></tr><tr><td>model_loader.py</td><td>Loading the trained or experimental AI model</td></tr><tr><td>inference.py</td><td>Applying the model to waveform inputs and producing findings</td></tr></table>
+<p>The exact algorithms used inside these modules cannot be determined from the supplied interface code alone.</p>
+<h5>5. ECG Image Acquisition</h5>
+<p>The first functional stage is ECG image acquisition.</p>
+<p>The application provides a file uploader:</p>
+<p>uploaded_file = st.file_uploader(</p>
+<p>    "Upload a 12-lead ECG image",</p>
+<p>    type=["png", "jpg", "jpeg"],</p>
+<p>)</p>
+<p>The system therefore accepts three common image formats:</p>
+<ul>
+<li>PNG</li>
+<li>JPEG</li>
+<li>JPG</li>
+</ul>
+<p>The application explicitly requests a 12-lead ECG image and instructs the user to upload a de-identified ECG.</p>
+<p>If no file has been uploaded, execution is stopped:</p>
+<p>if uploaded_file is None:</p>
+<p>    st.info(</p>
+<p>        "Upload a de-identified ECG image to begin."</p>
+<p>    )</p>
+<p>    st.stop()</p>
+<p>This prevents downstream processing from occurring without an input image.</p>
+<h5>6. Original Image Visualization</h5>
+<p>After successful upload, the image is retrieved as raw bytes:</p>
+<p>image_bytes = uploaded_file.getvalue()</p>
+<p>The original image is then displayed to the user.</p>
+<p>This provides an important visual reference because subsequent processing results can be compared with the original ECG.</p>
+<p>The workflow therefore maintains the distinction between:</p>
+<p><strong>Original ECG image</strong></p>
+<p>and</p>
+<p><strong>Processed ECG representation</strong></p>
+<p>which is useful during research and development.</p>
+<h5>7. ECG Image Processing</h5>
+<p>The central image-processing operation is initiated by the user through the <strong>PROCESS ECG</strong> button.</p>
+<p>The application calls:</p>
+<p>result = process_ecg(image_bytes)</p>
+<p>The process_ecg() function therefore represents the principal interface between the graphical application and the underlying ECG-processing algorithm.</p>
+<p>The returned object is expected to contain at least three components:</p>
+<p>result["cleaned"]</p>
+<p>result["regions"]</p>
+<p>result["waveforms"]</p>
+<p>These outputs correspond to three processing stages.</p>
+<p class='rep-subhead'>7.1 Cleaned ECG Image</p>
+<p>The cleaned output is displayed as:</p>
+<p>st.image(</p>
+<p>    result["cleaned"],</p>
+<p>    caption="Experimental grid-suppressed image",</p>
+<p>    channels="BGR",</p>
+<p>    width="stretch",</p>
+<p>)</p>
+<p>The interface describes this as an experimental grid-suppressed image.</p>
+<p>This suggests that the processing pipeline attempts to reduce or suppress ECG background-grid information while preserving the waveform. However, the precise image-processing method cannot be determined without access to ecg_processor.py.</p>
+<p>Possible operations in such a pipeline could include image normalization, color-space conversion, thresholding, grid suppression, segmentation, or noise reduction, but these should not be attributed to the current implementation without examining the actual processing module.</p>
+<h5>8. ECG Lead Region Detection</h5>
+<p>The processing function returns a collection called regions:</p>
+<p>regions = result["regions"]</p>
+<p>The application calculates the number of detected regions:</p>
+<p>len(regions)</p>
+<p>and reports:</p>
+<ul>
+<li>Detected regions</li>
+</ul>
+<p>Each region contains at least an image and a name:</p>
+<p>region["image"]</p>
+<p>region["name"]</p>
+<p>The regions are displayed in a three-column layout.</p>
+<p>This functionality allows the researcher to visually inspect the portions of the ECG image identified as individual lead regions.</p>
+<p>The system therefore introduces an intermediate representation:</p>
+<p><strong>Complete ECG image → detected lead regions</strong></p>
+<p>This is an important architectural step because individual lead waveforms can subsequently be associated with numerical waveform outputs.</p>
+<h5>9. Experimental Waveform Generation</h5>
+<p>Following region extraction, the application accesses:</p>
+<p>waveforms = result["waveforms"]</p>
+<p>Each waveform is evaluated individually.</p>
+<p>The application excludes two categories of unusable output:</p>
+<p>if waveform is None:</p>
+<p>    continue</p>
+<p>if len(waveform) &lt; 2:</p>
+<p>    continue</p>
+<p>A waveform is considered usable by the interface if it is not None and contains at least two elements.</p>
+<p>Usable waveforms are then visualized using Streamlit line charts:</p>
+<p>st.line_chart(</p>
+<p>    waveform,</p>
+<p>    height=150,</p>
+<p>)</p>
+<p>The corresponding ECG lead name is displayed below each chart.</p>
+<p>This stage is described as <strong>experimental waveform extraction</strong> because the numerical waveform is reconstructed or derived from an image rather than obtained directly from an ECG acquisition system.</p>
+<p>The accuracy of this reconstruction is not established by the supplied code.</p>
+<h5>10. Waveform Quality Gate</h5>
+<p>One of the most important safety-oriented software mechanisms is the waveform completeness check.</p>
+<p>The application counts the number of usable waveform outputs:</p>
+<p>usable += 1</p>
+<p>and subsequently reports:</p>
+<p>Usable waveform outputs: X/12</p>
+<p>The AI system requires all 12 waveform outputs to be usable.</p>
+<p>The condition is explicitly implemented as:</p>
+<p>if usable != 12:</p>
+<p>When fewer than 12 usable waveforms are available, the application displays:</p>
+<ul>
+<li>AI inference requires 12 usable waveform outputs. Do not run the model yet.</li>
+</ul>
+<p>This represents a <strong>quality-gating mechanism</strong> between preprocessing and AI inference.</p>
+<p>The workflow can therefore be represented as:</p>
+<p><strong>Image processing</strong></p>
+<p>→ <strong>Waveform generation</strong></p>
+<p>→ <strong>12-lead completeness check</strong></p>
+<p>→ <strong>AI inference only if 12/12 are usable</strong></p>
+<p>This prevents the model from being intentionally executed when the expected complete 12-lead waveform representation is not available.</p>
+<p>It is important to note that this is a completeness criterion rather than a validated clinical quality-control measure. The code verifies that outputs exist and contain at least two elements, but it does not establish that the extracted waveforms are physiologically accurate.</p>
+<h5>11. AI Model Loading</h5>
+<p>When all 12 waveforms satisfy the basic usability criterion, the user is allowed to initiate AI analysis.</p>
+<p>The model is loaded through:</p>
+<p>model = load_model()</p>
+<p>The implementation of load_model() is not included in the supplied code. Consequently, the model architecture, training dataset, model parameters, framework, and training methodology cannot be established from this source file.</p>
+<p>The separation of model loading into its own module is nevertheless a useful design decision because it allows the underlying model to be changed without redesigning the Streamlit interface.</p>
+<h5>12. AI Inference</h5>
+<p>The loaded model and waveform data are passed to:</p>
+<p>results = predict(</p>
+<p>    model,</p>
+<p>    waveforms</p>
+<p>)</p>
+<p>The predict() function therefore forms the inference interface.</p>
+<p>The output is expected to be an iterable containing objects with at least:</p>
+<p>item["finding"]</p>
+<p>item["probability"]</p>
+<p>The probability is converted to a percentage:</p>
+<p>probability = (</p>
+<p>    item["probability"]</p>
+<p>    * 100</p>
+<p>)</p>
+<p>The application subsequently displays the finding and probability:</p>
+<p>Finding — probability%</p>
+<p>A visual progress bar is also generated:</p>
+<p>st.progress(</p>
+<p>    min(</p>
+<p>        int(probability),</p>
+<p>        100</p>
+<p>    )</p>
+<p>)</p>
+<p>This allows the user to visually inspect the model's output scores.</p>
+<p>Importantly, these values are explicitly presented as <strong>experimental model outputs rather than diagnoses</strong>.</p>
+<h5>13. User Interface and Interaction Workflow</h5>
+<p>The complete user workflow is designed as a three-stage process.</p>
+<h6>Stage 1 — Upload ECG</h6>
+<p>The researcher uploads a 12-lead ECG image.</p>
+<p>The application then displays the original image.</p>
+<h6>Stage 2 — ECG Processing</h6>
+<p>The researcher selects <strong>PROCESS ECG</strong>.</p>
+<p>The application:</p>
+<ul>
+<li>Sends the image to the ECG-processing module.</li>
+<li>Receives the processing results.</li>
+<li>Displays the cleaned ECG image.</li>
+<li>Displays detected lead regions.</li>
+<li>Generates and displays available waveform outputs.</li>
+<li>Counts usable waveforms.</li>
+</ul>
+<h6>Stage 3 — AI Analysis</h6>
+<p>If all 12 waveform outputs are usable, the researcher can select <strong>RUN ECG AI</strong>.</p>
+<p>The application:</p>
+<ul>
+<li>Loads the AI model.</li>
+<li>Sends the waveform data to the inference function.</li>
+<li>Receives model results.</li>
+<li>Converts probabilities into percentages.</li>
+<li>Displays predicted findings and scores.</li>
+</ul>
+<p>The complete workflow is therefore:</p>
+<p>ECG Image</p>
+<p>    ↓</p>
+<p>Upload</p>
+<p>    ↓</p>
+<p>Image Processing</p>
+<p>    ↓</p>
+<p>Cleaned Image</p>
+<p>    ↓</p>
+<p>Lead Region Detection</p>
+<p>    ↓</p>
+<p>Waveform Extraction</p>
+<p>    ↓</p>
+<p>Waveform Visualization</p>
+<p>    ↓</p>
+<p>12/12 Quality Gate</p>
+<p>    ↓</p>
+<p>AI Model</p>
+<p>    ↓</p>
+<p>Inference</p>
+<p>    ↓</p>
+<p>Finding + Probability</p>
+<h5>14. Error Handling</h5>
+<p>The application incorporates exception handling around both major computational stages.</p>
+<p>During ECG processing:</p>
+<p>try:</p>
+<p>    ...</p>
+<p>except Exception as error:</p>
+<p>    st.error(</p>
+<p>        f"ECG processing failed: {error}"</p>
+<p>    )</p>
+<p>During AI inference:</p>
+<p>try:</p>
+<p>    ...</p>
+<p>except Exception as error:</p>
+<p>    st.error(</p>
+<p>        f"AI inference failed: {error}"</p>
+<p>    )</p>
+<p>This prevents an unexpected processing or inference error from causing an uncontrolled application failure and instead provides a visible error message to the user.</p>
+<p>The use of st.spinner() also communicates that a computational operation is currently being performed.</p>
+<h5>15. State Management</h5>
+<p>The processed ECG results are stored in Streamlit session state:</p>
+<p>st.session_state["ecg_result"] = result</p>
+<p>This allows the processed results to remain available during subsequent interactions with the application.</p>
+<p>The interface can therefore display the processing results without requiring the ECG-processing function to be repeatedly executed every time the application reruns.</p>
+<p>This is particularly relevant to Streamlit applications because user interactions can trigger script reruns.</p>
+<h5>16. Research-Oriented Safety Design</h5>
+<p>The application repeatedly communicates that it is not a clinical diagnostic system.</p>
+<p>At the beginning of the interface, a warning states that the application is:</p>
+<ul>
+<li>RESEARCH PROTOTYPE ONLY</li>
+</ul>
+<p>The application further states that it is not clinically validated and must not be used to diagnose patients or make patient-care decisions.</p>
+<p>After AI inference, an additional warning explains that the scores represent experimental model outputs rather than medical diagnoses.</p>
+<p>This is an important characteristic of the prototype because it establishes a distinction between:</p>
+<p><strong>Research model output</strong></p>
+<p>and</p>
+<p><strong>Clinically validated diagnostic information</strong>.</p>
+<p>The interface also requests a de-identified ECG image, reflecting an awareness of the importance of avoiding unnecessary exposure of patient-identifying information.</p>
+<h5>17. Functional Characteristics</h5>
+<p>The principal functional characteristics of the system are summarized below.</p>
+<table class='rep-table'><tr><th>Function</th><th>Implementation</th><th>Purpose</th></tr><tr><td>ECG upload</td><td>Streamlit file uploader</td><td>Accept ECG images</td></tr><tr><td>Original visualization</td><td>st.image()</td><td>Display source ECG</td></tr><tr><td>ECG processing</td><td>process_ecg()</td><td>Process uploaded image</td></tr><tr><td>Image cleaning</td><td>result["cleaned"]</td><td>Display processed image</td></tr><tr><td>Lead detection</td><td>result["regions"]</td><td>Identify ECG regions</td></tr><tr><td>Region visualization</td><td>st.image()</td><td>Inspect detected leads</td></tr><tr><td>Waveform extraction</td><td>result["waveforms"]</td><td>Obtain numerical representations</td></tr><tr><td>Waveform visualization</td><td>st.line_chart()</td><td>Inspect extracted signals</td></tr><tr><td>Quality gating</td><td>usable != 12</td><td>Prevent incomplete AI input</td></tr><tr><td>Model loading</td><td>load_model()</td><td>Load AI model</td></tr><tr><td>AI inference</td><td>predict()</td><td>Generate model outputs</td></tr><tr><td>Probability display</td><td>percentage + progress bar</td><td>Present model scores</td></tr><tr><td>Error handling</td><td>try/except</td><td>Manage failures</td></tr><tr><td>State management</td><td>st.session_state</td><td>Preserve processing results</td></tr></table>
+<h5>18. Discussion</h5>
+<p>The prototype demonstrates an important concept in image-based ECG artificial intelligence: the AI analysis does not necessarily have to operate directly on the original ECG image. Instead, the system can establish an intermediate representation of the ECG through image processing and waveform extraction.</p>
+<p>This architecture has several potential advantages.</p>
+<p>First, the modular design separates image processing from AI inference. This allows the waveform extraction method and AI model to be independently developed and evaluated.</p>
+<p>Second, the visualization of intermediate processing results provides researchers with greater transparency than a system that produces only a final prediction. Researchers can inspect the cleaned image, detected regions, and reconstructed waveforms before evaluating AI outputs.</p>
+<p>Third, the 12-lead completeness gate provides a simple mechanism for preventing inference when the expected input structure is incomplete.</p>
+<p>Fourth, the explicit research-only warnings help distinguish experimental software from a clinically validated medical device.</p>
+<p>However, several limitations must be recognized.</p>
+<p>The most important limitation is that the provided source code represents primarily the application interface and orchestration layer. The actual implementation of ECG image processing, waveform extraction, model loading, and AI inference is contained in external modules that were not supplied. Therefore, the specific algorithms, model architecture, training methodology, dataset characteristics, and performance metrics cannot be evaluated from this code alone.</p>
+<p>Furthermore, the current waveform quality check is limited. A waveform is considered usable if it is present and has at least two elements. This does not demonstrate that the waveform is correctly reconstructed, correctly aligned, physiologically plausible, or suitable for clinical inference.</p>
+<p>Similarly, the probability values produced by the model should not be interpreted as clinically meaningful probabilities without appropriate calibration and validation.</p>
+<h5>19. Recommended Validation Framework</h5>
+<p>Before the prototype could be considered for research involving clinical interpretation, several additional validation stages would be required.</p>
+<p class='rep-subhead'>19.1 Image-processing validation</p>
+<p>The ability of the system to identify ECG regions should be evaluated against manually annotated ECG images.</p>
+<p>Relevant measurements could include:</p>
+<ul>
+<li>Lead-region detection accuracy</li>
+<li>Localization error</li>
+<li>Segmentation accuracy</li>
+<li>Grid-removal performance</li>
+<li>Robustness to image quality variations</li>
+</ul>
+<p class='rep-subhead'>19.2 Waveform reconstruction validation</p>
+<p>The extracted waveform should be compared with the original digital ECG signal when paired image and signal data are available.</p>
+<p>Potential measurements include:</p>
+<ul>
+<li>Correlation</li>
+<li>Root mean square error</li>
+<li>Amplitude error</li>
+<li>Temporal alignment error</li>
+<li>Signal-to-noise ratio</li>
+<li>Morphological similarity</li>
+</ul>
+<p class='rep-subhead'>19.3 AI model validation</p>
+<p>The model should be evaluated using an independent dataset that was not used during training.</p>
+<p>Depending on the intended findings, relevant metrics may include:</p>
+<ul>
+<li>Sensitivity</li>
+<li>Specificity</li>
+<li>Positive predictive value</li>
+<li>Negative predictive value</li>
+<li>AUROC</li>
+<li>AUPRC</li>
+<li>Calibration</li>
+<li>Confusion matrices</li>
+</ul>
+<p class='rep-subhead'>19.4 External validation</p>
+<p>Testing should subsequently be performed using ECG images originating from different devices, institutions, acquisition conditions, resolutions, and patient populations.</p>
+<p>This would help determine whether the system generalizes beyond the development dataset.</p>
+<p class='rep-subhead'>19.5 Clinical validation</p>
+<p>If the eventual goal is clinical use, prospective clinical evaluation and appropriate regulatory assessment would be necessary. The current prototype should not be interpreted as having completed these stages.</p>
+<h5>20. Reproducibility and Modularity</h5>
+<p>The separation of the application into independent components provides a useful foundation for reproducible research.</p>
+<p>The architecture can be conceptualized as four independent layers:</p>
+<p class='rep-subhead'>Layer 1 — User Interface</p>
+<p>Implemented through Streamlit.</p>
+<p class='rep-subhead'>Layer 2 — Image Processing</p>
+<p>Implemented through ecg_processor.py.</p>
+<p class='rep-subhead'>Layer 3 — Model Management</p>
+<p>Implemented through model_loader.py.</p>
+<p class='rep-subhead'>Layer 4 — Inference</p>
+<p>Implemented through inference.py.</p>
+<p>This architecture allows researchers to replace individual components without redesigning the entire system.</p>
+<p>For example, an improved waveform extraction algorithm could replace the existing processing implementation while retaining the same Streamlit interface and inference interface.</p>
+<p>Similarly, a different AI model could be incorporated through the model-loading and inference modules.</p>
+<h5>21. Conclusion</h5>
+<p>This case report describes the development of an experimental ECG AI research prototype capable of accepting a 12-lead ECG image, processing the image, identifying ECG regions, generating experimental waveform representations, evaluating waveform completeness, and performing AI inference when all 12 waveform outputs are available.</p>
+<p>The software uses a modular Python architecture in which the Streamlit application serves as the orchestration and visualization layer while dedicated modules perform ECG processing, model loading, and inference.</p>
+<p>A key feature of the system is its visualization of intermediate processing stages. Rather than providing only a final AI output, the prototype exposes the cleaned ECG image, detected lead regions, and experimental waveform representations. This provides researchers with an opportunity to inspect the computational pipeline before AI inference.</p>
+<p>The implementation also incorporates basic error handling, session-state management, input restrictions, waveform completeness gating, and repeated warnings regarding the experimental nature of the system.</p>
+<p>Nevertheless, the current software should be considered a <strong>research and development prototype rather than a clinical diagnostic system</strong>. The supplied source code does not establish the accuracy of image processing, waveform reconstruction, or AI prediction. Further technical validation, independent testing, clinical evaluation, model calibration, and regulatory assessment would be required before any clinical application could be considered.</p>
+<p>Overall, the prototype establishes a practical software framework for investigating the transformation of ECG images into machine-readable waveform representations and subsequently applying artificial intelligence to those representations.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Potential Clinical Application of an Artificial Intelligence&ndash;Enabled ECG Image Analysis System: A Proposed Translational Framework</span>
+          <span class="report-meta">Viewpoint</span>
+        </summary>
+        <div class="report-body">
+<h6>Abstract</h6>
+<p class='rep-subhead'>Background</p>
+<p>Artificial intelligence (AI) has emerged as a potentially important technology for cardiovascular medicine, with applications ranging from automated interpretation of electrocardiographic data to clinical decision support and risk prediction. The translation of AI-based ECG analysis into clinical practice, however, requires more than technical feasibility. Robust clinical validation, transparent reporting, appropriate integration into clinical workflows, human oversight, data governance, and regulatory assessment are necessary before an AI system can be used to influence patient care. Recent scientific guidance emphasizes that AI systems should be evaluated within their intended clinical context and reported transparently.</p>
+<p class='rep-subhead'>Objective</p>
+<p>This paper proposes a potential clinical-use framework for an experimental ECG image processing and AI analysis prototype. The system accepts a 12-lead ECG image, performs image processing and lead-region extraction, generates experimental waveform representations, and applies an AI model when all 12 waveform outputs are available. The purpose of this report is to describe how such a system could potentially be incorporated into clinical workflows while identifying the technical, clinical, ethical, and regulatory requirements that must be satisfied before deployment.</p>
+<p class='rep-subhead'>Proposed Clinical Application</p>
+<p>In a future validated implementation, the system could function as a clinician-facing decision-support tool. An ECG image generated by an ECG device or uploaded from a clinical information system could be processed automatically. The system could reconstruct or extract the individual ECG leads, assess processing quality, and provide AI-generated probabilities for predefined ECG findings. The results would be presented to a qualified clinician as supplementary information rather than as an autonomous diagnosis.</p>
+<p class='rep-subhead'>Conclusion</p>
+<p>The proposed system illustrates a potential pathway for converting ECG images into machine-readable representations and subsequently providing AI-assisted interpretation. Its most appropriate initial clinical role would be as an adjunctive decision-support system operating under clinician supervision. Before clinical implementation, prospective evaluation, external validation, calibration assessment, workflow studies, cybersecurity and privacy assessment, human-factors testing, and applicable regulatory review would be required.</p>
+<h5>1. Introduction</h5>
+<p>The electrocardiogram (ECG) remains one of the most widely used investigations in cardiovascular medicine because it provides a rapid, non-invasive assessment of cardiac electrical activity. Although modern ECG systems frequently generate digitally stored signals, ECG information is also commonly encountered in image-based formats, including printed ECG reports, scanned documents, screenshots, and exported images.</p>
+<p>The use of AI in cardiovascular medicine has expanded considerably, with potential applications in automated interpretation, risk prediction, clinical decision support, and integration of heterogeneous clinical information. The American Heart Association has identified AI as a potentially important component of future cardiovascular care while emphasizing the need for appropriate evaluation, implementation, and clinical oversight.</p>
+<p>The European Society of Cardiology similarly recognizes the increasing role of AI and digital technologies in cardiovascular medicine while emphasizing evidence-based implementation and appropriate clinical validation.</p>
+<p>The prototype described in this report provides a technical foundation for one potential application: transforming an ECG image into an analyzable representation and subsequently applying an AI model. The current software is explicitly designated as a research prototype and is not clinically validated.</p>
+<p>Accordingly, the purpose of this report is not to claim clinical effectiveness of the existing implementation. Rather, it is to describe <strong>how the technology could potentially be translated into clinical practice following appropriate validation and regulatory development</strong>.</p>
+<h5>2. Proposed Clinical Use Case</h5>
+<p>The proposed clinical application would be a clinician-facing AI-assisted ECG interpretation system.</p>
+<p>The intended workflow could be:</p>
+<p><strong>Patient undergoes ECG</strong></p>
+<p>↓</p>
+<p><strong>ECG image generated</strong></p>
+<p>↓</p>
+<p><strong>Image transferred to AI system</strong></p>
+<p>↓</p>
+<p><strong>Image quality assessment</strong></p>
+<p>↓</p>
+<p><strong>12-lead detection and waveform extraction</strong></p>
+<p>↓</p>
+<p><strong>Waveform quality assessment</strong></p>
+<p>↓</p>
+<p><strong>AI analysis</strong></p>
+<p>↓</p>
+<p><strong>Clinical decision-support output</strong></p>
+<p>↓</p>
+<p><strong>Clinician review</strong></p>
+<p>↓</p>
+<p><strong>Clinical decision</strong></p>
+<p>The critical distinction is that the AI system would not independently diagnose or treat the patient.</p>
+<p>Instead, it would provide information to a healthcare professional who would interpret the AI output together with the patient's symptoms, history, examination, previous ECGs, laboratory results, imaging, and other clinically relevant information.</p>
+<p>This human-in-the-loop approach is particularly important because AI output represents one source of information rather than a complete clinical assessment.</p>
+<h5>3. Potential Clinical Workflow</h5>
+<h6>3.1 ECG Acquisition</h6>
+<p>The first stage would occur during routine patient care.</p>
+<p>A 12-lead ECG could be acquired using a conventional ECG device. In the proposed image-based implementation, the resulting ECG report would be supplied to the software as an image.</p>
+<p>In a mature clinical implementation, direct integration with the ECG acquisition system or electronic health record (EHR) would be preferable to manual file upload. Such integration could reduce transcription errors and minimize unnecessary handling of patient data.</p>
+<p>The current prototype instead uses a manual image-upload mechanism through a Streamlit interface.</p>
+<h5>4. Patient Identification and Data Governance</h5>
+<p>A clinical implementation would require substantially stronger data-management controls than those demonstrated by the current prototype.</p>
+<p>The present application requests a de-identified ECG image. In a clinical environment, however, ECG data would potentially be associated with protected health information.</p>
+<p>Accordingly, a production system would require:</p>
+<ul>
+<li>authenticated users;</li>
+<li>role-based access control;</li>
+<li>secure data transmission;</li>
+<li>encryption;</li>
+<li>audit logging;</li>
+<li>controlled data retention;</li>
+<li>appropriate patient-identification procedures;</li>
+<li>secure storage;</li>
+<li>cybersecurity monitoring;</li>
+<li>institutional data-governance procedures.</li>
+</ul>
+<p>The exact requirements would depend on the jurisdiction and intended deployment environment.</p>
+<p>The system should also minimize unnecessary transmission of identifiable patient information to external services.</p>
+<h5>5. Automated ECG Image Processing</h5>
+<p>After ECG acquisition, the proposed system would perform automated image processing.</p>
+<p>The prototype invokes:</p>
+<p>result = process_ecg(image_bytes)</p>
+<p>The processing function returns:</p>
+<p>result["cleaned"]</p>
+<p>result["regions"]</p>
+<p>result["waveforms"]</p>
+<p>In a clinical implementation, this stage would serve two important purposes.</p>
+<p>First, it would transform the raw ECG image into a representation suitable for computational analysis.</p>
+<p>Second, it would determine whether the image contains sufficient information for reliable downstream analysis.</p>
+<p>This is particularly important because clinical ECG images may vary in:</p>
+<ul>
+<li>resolution;</li>
+<li>contrast;</li>
+<li>paper quality;</li>
+<li>orientation;</li>
+<li>scanning artifacts;</li>
+<li>illumination;</li>
+<li>background grid;</li>
+<li>cropping;</li>
+<li>compression;</li>
+<li>device manufacturer;</li>
+<li>lead arrangement.</li>
+</ul>
+<p>A clinical system would therefore require systematic evaluation across representative variations in ECG image quality.</p>
+<h5>6. Lead Identification and Waveform Reconstruction</h5>
+<p>The prototype identifies ECG regions and subsequently generates waveform outputs.</p>
+<p>This creates a computational pathway of:</p>
+<p><strong>ECG image → lead regions → numerical waveforms</strong></p>
+<p>Such a pathway could potentially enable an AI model originally designed for waveform-based ECG analysis to operate on ECG images.</p>
+<p>However, this stage represents one of the most important areas requiring clinical validation.</p>
+<p>The reconstructed waveform must accurately represent the original ECG signal in terms of:</p>
+<ul>
+<li>amplitude;</li>
+<li>timing;</li>
+<li>morphology;</li>
+<li>polarity;</li>
+<li>intervals;</li>
+<li>rhythm;</li>
+<li>QRS morphology;</li>
+<li>ST-segment characteristics;</li>
+<li>T-wave morphology.</li>
+</ul>
+<p>An apparently successful image-processing pipeline may nevertheless introduce systematic distortions that subsequently affect AI predictions.</p>
+<p>Therefore, clinical validation should compare extracted waveforms against a reference digital ECG signal where paired datasets are available.</p>
+<h5>7. Automated Quality Control</h5>
+<p>The prototype contains an important preliminary quality-control mechanism.</p>
+<p>The system counts usable waveform outputs and prevents AI analysis unless all 12 are available:</p>
+<p>if usable != 12:</p>
+<p>    st.warning(</p>
+<p>        "AI inference requires 12 usable waveform outputs."</p>
+<p>    )</p>
+<p>This principle could be expanded substantially in a clinical system.</p>
+<p>Rather than merely determining whether a waveform exists, a clinical quality-control module should assess whether each lead is:</p>
+<ul>
+<li>present;</li>
+<li>correctly localized;</li>
+<li>sufficiently complete;</li>
+<li>adequately reconstructed;</li>
+<li>free from excessive artifacts;</li>
+<li>temporally coherent;</li>
+<li>physiologically plausible.</li>
+</ul>
+<p>The system could ultimately generate a quality score such as:</p>
+<p><strong>ECG quality: Acceptable / Unacceptable</strong></p>
+<p>If quality were insufficient, the system should abstain from producing an AI interpretation.</p>
+<p>This concept of controlled abstention is particularly important for medical AI because an algorithm should not necessarily produce an output for every input.</p>
+<h5>8. AI-Based Analysis</h5>
+<p>Following successful waveform extraction and quality assessment, the prototype loads an AI model:</p>
+<p>model = load_model()</p>
+<p>and performs inference:</p>
+<p>results = predict(</p>
+<p>    model,</p>
+<p>    waveforms</p>
+<p>)</p>
+<p>The model returns findings associated with probabilities.</p>
+<p>In a future clinical implementation, these outputs could potentially be displayed as:</p>
+<table class='rep-table'><tr><th>AI finding</th><th>Estimated probability</th></tr><tr><td>Finding A</td><td>XX.X%</td></tr><tr><td>Finding B</td><td>XX.X%</td></tr><tr><td>Finding C</td><td>XX.X%</td></tr></table>
+<p>The specific clinical findings would depend entirely on the model's training objective.</p>
+<p>Importantly, a probability generated by an AI model should not automatically be interpreted as a patient's true probability of disease. The meaning of the value depends on model calibration, prevalence, training data, threshold selection, and the clinical population in which the model is deployed.</p>
+<p>Therefore, calibration should be assessed in addition to discrimination.</p>
+<h5>9. Human-in-the-Loop Clinical Decision Support</h5>
+<p>The most appropriate initial clinical role for this technology would be <strong>clinical decision support rather than autonomous diagnosis</strong>.</p>
+<p>For example, a clinician might receive an ECG together with an AI-generated summary:</p>
+<ul>
+<li>AI-assisted analysis identifies a high probability of a predefined ECG finding.</li>
+</ul>
+<p>The clinician would then independently review the ECG and determine whether the finding is clinically plausible.</p>
+<p>The clinician would also consider:</p>
+<ul>
+<li>presenting symptoms;</li>
+<li>vital signs;</li>
+<li>medical history;</li>
+<li>medications;</li>
+<li>previous ECGs;</li>
+<li>laboratory results;</li>
+<li>imaging;</li>
+<li>other diagnostic investigations.</li>
+</ul>
+<p>The final clinical decision would remain with the appropriately qualified healthcare professional.</p>
+<p>This approach is consistent with the broader principle that AI should augment clinical reasoning rather than be treated as a substitute for clinical judgment. The AHA has emphasized the importance of responsible implementation of AI within cardiovascular care.</p>
+<h5>10. Potential Clinical Applications</h5>
+<p>If successfully validated, an image-based ECG AI system could potentially support several clinical scenarios.</p>
+<h6>10.1 Emergency Department</h6>
+<p>In emergency care, rapid ECG interpretation can be important because certain cardiovascular conditions require prompt assessment.</p>
+<p>A validated AI system could potentially flag predefined ECG abnormalities for clinician review.</p>
+<p>The system would not replace emergency physician or cardiologist assessment, but could function as an additional screening or prioritization mechanism.</p>
+<h6>10.2 Primary Care</h6>
+<p>In primary-care settings, ECG interpretation resources may vary.</p>
+<p>An AI-assisted system could potentially provide an additional interpretation for clinician consideration, particularly when specialist interpretation is not immediately available.</p>
+<h6>10.3 Remote and Rural Healthcare</h6>
+<p>Image-based analysis may be particularly relevant in environments where ECGs are acquired locally but specialist interpretation is remote.</p>
+<p>A validated system could potentially provide preliminary computational analysis while allowing a clinician or remote cardiologist to review the original ECG.</p>
+<h6>10.4 Cardiology Services</h6>
+<p>Within cardiology, AI could potentially be used as an additional analytical layer alongside conventional ECG interpretation.</p>
+<p>For example, the system could facilitate:</p>
+<ul>
+<li>automated preliminary interpretation;</li>
+<li>prioritization of abnormal ECGs;</li>
+<li>retrospective research;</li>
+<li>longitudinal comparison;</li>
+<li>quality assurance;</li>
+<li>population-scale ECG analysis.</li>
+</ul>
+<h6>10.5 Retrospective Research</h6>
+<p>Before clinical deployment, the system could be particularly valuable as a research tool.</p>
+<p>Large collections of historical ECG images could be processed to investigate model performance across different populations, devices, and clinical conditions.</p>
+<h5>11. Clinical Validation Strategy</h5>
+<p>Clinical implementation should not occur solely on the basis of successful software execution.</p>
+<p>A staged validation strategy would be required.</p>
+<h6>Phase I — Technical Validation</h6>
+<p>The first stage should determine whether the software correctly processes ECG images.</p>
+<p>Potential endpoints include:</p>
+<ul>
+<li>image-processing success rate;</li>
+<li>lead detection accuracy;</li>
+<li>waveform reconstruction accuracy;</li>
+<li>processing time;</li>
+<li>failure rate;</li>
+<li>robustness to image quality.</li>
+</ul>
+<h6>Phase II — Internal Model Evaluation</h6>
+<p>The AI model should be evaluated using appropriately separated development and evaluation datasets.</p>
+<p>Performance should include discrimination and calibration measures appropriate to the intended prediction task.</p>
+<h6>Phase III — External Validation</h6>
+<p>The model should subsequently be evaluated using independent datasets from different institutions and patient populations.</p>
+<p>This is essential because performance obtained from a single development dataset may not generalize to other clinical environments.</p>
+<p>TRIPOD+AI specifically emphasizes transparent reporting of prediction-model development and evaluation, including information about development data, evaluation data, model specification, and performance.</p>
+<h6>Phase IV — Clinical Workflow Evaluation</h6>
+<p>The next stage should evaluate how clinicians interact with the AI system.</p>
+<p>Relevant questions include:</p>
+<ul>
+<li>Does the system reduce interpretation time?</li>
+<li>Does it improve diagnostic accuracy?</li>
+<li>Does it increase false-positive interpretations?</li>
+<li>Does it alter clinician confidence?</li>
+<li>Does it create automation bias?</li>
+<li>Does it improve or worsen workflow?</li>
+<li>Do clinicians appropriately recognize model uncertainty?</li>
+</ul>
+<h6>Phase V — Prospective Clinical Evaluation</h6>
+<p>A prospective study could subsequently evaluate performance in patients encountered during routine clinical care.</p>
+<p>The system should be assessed against predefined reference standards and clinically meaningful endpoints.</p>
+<h5>12. Safety and Failure Modes</h5>
+<p>A clinically deployable system must explicitly account for failure.</p>
+<p>Potential failure modes include:</p>
+<p class='rep-subhead'>Poor-quality ECG image</p>
+<p>The system may incorrectly reconstruct waveform information.</p>
+<p class='rep-subhead'>Incorrect lead identification</p>
+<p>A waveform could potentially be associated with the wrong lead.</p>
+<p class='rep-subhead'>Missing leads</p>
+<p>The AI model could receive incomplete information.</p>
+<p class='rep-subhead'>Image artifacts</p>
+<p>Compression, shadows, folds, or grid interference could alter waveform extraction.</p>
+<p class='rep-subhead'>Distribution shift</p>
+<p>The clinical population or ECG device may differ substantially from the training data.</p>
+<p class='rep-subhead'>Model uncertainty</p>
+<p>The model may generate apparently confident predictions despite limited supporting information.</p>
+<p class='rep-subhead'>Automation bias</p>
+<p>Clinicians may place excessive confidence in AI output.</p>
+<p class='rep-subhead'>False negatives</p>
+<p>A clinically important abnormality may be missed.</p>
+<p class='rep-subhead'>False positives</p>
+<p>The system may identify abnormalities that are not actually present.</p>
+<p>For these reasons, a clinical implementation should incorporate explicit failure states and an ability to abstain from prediction.</p>
+<h5>13. Regulatory Considerations</h5>
+<p>The regulatory status of an AI-based ECG application depends on its intended use, claims, functionality, jurisdiction, and degree of influence on clinical decision-making.</p>
+<p>In the United States, the FDA's January 2026 guidance on Clinical Decision Support Software distinguishes certain non-device clinical decision-support functions from software functions that meet the definition of a medical device. The FDA also states that existing digital-health policies continue to apply to software functions that meet the device definition.</p>
+<p>Consequently, the intended clinical use of an ECG AI system would need to be defined carefully.</p>
+<p>A system intended merely to display information is materially different from one intended to analyze ECG data and provide diagnostic recommendations that influence patient management.</p>
+<p>A future development program should therefore include regulatory assessment at an early stage rather than treating regulatory considerations as an issue only after software development is complete.</p>
+<h5>14. Reporting and Scientific Standards</h5>
+<p>If this technology were evaluated as a clinical prediction model, the research should follow contemporary reporting standards.</p>
+<p>TRIPOD+AI provides updated recommendations for studies involving prediction models developed using machine-learning or regression methods. The guideline contains 27 main reporting items covering areas including the study title, abstract, introduction, methods, data, model development, evaluation, results, and open-science practices.</p>
+<p>A future publication should therefore explicitly describe:</p>
+<ul>
+<li>patient population;</li>
+<li>inclusion and exclusion criteria;</li>
+<li>ECG acquisition;</li>
+<li>image characteristics;</li>
+<li>preprocessing;</li>
+<li>waveform extraction;</li>
+<li>training dataset;</li>
+<li>evaluation dataset;</li>
+<li>model architecture;</li>
+<li>model training;</li>
+<li>hyperparameters;</li>
+<li>outcome definitions;</li>
+<li>missing data;</li>
+<li>reference standard;</li>
+<li>statistical analysis;</li>
+<li>discrimination;</li>
+<li>calibration;</li>
+<li>subgroup performance;</li>
+<li>external validation;</li>
+<li>limitations.</li>
+</ul>
+<p>This level of transparency would allow independent researchers and clinicians to assess the reproducibility and applicability of the system.</p>
+<h5>15. Integration With Clinical Information Systems</h5>
+<p>A production implementation would ideally be integrated into existing clinical infrastructure rather than requiring clinicians to manually upload ECG files.</p>
+<p>A possible architecture would be:</p>
+<p><strong>ECG device</strong></p>
+<p>↓</p>
+<p><strong>Hospital information system / EHR</strong></p>
+<p>↓</p>
+<p><strong>ECG AI service</strong></p>
+<p>↓</p>
+<p><strong>Image and signal processing</strong></p>
+<p>↓</p>
+<p><strong>AI inference</strong></p>
+<p>↓</p>
+<p><strong>Structured AI result</strong></p>
+<p>↓</p>
+<p><strong>Clinician-facing EHR display</strong></p>
+<p>The AI output could potentially be stored alongside the ECG as a supplementary interpretation.</p>
+<p>However, integration should ensure that AI-generated information is clearly distinguished from clinician-authored interpretation.</p>
+<p>The interface should avoid presenting experimental or probabilistic outputs in a manner that could be mistaken for definitive diagnoses.</p>
+<h5>16. Proposed Clinical User Interface</h5>
+<p>A future clinical interface could contain four major sections.</p>
+<p class='rep-subhead'>A. Original ECG</p>
+<p>The clinician should be able to view the original ECG image without modification.</p>
+<p class='rep-subhead'>B. Processing Quality</p>
+<p>The system could report:</p>
+<p><strong>ECG image quality: Acceptable</strong></p>
+<p><strong>12/12 leads identified</strong></p>
+<p><strong>Waveform extraction: Successful</strong></p>
+<p class='rep-subhead'>C. AI Findings</p>
+<p>The system could provide:</p>
+<p><strong>AI-assisted findings</strong></p>
+<ul>
+<li>Finding A — probability</li>
+<li>Finding B — probability</li>
+<li>Finding C — probability</li>
+</ul>
+<p class='rep-subhead'>D. Clinical Disclaimer</p>
+<p>A concise statement should clarify:</p>
+<ul>
+<li>AI-generated information is intended to support, not replace, clinical assessment.</li>
+</ul>
+<p>This design would preserve the original evidence while making the AI interpretation transparent.</p>
+<h5>17. Explainability and Transparency</h5>
+<p>For clinical adoption, displaying only a probability may be insufficient.</p>
+<p>Where technically feasible, future versions could provide additional information explaining why a prediction was generated.</p>
+<p>For example, the system could potentially identify:</p>
+<ul>
+<li>the lead(s) contributing most strongly to a prediction;</li>
+<li>relevant waveform segments;</li>
+<li>signal-quality indicators;</li>
+<li>model confidence;</li>
+<li>uncertainty;</li>
+<li>reasons for abstention.</li>
+</ul>
+<p>Such information may help clinicians assess whether the AI output is consistent with the visible ECG.</p>
+<p>However, explainability methods themselves require validation and should not automatically be assumed to represent causal reasoning.</p>
+<h5>18. Ethical Considerations</h5>
+<p>Several ethical considerations should be addressed before deployment.</p>
+<p class='rep-subhead'>Patient privacy</p>
+<p>ECG images can contain identifying information and must therefore be handled according to applicable privacy and data-protection requirements.</p>
+<p class='rep-subhead'>Algorithmic bias</p>
+<p>Model performance should be assessed across relevant demographic and clinical subgroups.</p>
+<p class='rep-subhead'>Transparency</p>
+<p>Patients and clinicians should be appropriately informed when AI contributes to clinical decision support.</p>
+<p class='rep-subhead'>Accountability</p>
+<p>The responsibilities of clinicians, institutions, developers, and vendors should be clearly defined.</p>
+<p class='rep-subhead'>Automation bias</p>
+<p>Clinical users should be trained not to accept AI recommendations without appropriate independent assessment.</p>
+<p class='rep-subhead'>Equity</p>
+<p>The system should not systematically provide lower-quality performance for particular patient populations or healthcare environments.</p>
+<p>The ESC has similarly emphasized that implementation of AI in cardiovascular medicine requires evidence-based evaluation and careful consideration of how these technologies affect clinical care.</p>
+<h5>19. Proposed Deployment Model</h5>
+<p>A reasonable translational pathway would be:</p>
+<p class='rep-subhead'>Stage 1 — Research Prototype</p>
+<p>Current stage.</p>
+<p>Purpose:</p>
+<ul>
+<li>demonstrate technical feasibility;</li>
+<li>develop image-processing pipeline;</li>
+<li>test waveform extraction;</li>
+<li>investigate model inference.</li>
+</ul>
+<p><strong>Clinical use: No.</strong></p>
+<p class='rep-subhead'>Stage 2 — Retrospective Validation</p>
+<p>Use de-identified historical ECGs with appropriate reference standards.</p>
+<p><strong>Clinical use: No.</strong></p>
+<p class='rep-subhead'>Stage 3 — Prospective Silent Evaluation</p>
+<p>The AI runs on real clinical ECGs, but its outputs are hidden from treating clinicians.</p>
+<p>This permits evaluation of real-world performance without influencing patient management.</p>
+<p><strong>Clinical decision influence: No.</strong></p>
+<p class='rep-subhead'>Stage 4 — Clinician-Assisted Evaluation</p>
+<p>AI results become visible to clinicians as research outputs under an approved study protocol.</p>
+<p>Clinical decisions remain independent of the system.</p>
+<p><strong>Clinical decision influence: Controlled research setting.</strong></p>
+<p class='rep-subhead'>Stage 5 — Regulated Clinical Deployment</p>
+<p>Only following satisfactory technical, clinical, human-factors, safety, cybersecurity, and regulatory assessment would routine clinical use be considered.</p>
+<h5>20. Limitations</h5>
+<p>The principal limitation of this proposed clinical framework is that the supplied software is currently an experimental prototype rather than a clinically validated medical system.</p>
+<p>The provided source code demonstrates the user interface and orchestration of ECG processing and AI inference but does not provide the implementations of process_ecg(), load_model(), or predict().</p>
+<p>Consequently, the following characteristics cannot currently be established:</p>
+<ul>
+<li>exact image-processing algorithm;</li>
+<li>waveform reconstruction methodology;</li>
+<li>AI architecture;</li>
+<li>training dataset;</li>
+<li>training procedure;</li>
+<li>model calibration;</li>
+<li>diagnostic accuracy;</li>
+<li>sensitivity;</li>
+<li>specificity;</li>
+<li>external validity;</li>
+<li>clinical utility.</li>
+</ul>
+<p>Furthermore, the existing criterion of requiring 12 non-empty waveform outputs is a technical completeness check rather than a validated measure of ECG quality.</p>
+<p>Therefore, no clinical performance claims should be derived from the current prototype alone.</p>
+<h5>21. Proposed Clinical Evaluation Endpoints</h5>
+<p>A future clinical study could evaluate the following primary and secondary endpoints.</p>
+<table class='rep-table'><tr><th>Domain</th><th>Potential endpoint</th></tr><tr><td>Technical</td><td>Successful ECG processing rate</td></tr><tr><td>Technical</td><td>Lead detection accuracy</td></tr><tr><td>Technical</td><td>Waveform reconstruction error</td></tr><tr><td>Model</td><td>AUROC</td></tr><tr><td>Model</td><td>Sensitivity</td></tr><tr><td>Model</td><td>Specificity</td></tr><tr><td>Model</td><td>Positive/negative predictive value</td></tr><tr><td>Model</td><td>Calibration</td></tr><tr><td>Clinical</td><td>Agreement with expert interpretation</td></tr><tr><td>Clinical</td><td>Change in diagnostic accuracy</td></tr><tr><td>Clinical</td><td>Time to interpretation</td></tr><tr><td>Workflow</td><td>Clinician acceptance</td></tr><tr><td>Safety</td><td>False-negative rate</td></tr><tr><td>Safety</td><td>False-positive rate</td></tr><tr><td>Human factors</td><td>Automation bias</td></tr><tr><td>Equity</td><td>Performance across demographic subgroups</td></tr></table>
+<p>The selection of endpoints should be determined prospectively according to the intended clinical use and target condition.</p>
+<h5>22. Conclusion</h5>
+<p>The ECG AI prototype described in this report could potentially form the foundation of a future clinical decision-support system capable of analyzing ECG images and providing AI-assisted interpretation.</p>
+<p>The proposed clinical workflow would consist of ECG acquisition, secure image transfer, automated image processing, lead identification, waveform reconstruction, quality assessment, AI inference, and clinician review.</p>
+<p>The most appropriate initial clinical role would be <strong>assistive rather than autonomous</strong>. The AI system could provide an additional interpretation or prioritization signal while the final clinical decision remains under the responsibility of an appropriately qualified healthcare professional.</p>
+<p>Translation from a research prototype to clinical use, however, requires substantially more than successful software operation. Technical validation, external evaluation, calibration, prospective clinical studies, human-factors assessment, cybersecurity, privacy safeguards, and regulatory review would all be required.</p>
+<p>Contemporary guidance emphasizes transparent reporting and rigorous evaluation of AI prediction models. TRIPOD+AI provides a useful framework for reporting the development and evaluation of such models, while cardiovascular scientific guidance from the AHA and ESC highlights the importance of responsible implementation of AI within clinical care.</p>
+<p>Accordingly, the current system should be regarded as a <strong>research platform for investigating image-based ECG analysis</strong>, with clinical deployment representing a future objective contingent upon successful validation. If developed according to a staged translational pathway, the technology could potentially provide clinicians with an additional source of quantitative ECG information while preserving human oversight and clinical accountability.</p>
+<h5>References</h5>
+<ul>
+<li>Collins GS, Moons KGM, Dhiman P, et al. TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods. <em>BMJ</em>. 2024;385:e078378.</li>
+<li>Armoundas AA, Narayan SM, Arnett DK, et al. Use of Artificial Intelligence in Improving Outcomes in Heart Disease: A Scientific Statement From the American Heart Association. <em>Circulation</em>. 2024;149:e1028-e1050. doi:10.1161/CIR.0000000000001201.</li>
+<li>European Society of Cardiology. Digital tools and artificial intelligence in cardiology. ESC educational resources, 2025.</li>
+<li>U.S. Food and Drug Administration. <em>Clinical Decision Support Software: Guidance for Industry and Food and Drug Administration Staff</em>. January 2026.</li>
+<li>European Society of Cardiology. ESC Clinical Practice Guidelines. European Society of Cardiology.</li>
+</ul>
+        </div>
+      </details>
+
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">ECG AI Research Prototype</span>
+          <span class="report-meta">Prototype development notes</span>
+        </summary>
+        <div class="report-body">
+<h5>1. Purpose</h5>
+<p>This manual describes the operation, technical architecture, testing methodology, and software-test results of an experimental ECG image-processing and machine-learning prototype.</p>
+<p>The system is designed to process an uploaded 12-lead ECG image, identify ECG lead regions, generate experimental waveform representations, and, when sufficient waveform outputs are available, pass those representations to a machine-learning inference system.</p>
+<p>The prototype consists of three principal computational stages:</p>
+<ul>
+<li>ECG image processing</li>
+<li>Waveform extraction</li>
+<li>Machine-learning inference</li>
+</ul>
+<p>The system is intended exclusively for research, educational, and software-development purposes.</p>
+<p>Important: The prototype has not been clinically validated. Its outputs must not be used to diagnose patients, determine patient condition, or make clinical or treatment decisions.</p>
+<h5>2. System Overview</h5>
+<p>The application is implemented using Python and Streamlit.</p>
+<p>The principal workflow is:</p>
+<p>ECG Image</p>
+<p>↓</p>
+<p>Image Upload</p>
+<p>↓</p>
+<p>ECG Image Processing</p>
+<p>↓</p>
+<p>Lead Region Detection</p>
+<p>↓</p>
+<p>Waveform Extraction</p>
+<p>↓</p>
+<p>12 Usable Waveforms Required</p>
+<p>↓</p>
+<p>Machine-Learning Model</p>
+<p>↓</p>
+<p>Experimental Model Output</p>
+<p>The application prevents AI inference from proceeding unless all 12 required waveform outputs are considered usable.</p>
+<p>This provides a software-level input requirement between the ECG-processing and machine-learning stages.</p>
+<h5>3. Software Components</h5>
+<p>The prototype uses several Python modules:</p>
+<p>from ecg_processor import process_ecg</p>
+<p>from model_loader import load_model</p>
+<p>from inference import predict</p>
+<p>Their respective functions are:</p>
+<table class='rep-table'><tr><th>Component</th><th>Function</th></tr><tr><td>ecg_processor</td><td>Processes the uploaded ECG image and generates regions/waveforms</td></tr><tr><td>model_loader</td><td>Loads the machine-learning model</td></tr><tr><td>inference</td><td>Performs model prediction</td></tr><tr><td>Streamlit application</td><td>Provides the user interface and controls the processing workflow</td></tr></table>
+<h5>4. ECG Image Input</h5>
+<p>The application accepts ECG image files in the following formats:</p>
+<ul>
+<li>PNG</li>
+<li>JPG</li>
+<li>JPEG</li>
+</ul>
+<p>The uploaded file is converted into image bytes:</p>
+<p>image_bytes = uploaded_file.getvalue()</p>
+<p>These bytes are subsequently passed to the ECG-processing function:</p>
+<p>result = process_ecg(image_bytes)</p>
+<p>The application displays the original uploaded image before processing.</p>
+<h5>5. ECG Processing</h5>
+<p>The ECG-processing stage is responsible for generating the information required by the downstream machine-learning stage.</p>
+<p>The expected processing result contains:</p>
+<p>result["cleaned"]</p>
+<p>result["regions"]</p>
+<p>result["waveforms"]</p>
+<p>The cleaned image is displayed as an experimental processing preview.</p>
+<p>The detected regions are displayed individually and are associated with ECG lead names.</p>
+<h5>6. Lead Region Detection</h5>
+<p>The system extracts ECG lead regions from the uploaded image.</p>
+<p>The application reports:</p>
+<p>Detected regions: [number]</p>
+<p>Each detected region contains an image representation and an associated name.</p>
+<p>The regions are subsequently used when displaying the experimental waveform outputs.</p>
+<p>The system is designed around a 12-lead ECG workflow.</p>
+<h5>7. Waveform Generation</h5>
+<p>The application examines the waveform outputs returned by the ECG-processing module.</p>
+<p>A waveform is considered usable by the interface when:</p>
+<p>waveform is not None</p>
+<p>and:</p>
+<p>len(waveform) &gt;= 2</p>
+<p>The number of usable waveform outputs is then reported to the user.</p>
+<p>The application displays:</p>
+<p>Usable waveform outputs: X/12</p>
+<p>This provides a software-level quality gate before machine-learning inference.</p>
+<h5>8. AI Inference Requirement</h5>
+<p>The machine-learning stage is only made available when:</p>
+<p>usable == 12</p>
+<p>If fewer than 12 usable waveform outputs are available, the application displays a warning and does not permit the AI inference stage to proceed.</p>
+<p>This design prevents incomplete waveform input from being intentionally passed to the model through the normal application workflow.</p>
+<h5>9. Machine-Learning Model</h5>
+<p>When all 12 waveform outputs are usable, the application loads the model using:</p>
+<p>model = load_model()</p>
+<p>The waveform data are then passed to:</p>
+<p>results = predict(</p>
+<p>model,</p>
+<p>waveforms</p>
+<p>)</p>
+<p>The resulting model outputs are displayed individually.</p>
+<p>Each result contains:</p>
+<p>item["finding"]</p>
+<p>item["probability"]</p>
+<p>The probability is converted into a percentage for presentation.</p>
+<h5>10. Experimental Model Output</h5>
+<p>The displayed model output is presented in the form:</p>
+<p>Finding — probability%</p>
+<p>The application also provides a visual probability bar.</p>
+<p>These values represent outputs generated by the experimental machine-learning implementation.</p>
+<p>They should not be interpreted as:</p>
+<ul>
+<li>a medical diagnosis,</li>
+<li>clinical certainty,</li>
+<li>validated disease probability,</li>
+<li>patient risk,</li>
+<li>treatment guidance, or</li>
+<li>evidence of clinical deterioration.</li>
+</ul>
+<h5>11. Testing Methodology</h5>
+<p>Software testing was performed to assess whether the prototype operated according to its programmed requirements.</p>
+<p>Testing focused on the functional behavior of the application and its computational components.</p>
+<p>The evaluation considered the successful execution of the implemented workflow, including the processing pipeline and associated output handling.</p>
+<p>The test result obtained was:</p>
+<p>100%</p>
+<p>This result is reported as a software test pass rate, rather than as clinical or diagnostic accuracy.</p>
+<h5>12. Test Result</h5>
+<p>The executed testing produced an overall result of:</p>
+<h5>100% Test Pass Rate</h5>
+<p>All test cases included in the executed test procedure produced the expected software-level result.</p>
+<p>The result indicates that, under the conditions represented by the test procedure, the tested prototype functions behaved according to their predefined requirements.</p>
+<h5>13. Interpretation of the 100% Result</h5>
+<p>The 100% result should be interpreted specifically as a measure of successful execution of the tested software requirements.</p>
+<p>It demonstrates that the executed test cases produced the expected programmed behavior.</p>
+<p>It does not establish:</p>
+<ul>
+<li>100% ECG diagnostic accuracy,</li>
+<li>100% sensitivity,</li>
+<li>100% specificity,</li>
+<li>100% clinical accuracy,</li>
+<li>clinical validity,</li>
+<li>clinical safety,</li>
+<li>generalization to unseen patients, or</li>
+<li>suitability for clinical decision-making.</li>
+</ul>
+<p>The appropriate scientific interpretation is therefore:</p>
+<p>The prototype achieved a 100% pass rate across the executed software test cases.</p>
+<p>This statement should be used instead of describing the result as “100% AI accuracy.”</p>
+<h5>14. Software Verification Versus Clinical Validation</h5>
+<p>Software verification and clinical validation are distinct processes.</p>
+<h6>Software verification</h6>
+<p>Software verification determines whether the implemented system behaves according to its specified requirements.</p>
+<p>The observed result of:</p>
+<p>100% test pass rate</p>
+<p>indicates successful software behavior for the executed tests.</p>
+<h6>Clinical validation</h6>
+<p>Clinical validation would require evaluation against appropriately collected and independently labeled clinical ECG data.</p>
+<p>Such validation would need to establish the performance of the system on data representative of the intended population and use case.</p>
+<p>The present 100% software-test result does not constitute clinical validation.</p>
+<h5>15. Error Handling</h5>
+<p>The application includes exception handling around both ECG processing and AI inference.</p>
+<p>For ECG processing:</p>
+<p>try:</p>
+<p>result = process_ecg(image_bytes)</p>
+<p>except Exception as error:</p>
+<p>st.error(...)</p>
+<p>For AI inference:</p>
+<p>try:</p>
+<p>model = load_model()</p>
+<p>results = predict(model, waveforms)</p>
+<p>except Exception as error:</p>
+<p>st.error(...)</p>
+<p>This allows processing failures to be presented to the user rather than terminating the application without an explanatory message.</p>
+<h5>16. Input Quality Control</h5>
+<p>The application incorporates a basic computational quality-control mechanism by requiring 12 usable waveform outputs before AI inference.</p>
+<p>When fewer than 12 usable waveforms are produced, the application displays:</p>
+<p>AI inference requires 12 usable waveform outputs.</p>
+<p>Do not run the model yet.</p>
+<p>This represents a software input requirement and should not be interpreted as a validated measure of ECG image quality.</p>
+<h5>17. Reproducibility</h5>
+<p>For reproducible testing, the following should be retained:</p>
+<ul>
+<li>source code,</li>
+<li>test images,</li>
+<li>model file,</li>
+<li>Python version,</li>
+<li>installed package versions,</li>
+<li>test procedure,</li>
+<li>test outputs, and</li>
+<li>date of testing.</li>
+</ul>
+<p>Any future modification to the ECG-processing, waveform-extraction, model-loading, or inference modules should trigger another software-test cycle.</p>
+<h5>18. Scientific Limitations</h5>
+<p>Several limitations apply to interpretation of the current results.</p>
+<p>First, the prototype is an experimental research system and has not undergone clinical validation.</p>
+<p>Second, successful software execution does not establish that the ECG-processing algorithm correctly represents all physiological waveform characteristics.</p>
+<p>Third, successful machine-learning inference does not establish that the model's predictions correspond to clinically correct findings.</p>
+<p>Fourth, a 100% pass rate can occur when testing is performed using a limited or predefined set of test cases. It therefore cannot, by itself, establish generalization to unseen ECG images or patient populations.</p>
+<h5>19. Recommended Future Evaluation</h5>
+<p>Further research should evaluate the system using appropriately designed datasets containing ECG images and independent reference labels.</p>
+<p>Future evaluation could include:</p>
+<ul>
+<li>independent test datasets,</li>
+<li>blinded evaluation,</li>
+<li>confusion matrices,</li>
+<li>sensitivity,</li>
+<li>specificity,</li>
+<li>precision,</li>
+<li>recall,</li>
+<li>F1 score,</li>
+<li>calibration analysis,</li>
+<li>subgroup analysis,</li>
+<li>robustness testing,</li>
+<li>image-quality testing,</li>
+<li>external validation, and</li>
+<li>prospective evaluation where appropriate.</li>
+</ul>
+<p>Testing should ensure that data used for final performance evaluation are not inadvertently used during model development or tuning.</p>
+<h5>20. Recommended Scientific Reporting Statement</h5>
+<p>The following statement accurately summarizes the present testing result:</p>
+<p>The ECG AI Research Prototype achieved a 100% pass rate across the executed software test cases. The testing demonstrated that the tested components produced their predefined expected outputs under the specified test conditions. This result represents software-level verification and does not constitute evidence of clinical accuracy, diagnostic performance, clinical validity, or patient-level predictive capability.</p>
+<h5>21. Conclusion</h5>
+<p>The experimental ECG image-processing and machine-learning prototype completed the executed software tests with a 100% test pass rate.</p>
+<p>The result demonstrates successful operation of the tested software functionality under the conditions evaluated.</p>
+<p>However, the result must be interpreted within the scope of software verification. A 100% software-test pass rate does not establish clinical accuracy or demonstrate that the machine-learning system can reliably identify ECG abnormalities in real-world patients.</p>
+<p>Accordingly, the current system should remain classified as an experimental research and educational prototype until appropriate independent technical and clinical validation has been performed.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="tinted" id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Written reports</span>
+        <h2>Read the full technical write-ups</h2>
+        <p>The complete reports behind ECG AI, in full — tap a title to expand it.</p>
+      </div>
+<span class="reports-label">Written reports on ECG AI</span>
+
+      
+      
+
+      
+    </div>
+  </section>
+
   <section class="navy">
     <div class="wrap grid grid-2" style="align-items:center;">
       <div>
-        <span class="tab-label">Want the technical details?</span>
-        <h2>Read the full write-up</h2>
-        <p>ECG AI has three written reports on the AI &amp; Innovation page: the original development &amp; functional evaluation report, a research-prototype technical manual, and a discussion of potential clinical application.</p>
+        <span class="tab-label">Keep exploring</span>
+        <h2>More from AI &amp; Innovation</h2>
+        <p>See ECG AI alongside the site's other prototypes, or head back to the AI &amp; Innovation overview for the full picture.</p>
       </div>
       <div style="text-align:center;">
-        <a class="btn btn-primary" href="ai-innovation.html#app-ecg">View reports on AI &amp; Innovation &rarr;</a>
+        <a class="btn btn-primary" href="ai-innovation.html#app-ecg">Back to AI &amp; Innovation &rarr;</a>
       </div>
     </div>
   </section>

@@ -137,6 +137,124 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
 .apps-nav a:hover{ background:rgba(33,29,23,.12); text-decoration:none; }
 .apps-nav a[aria-current="page"]{ background:var(--ink); color:#fff; }
 
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"− Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem;
+  margin:18px 0 6px;
+  color:var(--accent-deep);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+.report-body td, .report-body th { vertical-align: top; }
+@media(max-width:620px){
+  .report-entry summary{flex-direction:column;align-items:flex-start;gap:4px}
+}
+
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"\2212 Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem; margin:18px 0 6px; color:var(--accent-deep);
+  text-transform:uppercase; letter-spacing:.02em; font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+
 </style>
 </head>
 <body>
@@ -195,7 +313,7 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
       <p class="lede">A self-contained field-reference tool for EMT and paramedic students: build a patient from findings and vitals, get a ranked impression with field treatment, look up cardiac rhythms on a live monitor, and check medication dosing — all in one page, paired with a local AI assistant.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://runsheet.website/" target="_blank" rel="noopener noreferrer">Launch RUNSHEET &rarr;</a>
-        <a class="btn btn-outline" href="ai-innovation.html#app-runsheet">Read the full technical report &rarr;</a>
+        <a class="btn btn-outline" href="#reports">Read the full technical reports &rarr;</a>
       </div>
     </div>
   </section>
@@ -280,15 +398,563 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
     </div>
   </section>
 
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Full technical write-up</span>
+        <h2>Written Reports</h2>
+        <p>The complete reports behind this tool &mdash; methodology, testing, and results.</p>
+      </div>
+
+<span class="reports-label">Written reports on RUNSHEET</span>
+
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">A Technical Study of the Development of RUNSHEET &mdash; EMS Field Reference</span>
+          <span class="report-meta">Technical case study</span>
+        </summary>
+        <div class="report-body">
+<h6>1. Introduction</h6>
+<p>RUNSHEET is a web-based educational platform designed for EMT and paramedic students. The application combines several different learning and decision-support features into a single interface, including patient assessment, symptom-to-impression matching, ECG rhythm recognition, medication reference information, and an AI-powered copilot.</p>
+<p>The website describes itself as a <strong>study tool rather than a clinical protocol</strong>. It emphasizes that its recommendations are based on general EMS reference material and that users should follow their local protocols, treatment guidelines, and medical direction.</p>
+<p>This study examines the publicly observable functionality of RUNSHEET and proposes how the system could have been architected and implemented. Because the application's private source code, database, deployment configuration, and development history are not publicly available, implementation details that cannot be directly observed are identified as likely architectural approaches rather than confirmed facts.</p>
+<h5>2. Purpose of the Application</h5>
+<p>The primary objective of RUNSHEET appears to be providing EMS students with an interactive environment for practicing patient assessment and reviewing common emergency-care concepts.</p>
+<p>Instead of presenting information as a traditional static reference manual, the application allows the user to construct a patient scenario.</p>
+<p>The main workflow can be summarized as:</p>
+<p><strong>Patient information → Clinical findings → Vitals/ECG → Assessment → Ranked impressions → Educational treatment reference</strong></p>
+<p>The homepage describes the central assessment feature as allowing users to enter vital signs and select signs, symptoms, and risk factors. The system then ranks conditions that best match the selected findings and displays associated field-treatment information, oxygen targets, and medication doses.</p>
+<p>This makes the application more interactive than a conventional medical reference website.</p>
+<h5>3. Major Components</h5>
+<p>The public interface exposes several major components.</p>
+<h6>3.1 Patient Assessment</h6>
+<p>The Patient section allows users to enter clinical findings and vital signs.</p>
+<p>The application indicates that vital signs are optional and that abnormal values can automatically be added as findings. This suggests that the application contains a rule-based preprocessing layer that interprets numerical inputs before running the assessment.</p>
+<p>For example, conceptually:</p>
+<p>User enters vital signs</p>
+<p>        ↓</p>
+<p>Validate input</p>
+<p>        ↓</p>
+<p>Identify abnormal values</p>
+<p>        ↓</p>
+<p>Convert abnormalities into findings</p>
+<p>        ↓</p>
+<p>Combine with selected symptoms</p>
+<p>        ↓</p>
+<p>Calculate condition matches</p>
+<p>        ↓</p>
+<p>Rank possible impressions</p>
+<p>This is an important design decision because it allows the user to provide information in numerical form while the assessment engine works with higher-level clinical findings.</p>
+<h5>4. Symptom-to-Impression Engine</h5>
+<p>One of the most important components appears to be the <strong>Symptom → Impression</strong> engine.</p>
+<p>The user selects signs, symptoms, and risk factors. The application then determines which conditions are most compatible with those findings.</p>
+<p>A likely implementation would represent each condition as a collection of associated findings.</p>
+<p>For example, a simplified internal structure could look conceptually like:</p>
+<p>Condition A</p>
+<p>    finding_1</p>
+<p>    finding_2</p>
+<p>    finding_3</p>
+<p>Condition B</p>
+<p>    finding_2</p>
+<p>    finding_4</p>
+<p>    finding_5</p>
+<p>When a user selects findings, the application can compare the patient's findings against the condition definitions.</p>
+<p>A simple scoring approach could be:</p>
+<p>score =</p>
+<p>    number of matching findings</p>
+<p>    / number of relevant findings</p>
+<p>The conditions could then be sorted from the highest score to the lowest score.</p>
+<p>This would allow RUNSHEET to produce a ranked differential-style educational result without requiring a complex machine-learning model.</p>
+<p>The website describes the results as conditions that "best match" the information entered, which is consistent with a matching or scoring architecture.</p>
+<h5>5. Full Scenario Builder</h5>
+<p>RUNSHEET also provides a more comprehensive <strong>Full Scenario</strong> workflow.</p>
+<p>The public interface states that users can enter:</p>
+<ul>
+<li>Demographics</li>
+<li>Chief complaint findings</li>
+<li>Vital signs</li>
+<li>ECG information</li>
+</ul>
+<p>The system then combines the information and produces a ranked impression with field-treatment information.</p>
+<p>A conceptual architecture would therefore be:</p>
+<p>               ┌─────────────────┐</p>
+<p>                │ Patient Profile │</p>
+<p>                └────────┬────────┘</p>
+<p>                         │</p>
+<p>                         ▼</p>
+<p>┌──────────────┐   ┌───────────────┐</p>
+<p>│ Chief        │──►│ Assessment    │</p>
+<p>│ Complaint    │   │ Engine        │</p>
+<p>└──────────────┘   └───────┬───────┘</p>
+<p>                           │</p>
+<p>┌──────────────┐           │</p>
+<p>│ Vital Signs  │───────────┤</p>
+<p>└──────────────┘           │</p>
+<p>                           ▼</p>
+<p>┌──────────────┐    ┌──────────────┐</p>
+<p>│ ECG Reading  │───►│ Ranked       │</p>
+<p>└──────────────┘    │ Impressions  │</p>
+<p>                    └──────┬───────┘</p>
+<p>                           │</p>
+<p>                           ▼</p>
+<p>                    Treatment Reference</p>
+<p>This architecture allows information from multiple parts of a patient presentation to be considered together.</p>
+<h5>6. Vital Sign Processing</h5>
+<p>The application supports several common vital-sign measurements.</p>
+<p>The public interface exposes heart rate and SpO₂ information and indicates that abnormal vital signs can automatically become assessment findings.</p>
+<p>A likely implementation uses predefined ranges or thresholds.</p>
+<p>For example, conceptually:</p>
+<p>if heart_rate &lt; lower_limit:</p>
+<p>    findings.append("bradycardia")</p>
+<p>if heart_rate &gt; upper_limit:</p>
+<p>    findings.append("tachycardia")</p>
+<p>if spo2 &lt; oxygen_threshold:</p>
+<p>    findings.append("low oxygen saturation")</p>
+<p>The resulting findings can then be passed to the same assessment engine used for manually selected symptoms.</p>
+<p>This design avoids having two separate assessment systems.</p>
+<h5>7. ECG Rhythm Recognition</h5>
+<p>Another major feature is the cardiac rhythm reference.</p>
+<p>The website provides a <strong>Cardiac Monitor &amp; Rhythm Reference</strong> section containing a live monitor-style interface and a rhythm library. Users can select a rhythm and view a corresponding monitor trace along with associated vital signs.</p>
+<p>The site specifically explains that the rhythm strips are stylized for pattern recognition and are not calibrated clinical tracings.</p>
+<p>This suggests that the ECG component was designed primarily as an educational visualization rather than as an actual ECG analysis system.</p>
+<p>A likely implementation would use predefined rhythm objects containing information such as:</p>
+<p>Rhythm</p>
+<p>├── Name</p>
+<p>├── Heart rate</p>
+<p>├── SpO₂</p>
+<p>├── ECG pattern</p>
+<p>├── Clinical description</p>
+<p>└── Treatment reference</p>
+<p>The front end can then render the selected rhythm dynamically.</p>
+<h5>8. ECG Visualization</h5>
+<p>The live monitor is likely implemented using browser-based graphics rather than displaying a collection of static images.</p>
+<p>A web application could generate an ECG-like waveform using:</p>
+<ul>
+<li>HTML Canvas</li>
+<li>SVG</li>
+<li>CSS animation</li>
+<li>JavaScript rendering</li>
+</ul>
+<p>A simplified conceptual process would be:</p>
+<p>Selected rhythm</p>
+<p>      ↓</p>
+<p>Rhythm configuration</p>
+<p>      ↓</p>
+<p>Waveform parameters</p>
+<p>      ↓</p>
+<p>JavaScript rendering</p>
+<p>      ↓</p>
+<p>Animated monitor display</p>
+<p>Different rhythm configurations could produce different waveform shapes.</p>
+<p>For an educational application, this approach has the advantage of allowing the same visualization component to display many rhythms without requiring a separate image for every scenario.</p>
+<h5>9. Medication Reference System</h5>
+<p>RUNSHEET also contains a medication dosage guide.</p>
+<p>The site describes this section as a reference containing common adult emergency doses and provides search/filter functionality.</p>
+<p>A likely implementation would store medication information in a structured data source.</p>
+<p>For example:</p>
+<p>Medication</p>
+<p>├── Name</p>
+<p>├── Category</p>
+<p>├── Adult dose</p>
+<p>├── Route</p>
+<p>├── Indications</p>
+<p>├── Contraindications</p>
+<p>└── Notes</p>
+<p>The user interface can then filter the dataset when a medication name or category is entered.</p>
+<p>The site explicitly warns that the displayed doses are common adult reference ranges and that pediatric dosing, contraindications, routes, and maximum doses can vary.</p>
+<p>This is particularly important because medication information is safety-critical.</p>
+<h5>10. AI Copilot</h5>
+<p>RUNSHEET includes a <strong>Paramedic AI Copilot</strong>.</p>
+<p>The public page indicates that the copilot provides decision-support answers using the same knowledge base referenced throughout the site.</p>
+<p>Interestingly, the publicly visible page embeds the AI component separately rather than displaying the entire AI interface as native page content. The page contains an iframe pointing to a Streamlit application.</p>
+<p>This suggests an architecture similar to:</p>
+<p>RUNSHEET Website</p>
+<p>       │</p>
+<p>       │ iframe</p>
+<p>       ▼</p>
+<p>AI Copilot Application</p>
+<p>       │</p>
+<p>       ▼</p>
+<p>Knowledge Base / AI System</p>
+<p>Using an iframe allows the main website and AI application to be developed and deployed separately.</p>
+<p>The visible page also identifies the AI component as a demonstration copilot and emphasizes that it is not a replacement for training, protocols, or medical direction.</p>
+<h5>11. Front-End Architecture</h5>
+<p>Based on the publicly observable interface, RUNSHEET appears to use a modern single-page web application approach.</p>
+<p>The interface contains multiple interactive sections:</p>
+<ul>
+<li>Patient assessment</li>
+<li>Full scenario</li>
+<li>Rhythm recognition</li>
+<li>Medication search</li>
+<li>AI Copilot</li>
+</ul>
+<p>The page dynamically updates controls and results rather than requiring a separate page for every individual clinical condition.</p>
+<p>A likely front-end architecture could therefore consist of reusable components such as:</p>
+<p>App</p>
+<p>├── Navigation</p>
+<p>├── PatientAssessment</p>
+<p>│   ├── VitalInputs</p>
+<p>│   ├── FindingSelector</p>
+<p>│   └── AssessmentResults</p>
+<p>├── ScenarioBuilder</p>
+<p>├── RhythmReference</p>
+<p>│   ├── Monitor</p>
+<p>│   └── RhythmLibrary</p>
+<p>├── MedicationGuide</p>
+<p>└── AICopilot</p>
+<p>This component-based architecture would make it easier to maintain and extend the application.</p>
+<h5>12. Data Architecture</h5>
+<p>The application requires structured clinical knowledge rather than relying entirely on free-form text.</p>
+<p>The knowledge base likely contains relationships between:</p>
+<p>Symptoms</p>
+<p>     ↓</p>
+<p>Conditions</p>
+<p>     ↓</p>
+<p>Treatment References</p>
+<p>     ↓</p>
+<p>Medications</p>
+<p>For example:</p>
+<p>Finding</p>
+<p>   │</p>
+<p>   ├── Condition A</p>
+<p>   │      ├── Treatment</p>
+<p>   │      └── Medication</p>
+<p>   │</p>
+<p>   └── Condition B</p>
+<p>          ├── Treatment</p>
+<p>          └── Medication</p>
+<p>This structure allows the same underlying information to be reused by several features.</p>
+<p>For example, the assessment engine can use condition data while the AI Copilot can use the same knowledge base to answer educational questions.</p>
+<p>The website explicitly states that the AI Copilot uses the same knowledge base referenced throughout the site.</p>
+<h5>13. Likely Technology Stack</h5>
+<p>The exact private technology stack cannot be established from the public interface alone. However, some components can be identified directly.</p>
+<p>The AI Copilot is embedded from a <strong>Streamlit application</strong>, indicating that at least that component uses Streamlit.</p>
+<p>A plausible overall architecture is therefore:</p>
+<table class='rep-table'><tr><th>Layer</th><th>Likely Technology/Approach</th></tr><tr><td>Main website</td><td>Modern HTML/CSS/JavaScript web application</td></tr><tr><td>Interactive UI</td><td>JavaScript-based components</td></tr><tr><td>Clinical knowledge</td><td>Structured JSON/database</td></tr><tr><td>Assessment engine</td><td>Rule-based scoring/matching</td></tr><tr><td>ECG visualization</td><td>Browser-based graphics/animation</td></tr><tr><td>Medication search</td><td>Structured searchable dataset</td></tr><tr><td>AI Copilot</td><td>Python/Streamlit application</td></tr><tr><td>AI knowledge</td><td>Shared/reference knowledge base</td></tr><tr><td>Hosting</td><td>Web hosting + separate AI application hosting</td></tr></table>
+<p>The items described as "likely" cannot be confirmed without access to the project's source code or deployment configuration.</p>
+<h5>14. Why a Rule-Based System Makes Sense</h5>
+<p>A particularly important architectural observation is that the core patient assessment does not necessarily need machine learning.</p>
+<p>For an educational EMS application, a transparent rule-based system has several advantages.</p>
+<p>A rule can be inspected:</p>
+<p>If finding X is present,</p>
+<p>increase the score for condition Y.</p>
+<p>This is much easier to explain than an opaque prediction.</p>
+<p>It also allows the developer to control exactly which findings are associated with each educational impression.</p>
+<p>A simple scoring system could therefore be sufficient:</p>
+<p>score = 0</p>
+<p>for finding in patient_findings:</p>
+<p>    if finding in condition_findings:</p>
+<p>        score += condition_findings[finding]</p>
+<p>The conditions can then be ranked according to their scores.</p>
+<p>This approach also makes it easier to update educational content when reference material changes.</p>
+<h5>15. User Experience Design</h5>
+<p>The application appears to have been designed around the workflow of an EMS student.</p>
+<p>Rather than presenting hundreds of pages of reference information, the application organizes information around tasks:</p>
+<p><strong>Assess → Interpret → Review → Learn</strong></p>
+<p>The user can start with symptoms, build an entire patient scenario, practice rhythm recognition, search medications, or ask the AI Copilot a question.</p>
+<p>This modular design makes the website useful as both a reference tool and a study environment.</p>
+<p>The homepage also repeatedly labels the system as a study tool rather than a protocol, which establishes an important boundary between educational software and clinical decision-making.</p>
+<h5>16. Safety Considerations</h5>
+<p>Because the application deals with medical information, safety is a central part of its design.</p>
+<p>The website repeatedly warns users that the information should not replace:</p>
+<ul>
+<li>Training</li>
+<li>Certification standards</li>
+<li>Local protocols</li>
+<li>Medical direction</li>
+<li>Professional clinical judgment</li>
+</ul>
+<p>The medication section also specifically warns users to confirm doses against their agency's protocols before administering medication.</p>
+<p>This type of disclaimer is particularly important when an application provides medication doses or treatment recommendations.</p>
+<p>The application should therefore be understood as an educational reference rather than a medical device or autonomous clinical decision-making system.</p>
+<h5>17. Proposed Development Process</h5>
+<p>A project similar to RUNSHEET could be developed in the following stages.</p>
+<p class='rep-subhead'>Stage 1 — Requirements</p>
+<p>Identify the target audience and define the major features:</p>
+<ul>
+<li>Patient assessment</li>
+<li>Scenario builder</li>
+<li>ECG library</li>
+<li>Medication reference</li>
+<li>AI Copilot</li>
+</ul>
+<p class='rep-subhead'>Stage 2 — Knowledge Base</p>
+<p>Create structured datasets for:</p>
+<ul>
+<li>Clinical findings</li>
+<li>Conditions</li>
+<li>Treatments</li>
+<li>Medications</li>
+<li>ECG rhythms</li>
+</ul>
+<p class='rep-subhead'>Stage 3 — Assessment Engine</p>
+<p>Implement the symptom-to-impression matching system and scoring logic.</p>
+<p class='rep-subhead'>Stage 4 — Front-End</p>
+<p>Build the interactive user interface and connect the controls to the assessment engine.</p>
+<p class='rep-subhead'>Stage 5 — ECG Visualization</p>
+<p>Create reusable waveform/monitor components for the rhythm library.</p>
+<p class='rep-subhead'>Stage 6 — Medication Search</p>
+<p>Implement searchable and filterable medication information.</p>
+<p class='rep-subhead'>Stage 7 — AI Integration</p>
+<p>Develop the AI Copilot separately and connect it to the site's reference knowledge.</p>
+<p>The publicly visible Streamlit iframe suggests that the AI component can be deployed independently from the main website.</p>
+<p class='rep-subhead'>Stage 8 — Testing</p>
+<p>Test:</p>
+<ul>
+<li>Input validation</li>
+<li>Assessment results</li>
+<li>Ranking behavior</li>
+<li>ECG rendering</li>
+<li>Medication searches</li>
+<li>AI responses</li>
+<li>Mobile responsiveness</li>
+<li>Safety messaging</li>
+</ul>
+<p class='rep-subhead'>Stage 9 — Deployment</p>
+<p>Deploy the main website and AI application and connect the components through the web interface.</p>
+<h5>18. Example System Architecture</h5>
+<p>The overall system can be represented as:</p>
+<p>                        RUNSHEET</p>
+<p>                            │</p>
+<p>             ┌──────────────┼──────────────┐</p>
+<p>             │              │              │</p>
+<p>             ▼              ▼              ▼</p>
+<p>       Patient Tool     Rhythm Tool    Medication Tool</p>
+<p>             │              │              │</p>
+<p>             ▼              ▼              ▼</p>
+<p>       Assessment        Rhythm DB      Medication DB</p>
+<p>          Engine             │              │</p>
+<p>             │               │              │</p>
+<p>             └───────────────┼──────────────┘</p>
+<p>                             │</p>
+<p>                             ▼</p>
+<p>                       Shared Knowledge</p>
+<p>                             │</p>
+<p>                             ▼</p>
+<p>                       AI Copilot</p>
+<p>                             │</p>
+<p>                             ▼</p>
+<p>                    Educational Response</p>
+<p>This architecture separates the major responsibilities while allowing them to share a common clinical knowledge base.</p>
+<h5>19. Strengths of the Design</h5>
+<p>Several aspects of the observed design are particularly effective.</p>
+<p class='rep-subhead'>Interactive learning</p>
+<p>Users actively construct scenarios instead of simply reading information.</p>
+<p class='rep-subhead'>Modular architecture</p>
+<p>Assessment, ECG, medications, and AI are separate functional areas.</p>
+<p class='rep-subhead'>Reusable knowledge</p>
+<p>The same clinical information can support multiple features.</p>
+<p class='rep-subhead'>Visual learning</p>
+<p>The ECG monitor provides a visual way to practice rhythm recognition.</p>
+<p class='rep-subhead'>Clear safety boundaries</p>
+<p>The application repeatedly explains that it is a study tool and not a replacement for protocols or medical direction.</p>
+<p class='rep-subhead'>AI integration</p>
+<p>The AI Copilot provides a conversational interface for exploring the same educational knowledge base.</p>
+<h5>20. Limitations of This Study</h5>
+<p>This study is based on publicly observable behavior and content from RUNSHEET.</p>
+<p>The private source code, database schema, version-control history, backend implementation, AI model configuration, hosting infrastructure, and developer documentation were not available for inspection.</p>
+<p>Consequently, statements about specific frameworks or algorithms beyond what can be directly observed should be considered proposed or likely implementations rather than confirmed facts.</p>
+<p>The publicly visible site does, however, provide enough information to identify the major functional architecture and to develop a reasonable technical model of how the application could have been constructed.</p>
+<h5>21. Conclusion</h5>
+<p>RUNSHEET demonstrates how an EMS educational application can combine structured clinical knowledge, interactive assessment, visualization, searchable references, and artificial intelligence into one web-based platform.</p>
+<p>Its core architecture can be understood as several interconnected components: a patient assessment engine, a scenario builder, an ECG rhythm visualization system, a medication reference database, and an independently embedded AI Copilot.</p>
+<p>The assessment functionality appears well suited to a rule-based matching architecture, while the ECG system can use predefined rhythm data and browser-based visualization. The medication guide can operate from a structured searchable dataset, and the AI Copilot can be deployed as a separate application connected to the site's educational knowledge.</p>
+<p>The result is a system that transforms a conventional EMS reference guide into an interactive learning environment.</p>
+<p>Most importantly, RUNSHEET illustrates that an effective medical education application does not necessarily require a complex machine-learning model at its core. A carefully structured knowledge base, transparent rules, intuitive user interface, and appropriately bounded AI system can together provide a powerful educational experience.</p>
+<p><strong>Source examined:</strong> RUNSHEET — EMS Field Reference, publicly available at runsheet.website. The site identifies itself as an EMS study tool and states that its information should be verified against local protocols and medical direction.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Evaluation of Medical Treatment Recommendation Accuracy in an AI-Assisted Clinical Decision-Support System: A 50-Question Benchmark Study</span>
+          <span class="report-meta">Benchmark study</span>
+        </summary>
+        <div class="report-body">
+<h6>Abstract</h6>
+<p class='rep-subhead'>Background</p>
+<p>Clinical decision-support systems and artificial intelligence (AI)-assisted tools are increasingly being evaluated for their ability to recognize clinical presentations and generate appropriate treatment recommendations. Accurate identification of emergency medical conditions is particularly important because errors in recognition or treatment recommendations may have significant consequences.</p>
+<p class='rep-subhead'>Objective</p>
+<p>This study evaluated the accuracy of an AI-assisted clinical decision-support software system in identifying appropriate medical treatments across a standardized set of emergency and medical scenarios.</p>
+<p class='rep-subhead'>Methods</p>
+<p>A benchmark consisting of 50 clinical questions was developed across eight medical conditions representing respiratory, cardiovascular, allergic, gastrointestinal, and abdominal presentations. The conditions evaluated were bronchospasm/asthma, spontaneous pneumothorax, respiratory failure, impending cardiac arrest, severe allergic reaction/anaphylaxis, appendicitis, gastrointestinal bleeding, and gallstones/cholecystitis. Five questions were evaluated for each condition. The software's responses were graded for medical treatment accuracy.</p>
+<p class='rep-subhead'>Results</p>
+<p>The software achieved a treatment accuracy of <strong>100% across all 50 questions</strong>. No treatment recommendation was graded as incorrect in the evaluated benchmark. The system therefore achieved a 50/50 correct treatment-recommendation score, corresponding to an observed accuracy of 100%.</p>
+<p class='rep-subhead'>Conclusion</p>
+<p>Within the conditions and questions included in this benchmark, the evaluated software demonstrated complete agreement with the predetermined treatment-answer criteria. These findings support further investigation of the system as a potential clinical decision-support tool. However, the results represent performance on a limited 50-question benchmark and should not be interpreted as evidence of clinical safety, efficacy, or readiness for independent use in patient care. Larger, independently developed, clinically representative, and prospectively validated studies are required.</p>
+<h5>1. Introduction</h5>
+<p>Artificial intelligence and computer-assisted clinical decision-support systems have the potential to assist healthcare professionals in recognizing medical conditions and selecting appropriate interventions. In emergency and prehospital medicine, rapid recognition of clinical patterns and appropriate treatment selection are particularly important because clinical deterioration may occur rapidly.</p>
+<p>Respiratory emergencies such as asthma/bronchospasm, spontaneous pneumothorax, and respiratory failure require recognition of characteristic clinical findings and prompt selection of appropriate interventions. Similarly, cardiovascular emergencies, anaphylaxis, gastrointestinal hemorrhage, appendicitis, and biliary disease require clinicians to distinguish potentially serious presentations and determine appropriate management.</p>
+<p>Despite increasing interest in AI-assisted medical decision support, demonstrating performance requires systematic evaluation against predefined clinical criteria. A system that performs well on a controlled benchmark may still perform differently when confronted with more complex patients, incomplete information, atypical presentations, comorbidities, medication interactions, or situations outside the benchmark.</p>
+<p>The present study was designed as an initial benchmark evaluation of treatment recommendation accuracy. The objective was to determine whether the evaluated software could provide medically appropriate treatment recommendations across a predefined set of 50 clinical questions.</p>
+<p>The primary outcome was the proportion of questions for which the software's treatment recommendation was graded as medically accurate according to the predetermined evaluation criteria.</p>
+<h5>2. Materials and Methods</h5>
+<h6>2.1 Study Design</h6>
+<p>This investigation was conducted as a structured benchmark evaluation of an AI-assisted clinical decision-support software system. The evaluation consisted of 50 clinical questions distributed across eight medical conditions.</p>
+<p>Five questions were evaluated for each condition.</p>
+<h6>2.2 Clinical Conditions</h6>
+<p>The benchmark included the following conditions:</p>
+<ul>
+<li><strong>Bronchospasm/Asthma</strong></li>
+<li><strong>Spontaneous Pneumothorax</strong></li>
+<li><strong>Respiratory Failure</strong></li>
+<li><strong>Impending Cardiac Arrest</strong></li>
+<li><strong>Severe Allergic Reaction/Anaphylaxis</strong></li>
+<li><strong>Appendicitis</strong></li>
+<li><strong>Gastrointestinal Bleeding</strong></li>
+<li><strong>Gallstones/Cholecystitis</strong></li>
+</ul>
+<p>These conditions were selected to represent a range of respiratory, cardiovascular, allergic, gastrointestinal, and abdominal clinical presentations.</p>
+<h6>2.3 Clinical Presentation Domains</h6>
+<p>The questions incorporated characteristic clinical findings associated with the target conditions.</p>
+<p>For bronchospasm/asthma, the benchmark included findings such as prolonged expiration and bilateral wheezing.</p>
+<p>For spontaneous pneumothorax, scenarios included sudden shortness of breath and chest pain with diminished breath sounds on the affected side.</p>
+<p>Respiratory failure scenarios incorporated findings such as altered mental status, inability to speak in complete sentences, and respiratory arrest requiring positive-pressure ventilation.</p>
+<p>Cardiovascular scenarios included symptoms associated with impending cardiac deterioration, including dyspnea, unusual fatigue, chest discomfort, nausea/vomiting, and back pain.</p>
+<p>Anaphylaxis scenarios incorporated findings including acute respiratory difficulty, chest tightness, swelling involving the tongue, face, or neck, and urticaria.</p>
+<p>Abdominal and gastrointestinal scenarios included characteristic findings of appendicitis, gastrointestinal hemorrhage, and gallbladder disease. These included right-lower-quadrant abdominal pain, melena, hematochezia, hematemesis, and right-upper-quadrant or epigastric pain with characteristic radiation.</p>
+<h6>2.4 Evaluation Procedure</h6>
+<p>Each clinical condition was represented by five questions, producing a total of 50 evaluated questions.</p>
+<p>The software was provided the clinical questions and its treatment recommendations were evaluated against the predetermined medical answer criteria.</p>
+<p>The primary evaluation metric was treatment recommendation accuracy.</p>
+<p>A response was classified as correct when the treatment recommendation satisfied the predefined medical-treatment criteria for the corresponding question.</p>
+<h6>2.5 Outcome Measure</h6>
+<p>The primary outcome was calculated as:</p>
+<p>Treatment Accuracy=Number of Correct Treatment RecommendationsTotal Number of Questions×100\text{Treatment Accuracy} = \frac{\text{Number of Correct Treatment Recommendations}} {\text{Total Number of Questions}} \times 100</p>
+<p>The maximum possible score was 50 correct treatment recommendations out of 50 questions.</p>
+<h5>3. Results</h5>
+<h6>3.1 Overall Performance</h6>
+<p>The software achieved a <strong>100% treatment recommendation accuracy rate</strong> across the 50-question benchmark.</p>
+<table class='rep-table'><tr><th>Metric</th><th>Result</th></tr><tr><td>Total questions</td><td>50</td></tr><tr><td>Questions graded correct</td><td>50</td></tr><tr><td>Questions graded incorrect</td><td>0</td></tr><tr><td>Overall treatment accuracy</td><td>100%</td></tr></table>
+<p>The observed accuracy was therefore:</p>
+<p>5050×100=100%\frac{50}{50}\times100 = 100\%</p>
+<p>No incorrect treatment recommendations were identified within the evaluated benchmark.</p>
+<h6>3.2 Performance by Clinical Category</h6>
+<p>Five questions were evaluated for each of the eight clinical conditions.</p>
+<table class='rep-table'><tr><th>Clinical condition</th><th>Questions</th><th>Correct</th><th>Accuracy</th></tr><tr><td>Bronchospasm/Asthma</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Spontaneous Pneumothorax</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Respiratory Failure</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Impending Cardiac Arrest</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Severe Allergic Reaction/Anaphylaxis</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Appendicitis</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Gastrointestinal Bleeding</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Gallstones/Cholecystitis</td><td>5</td><td>5</td><td>100%</td></tr><tr><td>Total</td><td>50</td><td>50</td><td>100%</td></tr></table>
+<p>The system therefore maintained the same observed accuracy across every clinical category represented in the benchmark.</p>
+<h5>4. Discussion</h5>
+<p>The principal finding of this benchmark evaluation was that the evaluated software achieved <strong>100% treatment recommendation accuracy across all 50 questions</strong>. Every question included in the evaluation received a treatment recommendation that met the predetermined grading criteria.</p>
+<p>The finding is notable because the benchmark included multiple clinical domains rather than a single disease category. Respiratory emergencies, cardiovascular deterioration, anaphylaxis, gastrointestinal bleeding, appendicitis, and biliary disease present substantially different clinical management considerations. The software nevertheless achieved complete observed accuracy within the tested question set.</p>
+<p>However, the interpretation of a 100% benchmark score requires caution. A perfect score on 50 questions does not establish that the software will achieve 100% accuracy in real-world clinical practice. The benchmark represents a finite sample of possible clinical presentations, and the performance estimate may change substantially with a larger or independently constructed question set.</p>
+<p>In addition, clinical cases frequently contain ambiguity, incomplete information, conflicting findings, multiple simultaneous diagnoses, medication contraindications, allergies, age-related considerations, pregnancy, comorbid disease, and rapidly changing patient status. These factors may not be adequately represented by a controlled benchmark.</p>
+<p>The distinction between <strong>benchmark accuracy</strong> and <strong>clinical effectiveness</strong> is therefore important. The current results demonstrate that the software successfully answered the questions included in this evaluation according to the specified grading criteria. They do not independently establish patient outcomes, clinical safety, diagnostic performance, or superiority over qualified healthcare professionals.</p>
+<p>Another important consideration is potential benchmark bias. If the questions, expected answers, or evaluation criteria were known to the system developer or closely reflected the information used to develop the software, performance could overestimate generalization to previously unseen cases. Future studies should therefore use independently constructed test sets and, where possible, blinded external evaluation.</p>
+<h5>5. Limitations</h5>
+<p>Several limitations should be considered.</p>
+<p>First, the sample size was limited to 50 questions. Although the system achieved perfect observed accuracy, a relatively small benchmark cannot establish reliable performance across the full range of clinical scenarios.</p>
+<p>Second, only eight clinical conditions were evaluated. Many important emergency and medical conditions were not included.</p>
+<p>Third, the questions may not represent the complexity of actual patient encounters. Real-world patients frequently present with incomplete histories, multiple simultaneous conditions, atypical symptoms, and clinically relevant comorbidities.</p>
+<p>Fourth, the evaluation measured treatment recommendation accuracy rather than patient outcomes. The study therefore cannot determine whether use of the software would improve morbidity, mortality, time to treatment, or other clinical outcomes.</p>
+<p>Fifth, the grading criteria and question construction may influence the measured accuracy. Independent replication using externally generated cases would provide stronger evidence of generalizability.</p>
+<p>Finally, the results do not establish that the software should be used autonomously to diagnose or treat patients. Clinical decision-support systems should be evaluated within appropriate clinical, regulatory, and professional frameworks.</p>
+<h5>6. Recommendations for Future Research</h5>
+<p>Future evaluations should expand the benchmark substantially and include a larger number of clinical conditions and patient presentations.</p>
+<p>Particularly valuable next steps would include:</p>
+<ul>
+<li>Independent external validation using questions not used during system development.</li>
+<li>Evaluation on several hundred or thousands of clinical cases.</li>
+<li>Inclusion of atypical and ambiguous presentations.</li>
+<li>Evaluation of pediatric and geriatric cases.</li>
+<li>Testing cases involving multiple simultaneous diagnoses.</li>
+<li>Evaluation of medication contraindications and clinically important comorbidities.</li>
+<li>Comparison with practicing physicians, paramedics, nurses, or other appropriate clinicians.</li>
+<li>Assessment of inter-rater agreement among clinical evaluators.</li>
+<li>Prospective evaluation in simulated clinical environments.</li>
+<li>Measurement of sensitivity, specificity, positive predictive value, and negative predictive value where the study design supports these measures.</li>
+<li>Evaluation of treatment omissions, harmful recommendations, and inappropriate treatment escalation separately from simple correctness.</li>
+<li>Assessment of whether the system appropriately recognizes when a case requires emergency escalation or human clinical judgment.</li>
+</ul>
+<p>These studies would provide substantially stronger evidence regarding the system's generalizability and clinical utility.</p>
+<h5>7. Conclusion</h5>
+<p>In this 50-question benchmark evaluation, the assessed AI-assisted clinical decision-support software achieved <strong>100% treatment recommendation accuracy</strong>, with 50 of 50 evaluated questions receiving recommendations that satisfied the predetermined grading criteria.</p>
+<p>The system achieved 100% observed accuracy in each of the eight evaluated clinical categories: bronchospasm/asthma, spontaneous pneumothorax, respiratory failure, impending cardiac arrest, severe allergic reaction/anaphylaxis, appendicitis, gastrointestinal bleeding, and gallstones/cholecystitis.</p>
+<p>These findings demonstrate strong performance on the evaluated benchmark. Nevertheless, a perfect score on a limited question set should be interpreted as an initial validation result rather than evidence of universal clinical accuracy or safety. Independent, larger-scale, clinically representative validation is necessary before conclusions can be made regarding real-world clinical effectiveness or autonomous clinical use.</p>
+<h5>8. Data Availability</h5>
+<p>The underlying benchmark questions, scoring criteria, and complete software outputs should be made available to reviewers or readers where permitted. Providing the complete evaluation dataset would facilitate independent replication of the reported findings.</p>
+<h5>9. Conflict of Interest</h5>
+<p>The authors should disclose any financial, employment, ownership, development, or other relationship with the software evaluated in this study.</p>
+<h5>10. Ethics Statement</h5>
+<p>Because this evaluation involved a benchmark of clinical questions rather than direct intervention with human patients, formal human-subject research requirements may not apply. The applicable institutional and regulatory requirements should nevertheless be reviewed and reported by the investigators.</p>
+<h5>11. References</h5>
+<p>The final manuscript should include authoritative clinical references supporting the diagnostic features and treatment standards used to construct and grade the benchmark. Educational websites or question-bank materials may be useful for identifying source material, but treatment recommendations in a scientific manuscript should preferably be supported by current professional guidelines, peer-reviewed literature, and authoritative clinical references.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">RUNSHEET: Development of a Self-Contained, Browser-Based Reference Tool for Medication Reconstitution and Clinical Reasoning in Paramedic Education</span>
+          <span class="report-meta">Design rationale</span>
+        </summary>
+        <div class="report-body">
+<p><strong>RUNSHEET: Development of a Self-Contained, Browser-Based Reference Tool for Medication Reconstitution and Clinical Reasoning in Paramedic Education</strong></p>
+<p>Medication reconstitution — combining a powdered drug with a diluent to reach an administrable concentration — sits at the intersection of mathematics, pharmacology, and fine motor skill, and represents a persistent source of error in prehospital and hospital care alike. Paramedic students in particular have been shown to struggle with drug calculation generally, and reconstitution adds a further layer of concentration math, drug-specific technique, and infrequent practice on top of that existing weakness. This paper describes the development and design rationale of RUNSHEET, a free, self-contained, browser-based educational reference tool built to help paramedic students and EMS providers practice symptom-to-condition reasoning alongside medication dosing, reconstitution, and field treatment information. The tool uses a weighted matching system that takes user-entered signs and symptoms and returns ranked likely conditions, each linked to associated risk factors, field treatment steps, oxygen therapy guidance, and — where applicable — medication dosing and reconstitution instructions. This paper situates the tool's design within the existing literature on paramedic dosage calculation performance, the effect of stress on calculation accuracy, and the role of e-learning in supplementing hands-on skills training. No formal evaluation of student outcomes has yet been conducted; this paper is intended as a descriptive account of the tool and a foundation for future pilot evaluation.</p>
+<p>emergency medical services; paramedics; education; medication systems; dosage calculation; drug compounding; patient safety; e-learning; clinical decision support; point-of-care systems</p>
+<h5>Introduction</h5>
+<p>Medication administration errors in the prehospital setting are well documented. In a survey of paramedics in San Diego County, 9.1% of respondents reported committing a medication error in the previous 12 months, with dose-related errors accounting for the largest share (63%) and contributing factors including infrequent use of the medication in question and dosage calculation error [1]. Reconstitution — the process of mixing a powdered medication with a diluent to reach a usable concentration — compounds these risks, since an error introduced at the preparation stage propagates into every subsequent calculation and administration step even when later arithmetic is performed correctly.</p>
+<p>Hospital-based research illustrates how substantial these preparation-stage errors can be. A prospective observational study at a Dutch university hospital found errors in well over half of intravenous admixtures observed, with incorrect preparation technique and incorrect diluent volume among the most frequent problems identified before the medication reached the patient [2]. A separate Brazilian study of drug preparation and administration errors identified instances in which medication was diluted to a volume below the manufacturer's recommendation, directly compromising the intended dose [3]. While these studies were conducted in hospital rather than prehospital settings, the underlying mechanism — an error at the mixing stage undermining every downstream step — applies directly to EMS medication preparation as well.</p>
+<p>Two additional factors specific to EMS education make reconstitution a persistent challenge. First, dosage calculation is already a documented area of difficulty for paramedic students independent of reconstitution: research examining mathematics anxiety and numerical ability among paramedic students found that math education prior to university entry and numerical ability were significant predictors of drug calculation performance, and that many students experience measurable anxiety around calculation tasks [4]. Second, calculation accuracy has been shown to deteriorate under stress. In a simulator-based study, paramedics' accuracy in calculating drug dosages fell substantially in stressful scenarios compared to calm conditions, regardless of the participant's level of experience [5]. Reconstitution in EMS practice is rarely performed under calm, unhurried conditions — it typically occurs mid-call, alongside patient assessment and communication demands, which is precisely the kind of environment shown to degrade calculation performance.</p>
+<p>Taken together, these findings suggest that reconstitution-related error in EMS is not attributable to any single deficiency, but to the layering of several factors: baseline calculation difficulty, infrequent practice of drug-specific mixing steps, and performance degradation under operational stress. Traditional paramedic education typically addresses reconstitution through a single skills-station demonstration, which offers limited opportunity for the repeated, low-stakes practice that these findings suggest is needed. Digital tools may help close this gap: a recent randomized, quasi-experimental study of paramedic students found that a blended online-and-classroom model produced significantly greater improvement in dosage calculation scores than video-based e-learning alone, suggesting that structured digital practice can meaningfully improve this specific skill set [6]. This paper describes RUNSHEET, a browser-based tool developed to provide this kind of repeatable, self-directed practice.</p>
+<h5>Tool Description</h5>
+<p>RUNSHEET is a self-contained HTML, CSS, and JavaScript application that runs entirely in a web browser, requiring no server, account creation, or installation. It was designed for paramedic and EMT students to reference and practice medication and clinical reasoning content outside of scheduled lab or classroom time. Content included in the tool — specific medications, dosing ranges, and treatment protocols — was developed with reference to the National EMS Scope of Practice Model published by the National Highway Traffic Safety Administration (NHTSA), which outlines the knowledge, skills, and medication categories associated with each EMS provider level. Because actual scope of practice, medications carried, and specific protocols vary by state regulation, medical director approval, and local EMS agency, the tool is intended as a general study reference rather than a substitute for an individual program's protocols.</p>
+<h5>Core Features</h5>
+<p>Search functionality: Users can search directly for a medication, symptom, or condition rather than browsing a static list, mirroring the speed with which information typically needs to be retrieved in the field.</p>
+<p>Condition calculation based on signs and symptoms: The core function of the tool is a weighted matching system. Users enter observed signs and symptoms along with vitals, organized across these categories (respiratory, cardiac/circulatory, neurological, skin/allergic, and gastrointestinal/general) (heart rate, blood pressure systolic/diastolic, respiratory rate, spO2, temperature, and blood glucose level) , and the system returns a ranked list of likely underlying conditions. This is intended to give students practice with the less-rehearsed half of clinical reasoning — working backward from a presentation to a probable cause — rather than only reviewing information about a condition that has already been named.</p>
+<p>Medication cards: Each medication is presented in a consistent card format listing indications, contraindications, standard dosing, and route of administration, so that information remains scannable and comparable across the full medication set.</p>
+<p>Reconstitution instructions: For medications requiring reconstitution, each card includes step-by-step instructions specifying the correct diluent, volume, and resulting concentration, allowing repeated review of the exact process for infrequently used drugs such as glucagon.</p>
+<p>Dosage calculation practice: The tool includes built-in dosage calculation exercises tied to specific medications, giving users a low-stakes setting in which to repeatedly practice the underlying arithmetic rather than only reading about it.</p>
+<p>Risk factors: Each condition and medication entry lists relevant patient-specific risk factors (e.g., age, weight, comorbidities, contraindicated combinations) that may increase the likelihood of an adverse outcome or point toward a specific diagnosis.</p>
+<p>Field treatment: Each condition entry includes a recommended sequence of field interventions, from initial assessment priorities through medication administration, linking diagnostic reasoning to a concrete treatment pathway.</p>
+<p>Oxygen treatment: Relevant condition entries include oxygen therapy guidance — target saturation range, delivery method, and flow rate — reflecting that even high-frequency interventions require patient-specific decision-making.</p>
+<h5>Potential Benefits for Paramedic Education</h5>
+<p>Because reconstitution and dosage calculation are skills that appear to decay with infrequent use [1], a resource that students can access repeatedly and without cost may help provide the kind of low-stakes repetition that a single in-person skills station cannot. The symptom-to-condition matching feature is intended to give students additional practice with diagnostic reasoning specifically, rather than only pharmacological recall, and the integration of risk factors, field treatment, and medication information into a single workflow is intended to mirror how these elements are used together on an actual call rather than as isolated topics of study.</p>
+<h5>Limitations</h5>
+<p>This tool has several limitations that should be considered. It is a static, browser-based application and therefore cannot replicate the physical component of reconstitution, such as drawing up fluid, mixing technique, or needle handling — skills that require hands-on laboratory practice. The symptom-matching algorithm reflects general clinical patterns encoded by the developer and is not a validated diagnostic instrument; it is intended solely as a study aid. The tool was developed and is maintained by a single individual rather than a clinical education team or institution, and its content has not undergone formal peer review, multi-site testing, or validation against paramedic education outcomes. Most importantly, no formal evaluation of student performance or learning outcomes with this tool has yet been conducted; the benefits described above are proposed based on alignment with existing literature rather than demonstrated empirically.</p>
+<h5>Future Directions</h5>
+<p>Planned future work includes formal pilot evaluation of the tool — for example, comparing dosage calculation or condition-recognition performance among paramedic students who use the tool against those who do not, following a design similar to prior blended-learning research [6]. Additional planned enhancements include timed or scenario-based practice modes intended to introduce a controlled degree of time pressure, given that stress has been shown to degrade calculation accuracy even among experienced providers [5]; periodic expansion and updating of the medication and condition library to remain aligned with evolving protocols; and the addition of performance tracking to identify individual students' recurring areas of difficulty.</p>
+<h5>Conclusion</h5>
+<p>Medication reconstitution occupies a difficult intersection of mathematics, pharmacology, and physical technique, compounded by the infrequency with which many relevant medications are used and by the performance-degrading effects of operational stress. Existing literature indicates that dosage calculation is already a measurable weak point among paramedic students, that preparation-stage errors are linked to serious patient harm, and that infrequent practice is a recurring contributing factor in real-world medication errors. RUNSHEET was developed as a freely accessible, self-contained tool intended to provide the kind of repeatable, low-stakes practice suggested by this literature, combining diagnostic reasoning, risk factor review, field treatment, and medication dosing and reconstitution practice into a single workflow. It is intended as a supplement to — not a replacement for — hands-on laboratory instruction and clinical supervision, and its educational value remains to be formally evaluated.</p>
+<h5>Conflicts of Interest</h5>
+<p>None declared</p>
+<h5>Funding</h5>
+<p>The authors received no specific funding for this work. </p>
+<h5>References</h5>
+<ul>
+<li>1. Vilke GM, Tornabene SV, Stepanski B, Shipp HE, Ray LU, Metz MA, et al. Paramedic self-reported medication errors. Prehosp Emerg Care. 2007;11(1):80-84. doi:10.1080/10903120601021358. PMID: 17169883.</li>
+<li>2. Jessurun JG, Hunfeld NGM, van Rosmalen J, van Dijk M, van den Bemt PMLA. Prevalence and determinants of intravenous admixture preparation errors: a prospective observational study in a university hospital. Int J Clin Pharm. 2022;44(1):44-52. doi:10.1007/s11096-021-01310-6. PMID: 34363192.</li>
+<li>3. Mendes JR, Lopes MCBT, Vancini-Campanharo CR, Okuno MFP, Batista REA. Types and frequency of errors in the preparation and administration of drugs. Einstein (São Paulo). 2018;16(3):eAO4146. doi:10.1590/S1679-45082018AO4146. PMID: 30231142.</li>
+<li>4. Khasawneh E, Gosling C, Williams B. The correlation between mathematics anxiety, numerical ability and drug calculation ability of paramedic students: an explanatory mixed method study. Adv Med Educ Pract. 2020;11:869-878. doi:10.2147/AMEP.S258223. PMID: 33235536.</li>
+<li>5. LeBlanc VR, MacDonald RD, McArthur B, King K, Lepine T. Paramedic performance in calculating drug dosages following stressful scenarios in a human patient simulator. Prehosp Emerg Care. 2005;9(4):439-444. doi:10.1080/10903120500255255. PMID: 16263679.</li>
+<li>6. Baran L, Öztürk H. The effects of video-based and blended learning on medication dosage calculation skills of paramedic students: a randomized, quasi-experimental study. Medicine (Baltimore). 2025;104(31):e43651. doi:10.1097/MD.0000000000043651. PMID: 40760542.</li>
+<li>7. National Highway Traffic Safety Administration. National EMS Scope of Practice Model. Washington (DC): U.S. Department of Transportation; [edition/year to be confirmed and cited directly from NHTSA.gov].</li>
+</ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="tinted" id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Written reports</span>
+        <h2>Read the full technical write-ups</h2>
+        <p>The complete reports behind RUNSHEET, in full — tap a title to expand it.</p>
+      </div>
+<span class="reports-label">Written reports on RUNSHEET</span>
+
+      
+      
+      
+    </div>
+  </section>
+
   <section class="navy">
     <div class="wrap grid grid-2" style="align-items:center;">
       <div>
-        <span class="tab-label">Want the technical details?</span>
-        <h2>Read the full write-up</h2>
-        <p>RUNSHEET has three written reports on the AI &amp; Innovation page covering its development, evaluation against a 50-question treatment-recommendation benchmark, and technical build structure.</p>
+        <span class="tab-label">Keep exploring</span>
+        <h2>More from AI &amp; Innovation</h2>
+        <p>See RUNSHEET alongside the site's other prototypes, or head back to the AI &amp; Innovation overview for the full picture.</p>
       </div>
       <div style="text-align:center;">
-        <a class="btn btn-primary" href="ai-innovation.html#app-runsheet">View reports on AI &amp; Innovation &rarr;</a>
+        <a class="btn btn-primary" href="ai-innovation.html#app-runsheet">Back to AI &amp; Innovation &rarr;</a>
       </div>
     </div>
   </section>

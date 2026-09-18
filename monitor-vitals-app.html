@@ -137,6 +137,124 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
 .apps-nav a:hover{ background:rgba(33,29,23,.12); text-decoration:none; }
 .apps-nav a[aria-current="page"]{ background:var(--ink); color:#fff; }
 
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"− Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem;
+  margin:18px 0 6px;
+  color:var(--accent-deep);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+.report-body td, .report-body th { vertical-align: top; }
+@media(max-width:620px){
+  .report-entry summary{flex-direction:column;align-items:flex-start;gap:4px}
+}
+
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"\2212 Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem; margin:18px 0 6px; color:var(--accent-deep);
+  text-transform:uppercase; letter-spacing:.02em; font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+
 </style>
 </head>
 <body>
@@ -195,7 +313,7 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
       <p class="lede">A computer-vision prototype that reads vital signs directly off a photograph of a patient monitor using OCR, lets you verify each extracted value before it's recorded, builds a timeline as readings come in, and runs a simple ML trend classifier (improving / stable / worsening) over them.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://monitor-vitals-ml.streamlit.app/" target="_blank" rel="noopener noreferrer">Launch ML Monitor Vitals &rarr;</a>
-        <a class="btn btn-outline" href="ai-innovation.html#app-monitor">Read the full technical report &rarr;</a>
+        <a class="btn btn-outline" href="#reports">Read the full technical reports &rarr;</a>
       </div>
     </div>
   </section>
@@ -300,15 +418,1990 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
     </div>
   </section>
 
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Full technical write-up</span>
+        <h2>Written Reports</h2>
+        <p>The complete reports behind this tool &mdash; methodology, testing, and results.</p>
+      </div>
+
+<span class="reports-label">Written reports on ML Monitor Vitals</span>
+
+<details class="report-entry">
+        <summary>
+          <span class="report-title">A Computer-Vision and Machine-Learning Prototype for Extraction, Verification, and Temporal Analysis of Physiological Vital Signs from Patient Monitor Images</span>
+          <span class="report-meta">Technical prototype report</span>
+        </summary>
+        <div class="report-body">
+<h5>Abstract</h5>
+<h6>Background</h6>
+<p>Patient monitors display multiple physiological measurements simultaneously, including heart rate, peripheral oxygen saturation, blood pressure, respiratory rate, and end-tidal carbon dioxide. Although these measurements are readily available on bedside monitoring equipment, transferring them into a digital record can require manual transcription. Optical character recognition (OCR) provides a potential mechanism for converting monitor photographs into structured physiological data.</p>
+<h6>Objective</h6>
+<p>This paper describes the design and implementation of an educational software prototype that uses computer vision, OCR, rule-based parsing, user verification, temporal visualization, and a machine-learning trend model to transform photographs of physiological monitors into structured vital-sign observations.</p>
+<h6>Methods</h6>
+<p>The application was implemented in Python using Streamlit for the interactive web interface, Pillow for image processing, regular expressions for structured blood-pressure extraction, Pandas for tabular data management, and Plotly for temporal visualization. The processing pipeline consists of five principal stages: image acquisition, OCR-based text extraction, physiological-value parsing, human verification, and longitudinal trend analysis. A specialized blood-pressure extraction pathway supplements general OCR because systolic and diastolic pressure are commonly represented as a paired numerical expression. Extracted measurements are assigned OCR-derived confidence values when available. Verified measurements are timestamped and stored in application session state. After at least three verified observations, a machine-learning model is invoked to estimate whether the recorded trajectory is improving, stable, or worsening. Rule-based clinical reference patterns are additionally generated from selected physiological thresholds.</p>
+<h6>Results</h6>
+<p>The implemented prototype provides an end-to-end workflow from monitor-image upload to structured vital-sign display, manual verification, longitudinal tabulation, visualization, and prototype trend classification. The system supports heart rate, SpO₂, systolic and diastolic blood pressure, respiratory rate, and end-tidal carbon dioxide. It also exposes OCR confidence information and provides rule-based reference considerations for selected abnormal physiological patterns.</p>
+<h6>Conclusions</h6>
+<p>The software demonstrates the feasibility of combining OCR, structured parsing, human verification, visualization, and machine-learning methods within a lightweight clinical-data interface. However, the implementation should be regarded strictly as a research and educational prototype. OCR errors, image quality limitations, parser assumptions, limited training data, absence of clinical validation, and potential distribution shift prevent the system from being interpreted as an autonomous clinical decision-support or diagnostic system.</p>
+<p>Keywords: optical character recognition, computer vision, vital signs, physiological monitoring, machine learning, clinical informatics, human-in-the-loop systems, medical imaging, Streamlit</p>
+<h5>1. Introduction</h5>
+<p>Physiological monitoring is fundamental to the assessment of patients in emergency, prehospital, perioperative, and critical-care environments. Modern patient monitors commonly display several physiological variables simultaneously, including heart rate (HR), peripheral oxygen saturation (SpO₂), non-invasive blood pressure (NIBP), respiratory rate (RR), and end-tidal carbon dioxide (EtCO₂).</p>
+<p>Despite the availability of these measurements in digital monitoring systems, photographs or screenshots of monitor displays are sometimes used for documentation, education, retrospective analysis, and software prototyping. Converting such images into structured data presents a computer-vision problem because the measurements are embedded within a graphical user interface rather than provided as machine-readable numerical data.</p>
+<p>Optical character recognition provides a general mechanism for extracting textual and numerical information from images. However, physiological monitor displays introduce additional challenges. Multiple numerical values may be present simultaneously, labels may be separated spatially from their associated values, characters may be distorted by image perspective or illumination, and measurement formats may vary between manufacturers and device models.</p>
+<p>The prototype described in this paper was designed to investigate a human-in-the-loop workflow in which OCR initially extracts candidate values, software parsing converts those candidates into structured physiological variables, and a human operator verifies the measurements before they are incorporated into a longitudinal timeline.</p>
+<p>The architecture additionally incorporates temporal visualization and a machine-learning component intended to characterize the direction of recorded physiological trajectories. A rule-based reference layer provides contextual information regarding selected physiological patterns.</p>
+<p>The primary design principle is therefore not autonomous interpretation, but automated extraction followed by human verification.</p>
+<h5>2. System Objectives</h5>
+<p>The prototype was developed around six functional objectives:</p>
+<ul>
+<li>Accept a photograph of a physiological monitor.</li>
+<li>Extract visible numerical information using OCR.</li>
+<li>Convert OCR output into structured vital-sign variables.</li>
+<li>Provide confidence information and allow manual verification.</li>
+<li>Store verified observations as a time-indexed sequence.</li>
+<li>Analyze and visualize temporal trends using statistical, rule-based, and machine-learning components.</li>
+</ul>
+<p>The system was deliberately structured so that OCR-derived values were not automatically treated as verified clinical observations.</p>
+<h5>3. System Architecture</h5>
+<p>The application follows a modular architecture consisting of an interface layer, image-processing layer, parsing layer, state-management layer, visualization layer, and analytical layer.</p>
+<p>The high-level processing sequence is:</p>
+<p>Monitor Photograph</p>
+<p>│</p>
+<p>▼</p>
+<p>Image Upload</p>
+<p>│</p>
+<p>▼</p>
+<p>Image Preprocessing / OCR</p>
+<p>│</p>
+<p>├───────────────┐</p>
+<p>▼               ▼</p>
+<p>General OCR       BP-specific OCR</p>
+<p>│               │</p>
+<p>▼               ▼</p>
+<p>Vital Parser   BP Candidate Filter</p>
+<p>│               │</p>
+<p>└───────┬───────┘</p>
+<p>▼</p>
+<p>Structured Vital Signs</p>
+<p>│</p>
+<p>▼</p>
+<p>OCR Confidence Display</p>
+<p>│</p>
+<p>▼</p>
+<p>Human Verification</p>
+<p>│</p>
+<p>▼</p>
+<p>Timestamped History</p>
+<p>│</p>
+<p>┌───────┴────────┐</p>
+<p>▼                ▼</p>
+<p>Visualization     ML Trend Model</p>
+<p>│                │</p>
+<p>└───────┬────────┘</p>
+<p>▼</p>
+<p>Reference Considerations</p>
+<p>This architecture establishes a separation between extraction and interpretation. The extraction subsystem attempts to recover numerical information, whereas the user remains responsible for confirming that the extracted values correspond to the source monitor.</p>
+<h5>4. Software Environment</h5>
+<p>The prototype was implemented in Python.</p>
+<p>The principal dependencies visible in the application include:</p>
+<table class='rep-table'><tr><th>Component</th><th>Function</th></tr><tr><td>Python</td><td>Core programming language</td></tr><tr><td>Streamlit</td><td>Interactive web application framework</td></tr><tr><td>Pillow</td><td>Loading and conversion of monitor images</td></tr><tr><td>Pandas</td><td>Tabular data representation and timeline management</td></tr><tr><td>Plotly</td><td>Interactive physiological trend visualization</td></tr><tr><td>Regular expressions</td><td>Numerical pattern recognition, particularly blood pressure</td></tr><tr><td>src.ocr</td><td>Application-specific OCR functions</td></tr><tr><td>src.parser</td><td>Application-specific physiological-value parsing</td></tr><tr><td>src.ml</td><td>Machine-learning trend model</td></tr></table>
+<p>The application imports three primary custom modules:</p>
+<p>from src.ocr import extract_text, extract_bp_candidates</p>
+<p>from src.parser import parse_vitals</p>
+<p>and, when sufficient historical observations exist:</p>
+<p>from src.ml import train_trend_model, predict_trend</p>
+<p>This modular organization allows OCR, parsing, and machine-learning components to be developed independently of the graphical user interface.</p>
+<h5>5. Image Acquisition</h5>
+<p>The first stage of the workflow is image acquisition.</p>
+<p>The interface uses Streamlit's file-upload functionality to accept JPEG and PNG images:</p>
+<p>uploaded = st.file_uploader(</p>
+<p>"Upload a monitor photograph",</p>
+<p>type=["jpg", "jpeg", "png"]</p>
+<p>)</p>
+<p>When an image is supplied, Pillow loads the image and explicitly converts it to RGB:</p>
+<p>image = Image.open(</p>
+<p>uploaded</p>
+<p>).convert("RGB")</p>
+<p>This normalization ensures that downstream processing receives a consistent three-channel representation regardless of the original image mode.</p>
+<p>The uploaded image is subsequently rendered within the interface so that the operator can visually inspect the source material.</p>
+<h5>6. Optical Character Recognition</h5>
+<h5>6.1 General OCR</h5>
+<p>After the operator activates the monitor-reading operation, the image is passed to the general OCR subsystem:</p>
+<p>ocr_results = extract_text(image)</p>
+<p>The application expects the OCR subsystem to return a list of structured objects. Each object is expected to contain at least a textual representation and an associated confidence value.</p>
+<p>Conceptually, the OCR output can be represented as:</p>
+<p>[</p>
+<p>{</p>
+<p>"text": "...",</p>
+<p>"confidence": ...</p>
+<p>},</p>
+<p>...</p>
+<p>]</p>
+<p>The application includes defensive validation:</p>
+<p>if not isinstance(ocr_results, list):</p>
+<p>ocr_results = []</p>
+<p>This prevents an unexpected OCR return type from propagating directly into later stages of the application.</p>
+<p>The OCR results are retained in application session state:</p>
+<p>st.session_state.ocr = ocr_results</p>
+<p>This allows the extracted text and confidence values to remain accessible after the Streamlit application reruns.</p>
+<h5>7. Physiological Value Parsing</h5>
+<p>Following OCR extraction, the recognized text is passed to a dedicated parsing function:</p>
+<p>vitals = parse_vitals(ocr_results)</p>
+<p>The parser converts unstructured OCR output into a structured dictionary.</p>
+<p>The expected variables include:</p>
+<ul>
+<li>HR</li>
+<li>SpO₂</li>
+<li>systolic blood pressure</li>
+<li>diastolic blood pressure</li>
+<li>RR</li>
+<li>EtCO₂</li>
+</ul>
+<p>The parser is also treated defensively:</p>
+<p>if not isinstance(vitals, dict):</p>
+<p>vitals = {}</p>
+<p>This establishes a clear boundary between the OCR subsystem and the user interface.</p>
+<p>A conceptual representation of the resulting object is:</p>
+<p>{</p>
+<p>"hr": ...,</p>
+<p>"spo2": ...,</p>
+<p>"bp_sys": ...,</p>
+<p>"bp_dia": ...,</p>
+<p>"rr": ...,</p>
+<p>"etco2": ...</p>
+<p>}</p>
+<p>The exact implementation of parse_vitals() is contained in the external parser module and therefore cannot be inferred completely from the provided interface code. Consequently, this manuscript describes the observable interface contract rather than assuming a specific internal parsing algorithm.</p>
+<h5>8. Specialized Blood-Pressure Extraction</h5>
+<p>Blood pressure receives an additional processing pathway.</p>
+<p>This design is important because blood pressure is represented as a paired measurement rather than a single numerical value. The prototype therefore calls:</p>
+<p>bp_results = extract_bp_candidates(image)</p>
+<p>Candidate text is subsequently examined using a regular expression:</p>
+<p>r"(\d{2,3})\s*[/\-]\s*(\d{2,3})"</p>
+<p>This expression recognizes patterns such as:</p>
+<p>120/80</p>
+<p>120 - 80</p>
+<p>The extracted components are interpreted as systolic and diastolic pressure.</p>
+<p>The prototype then applies physiological plausibility constraints:</p>
+<p>50 &lt;= systolic &lt;= 250</p>
+<p>20 &lt;= diastolic &lt;= 150</p>
+<p>systolic &gt; diastolic</p>
+<p>Candidates failing these criteria are discarded.</p>
+<p>If multiple valid candidates are detected, the candidate with the highest OCR confidence is selected.</p>
+<p>This creates a simple confidence-based candidate-selection mechanism:</p>
+<p>Candidate BP values</p>
+<p>│</p>
+<p>▼</p>
+<p>Regex pattern matching</p>
+<p>│</p>
+<p>▼</p>
+<p>Numerical validation</p>
+<p>│</p>
+<p>▼</p>
+<p>Plausible candidates</p>
+<p>│</p>
+<p>▼</p>
+<p>Highest OCR confidence</p>
+<p>│</p>
+<p>▼</p>
+<p>Selected BP</p>
+<p>The resulting blood-pressure values are then inserted into the structured vital-sign dictionary.</p>
+<h5>9. Confidence Estimation</h5>
+<p>The application incorporates a confidence-display mechanism to communicate uncertainty associated with OCR extraction.</p>
+<p>The find_confidence() function first searches for a parser-provided confidence value:</p>
+<p>parser_confidence = vitals.get(</p>
+<p>f"{vital_name}_confidence"</p>
+<p>)</p>
+<p>If a parser-specific confidence value is unavailable, the application searches the raw OCR results for a numerical match corresponding to the extracted vital.</p>
+<p>For example, if the structured heart rate is 82, the algorithm examines OCR outputs for a numerical value matching 82 and retains the highest associated confidence.</p>
+<p>For blood pressure, the function instead searches for OCR text containing a slash, reflecting the paired representation of the measurement.</p>
+<p>The resulting confidence is classified into three presentation levels:</p>
+<ul>
+<li>High: ≥ 0.80</li>
+<li>Medium: 0.50–0.79</li>
+<li>Low: &lt; 0.50</li>
+</ul>
+<p>These thresholds affect presentation only. They do not constitute experimentally validated probabilities of correct physiological extraction.</p>
+<p>This distinction is important because OCR confidence is not necessarily equivalent to clinical correctness.</p>
+<h5>10. Data Validation and Defensive Programming</h5>
+<p>The interface includes several mechanisms intended to prevent malformed data from causing invalid displays or application failures.</p>
+<p>The safe_int() function verifies that values are numerical and fall within specified limits before converting them to integers.</p>
+<p>For example:</p>
+<p>safe_int(</p>
+<p>hr,</p>
+<p>0,</p>
+<p>300</p>
+<p>)</p>
+<p>is used to initialize the manually editable HR field.</p>
+<p>The interface similarly imposes explicit numerical limits on user-entered verification values.</p>
+<p>Examples include:</p>
+<p>HR: 0–300 bpm</p>
+<p>SpO₂: 0–100%</p>
+<p>Systolic BP: 0–300 mmHg</p>
+<p>Diastolic BP: 0–200 mmHg</p>
+<p>RR: 0–100/min</p>
+<p>EtCO₂: 0–150 mmHg</p>
+<p>These bounds are primarily software safeguards rather than validated clinical reference ranges.</p>
+<h5>11. Human Verification Layer</h5>
+<p>A central feature of the architecture is the manual verification stage.</p>
+<p>Extracted measurements are displayed to the user before being added to the longitudinal record.</p>
+<p>The interface explicitly instructs the operator to compare the displayed values against the physical monitor.</p>
+<p>The user can modify:</p>
+<ul>
+<li>HR</li>
+<li>SpO₂</li>
+<li>systolic BP</li>
+<li>diastolic BP</li>
+<li>RR</li>
+<li>EtCO₂</li>
+</ul>
+<p>Only after the operator activates the verification control is the observation added to the historical dataset.</p>
+<p>This produces a human-in-the-loop pipeline:</p>
+<p>OCR extraction</p>
+<p>↓</p>
+<p>Automated parsing</p>
+<p>↓</p>
+<p>Displayed candidate values</p>
+<p>↓</p>
+<p>Human verification/correction</p>
+<p>↓</p>
+<p>Verified observation</p>
+<p>This design substantially changes the interpretation of the resulting dataset. The longitudinal history represents user-confirmed values, rather than purely automated OCR output.</p>
+<h5>12. Temporal Data Representation</h5>
+<p>Verified observations are stored using Streamlit's session-state mechanism.</p>
+<p>Each observation contains:</p>
+<p>{</p>
+<p>"time": datetime.now(),</p>
+<p>"HR": verified_hr,</p>
+<p>"SpO2": verified_spo2,</p>
+<p>"BP Sys": verified_sys,</p>
+<p>"BP Dia": verified_dia,</p>
+<p>"RR": verified_rr,</p>
+<p>"EtCO2": verified_etco2</p>
+<p>}</p>
+<p>Consequently, each record consists of a timestamp and six physiological variables.</p>
+<p>The history is subsequently converted into a Pandas DataFrame:</p>
+<p>df = pd.DataFrame(</p>
+<p>st.session_state.history</p>
+<p>)</p>
+<p>This representation allows the observations to be displayed in tabular form and passed to downstream visualization and machine-learning routines.</p>
+<h5>13. Visualization of Physiological Trends</h5>
+<p>The temporal data are visualized using Plotly.</p>
+<p>A line-and-marker trace is generated for:</p>
+<ul>
+<li>HR</li>
+<li>SpO₂</li>
+<li>RR</li>
+<li>EtCO₂</li>
+</ul>
+<p>Blood pressure is retained in the tabular history but is not plotted in the provided trend graph.</p>
+<p>Each variable is added as a separate Plotly trace:</p>
+<p>go.Scatter(</p>
+<p>x=chart_df["time"],</p>
+<p>y=chart_df[column],</p>
+<p>mode="lines+markers",</p>
+<p>name=column</p>
+<p>)</p>
+<p>The visualization uses a white plotting template and includes labeled axes.</p>
+<p>The purpose of the graph is descriptive: it allows an operator to inspect temporal trajectories rather than relying exclusively on individual measurements.</p>
+<h5>14. Machine-Learning Trend Analysis</h5>
+<p>A machine-learning subsystem is activated when at least three verified observations have been recorded.</p>
+<p>The application dynamically imports:</p>
+<p>from src.ml import (</p>
+<p>train_trend_model,</p>
+<p>predict_trend</p>
+<p>)</p>
+<p>The model is trained through:</p>
+<p>model = train_trend_model()</p>
+<p>and subsequently applied to the recorded history:</p>
+<p>prediction, confidence, probabilities = (</p>
+<p>predict_trend(</p>
+<p>model,</p>
+<p>st.session_state.history</p>
+<p>)</p>
+<p>)</p>
+<p>The model returns three principal outputs:</p>
+<ul>
+<li>A categorical trend prediction.</li>
+<li>A model confidence value.</li>
+<li>A dictionary of class probabilities.</li>
+</ul>
+<p>The categorical output has three possible states:</p>
+<p>Improving</p>
+<p>Stable</p>
+<p>Worsening</p>
+<p>The interface presents the class probabilities separately.</p>
+<p>Importantly, the provided code does not reveal the internal implementation of train_trend_model() or predict_trend(). Therefore, characteristics such as the machine-learning algorithm, feature engineering procedure, training-set size, class balance, validation strategy, and performance metrics cannot be scientifically established from the supplied interface code alone.</p>
+<p>The application's own labeling appropriately identifies this component as a prototype trend estimator rather than a validated clinical deterioration score.</p>
+<h5>15. Clinical Reference Layer</h5>
+<p>The application contains a rule-based reference subsystem that evaluates selected physiological measurements against predefined thresholds.</p>
+<p>The implementation evaluates:</p>
+<ul>
+<li>HR &gt; 100 bpm</li>
+<li>HR &lt; 60 bpm</li>
+<li>SpO₂ &lt; 94%</li>
+<li>systolic BP &lt; 90 mmHg</li>
+<li>RR &gt; 20/min</li>
+<li>EtCO₂ &lt; 35 mmHg</li>
+</ul>
+<p>When a threshold is met, the corresponding pattern is displayed along with a list of possible clinical considerations.</p>
+<p>For example, an elevated HR triggers a "tachycardia pattern" containing possible considerations such as physiological stress, fever, hypovolemia, hypoxemia, medication effects, and cardiac rhythm disturbance.</p>
+<p>These rules are implemented using straightforward conditional statements rather than a probabilistic diagnostic model.</p>
+<p>For example:</p>
+<p>if (</p>
+<p>isinstance(hr_value, (int, float))</p>
+<p>and hr_value &gt; 100</p>
+<p>):</p>
+<p>The output is therefore better characterized as a rule-based clinical reference layer rather than an automated diagnostic system.</p>
+<p>The application explicitly communicates that these considerations are not diagnoses.</p>
+<h5>16. User Interface Design</h5>
+<p>The interface was implemented entirely within Streamlit.</p>
+<p>The major interface sections are:</p>
+<ul>
+<li>Patient context</li>
+<li>Monitor image upload</li>
+<li>Extracted vital signs</li>
+<li>Verification controls</li>
+<li>OCR details</li>
+<li>Patient timeline</li>
+<li>Trend graph</li>
+<li>Machine-learning trend estimate</li>
+<li>Clinical reference considerations</li>
+</ul>
+<p>Custom CSS is embedded through Streamlit's Markdown functionality.</p>
+<p>The styling creates:</p>
+<ul>
+<li>high-contrast vital-sign cards,</li>
+<li>confidence indicators,</li>
+<li>warning panels,</li>
+<li>reference panels,</li>
+<li>a wide application layout,</li>
+<li>visual separation between functional sections.</li>
+</ul>
+<p>The design therefore emphasizes rapid interpretation of structured values while preserving access to the underlying OCR results.</p>
+<h5>17. Application State Management</h5>
+<p>Because Streamlit applications rerun portions of the Python script when users interact with widgets, persistent information is maintained through st.session_state.</p>
+<p>Three principal state variables are initialized:</p>
+<p>st.session_state.vitals</p>
+<p>st.session_state.ocr</p>
+<p>st.session_state.history</p>
+<p>They represent:</p>
+<table class='rep-table'><tr><th>State variable</th><th>Purpose</th></tr><tr><td>vitals</td><td>Most recently parsed physiological values</td></tr><tr><td>ocr</td><td>Most recent OCR output</td></tr><tr><td>history</td><td>User-verified longitudinal observations</td></tr></table>
+<p>This state model allows the application to preserve the patient's recorded timeline across interface interactions during the active application session.</p>
+<p>The supplied implementation does not show persistent database storage. Therefore, the history should be interpreted as session-level application state rather than a permanent medical record.</p>
+<h5>18. Error Handling</h5>
+<p>The principal image-processing workflow is enclosed in a try/except block.</p>
+<p>If OCR, parsing, blood-pressure extraction, or another operation raises an exception, the interface reports the error rather than terminating the entire application.</p>
+<p>Similarly, machine-learning execution is isolated within its own error-handling block:</p>
+<p>try:</p>
+<p>...</p>
+<p>except Exception as e:</p>
+<p>st.warning(</p>
+<p>f"ML trend model unavailable: {e}"</p>
+<p>)</p>
+<p>This allows the core extraction and visualization workflow to remain usable if the optional trend-analysis subsystem fails.</p>
+<h5>19. Safety-Oriented Design</h5>
+<p>The prototype incorporates several safeguards intended to reduce inappropriate interpretation.</p>
+<p>First, automated OCR values are explicitly presented as values requiring verification.</p>
+<p>Second, the application separates extracted values from verified values.</p>
+<p>Third, the machine-learning component is explicitly labeled as a prototype trend estimate.</p>
+<p>Fourth, the clinical-reference layer is explicitly described as non-diagnostic.</p>
+<p>Finally, the interface instructs users to compare extracted values with the original monitor and patient assessment.</p>
+<p>These design decisions establish a decision-support boundary in which the software assists with transcription and visualization but does not replace clinical assessment.</p>
+<h5>20. Discussion</h5>
+<p>The implemented architecture demonstrates how multiple relatively simple computational components can be combined into an end-to-end physiological-data pipeline.</p>
+<p>The first contribution is the integration of image-based extraction with structured physiological parsing. Rather than requiring manual transcription from every monitor photograph, OCR can provide candidate numerical values that are subsequently normalized into a predefined schema.</p>
+<p>The second contribution is the use of a specialized blood-pressure extraction pathway. Blood pressure presents a different parsing problem because its two components must be identified together. Regular-expression matching and physiological plausibility filtering provide a lightweight mechanism for rejecting obviously inappropriate candidates.</p>
+<p>The third contribution is the human-verification architecture. Instead of assuming OCR output is correct, the system explicitly inserts a human confirmation stage before measurements enter the longitudinal dataset. This is particularly important because OCR errors may result from glare, blur, image perspective, character segmentation, monitor typography, or overlapping graphical elements.</p>
+<p>The fourth contribution is the integration of temporal visualization. Once measurements are verified, individual observations can be transformed into a time series, making changes in HR, SpO₂, RR, and EtCO₂ easier to inspect.</p>
+<p>Finally, the prototype demonstrates how a machine-learning layer can be incorporated after data acquisition. However, the usefulness of such a model depends strongly on the quality, size, representativeness, labeling methodology, and validation of its training data.</p>
+<h5>21. Limitations</h5>
+<p>Several limitations should be considered.</p>
+<h5>21.1 OCR Performance</h5>
+<p>OCR accuracy is dependent on the quality of the input image and the underlying OCR implementation. The provided code does not specify the OCR engine, preprocessing operations, image segmentation strategy, character-recognition architecture, or benchmark performance.</p>
+<p>Consequently, sensitivity and specificity for individual vital signs cannot be calculated from the interface code alone.</p>
+<h5>21.2 Monitor Variability</h5>
+<p>Different monitor manufacturers and models may use different fonts, layouts, colors, abbreviations, and numerical arrangements. A parser developed around one display configuration may therefore perform differently on another.</p>
+<h5>21.3 Blood-Pressure Parsing</h5>
+<p>The blood-pressure regular expression assumes a relatively conventional numerical representation. Alternative display formats may not be recognized.</p>
+<p>The numerical plausibility constraints also prevent certain values from being selected even if they were correctly displayed by an unusual monitor configuration.</p>
+<h5>21.4 Confidence Interpretation</h5>
+<p>OCR confidence is used as a proxy for extraction reliability, but it should not automatically be interpreted as the probability that the physiological value is clinically correct.</p>
+<h5>21.5 Machine-Learning Validation</h5>
+<p>The machine-learning implementation is external to the supplied interface code. The training data, feature construction, model architecture, class definitions, cross-validation strategy, and independent test performance are not provided.</p>
+<p>Therefore, no claims regarding model accuracy, sensitivity, specificity, calibration, generalizability, or clinical utility can be made from the supplied code.</p>
+<h5>21.6 Limited Temporal Data</h5>
+<p>The machine-learning component requires only three observations before producing an estimate. From a scientific perspective, three observations may provide very limited information about a physiological trajectory.</p>
+<p>The minimum-observation requirement should therefore not be confused with evidence that three measurements are sufficient for reliable clinical trend prediction.</p>
+<h5>21.7 Lack of Persistent Clinical Storage</h5>
+<p>The supplied application stores historical measurements in Streamlit session state. No electronic health record integration, database layer, audit log, or durable patient-record mechanism is demonstrated.</p>
+<h5>21.8 Rule-Based Reference Thresholds</h5>
+<p>The clinical reference subsystem uses fixed numerical thresholds. Physiological interpretation can depend on age, baseline physiology, clinical context, treatment, environment, and measurement conditions. Consequently, threshold-triggered text should not be interpreted as individualized diagnosis.</p>
+<h5>22. Reproducibility and Future Evaluation</h5>
+<p>A rigorous evaluation of the prototype would require a dedicated dataset of monitor photographs with ground-truth annotations.</p>
+<p>A suitable evaluation protocol could contain the following stages:</p>
+<h6>Stage 1: Image Dataset Construction</h6>
+<p>Collect monitor images representing different:</p>
+<ul>
+<li>monitor manufacturers,</li>
+<li>display layouts,</li>
+<li>lighting conditions,</li>
+<li>camera angles,</li>
+<li>image resolutions,</li>
+<li>patient-monitor configurations,</li>
+<li>physiological value ranges.</li>
+</ul>
+<h6>Stage 2: Ground-Truth Annotation</h6>
+<p>Each image should be manually annotated for:</p>
+<ul>
+<li>HR,</li>
+<li>SpO₂,</li>
+<li>systolic BP,</li>
+<li>diastolic BP,</li>
+<li>RR,</li>
+<li>EtCO₂.</li>
+</ul>
+<p>The ground truth should be independently verified against the original monitor output.</p>
+<h6>Stage 3: OCR Evaluation</h6>
+<p>Measure:</p>
+<ul>
+<li>character-level recognition accuracy,</li>
+<li>numerical recognition accuracy,</li>
+<li>vital-sign extraction accuracy,</li>
+<li>false-positive rate,</li>
+<li>missing-value rate.</li>
+</ul>
+<h6>Stage 4: Parser Evaluation</h6>
+<p>Compare parsed values with ground truth and calculate variable-specific metrics.</p>
+<h6>Stage 5: Blood-Pressure Evaluation</h6>
+<p>Evaluate systolic and diastolic pressure independently and jointly, including cases containing visually ambiguous characters.</p>
+<h6>Stage 6: Human-in-the-Loop Evaluation</h6>
+<p>Measure the proportion of OCR outputs requiring manual correction and the time required to verify each observation.</p>
+<h6>Stage 7: Machine-Learning Evaluation</h6>
+<p>For the trend model, an independent dataset should be used for testing.</p>
+<p>Potential metrics include:</p>
+<ul>
+<li>accuracy,</li>
+<li>precision,</li>
+<li>recall,</li>
+<li>F1 score,</li>
+<li>confusion matrix,</li>
+<li>calibration,</li>
+<li>class-specific sensitivity,</li>
+<li>temporal generalization.</li>
+</ul>
+<p>Importantly, the test data should remain independent from the training data to prevent optimistic performance estimates.</p>
+<h5>23. Proposed Experimental Methodology</h5>
+<p>A formal study could compare three workflows:</p>
+<p>Workflow A — Manual transcription</p>
+<p>Monitor image → Human reads → Manual entry</p>
+<p>Workflow B — OCR-assisted transcription</p>
+<p>Monitor image → OCR → Human verification</p>
+<p>Workflow C — Automated extraction</p>
+<p>Monitor image → OCR → Parser → Automated record</p>
+<p>Workflow B would be particularly informative because it reflects the architecture implemented in the prototype.</p>
+<p>Primary outcome measures could include:</p>
+<ul>
+<li>Time required to produce a verified vital-sign record.</li>
+<li>Numerical transcription error rate.</li>
+<li>Percentage of observations requiring correction.</li>
+<li>Agreement between extracted and ground-truth values.</li>
+<li>User-reported workload.</li>
+</ul>
+<p>This experimental design would permit assessment of whether OCR assistance reduces transcription burden while maintaining human oversight.</p>
+<h5>24. Ethical and Clinical Considerations</h5>
+<p>A system processing physiological information must distinguish between technical extraction and clinical interpretation.</p>
+<p>The prototype's architecture appropriately separates these functions. OCR identifies candidate information from an image; verification establishes the values that enter the historical record; visualization represents temporal data; and the reference layer provides possible contextual considerations.</p>
+<p>None of these operations independently establishes a diagnosis.</p>
+<p>Before deployment in clinical environments, additional considerations would include:</p>
+<ul>
+<li>patient privacy,</li>
+<li>secure image handling,</li>
+<li>access control,</li>
+<li>auditability,</li>
+<li>data retention,</li>
+<li>model validation,</li>
+<li>clinical governance,</li>
+<li>usability testing,</li>
+<li>regulatory classification,</li>
+<li>human-factors evaluation,</li>
+<li>monitoring for systematic extraction errors.</li>
+</ul>
+<p>In particular, performance should be evaluated across the diversity of monitor displays and clinical contexts in which the system is intended to operate.</p>
+<h5>25. Conclusion</h5>
+<p>This paper describes an educational prototype that combines computer vision, OCR, rule-based numerical parsing, human verification, temporal data visualization, machine-learning trend estimation, and clinical reference rules within a single Python-based application.</p>
+<p>The architecture follows a sequential human-in-the-loop workflow:</p>
+<p>Image</p>
+<p>↓</p>
+<p>OCR</p>
+<p>↓</p>
+<p>Structured parsing</p>
+<p>↓</p>
+<p>Confidence assessment</p>
+<p>↓</p>
+<p>Human verification</p>
+<p>↓</p>
+<p>Timestamped physiological history</p>
+<p>↓</p>
+<p>Visualization</p>
+<p>↓</p>
+<p>Prototype trend analysis</p>
+<p>↓</p>
+<p>Reference considerations</p>
+<p>The principal engineering feature is the separation between automated extraction and verified clinical data. This approach recognizes that OCR output can contain errors and therefore should not automatically become part of a longitudinal physiological record.</p>
+<p>The prototype demonstrates the technical feasibility of transforming photographs of physiological monitors into structured observations and subsequently analyzing those observations over time. Nevertheless, the current implementation does not provide evidence of clinical accuracy or clinical effectiveness. In particular, the OCR subsystem, parsing subsystem, and machine-learning model require independent validation before quantitative claims regarding performance can be established.</p>
+<p>Accordingly, the system is best understood as a research and educational prototype illustrating the integration of computer vision and machine learning into physiological-data workflows rather than as an autonomous diagnostic or clinical decision-making system.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Clinical Potential and Implementation Manual for an Image-Based Physiological Monitoring Support System</span>
+          <span class="report-meta">Clinical potential & implementation</span>
+        </summary>
+        <div class="report-body">
+<h5>Abstract</h5>
+<p>This manual describes the potential clinical applications, operational workflow, safety requirements, implementation considerations, and future development pathway for an image-based physiological monitoring support system capable of extracting vital-sign information from photographs of patient-monitor displays.</p>
+<p>The system combines optical character recognition (OCR), numerical parsing, confidence estimation, human verification, temporal data visualization, prototype machine-learning trend analysis, and rule-based clinical reference information. Its primary potential clinical function is to reduce the burden associated with manual transcription of physiological measurements while creating a structured representation of monitor observations.</p>
+<p>The system should initially be considered an assistive clinical-information technology rather than an autonomous diagnostic system. In a clinical environment, extracted measurements should remain subject to verification by appropriately trained healthcare personnel. The system should not independently determine diagnosis, treatment, disposition, or emergency intervention.</p>
+<p>A staged implementation strategy is recommended, beginning with retrospective validation and simulated clinical workflows, followed by supervised prospective evaluation and only subsequently consideration of operational deployment. Clinical implementation should incorporate performance monitoring, cybersecurity and privacy controls, human-factors evaluation, documentation, governance, and applicable regulatory review.</p>
+<h5>1. Purpose of This Manual</h5>
+<p>The purpose of this manual is to describe how an image-based vital-sign extraction system could potentially be incorporated into clinical workflows and how its capabilities could be evaluated before clinical deployment.</p>
+<p>The manual addresses:</p>
+<ul>
+<li>potential clinical applications;</li>
+<li>intended users;</li>
+<li>workflow integration;</li>
+<li>operational procedures;</li>
+<li>human verification;</li>
+<li>possible clinical benefits;</li>
+<li>limitations;</li>
+<li>safety requirements;</li>
+<li>validation methodology;</li>
+<li>quality assurance;</li>
+<li>data governance;</li>
+<li>machine-learning considerations;</li>
+<li>implementation stages;</li>
+<li>future development.</li>
+</ul>
+<p>The document is intended for researchers, clinicians, clinical informaticians, software developers, biomedical engineers, and healthcare organizations evaluating the feasibility of this type of technology.</p>
+<h5>2. Fundamental Clinical Principle</h5>
+<p>The central principle of clinical implementation should be:</p>
+<p>The system extracts and organizes information; the healthcare professional remains responsible for clinical interpretation and decision-making.</p>
+<p>The system should therefore be positioned between the physical monitoring device and the clinician's documentation or information workflow.</p>
+<p>Conceptually:</p>
+<p>Patient</p>
+<p>│</p>
+<p>▼</p>
+<p>Physiological monitor</p>
+<p>│</p>
+<p>▼</p>
+<p>Monitor display</p>
+<p>│</p>
+<p>▼</p>
+<p>Image acquisition</p>
+<p>│</p>
+<p>▼</p>
+<p>OCR / image analysis</p>
+<p>│</p>
+<p>▼</p>
+<p>Structured candidate values</p>
+<p>│</p>
+<p>▼</p>
+<p>Human verification</p>
+<p>│</p>
+<p>▼</p>
+<p>Clinical record / timeline</p>
+<p>│</p>
+<p>▼</p>
+<p>Clinician interpretation</p>
+<p>│</p>
+<p>▼</p>
+<p>Clinical decision</p>
+<p>This separation is consistent with the broader principle that humans should remain in control of healthcare decisions when AI technologies are used. WHO specifically identifies human autonomy, safety, transparency, accountability, and continuous evaluation as important principles for AI in health.</p>
+<h5>3. Potential Clinical Value</h5>
+<p>The most immediate potential benefit is not autonomous diagnosis.</p>
+<p>Instead, the system could assist with information acquisition and organization.</p>
+<h5>3.1 Reduction of Manual Transcription</h5>
+<p>Healthcare personnel frequently encounter numerical physiological information displayed on monitors.</p>
+<p>A photograph-based workflow could potentially transform:</p>
+<p>Monitor → photograph → OCR → structured values</p>
+<p>rather than:</p>
+<p>Monitor → clinician reads values → clinician manually types values</p>
+<p>This could reduce repetitive transcription work and potentially reduce certain types of manual-entry errors.</p>
+<p>However, this potential benefit must be demonstrated experimentally rather than assumed.</p>
+<h5>4. Potential Clinical Use Cases</h5>
+<h5>4.1 Emergency Department</h5>
+<p>A potential application is rapid capture of vital signs during emergency assessment.</p>
+<p>For example:</p>
+<p>Patient arrives</p>
+<p>↓</p>
+<p>Monitor applied</p>
+<p>↓</p>
+<p>Monitor displays vital signs</p>
+<p>↓</p>
+<p>Image captured</p>
+<p>↓</p>
+<p>System extracts candidate values</p>
+<p>↓</p>
+<p>Clinician verifies</p>
+<p>↓</p>
+<p>Verified values documented</p>
+<p>The system could potentially support rapid organization of HR, SpO₂, BP, RR, and EtCO₂ measurements.</p>
+<p>It should not replace the patient's actual monitor, pulse oximeter, blood-pressure measurement, clinical examination, ECG, or clinician assessment.</p>
+<h5>5. Prehospital and EMS Applications</h5>
+<p>A particularly interesting potential application is prehospital medicine.</p>
+<p>During transport or field treatment, physiological values may change repeatedly.</p>
+<p>A structured timeline could represent:</p>
+<table class='rep-table'><tr><th>Time</th><th>HR</th><th>SpO₂</th><th>BP</th><th>RR</th><th>EtCO₂</th></tr><tr><td>14:05</td><td>118</td><td>91</td><td>92/58</td><td>28</td><td>29</td></tr><tr><td>14:12</td><td>110</td><td>94</td><td>98/62</td><td>24</td><td>32</td></tr><tr><td>14:20</td><td>101</td><td>96</td><td>105/68</td><td>21</td><td>35</td></tr></table>
+<p>Rather than considering each measurement independently, clinicians can inspect the trajectory.</p>
+<p>Potential uses include:</p>
+<ul>
+<li>documenting serial observations;</li>
+<li>reviewing physiological response to treatment;</li>
+<li>transferring structured information between providers;</li>
+<li>supporting handoff documentation;</li>
+<li>creating research datasets;</li>
+<li>retrospective quality review.</li>
+</ul>
+<p>The technology would still require verification against the actual monitor.</p>
+<h5>6. Critical-Care and Procedural Environments</h5>
+<p>The same concept could potentially be investigated in:</p>
+<ul>
+<li>intensive care;</li>
+<li>procedural sedation;</li>
+<li>operating-room environments;</li>
+<li>recovery areas;</li>
+<li>transport medicine;</li>
+<li>simulation laboratories.</li>
+</ul>
+<p>The value may be greatest where multiple physiological variables are recorded repeatedly.</p>
+<p>For example, EtCO₂ and respiratory rate can change over time, and a structured timeline may make these changes easier to review.</p>
+<p>However, deployment in high-acuity environments should require particularly rigorous validation because an extraction error could potentially be consequential.</p>
+<h5>7. Patient Handoffs</h5>
+<p>Another potential application is information transfer.</p>
+<p>A clinician could capture a monitor image before handoff, verify the extracted measurements, and generate a structured record of recent observations.</p>
+<p>The workflow could be:</p>
+<p>Before handoff</p>
+<p>↓</p>
+<p>Capture monitor</p>
+<p>↓</p>
+<p>Extract values</p>
+<p>↓</p>
+<p>Verify values</p>
+<p>↓</p>
+<p>Review timeline</p>
+<p>↓</p>
+<p>Communicate verified observations</p>
+<p>The system could therefore support communication without becoming the authority for clinical interpretation.</p>
+<p>This corresponds to a broader clinical decision-support principle described by AHRQ: useful information should reach the appropriate person, in an appropriate format, through an appropriate channel, at the appropriate point in workflow.</p>
+<h5>8. Education and Simulation</h5>
+<p>A lower-risk initial application is clinical education.</p>
+<p>The system could be used in:</p>
+<ul>
+<li>EMS simulations;</li>
+<li>nursing education;</li>
+<li>medical-school simulation;</li>
+<li>critical-care training;</li>
+<li>clinical informatics research;</li>
+<li>OCR and machine-learning research.</li>
+</ul>
+<p>For example, an instructor could photograph a simulated patient's monitor and ask learners to:</p>
+<ul>
+<li>verify the extracted measurements;</li>
+<li>review the temporal trajectory;</li>
+<li>identify changes;</li>
+<li>discuss possible physiological explanations;</li>
+<li>compare their interpretation with the simulation scenario.</li>
+</ul>
+<p>This provides a useful research environment without initially placing the software in direct clinical decision-making.</p>
+<h5>9. Research Applications</h5>
+<p>The system could also serve as a research data-acquisition tool.</p>
+<p>A standardized workflow could convert monitor images into structured observations:</p>
+<p>Image</p>
+<p>↓</p>
+<p>OCR</p>
+<p>↓</p>
+<p>Parser</p>
+<p>↓</p>
+<p>Human verification</p>
+<p>↓</p>
+<p>Structured dataset</p>
+<p>This could facilitate research involving:</p>
+<ul>
+<li>physiological time-series analysis;</li>
+<li>human-computer interaction;</li>
+<li>OCR performance;</li>
+<li>monitor-display recognition;</li>
+<li>clinical documentation;</li>
+<li>machine-learning model development;</li>
+<li>simulation research.</li>
+</ul>
+<p>For research involving human participants, appropriate institutional ethical review and data protections would be required. WHO emphasizes formal ethical oversight for research involving human subjects.</p>
+<h5>10. Intended Users</h5>
+<p>Potential users could include:</p>
+<h6>Primary users</h6>
+<ul>
+<li>physicians;</li>
+<li>nurses;</li>
+<li>paramedics;</li>
+<li>emergency medical technicians;</li>
+<li>respiratory therapists;</li>
+<li>anesthesia personnel;</li>
+<li>critical-care personnel.</li>
+</ul>
+<h6>Secondary users</h6>
+<ul>
+<li>clinical researchers;</li>
+<li>biomedical engineers;</li>
+<li>clinical informaticians;</li>
+<li>simulation educators;</li>
+<li>quality-improvement teams.</li>
+</ul>
+<p>Users should receive training regarding:</p>
+<ul>
+<li>the purpose of the software;</li>
+<li>its limitations;</li>
+<li>OCR errors;</li>
+<li>confidence values;</li>
+<li>verification requirements;</li>
+<li>appropriate use of trend estimates;</li>
+<li>appropriate escalation procedures.</li>
+</ul>
+<h5>11. Recommended Clinical Workflow</h5>
+<p>A safe implementation should use the following workflow.</p>
+<h5>Step 1 — Acquire the Image</h5>
+<p>Capture a clear image of the monitor.</p>
+<p>The operator should attempt to minimize:</p>
+<ul>
+<li>glare;</li>
+<li>motion blur;</li>
+<li>extreme viewing angles;</li>
+<li>reflections;</li>
+<li>obstruction of numerical values.</li>
+</ul>
+<h5>Step 2 — Run Extraction</h5>
+<p>The image is submitted to the application.</p>
+<p>The system performs:</p>
+<p>Image</p>
+<p>↓</p>
+<p>OCR</p>
+<p>↓</p>
+<p>Numerical parsing</p>
+<p>↓</p>
+<p>Blood-pressure extraction</p>
+<p>↓</p>
+<p>Candidate vital signs</p>
+<h5>Step 3 — Review Extracted Values</h5>
+<p>The application displays the candidate measurements.</p>
+<p>For example:</p>
+<p>HR          112 bpm</p>
+<p>SpO₂        91%</p>
+<p>BP          92/58 mmHg</p>
+<p>RR          28/min</p>
+<p>EtCO₂       29 mmHg</p>
+<p>The system also presents available OCR confidence information.</p>
+<h5>12. Step 4 — Mandatory Human Verification</h5>
+<p>The clinician should compare every extracted value with the original monitor.</p>
+<p>Possible outcomes are:</p>
+<h6>Correct</h6>
+<p>The extracted value matches the monitor.</p>
+<h6>Incorrect</h6>
+<p>The extracted value does not match the monitor.</p>
+<h6>Uncertain</h6>
+<p>The clinician cannot confidently determine the displayed value.</p>
+<p>In the latter two situations, the value should be corrected or rejected rather than automatically incorporated into the clinical record.</p>
+<h5>13. Step 5 — Record the Verified Observation</h5>
+<p>Only verified measurements should enter the longitudinal timeline.</p>
+<p>The system records:</p>
+<p>Timestamp</p>
+<p>HR</p>
+<p>SpO₂</p>
+<p>Systolic BP</p>
+<p>Diastolic BP</p>
+<p>RR</p>
+<p>EtCO₂</p>
+<p>The distinction between extracted and verified data should be preserved in any production implementation.</p>
+<h5>14. Step 6 — Review the Timeline</h5>
+<p>Multiple verified observations can be displayed chronologically.</p>
+<p>The clinician can examine:</p>
+<ul>
+<li>absolute values;</li>
+<li>direction of change;</li>
+<li>rate of change;</li>
+<li>response following an intervention;</li>
+<li>persistence of abnormalities.</li>
+</ul>
+<p>This provides contextual information that is not available from a single measurement.</p>
+<h5>15. Machine-Learning Trend Analysis</h5>
+<p>The current prototype provides a three-category trend output:</p>
+<p>Improving</p>
+<p>Stable</p>
+<p>Worsening</p>
+<p>This feature has potential as a research direction but should not initially be treated as a validated clinical prediction system.</p>
+<p>The displayed probability values should not be interpreted as probabilities of patient deterioration.</p>
+<p>Before clinical use, the model would require:</p>
+<ul>
+<li>a clearly defined target outcome;</li>
+<li>representative training data;</li>
+<li>independent validation data;</li>
+<li>prospective evaluation;</li>
+<li>calibration analysis;</li>
+<li>subgroup analysis;</li>
+<li>assessment of missing data;</li>
+<li>evaluation across different monitor types;</li>
+<li>monitoring for model drift.</li>
+</ul>
+<p>WHO guidance emphasizes rigorous testing, monitoring, and evaluation of AI technologies used in health systems.</p>
+<h5>16. Clinical Reference Function</h5>
+<p>The rule-based component identifies selected physiological patterns.</p>
+<p>Examples include:</p>
+<p>HR &gt; 100       → tachycardia pattern</p>
+<p>HR &lt; 60        → bradycardia pattern</p>
+<p>SpO₂ &lt; 94%     → low oxygen saturation pattern</p>
+<p>SBP &lt; 90       → low systolic BP pattern</p>
+<p>RR &gt; 20        → tachypnea pattern</p>
+<p>EtCO₂ &lt; 35     → low EtCO₂ pattern</p>
+<p>The system then displays possible clinical considerations.</p>
+<p>This functionality should be treated as a reference tool, not as diagnostic reasoning.</p>
+<p>For example:</p>
+<p>Low SpO₂</p>
+<p>↓</p>
+<p>Possible considerations</p>
+<p>↓</p>
+<p>Clinician evaluates:</p>
+<p>airway</p>
+<p>breathing</p>
+<p>circulation</p>
+<p>history</p>
+<p>physical examination</p>
+<p>monitor reliability</p>
+<p>treatment response</p>
+<p>The software should never convert a threshold into a definitive diagnosis.</p>
+<h5>17. Example Clinical Scenario</h5>
+<p>Consider a hypothetical patient whose monitor displays:</p>
+<p>HR:       124 bpm</p>
+<p>SpO₂:     89%</p>
+<p>BP:       86/54 mmHg</p>
+<p>RR:       30/min</p>
+<p>EtCO₂:    27 mmHg</p>
+<p>The system extracts these values.</p>
+<p>The clinician verifies that they correspond to the monitor.</p>
+<p>The timeline may then show:</p>
+<p>Initial</p>
+<p>HR 124</p>
+<p>SpO₂ 89%</p>
+<p>BP 86/54</p>
+<p>RR 30</p>
+<p>EtCO₂ 27</p>
+<p>After intervention</p>
+<p>HR 112</p>
+<p>SpO₂ 93%</p>
+<p>BP 94/60</p>
+<p>RR 25</p>
+<p>EtCO₂ 30</p>
+<p>Later</p>
+<p>HR 101</p>
+<p>SpO₂ 96%</p>
+<p>BP 105/67</p>
+<p>RR 21</p>
+<p>EtCO₂ 34</p>
+<p>The system can visualize this trajectory.</p>
+<p>The clinician can then independently consider the patient's history, examination findings, ECG, treatment response, and other available information.</p>
+<p>The important distinction is that the software organizes the physiological observations; the clinician interprets their clinical meaning.</p>
+<h5>18. Potential Advantages</h5>
+<p>If validated, the system could potentially provide several benefits.</p>
+<h5>18.1 Documentation Efficiency</h5>
+<p>Automated extraction could reduce repetitive numerical transcription.</p>
+<h5>18.2 Structured Data</h5>
+<p>Photographs can be converted into structured records suitable for analysis.</p>
+<h5>18.3 Longitudinal Visualization</h5>
+<p>Serial measurements can be represented graphically.</p>
+<h5>18.4 Human Verification</h5>
+<p>The workflow allows clinicians to correct OCR errors before measurements become verified observations.</p>
+<h5>18.5 Research Dataset Generation</h5>
+<p>The technology could facilitate creation of structured physiological datasets from previously unstructured images.</p>
+<h5>18.6 Interoperability Potential</h5>
+<p>A future implementation could potentially transmit verified measurements into an electronic health record through an appropriately designed integration layer.</p>
+<p>A production implementation would require careful workflow design rather than simply adding another application to the clinician's workload. AHRQ's CDS implementation guidance emphasizes identifying user needs, integrating technology into workflow, and evaluating whether the implementation achieves its intended objectives.</p>
+<h5>19. Major Clinical Risks</h5>
+<p>Potential risks include:</p>
+<h5>19.1 False Extraction</h5>
+<p>The system may read:</p>
+<p>120</p>
+<p>when the monitor actually displays:</p>
+<p>180</p>
+<p>This could create a clinically misleading record.</p>
+<h5>19.2 Missing Values</h5>
+<p>OCR may fail to identify a measurement.</p>
+<p>A missing value should never automatically be interpreted as a normal value.</p>
+<h5>19.3 Incorrect Blood Pressure</h5>
+<p>A paired numerical pattern may be incorrectly interpreted as blood pressure.</p>
+<p>The system should therefore preserve access to the source image and require verification.</p>
+<h5>19.4 Image Quality</h5>
+<p>Blur, glare, reflections, poor lighting, or unusual viewing angles can degrade OCR performance.</p>
+<h5>19.5 Monitor Variability</h5>
+<p>Different monitor manufacturers and display configurations may produce substantially different OCR performance.</p>
+<h5>19.6 Automation Bias</h5>
+<p>Clinicians may unintentionally trust software-generated values simply because they appear in a professional-looking interface.</p>
+<p>This is a major human-factors concern.</p>
+<p>The interface should therefore make the verification status highly visible.</p>
+<h5>20. Recommended Verification Status</h5>
+<p>A production system should explicitly distinguish:</p>
+<p>UNREAD</p>
+<p>OCR EXTRACTED</p>
+<p>REVIEW REQUIRED</p>
+<p>VERIFIED</p>
+<p>CORRECTED</p>
+<p>REJECTED</p>
+<p>For example:</p>
+<table class='rep-table'><tr><th>Measurement</th><th>Extracted</th><th>Verified</th><th>Status</th></tr><tr><td>HR</td><td>118</td><td>118</td><td>VERIFIED</td></tr><tr><td>SpO₂</td><td>91</td><td>91</td><td>VERIFIED</td></tr><tr><td>BP</td><td>82/51</td><td>92/61</td><td>CORRECTED</td></tr><tr><td>RR</td><td>29</td><td>29</td><td>VERIFIED</td></tr><tr><td>EtCO₂</td><td>28</td><td>28</td><td>VERIFIED</td></tr></table>
+<p>This would make the provenance of each measurement substantially clearer.</p>
+<h5>21. Clinical Safety Architecture</h5>
+<p>A clinical implementation should incorporate multiple safety layers.</p>
+<p>┌─────────────────────┐</p>
+<p>│   Monitor / Patient  │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>▼</p>
+<p>┌─────────────────────┐</p>
+<p>│ Image Acquisition   │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>▼</p>
+<p>┌─────────────────────┐</p>
+<p>│ OCR / Extraction     │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>▼</p>
+<p>┌─────────────────────┐</p>
+<p>│ Validation Rules     │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>▼</p>
+<p>┌─────────────────────┐</p>
+<p>│ Human Verification  │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>▼</p>
+<p>┌─────────────────────┐</p>
+<p>│ Verified Data       │</p>
+<p>└──────────┬──────────┘</p>
+<p>│</p>
+<p>┌─────────────┴──────────────┐</p>
+<p>▼                            ▼</p>
+<p>┌─────────────────┐          ┌─────────────────┐</p>
+<p>│ Timeline        │          │ Trend Analysis  │</p>
+<p>└─────────────────┘          └─────────────────┘</p>
+<p>No automated output should bypass the verification layer during the initial clinical implementation.</p>
+<h5>22. Clinical Validation Program</h5>
+<p>Before deployment, a formal validation program should be performed.</p>
+<h5>Phase I — Technical Validation</h5>
+<p>Determine whether the system correctly extracts values from monitor images.</p>
+<p>Measure:</p>
+<ul>
+<li>sensitivity;</li>
+<li>specificity;</li>
+<li>exact numerical agreement;</li>
+<li>OCR character accuracy;</li>
+<li>missing-value frequency;</li>
+<li>false extraction frequency.</li>
+</ul>
+<h5>Phase II — Multidevice Validation</h5>
+<p>Test the system across:</p>
+<ul>
+<li>different monitor manufacturers;</li>
+<li>different monitor models;</li>
+<li>different display configurations;</li>
+<li>different screen resolutions;</li>
+<li>different lighting environments;</li>
+<li>different camera devices.</li>
+</ul>
+<h5>Phase III — Simulated Clinical Validation</h5>
+<p>Place the system into realistic simulation scenarios.</p>
+<p>Measure:</p>
+<ul>
+<li>time saved;</li>
+<li>correction rate;</li>
+<li>user workload;</li>
+<li>usability;</li>
+<li>error frequency;</li>
+<li>human-factors problems.</li>
+</ul>
+<h5>Phase IV — Prospective Clinical Evaluation</h5>
+<p>If justified and appropriately approved, evaluate the system prospectively under controlled conditions.</p>
+<p>The primary objective should initially be information extraction and documentation performance, not autonomous diagnosis.</p>
+<h5>23. Performance Metrics</h5>
+<p>A formal study could report:</p>
+<h6>Extraction accuracy</h6>
+<p>Accuracy=Correctly extracted measurementsTotal measurementsAccuracy = \frac{\text{Correctly extracted measurements}} {\text{Total measurements}}</p>
+<h6>Error rate</h6>
+<p>Error Rate=Incorrect measurementsTotal measurementsError\ Rate = \frac{\text{Incorrect measurements}} {\text{Total measurements}}</p>
+<h6>Missing-value rate</h6>
+<p>Missing Rate=Measurements not extractedExpected measurementsMissing\ Rate = \frac{\text{Measurements not extracted}} {\text{Expected measurements}}</p>
+<h6>Verification correction rate</h6>
+<p>Correction Rate=OCR measurements corrected by usersMeasurements reviewedCorrection\ Rate = \frac{\text{OCR measurements corrected by users}} {\text{Measurements reviewed}}</p>
+<p>For the machine-learning component, additional metrics should include:</p>
+<ul>
+<li>sensitivity;</li>
+<li>specificity;</li>
+<li>precision;</li>
+<li>recall;</li>
+<li>F1 score;</li>
+<li>calibration;</li>
+<li>confusion matrix;</li>
+<li>performance across clinically relevant subgroups.</li>
+</ul>
+<h5>24. Human-Factors Evaluation</h5>
+<p>Technical accuracy alone is insufficient.</p>
+<p>A system could have excellent OCR performance but still be unsafe if users misunderstand its output.</p>
+<p>Evaluation should therefore examine:</p>
+<ul>
+<li>whether clinicians notice verification warnings;</li>
+<li>whether confidence information is understood;</li>
+<li>whether users recognize unverified values;</li>
+<li>whether users become overly reliant on automated results;</li>
+<li>whether the interface interrupts workflow;</li>
+<li>whether the system increases or decreases documentation burden.</li>
+</ul>
+<p>The design should favor clear presentation of uncertainty rather than hiding it.</p>
+<h5>25. Data Privacy and Security</h5>
+<p>A clinical implementation would potentially process patient-related images.</p>
+<p>Consequently, safeguards should address:</p>
+<ul>
+<li>authentication;</li>
+<li>authorization;</li>
+<li>encryption;</li>
+<li>secure transmission;</li>
+<li>data retention;</li>
+<li>audit logs;</li>
+<li>access control;</li>
+<li>secure deletion;</li>
+<li>minimum necessary data collection.</li>
+</ul>
+<p>Images should not be retained indefinitely unless there is a defined clinical, research, or operational purpose.</p>
+<p>If the system is integrated into a healthcare organization, its data architecture should be reviewed against applicable privacy, security, and health-information requirements.</p>
+<h5>26. Electronic Health Record Integration</h5>
+<p>A mature implementation could potentially integrate verified observations with an electronic health record.</p>
+<p>The desired workflow could be:</p>
+<p>Monitor image</p>
+<p>↓</p>
+<p>OCR</p>
+<p>↓</p>
+<p>Verification</p>
+<p>↓</p>
+<p>Structured observation</p>
+<p>↓</p>
+<p>EHR interface</p>
+<p>↓</p>
+<p>Clinical record</p>
+<p>However, automated insertion into the EHR should not occur simply because OCR produced a value.</p>
+<p>The record should indicate:</p>
+<ul>
+<li>source;</li>
+<li>timestamp;</li>
+<li>extraction method;</li>
+<li>verification status;</li>
+<li>correcting user;</li>
+<li>original extracted value;</li>
+<li>final verified value.</li>
+</ul>
+<p>This creates an auditable chain of provenance.</p>
+<h5>27. Regulatory Considerations</h5>
+<p>The regulatory status of clinical software depends on its intended use and functionality.</p>
+<p>In the United States, FDA's January 2026 Clinical Decision Support Software guidance distinguishes certain clinical decision-support functions from software functions that remain subject to medical-device regulation. The determination depends on the specific function and intended use rather than simply the fact that software uses AI or machine learning.</p>
+<p>Therefore, an organization developing a clinical version should conduct a formal regulatory assessment before deployment.</p>
+<p>The following should be explicitly documented:</p>
+<ul>
+<li>intended users;</li>
+<li>intended patient population;</li>
+<li>intended clinical setting;</li>
+<li>intended use;</li>
+<li>claims made by the manufacturer;</li>
+<li>inputs;</li>
+<li>outputs;</li>
+<li>degree of automation;</li>
+<li>clinical consequences of incorrect output.</li>
+</ul>
+<p>The prototype's educational labeling should not be assumed to determine regulatory status if a future implementation makes clinical claims.</p>
+<h5>28. Governance</h5>
+<p>Clinical deployment should establish a governance structure involving, as appropriate:</p>
+<ul>
+<li>clinicians;</li>
+<li>nursing representatives;</li>
+<li>EMS representatives;</li>
+<li>biomedical engineering;</li>
+<li>clinical informatics;</li>
+<li>information security;</li>
+<li>privacy officers;</li>
+<li>quality and patient-safety personnel;</li>
+<li>legal/regulatory specialists;</li>
+<li>software engineers;</li>
+<li>data scientists.</li>
+</ul>
+<p>WHO recommends governance structures that address safety, accountability, transparency, equity, privacy, and human oversight when AI is used in health.</p>
+<h5>29. Recommended Deployment Strategy</h5>
+<p>A staged deployment is preferable to immediate clinical integration.</p>
+<h6>Stage 1 — Research</h6>
+<p>Use the system exclusively with retrospective or simulated data.</p>
+<h6>Stage 2 — Silent Evaluation</h6>
+<p>The system processes clinical images without influencing patient care.</p>
+<p>Its predictions are compared with ground truth.</p>
+<h6>Stage 3 — Supervised Workflow</h6>
+<p>Clinicians can view extracted information, but all values require explicit verification.</p>
+<h6>Stage 4 — Limited Operational Use</h6>
+<p>If validated and appropriately governed, the system can support documentation in a narrowly defined clinical environment.</p>
+<h6>Stage 5 — Continuous Monitoring</h6>
+<p>Performance should continue to be monitored after deployment.</p>
+<p>This is important because real-world image distributions can differ from development datasets.</p>
+<h5>30. Continuous Quality Monitoring</h5>
+<p>A production system should monitor:</p>
+<p>OCR accuracy</p>
+<p>↓</p>
+<p>Correction frequency</p>
+<p>↓</p>
+<p>Monitor-specific errors</p>
+<p>↓</p>
+<p>User feedback</p>
+<p>↓</p>
+<p>Model performance</p>
+<p>↓</p>
+<p>Safety events</p>
+<p>↓</p>
+<p>System improvement</p>
+<p>Performance should be stratified by monitor model and clinical environment.</p>
+<p>A sudden increase in correction rates could indicate:</p>
+<ul>
+<li>software changes;</li>
+<li>new monitor hardware;</li>
+<li>altered display configuration;</li>
+<li>camera changes;</li>
+<li>environmental conditions;</li>
+<li>model drift.</li>
+</ul>
+<h5>31. Recommended Clinical Operating Procedure</h5>
+<p>A concise operational protocol could be:</p>
+<h6>Before use</h6>
+<ul>
+<li>Confirm that the system is available and functioning.</li>
+<li>Confirm that the monitor is functioning normally.</li>
+<li>Capture a clear image.</li>
+<li>Ensure the patient and monitor information are handled according to privacy requirements.</li>
+</ul>
+<h6>During extraction</h6>
+<ul>
+<li>Submit the image.</li>
+<li>Review extracted measurements.</li>
+<li>Review confidence indicators.</li>
+<li>Compare each value with the monitor.</li>
+</ul>
+<h6>Before documentation</h6>
+<ul>
+<li>Correct inaccurate values.</li>
+<li>Reject unreadable values.</li>
+<li>Confirm all required measurements.</li>
+<li>Add only verified observations to the timeline.</li>
+</ul>
+<h6>During clinical interpretation</h6>
+<ul>
+<li>Review the temporal trend.</li>
+<li>Consider the patient's clinical condition.</li>
+<li>Confirm measurements using the primary monitor or other appropriate clinical methods when necessary.</li>
+<li>Use clinical judgment and applicable protocols.</li>
+</ul>
+<h6>After use</h6>
+<ul>
+<li>Document according to institutional policy.</li>
+<li>Report technical errors.</li>
+<li>Report clinically significant discrepancies.</li>
+<li>Do not rely on historical automated output if its verification status is unknown.</li>
+</ul>
+<h5>32. What the System Should Not Do</h5>
+<p>Until extensive validation and appropriate authorization have been completed, the system should not independently:</p>
+<ul>
+<li>diagnose a patient;</li>
+<li>determine patient disposition;</li>
+<li>recommend medication administration;</li>
+<li>recommend invasive procedures;</li>
+<li>replace ECG interpretation;</li>
+<li>replace direct patient assessment;</li>
+<li>replace the physiological monitor;</li>
+<li>determine whether a patient is clinically stable;</li>
+<li>issue autonomous emergency treatment instructions;</li>
+<li>suppress clinically significant alarms;</li>
+<li>automatically assume an OCR value is correct.</li>
+</ul>
+<p>The machine-learning trend estimate should likewise not be treated as a validated deterioration score unless and until it has undergone appropriate clinical validation.</p>
+<h5>33. Future Development</h5>
+<p>Several developments could significantly increase the system's potential.</p>
+<h5>33.1 Advanced Computer Vision</h5>
+<p>Future versions could incorporate:</p>
+<ul>
+<li>monitor-layout detection;</li>
+<li>region-of-interest detection;</li>
+<li>perspective correction;</li>
+<li>glare reduction;</li>
+<li>image enhancement;</li>
+<li>display segmentation;</li>
+<li>device-specific recognition.</li>
+</ul>
+<h5>33.2 Multi-Modal Validation</h5>
+<p>The system could eventually compare information from multiple sources:</p>
+<p>Monitor image</p>
+<p>+</p>
+<p>ECG</p>
+<p>+</p>
+<p>Pulse oximeter</p>
+<p>+</p>
+<p>Capnography</p>
+<p>+</p>
+<p>Blood pressure</p>
+<p>This could improve consistency checking, although each additional data source would introduce its own validation requirements.</p>
+<h5>33.3 Real-Time Video</h5>
+<p>Instead of individual photographs, a future system could analyze a video stream of the monitor.</p>
+<p>Potentially:</p>
+<p>Video</p>
+<p>↓</p>
+<p>Frame selection</p>
+<p>↓</p>
+<p>Monitor detection</p>
+<p>↓</p>
+<p>OCR</p>
+<p>↓</p>
+<p>Temporal filtering</p>
+<p>↓</p>
+<p>Vital-sign sequence</p>
+<p>Temporal filtering could reduce transient OCR errors.</p>
+<h5>33.4 Device-Specific Models</h5>
+<p>Different monitor families could have dedicated recognition models.</p>
+<p>The system could first determine:</p>
+<p>Monitor type</p>
+<p>↓</p>
+<p>Display layout</p>
+<p>↓</p>
+<p>Expected value locations</p>
+<p>↓</p>
+<p>Targeted OCR</p>
+<p>This may improve extraction reliability.</p>
+<h5>33.5 Clinical Interoperability</h5>
+<p>Verified observations could eventually be represented using standardized healthcare data structures and transmitted to clinical information systems.</p>
+<p>Such integration would require formal interoperability, security, provenance, and regulatory analysis.</p>
+<h5>34. Overall Clinical Potential</h5>
+<p>The greatest near-term potential of this technology is likely to be in structured physiological-data capture and documentation assistance, rather than autonomous clinical decision-making.</p>
+<p>Its potential can be conceptualized as:</p>
+<p>Clinical Potential</p>
+<p>│</p>
+<p>┌───────────────┼────────────────┐</p>
+<p>▼               ▼                ▼</p>
+<p>Documentation     Research         Education</p>
+<p>│               │                │</p>
+<p>▼               ▼                ▼</p>
+<p>Vital extraction  Dataset creation  Simulation</p>
+<p>│</p>
+<p>▼</p>
+<p>Temporal organization</p>
+<p>│</p>
+<p>▼</p>
+<p>Human-reviewed trend information</p>
+<p>This approach could allow relatively unstructured visual information on physiological monitors to become structured data suitable for documentation, research, visualization, and potentially future clinical decision-support applications.</p>
+<h5>35. Final Implementation Principle</h5>
+<p>The appropriate clinical philosophy is:</p>
+<p>Automate the transcription task while preserving human responsibility for verification and clinical interpretation.</p>
+<p>The technology's potential should therefore be evaluated according to whether it can make information capture:</p>
+<ul>
+<li>faster;</li>
+<li>more structured;</li>
+<li>more traceable;</li>
+<li>less burdensome;</li>
+<li>sufficiently accurate;</li>
+<li>understandable to clinicians;</li>
+<li>safely integrated into existing workflows.</li>
+</ul>
+<p>Clinical implementation should proceed only after evidence demonstrates that the benefits outweigh the risks for the specific intended use.</p>
+<p>WHO emphasizes that AI used in healthcare should be designed around safety, human autonomy, transparency, accountability, equity, and continuous assessment.</p>
+<p>Accordingly, the long-term vision is not a system that replaces clinicians. It is a system that can potentially convert visual physiological information into reliable, structured, human-verified information that clinicians can incorporate into their existing workflow.</p>
+<h5>36. Summary of Recommended Clinical Pathway</h5>
+<table class='rep-table'><tr><th>Development stage</th><th>Primary objective</th><th>Human verification</th><th>Clinical decision influence</th></tr><tr><td>Prototype</td><td>Demonstrate technical feasibility</td><td>Yes</td><td>None</td></tr><tr><td>Retrospective validation</td><td>Measure extraction accuracy</td><td>Yes</td><td>None</td></tr><tr><td>Simulation</td><td>Evaluate workflow and usability</td><td>Yes</td><td>None</td></tr><tr><td>Silent prospective evaluation</td><td>Measure real-world performance</td><td>Yes</td><td>None</td></tr><tr><td>Supervised clinical pilot</td><td>Evaluate operational utility</td><td>Mandatory</td><td>Limited</td></tr><tr><td>Validated clinical deployment</td><td>Support defined clinical workflow</td><td>Defined by intended use</td><td>Subject to authorization</td></tr><tr><td>Continuous monitoring</td><td>Detect performance degradation</td><td>Required</td><td>Governed</td></tr></table>
+<p>The key scientific question for future work is therefore not simply “Can the system read a monitor?” but rather:</p>
+<p>“Can the system reliably extract physiological measurements, communicate uncertainty, reduce documentation burden, and integrate safely into clinical workflow without creating new sources of clinical error?”</p>
+<p>That question can be answered only through systematic technical validation, human-factors testing, prospective evaluation, and appropriate clinical and regulatory governance.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Monitor Vital-Sign Trend Classification Assessment Prototype</span>
+          <span class="report-meta">Trend-model assessment</span>
+        </summary>
+        <div class="report-body">
+<h6>1. Purpose</h6>
+<p>This manual describes the operation, testing methodology, and technical principles of a prototype machine-learning system designed to classify a set of physiological measurements into one of three demonstration categories:</p>
+<ul>
+<li>Improving</li>
+<li>Stable</li>
+<li>Worsening</li>
+</ul>
+<p>The system uses a Random Forest classification algorithm implemented with Python and scikit-learn.</p>
+<p>The purpose of this prototype is to demonstrate a complete machine-learning workflow consisting of:</p>
+<ul>
+<li>physiological data input,</li>
+<li>feature extraction,</li>
+<li>model training,</li>
+<li>classification,</li>
+<li>probability estimation, and</li>
+<li>software testing.</li>
+</ul>
+<p>Important: The model described in this manual is a demonstration prototype. Its training data and labels are synthetic and are not derived from a clinically validated dataset. Consequently, its output must not be interpreted as a clinical diagnosis, medical risk score, or validated prediction of patient deterioration.</p>
+<h5>2. System Overview</h5>
+<p>The prototype receives individual physiological readings containing up to six measurements:</p>
+<table class='rep-table'><tr><th>Feature</th><th>Description</th></tr><tr><td>HR</td><td>Heart rate</td></tr><tr><td>SpO₂</td><td>Peripheral oxygen saturation</td></tr><tr><td>BP Sys</td><td>Systolic blood pressure</td></tr><tr><td>BP Dia</td><td>Diastolic blood pressure</td></tr><tr><td>RR</td><td>Respiratory rate</td></tr><tr><td>EtCO₂</td><td>End-tidal carbon dioxide</td></tr></table>
+<p>The measurements are converted into a standardized numerical feature vector:</p>
+<p>[HR, SpO₂, BP Sys, BP Dia, RR, EtCO₂]</p>
+<p>This vector is supplied to a trained Random Forest classifier.</p>
+<p>The classifier returns:</p>
+<ul>
+<li>a predicted category,</li>
+<li>a confidence value, and</li>
+<li>probability estimates for all three categories.</li>
+</ul>
+<h5>3. Software Requirements</h5>
+<p>The prototype requires:</p>
+<ul>
+<li>Python 3.x</li>
+<li>NumPy</li>
+<li>scikit-learn</li>
+<li>pytest, if automated testing is performed</li>
+</ul>
+<p>The principal libraries are:</p>
+<p>import numpy as np</p>
+<p>from sklearn.ensemble import RandomForestClassifier</p>
+<p>For automated testing:</p>
+<p>pip install pytest</p>
+<h5>4. Data Processing</h5>
+<h5>4.1 Input Data</h5>
+<p>A physiological reading is represented as a Python dictionary.</p>
+<p>For example:</p>
+<p>reading = {</p>
+<p>"HR": 80,</p>
+<p>"SpO2": 97,</p>
+<p>"BP Sys": 120,</p>
+<p>"BP Dia": 80,</p>
+<p>"RR": 18,</p>
+<p>"EtCO2": 38,</p>
+<p>}</p>
+<p>The implementation also supports lowercase field names such as:</p>
+<p>{</p>
+<p>"hr": 80,</p>
+<p>"spo2": 97,</p>
+<p>"bp_sys": 120,</p>
+<p>"bp_dia": 80,</p>
+<p>"rr": 18,</p>
+<p>"etco2": 38,</p>
+<p>}</p>
+<p>This allows the processing function to accommodate different naming conventions.</p>
+<h5>5. Feature Extraction</h5>
+<p>The get_features() function converts an input reading into a numerical vector.</p>
+<p>The resulting order is always:</p>
+<p>HR</p>
+<p>SpO₂</p>
+<p>BP Sys</p>
+<p>BP Dia</p>
+<p>RR</p>
+<p>EtCO₂</p>
+<p>For example:</p>
+<p>reading = {</p>
+<p>"HR": 80,</p>
+<p>"SpO2": 97,</p>
+<p>"BP Sys": 120,</p>
+<p>"BP Dia": 80,</p>
+<p>"RR": 18,</p>
+<p>"EtCO2": 38,</p>
+<p>}</p>
+<p>produces:</p>
+<p>[80, 97, 120, 80, 18, 38]</p>
+<p>This standardized representation is required because the machine-learning model expects the same feature ordering during training and prediction.</p>
+<h5>6. Missing and Invalid Data</h5>
+<p>The feature extraction function attempts to convert each value to a floating-point number.</p>
+<p>If a value is None, the implementation substitutes:</p>
+<p>0.0</p>
+<p>If a value cannot be converted to a number, the implementation also substitutes:</p>
+<p>0.0</p>
+<p>For example:</p>
+<p>reading = {</p>
+<p>"HR": 80,</p>
+<p>"SpO2": None,</p>
+<p>}</p>
+<p>results in:</p>
+<p>[</p>
+<p>80,</p>
+<p>0.0,</p>
+<p>0.0,</p>
+<p>0.0,</p>
+<p>0.0,</p>
+<p>0.0</p>
+<p>]</p>
+<h6>Scientific consideration</h6>
+<p>Replacing missing physiological measurements with zero is convenient for demonstrating the software pipeline, but it is not necessarily an appropriate clinical data-processing strategy.</p>
+<p>A missing oxygen-saturation measurement, for example, is fundamentally different from an actual measurement of zero.</p>
+<p>A production or research system should therefore define a formal missing-data strategy before being evaluated on real-world data.</p>
+<h5>7. Model Architecture</h5>
+<p>The prototype uses a:</p>
+<p>Random Forest Classifier</p>
+<p>implemented through:</p>
+<p>RandomForestClassifier(</p>
+<p>n_estimators=100,</p>
+<p>random_state=42</p>
+<p>)</p>
+<p>The model consists of multiple decision trees whose outputs are combined to produce a classification.</p>
+<p>The parameter:</p>
+<p>n_estimators = 100</p>
+<p>specifies that 100 decision trees are used.</p>
+<p>The fixed random seed:</p>
+<p>random_state = 42</p>
+<p>makes the demonstration reproducible under the same software and input conditions.</p>
+<h5>8. Training Dataset</h5>
+<p>The prototype uses nine synthetic observations.</p>
+<p>The six input variables are:</p>
+<p>HR</p>
+<p>SpO₂</p>
+<p>BP Sys</p>
+<p>BP Dia</p>
+<p>RR</p>
+<p>EtCO₂</p>
+<p>The corresponding labels are:</p>
+<p>0 = improving</p>
+<p>1 = stable</p>
+<p>2 = worsening</p>
+<p>The synthetic observations are deliberately arranged into three groups representing the three demonstration categories.</p>
+<h6>Improving examples</h6>
+<p>70, 98, 120, 80, 16, 38</p>
+<p>72, 98, 122, 82, 16, 39</p>
+<p>75, 97, 120, 80, 17, 38</p>
+<h6>Stable examples</h6>
+<p>80, 97, 118, 78, 18, 37</p>
+<p>82, 96, 116, 76, 19, 36</p>
+<p>85, 96, 115, 75, 20, 35</p>
+<h6>Worsening examples</h6>
+<p>95, 95, 110, 72, 22, 33</p>
+<p>105, 93, 100, 68, 25, 30</p>
+<p>115, 91, 90, 60, 28, 27</p>
+<h5>9. Important Scientific Limitation</h5>
+<p>The training dataset is extremely small.</p>
+<p>It contains only:</p>
+<p>9 observations</p>
+<p>6 features</p>
+<p>3 classes</p>
+<p>Furthermore, the labels are demonstration labels rather than labels generated from a clinically established outcome definition.</p>
+<p>Therefore, the model should not be evaluated as though it were a validated medical machine-learning model.</p>
+<p>The appropriate interpretation is:</p>
+<p>The prototype demonstrates the technical process of training a multiclass classifier and generating predictions from physiological measurements.</p>
+<p>It does not establish that the classifier can accurately identify clinical deterioration.</p>
+<h5>10. Prediction Procedure</h5>
+<p>The prediction process begins by checking whether historical data are available.</p>
+<p>If the history is empty:</p>
+<p>history = []</p>
+<p>the system returns:</p>
+<p>Prediction: stable</p>
+<p>Confidence: 0.0</p>
+<p>with the probability distribution:</p>
+<p>Improving: 0.0</p>
+<p>Stable:    1.0</p>
+<p>Worsening: 0.0</p>
+<p>This is a software-defined default behavior and should not be interpreted as evidence that a person is clinically stable.</p>
+<h5>11. Prediction From a Reading</h5>
+<p>When historical data are available, the prototype selects:</p>
+<p>latest = history[-1]</p>
+<p>It then extracts features from that reading and supplies them to the trained model.</p>
+<p>The model generates a numerical class:</p>
+<p>0</p>
+<p>1</p>
+<p>2</p>
+<p>The system subsequently converts those numerical values into:</p>
+<p>0 → improving</p>
+<p>1 → stable</p>
+<p>2 → worsening</p>
+<h5>12. Probability Output</h5>
+<p>The Random Forest also produces probability estimates using:</p>
+<p>model.predict_proba(features)</p>
+<p>The results are converted into a dictionary:</p>
+<p>{</p>
+<p>"improving": ...,</p>
+<p>"stable": ...,</p>
+<p>"worsening": ...</p>
+<p>}</p>
+<p>The probability corresponding to the selected prediction is reported as the model's confidence value.</p>
+<p>For example, a hypothetical result could be:</p>
+<p>Prediction: worsening</p>
+<p>Improving: 0.00</p>
+<p>Stable:    0.05</p>
+<p>Worsening: 0.95</p>
+<p>Confidence: 0.95</p>
+<p>The values represent the classifier's estimated class probabilities for the supplied feature vector.</p>
+<p>They should not be interpreted as a 95% probability that a patient will deteriorate.</p>
+<h5>13. Experimental Testing Procedure</h5>
+<p>Testing should be performed using predefined inputs whose expected behavior is known.</p>
+<p>The basic test set should contain at least:</p>
+<ul>
+<li>an improving demonstration reading,</li>
+<li>a stable demonstration reading,</li>
+<li>a worsening demonstration reading,</li>
+<li>a reading using lowercase field names,</li>
+<li>a reading containing missing values, and</li>
+<li>an empty history.</li>
+</ul>
+<p>This tests both the machine-learning pipeline and the surrounding data-processing code.</p>
+<h5>14. Functional Tests</h5>
+<h5>Test 1 — Feature Extraction</h5>
+<p>Input:</p>
+<p>{</p>
+<p>"HR": 80,</p>
+<p>"SpO2": 97,</p>
+<p>"BP Sys": 120,</p>
+<p>"BP Dia": 80,</p>
+<p>"RR": 18,</p>
+<p>"EtCO2": 38,</p>
+<p>}</p>
+<p>Expected result:</p>
+<p>[80, 97, 120, 80, 18, 38]</p>
+<h6>Objective</h6>
+<p>Verify that each physiological variable is extracted in the correct order.</p>
+<h5>Test 2 — Lowercase Compatibility</h5>
+<p>Input:</p>
+<p>{</p>
+<p>"hr": 80,</p>
+<p>"spo2": 97,</p>
+<p>"bp_sys": 120,</p>
+<p>"bp_dia": 80,</p>
+<p>"rr": 18,</p>
+<p>"etco2": 38,</p>
+<p>}</p>
+<p>Expected result:</p>
+<p>[80, 97, 120, 80, 18, 38]</p>
+<h6>Objective</h6>
+<p>Verify that alternative field naming conventions are accepted.</p>
+<h5>Test 3 — Missing Values</h5>
+<p>Input:</p>
+<p>{</p>
+<p>"HR": 80,</p>
+<p>"SpO2": None,</p>
+<p>}</p>
+<p>Expected result:</p>
+<p>[80, 0.0, 0.0, 0.0, 0.0, 0.0]</p>
+<h6>Objective</h6>
+<p>Verify that missing fields do not cause the program to crash.</p>
+<h5>Test 4 — Model Training</h5>
+<p>The training function should execute successfully and produce a fitted Random Forest classifier.</p>
+<p>The classifier should contain three classes:</p>
+<p>0</p>
+<p>1</p>
+<p>2</p>
+<h6>Objective</h6>
+<p>Verify that the training pipeline executes correctly.</p>
+<h5>Test 5 — Empty History</h5>
+<p>Input:</p>
+<p>history = []</p>
+<p>Expected prediction:</p>
+<p>stable</p>
+<p>Expected confidence:</p>
+<p>0.0</p>
+<h6>Objective</h6>
+<p>Verify that the system handles an absence of measurements without generating an exception.</p>
+<h5>15. Demonstration Classification Tests</h5>
+<p>Three representative observations can be used to verify the demonstration classifier.</p>
+<h6>Improving demonstration</h6>
+<p>{</p>
+<p>"HR": 72,</p>
+<p>"SpO2": 98,</p>
+<p>"BP Sys": 122,</p>
+<p>"BP Dia": 82,</p>
+<p>"RR": 16,</p>
+<p>"EtCO2": 39,</p>
+<p>}</p>
+<p>Expected class:</p>
+<p>improving</p>
+<h6>Stable demonstration</h6>
+<p>{</p>
+<p>"HR": 82,</p>
+<p>"SpO2": 96,</p>
+<p>"BP Sys": 116,</p>
+<p>"BP Dia": 76,</p>
+<p>"RR": 19,</p>
+<p>"EtCO2": 36,</p>
+<p>}</p>
+<p>Expected class:</p>
+<p>stable</p>
+<h6>Worsening demonstration</h6>
+<p>{</p>
+<p>"HR": 115,</p>
+<p>"SpO2": 91,</p>
+<p>"BP Sys": 90,</p>
+<p>"BP Dia": 60,</p>
+<p>"RR": 28,</p>
+<p>"EtCO2": 27,</p>
+<p>}</p>
+<p>Expected class:</p>
+<p>worsening</p>
+<p>These tests demonstrate that the model can reproduce patterns represented in its synthetic training dataset.</p>
+<p>They do not demonstrate generalization to previously unseen clinical populations.</p>
+<h5>16. Automated Testing</h5>
+<p>The test suite can be executed with:</p>
+<p>pytest -v</p>
+<p>A successful test run should report that the defined tests have passed.</p>
+<p>Automated testing is useful for detecting:</p>
+<ul>
+<li>incorrect feature ordering,</li>
+<li>missing-value handling errors,</li>
+<li>model-training failures,</li>
+<li>invalid class mappings,</li>
+<li>unexpected output formats, and</li>
+<li>regressions following code modifications.</li>
+</ul>
+<h5>17. Recommended Experimental Evaluation</h5>
+<p>For a scientifically meaningful machine-learning evaluation, the synthetic dataset should eventually be replaced with a sufficiently large, appropriately collected dataset.</p>
+<p>The dataset should have clearly defined outcome labels.</p>
+<p>Possible evaluation methodology includes:</p>
+<h6>Training set</h6>
+<p>Used to fit the model.</p>
+<h6>Validation set</h6>
+<p>Used to select model parameters and evaluate development performance.</p>
+<h6>Independent test set</h6>
+<p>Used only for final performance evaluation.</p>
+<p>The independent test set should not be used during model development.</p>
+<h5>18. Performance Metrics</h5>
+<p>Once an appropriate labeled dataset is available, performance can be evaluated using metrics such as:</p>
+<ul>
+<li>accuracy,</li>
+<li>precision,</li>
+<li>recall,</li>
+<li>F1 score,</li>
+<li>confusion matrix,</li>
+<li>sensitivity,</li>
+<li>specificity,</li>
+<li>calibration,</li>
+<li>receiver operating characteristic analysis where appropriate.</li>
+</ul>
+<p>Because this is a three-class classification problem, class-specific metrics should be reported rather than relying exclusively on overall accuracy.</p>
+<p>Class imbalance should also be assessed because accuracy can be misleading when one class occurs substantially more frequently than another.</p>
+<h5>19. Trend Analysis Limitation</h5>
+<p>Although the function is named:</p>
+<p>predict_trend()</p>
+<p>the current implementation does not mathematically calculate a temporal trend.</p>
+<p>It uses:</p>
+<p>latest = history[-1]</p>
+<p>Therefore, only the most recent observation is supplied to the classifier.</p>
+<p>For example, consider:</p>
+<p>Reading 1: HR = 70</p>
+<p>Reading 2: HR = 80</p>
+<p>Reading 3: HR = 95</p>
+<p>The current model receives only:</p>
+<p>HR = 95</p>
+<p>It does not explicitly calculate:</p>
+<p>70 → 80 → 95</p>
+<p>Consequently, the current implementation should technically be described as current-state classification, rather than a fully developed temporal trend model.</p>
+<h5>20. Future Development</h5>
+<p>A future version could incorporate temporal information such as:</p>
+<ul>
+<li>change between consecutive measurements,</li>
+<li>percentage change,</li>
+<li>rate of change,</li>
+<li>moving averages,</li>
+<li>measurement variability,</li>
+<li>duration of observed changes,</li>
+<li>slopes over time, and</li>
+<li>multiple consecutive observations.</li>
+</ul>
+<p>For example:</p>
+<p>Current HR</p>
+<p>Previous HR</p>
+<p>HR change</p>
+<p>Current SpO₂</p>
+<p>Previous SpO₂</p>
+<p>SpO₂ change</p>
+<p>Current BP</p>
+<p>Previous BP</p>
+<p>BP change</p>
+<p>This would allow the model to use information about the direction and magnitude of change rather than relying solely on the latest measurement.</p>
+<h5>21. Reproducibility</h5>
+<p>To reproduce the demonstration:</p>
+<ul>
+<li>Install Python.</li>
+<li>Install NumPy and scikit-learn.</li>
+<li>Save the model implementation.</li>
+<li>Save the automated test file.</li>
+<li>Run the test suite.</li>
+<li>Record the Python and package versions.</li>
+<li>Preserve the exact training data and model parameters.</li>
+</ul>
+<p>The fixed random seed:</p>
+<p>random_state=42</p>
+<p>also assists reproducibility.</p>
+<p>For scientific reporting, software versions should be recorded because different library versions can occasionally produce differences in implementation behavior.</p>
+<h5>22. Interpretation of Results</h5>
+<p>A successful test indicates that the software performed according to its programmed specifications.</p>
+<p>For example:</p>
+<p>Test passed</p>
+<p>means that the expected software behavior occurred.</p>
+<p>It does not mean:</p>
+<p>The model is clinically accurate.</p>
+<p>Similarly, a high classifier probability does not establish clinical certainty.</p>
+<p>The distinction between software verification and clinical validation is essential.</p>
+<h5>23. Safety and Scientific Validity</h5>
+<p>This prototype should be considered an experimental machine-learning demonstration.</p>
+<p>Before any system of this type could be considered for clinical use, it would require substantially more work, potentially including:</p>
+<ul>
+<li>clinically appropriate datasets,</li>
+<li>clearly defined clinical outcomes,</li>
+<li>prospective or appropriately designed validation,</li>
+<li>external validation,</li>
+<li>assessment of demographic and clinical subgroup performance,</li>
+<li>missing-data analysis,</li>
+<li>calibration assessment,</li>
+<li>robustness testing,</li>
+<li>monitoring for distribution shift,</li>
+<li>appropriate human oversight,</li>
+<li>documentation of limitations, and</li>
+<li>applicable regulatory and ethical review.</li>
+</ul>
+<p>The present prototype does not establish clinical safety or effectiveness.</p>
+<h5>24. Summary</h5>
+<p>The prototype demonstrates a basic supervised machine-learning workflow for classifying physiological measurements.</p>
+<p>The processing pipeline is:</p>
+<p>Physiological Reading</p>
+<p>↓</p>
+<p>Feature Extraction</p>
+<p>↓</p>
+<p>Numerical Feature Vector</p>
+<p>↓</p>
+<p>Random Forest Classifier</p>
+<p>↓</p>
+<p>Predicted Category</p>
+<p>↓</p>
+<p>Class Probabilities</p>
+<p>The current implementation successfully demonstrates the mechanics of:</p>
+<ul>
+<li>converting physiological readings into numerical features,</li>
+<li>training a multiclass Random Forest,</li>
+<li>generating predictions,</li>
+<li>calculating class probabilities,</li>
+<li>handling alternative field names,</li>
+<li>handling missing inputs, and</li>
+<li>performing automated software tests.</li>
+</ul>
+<p>However, the training dataset is synthetic and extremely limited, and the current prediction procedure uses only the latest reading. Therefore, the system should be regarded as a software and machine-learning prototype rather than a clinically validated predictive system.</p>
+<h5>Scientific and Technical Manual</h5>
+<h5>Vital-Sign Trend Classification Prototype</h5>
+<p>Version: 1.0
+Date: September 2026
+System Type: Educational machine-learning prototype
+Classification Task: Improving / Stable / Worsening</p>
+<h5>1. Purpose</h5>
+<p>This prototype was developed to demonstrate the use of a machine-learning classification pipeline for categorizing physiological observations into three predefined trend classes:</p>
+<ul>
+<li>Improving</li>
+<li>Stable</li>
+<li>Worsening</li>
+</ul>
+<p>The system uses six physiological features:</p>
+<ul>
+<li>Heart rate (HR)</li>
+<li>Oxygen saturation (SpO₂)</li>
+<li>Systolic blood pressure</li>
+<li>Diastolic blood pressure</li>
+<li>Respiratory rate (RR)</li>
+<li>End-tidal carbon dioxide (EtCO₂)</li>
+</ul>
+<p>The prototype uses a Random Forest classifier implemented with Python and scikit-learn.</p>
+<p>The system is intended for educational and technical demonstration purposes only. It has not been clinically validated and must not be interpreted as a clinical deterioration prediction system.</p>
+<h5>2. Experimental Objective</h5>
+<p>The objective of testing was to determine whether the implemented software correctly:</p>
+<ul>
+<li>extracted the expected numerical features,</li>
+<li>trained the Random Forest classifier,</li>
+<li>accepted physiological observations in the expected format,</li>
+<li>returned one of the three predefined classifications,</li>
+<li>generated class probabilities,</li>
+<li>mapped numerical class labels to their corresponding descriptions, and</li>
+<li>handled empty or valid input histories according to the programmed logic.</li>
+</ul>
+<h5>3. Model Configuration</h5>
+<p>The prototype uses:</p>
+<p>RandomForestClassifier(</p>
+<p>n_estimators=100,</p>
+<p>random_state=42</p>
+<p>)</p>
+<p>The model therefore consists of 100 decision trees.</p>
+<p>The random_state=42 parameter provides deterministic model initialization for reproducible testing.</p>
+<h5>4. Input Features</h5>
+<p>Each observation is converted into the following feature vector:</p>
+<p>[HR, SpO₂, BP Sys, BP Dia, RR, EtCO₂]</p>
+<p>For example:</p>
+<p>[82, 96, 116, 76, 19, 36]</p>
+<p>represents:</p>
+<table class='rep-table'><tr><th>Feature</th><th>Example value</th></tr><tr><td>HR</td><td>82 bpm</td></tr><tr><td>SpO₂</td><td>96%</td></tr><tr><td>Systolic BP</td><td>116 mmHg</td></tr><tr><td>Diastolic BP</td><td>76 mmHg</td></tr><tr><td>RR</td><td>19/min</td></tr><tr><td>EtCO₂</td><td>36 mmHg</td></tr></table>
+<p>The feature-extraction function also supports both uppercase and lowercase field names.</p>
+<h5>5. Demonstration Training Dataset</h5>
+<p>The prototype was trained using nine synthetic observations.</p>
+<p>The observations were divided into three demonstration classes:</p>
+<table class='rep-table'><tr><th>Class</th><th>Label</th><th>Number of observations</th></tr><tr><td>Improving</td><td>0</td><td>3</td></tr><tr><td>Stable</td><td>1</td><td>3</td></tr><tr><td>Worsening</td><td>2</td><td>3</td></tr><tr><td>Total</td><td></td><td>9</td></tr></table>
+<p>The labels represent predefined demonstration categories rather than clinically established outcomes.</p>
+<h5>6. Testing Procedure</h5>
+<p>Testing was performed by executing the prototype using predefined physiological observations and comparing the software output with the expected classification.</p>
+<p>For each test, the following were examined:</p>
+<ul>
+<li>successful model execution,</li>
+<li>predicted class,</li>
+<li>readable class label,</li>
+<li>confidence value,</li>
+<li>probability dictionary, and</li>
+<li>expected handling of the supplied input.</li>
+</ul>
+<p>A test was considered successful when the software output matched the predefined expected result.</p>
+<h5>7. Test Results</h5>
+<p>All completed prototype test cases produced the expected software output.</p>
+<p>The observed result was:</p>
+<table class='rep-table'><tr><th>Test outcome</th><th>Result</th></tr><tr><td>Tests passing</td><td>100%</td></tr><tr><td>Tests failing</td><td>0%</td></tr><tr><td>Expected-output agreement</td><td>100%</td></tr></table>
+<h6>Overall prototype test result</h6>
+<p>100% of the executed test cases passed according to the predefined software test criteria.</p>
+<p>This indicates that, within the tested conditions, the implemented functions produced the expected outputs.</p>
+<h5>8. Feature Extraction Testing</h5>
+<p>The feature-extraction function was tested using physiological dictionaries containing the expected vital-sign fields.</p>
+<p>The function successfully converted the supplied measurements into the required six-element numerical feature vector.</p>
+<p>Result: 100% of tested feature-extraction cases passed.</p>
+<p>The function also contains handling for:</p>
+<ul>
+<li>missing fields,</li>
+<li>None values,</li>
+<li>non-numeric values,</li>
+<li>uppercase field names, and</li>
+<li>lowercase field names.</li>
+</ul>
+<p>These behaviors were tested according to the available test cases.</p>
+<h5>9. Model Training Testing</h5>
+<p>The Random Forest model was successfully initialized and trained using the demonstration dataset.</p>
+<p>The model produced the expected three-class output structure:</p>
+<p>0 → Improving</p>
+<p>1 → Stable</p>
+<p>2 → Worsening</p>
+<p>Result: 100% of model-training test cases passed.</p>
+<h5>10. Prediction Testing</h5>
+<p>The prediction function was tested using valid physiological feature inputs.</p>
+<p>For each tested input, the classifier returned a valid prediction corresponding to one of the predefined classes.</p>
+<p>The output was successfully converted from the numerical class representation into the corresponding text label.</p>
+<p>Result: 100% of prediction test cases passed.</p>
+<h5>11. Probability Testing</h5>
+<p>The prototype also generates class probabilities using:</p>
+<p>model.predict_proba()</p>
+<p>The resulting values are assigned to:</p>
+<p>Improving</p>
+<p>Stable</p>
+<p>Worsening</p>
+<p>The tested probability outputs were successfully returned in the expected dictionary format.</p>
+<p>Result: 100% of tested probability-output cases passed.</p>
+<p>It is important to distinguish these model probabilities from clinically validated probabilities. They represent outputs of the prototype classifier trained on the supplied demonstration dataset.</p>
+<h5>12. Empty-History Testing</h5>
+<p>The prediction function contains a specific condition for an empty history.</p>
+<p>When no history is supplied, the programmed output is:</p>
+<p>Prediction: Stable</p>
+<p>Confidence: 0%</p>
+<p>with the probability representation:</p>
+<p>Improving: 0%</p>
+<p>Stable: 100%</p>
+<p>Worsening: 0%</p>
+<p>This behavior represents the application's predefined fallback behavior.</p>
+<p>It should not be interpreted as a physiological or clinical assessment.</p>
+<p>Result: 100% of the tested empty-history cases produced the expected fallback output.</p>
+<h5>13. Label-Mapping Testing</h5>
+<p>The numerical classifier outputs were tested against the programmed label mapping:</p>
+<p>0 → improving</p>
+<p>1 → stable</p>
+<p>2 → worsening</p>
+<p>The mapping operated as intended for the tested outputs.</p>
+<p>Result: 100% of label-mapping tests passed.</p>
+<h5>14. Error-Handling Testing</h5>
+<p>The prediction workflow was tested within the application's exception-handling structure.</p>
+<p>Where the machine-learning component cannot be executed, the application is designed to display an informative warning rather than terminate the entire interface.</p>
+<p>The tested error-handling behavior operated according to the programmed requirements.</p>
+<p>Result: 100% of completed error-handling test cases passed.</p>
+<h5>15. Summary of Test Performance</h5>
+<p>The complete software-level testing produced the following summary:</p>
+<table class='rep-table'><tr><th>Component</th><th>Test result</th></tr><tr><td>Feature extraction</td><td>100% passed</td></tr><tr><td>Model training</td><td>100% passed</td></tr><tr><td>Prediction</td><td>100% passed</td></tr><tr><td>Probability generation</td><td>100% passed</td></tr><tr><td>Empty-history handling</td><td>100% passed</td></tr><tr><td>Label mapping</td><td>100% passed</td></tr><tr><td>Error handling</td><td>100% passed</td></tr><tr><td>Overall tested prototype functionality</td><td>100% passed</td></tr></table>
+<h5>16. Interpretation of the 100% Result</h5>
+<p>The 100% result should be interpreted specifically as a software test result.</p>
+<p>It demonstrates that all executed test cases met their predefined expected outputs.</p>
+<p>It does not establish:</p>
+<ul>
+<li>clinical accuracy,</li>
+<li>clinical sensitivity,</li>
+<li>clinical specificity,</li>
+<li>patient deterioration prediction accuracy,</li>
+<li>generalization to real patient populations,</li>
+<li>diagnostic accuracy,</li>
+<li>safety in clinical use, or</li>
+<li>suitability for medical decision-making.</li>
+</ul>
+<p>The distinction is important because the model was trained using a small synthetic demonstration dataset rather than a clinically validated dataset.</p>
+<h5>17. Limitations of the Test Results</h5>
+<p>Although all executed tests passed, the test dataset and model remain limited.</p>
+<p>The training dataset contains only nine synthetic observations.</p>
+<p>Furthermore, the current prediction function uses the most recent reading as the model input. The existence of multiple historical readings does not mean that the classifier currently learns a longitudinal trajectory from the complete sequence.</p>
+<p>Therefore, the 100% test result should not be described as:</p>
+<p>100% clinical accuracy</p>
+<p>or:</p>
+<p>100% prediction accuracy in patients.</p>
+<p>The scientifically appropriate description is:</p>
+<p>100% of the executed prototype software test cases passed according to the predefined expected outputs.</p>
+<h5>18. Recommended Reporting Statement</h5>
+<p>For a scientific report, presentation, or project documentation, the following statement accurately summarizes the findings:</p>
+<p>Testing of the Vital-Sign Trend Classification Prototype resulted in a 100% pass rate across the executed software test cases. All tested feature-extraction, model-training, prediction, probability-generation, label-mapping, fallback, and error-handling functions produced their predefined expected outputs. These findings demonstrate successful operation under the tested conditions but do not constitute evidence of clinical validity, clinical accuracy, or real-world predictive performance.</p>
+<h5>19. Future Validation</h5>
+<p>Further evaluation would be required before drawing conclusions about real-world performance.</p>
+<p>Future testing should include:</p>
+<ul>
+<li>A substantially larger dataset.</li>
+<li>Independently collected physiological observations.</li>
+<li>Clinically established reference labels.</li>
+<li>Training/test data separation.</li>
+<li>An independent validation dataset.</li>
+<li>Cross-validation.</li>
+<li>Confusion-matrix analysis.</li>
+<li>Precision, recall, and F1-score.</li>
+<li>Calibration analysis.</li>
+<li>Testing across different patient populations and measurement conditions.</li>
+<li>Evaluation of temporal trends rather than only the latest observation.</li>
+<li>External validation using data not involved in model development.</li>
+</ul>
+<h5>20. Conclusion</h5>
+<p>The Vital-Sign Trend Classification Prototype successfully completed all executed software test cases, resulting in an overall 100% test pass rate.</p>
+<p>The results demonstrate that the implemented prototype performed according to its predefined computational requirements under the conditions tested.</p>
+<p>The findings should nevertheless be interpreted within the scope of the experiment. Because the model uses synthetic demonstration data and has not undergone clinical validation or independent real-world evaluation, the 100% result represents prototype software-test performance rather than clinical prediction accuracy.</p>
+<p>This distinction should be maintained in all scientific, academic, technical, and presentation materials describing the system.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="tinted" id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Written reports</span>
+        <h2>Read the full technical write-ups</h2>
+        <p>The complete reports behind ML Monitor Vitals, in full — tap a title to expand it.</p>
+      </div>
+      
+      
+      
+
+    </div>
+  </section>
+
   <section class="navy">
     <div class="wrap grid grid-2" style="align-items:center;">
       <div>
-        <span class="tab-label">Want the technical details?</span>
-        <h2>Read the full write-up</h2>
-        <p>ML Monitor Vitals has three written reports on the AI &amp; Innovation page: the computer-vision &amp; ML prototype report, a clinical-potential &amp; implementation manual, and the trend-classification assessment.</p>
+        <span class="tab-label">Keep exploring</span>
+        <h2>More from AI &amp; Innovation</h2>
+        <p>See ML Monitor Vitals alongside the site's other prototypes, or head back to the AI &amp; Innovation overview for the full picture.</p>
       </div>
       <div style="text-align:center;">
-        <a class="btn btn-primary" href="ai-innovation.html#app-monitor">View reports on AI &amp; Innovation &rarr;</a>
+        <a class="btn btn-primary" href="ai-innovation.html#app-monitor">Back to AI &amp; Innovation &rarr;</a>
       </div>
     </div>
   </section>

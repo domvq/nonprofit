@@ -137,6 +137,124 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
 .apps-nav a:hover{ background:rgba(33,29,23,.12); text-decoration:none; }
 .apps-nav a[aria-current="page"]{ background:var(--ink); color:#fff; }
 
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"− Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem;
+  margin:18px 0 6px;
+  color:var(--accent-deep);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+.report-body td, .report-body th { vertical-align: top; }
+@media(max-width:620px){
+  .report-entry summary{flex-direction:column;align-items:flex-start;gap:4px}
+}
+
+
+.reports-label{
+  font-size:.78rem;
+  color:var(--accent-deep);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin:22px 0 10px;
+  display:block;
+}
+.report-entry{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:#fff;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+.report-entry summary{
+  cursor:pointer;
+  padding:14px 18px;
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:12px;
+  font-weight:700;
+  color:var(--ink);
+  background:var(--tint);
+}
+.report-entry summary::-webkit-details-marker{display:none}
+.report-entry summary::after{
+  content:"+ Read report";
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--accent-deep);
+  white-space:nowrap;
+  text-transform:none;
+}
+.report-entry[open] summary::after{ content:"\2212 Collapse"; }
+.report-entry[open] summary{ border-bottom:1px solid var(--line); }
+.report-body{ padding:18px 22px 24px; }
+.report-body h5{ font-size:1.05rem; margin:22px 0 8px; color:var(--ink); }
+.report-body h5:first-child{margin-top:0}
+.report-body h6{
+  font-size:.9rem; margin:18px 0 6px; color:var(--accent-deep);
+  text-transform:uppercase; letter-spacing:.02em; font-weight:800;
+}
+.report-body p{ font-size:.92rem; max-width:none; }
+.report-body p.rep-subhead{ font-weight:700; margin:12px 0 4px; font-size:.94rem; }
+.report-body ul{ padding-left:22px; font-size:.92rem; margin:0 0 1.1em; }
+.report-body li{margin-bottom:4px}
+table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.86rem; }
+table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
+table.rep-table th{ background:var(--tint); }
+
 </style>
 </head>
 <body>
@@ -195,7 +313,7 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
       <p class="lede">A voice-enabled, retrieval-augmented clinical copilot for EMS learners, paired with a demonstration ML risk-assessment model. Every answer is grounded in a defined, uploadable knowledge base — with cited sources — rather than open-ended generated answers.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://paramedic-ai-copliot.streamlit.app/" target="_blank" rel="noopener noreferrer">Launch Paramedic AI Copilot &rarr;</a>
-        <a class="btn btn-outline" href="ai-innovation.html#app-paramedic">Read the full technical report &rarr;</a>
+        <a class="btn btn-outline" href="#reports">Read the full technical reports &rarr;</a>
       </div>
     </div>
   </section>
@@ -340,15 +458,530 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
     </div>
   </section>
 
+  <section class="tinted">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Full technical write-up</span>
+        <h2>Written Reports</h2>
+        <p>The complete reports behind this tool &mdash; methodology, testing, and results.</p>
+      </div>
+
+<span class="reports-label">Written reports on Paramedic AI Copilot</span>
+
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">PARAMEDIC AI: Development of a Browser-Based Artificial Intelligence and Machine-Learning Decision-Support Tool for Paramedic Education</span>
+          <span class="report-meta">System overview</span>
+        </summary>
+        <div class="report-body">
+<p><strong>PARAMEDIC AI: Development of a Browser-Based Artificial Intelligence and Machine-Learning Decision-Support Tool for Paramedic Education
+</strong></p>
+<p>Artificial intelligence (AI) and machine learning (ML) are increasingly being incorporated into healthcare education and decision-support systems, creating opportunities for paramedic students to interact with clinical information in ways that extend beyond traditional static reference materials. Paramedic education presents a particularly relevant environment for exploring these technologies because learners must integrate vital-sign interpretation, clinical reasoning, evidence retrieval, communication, and rapid decision-making while maintaining awareness of protocol and scope-of-practice limitations. This paper describes the development and design rationale of Paramedic AI, a browser-based educational and decision-support demonstration designed for EMS learners. The application combines a demonstration machine-learning risk assessment with an AI-powered clinical copilot, voice input, text-to-speech functionality, and a document-based knowledge-management system. Users can enter patient age and vital signs, obtain an estimated ML risk probability and classification, and ask the Paramedic Copilot questions using typed or spoken input. The Copilot retrieves information from an authorized knowledge base and provides responses accompanied by references when available. The Knowledge Manager permits authorized PDF and Word documents to be uploaded, assigned source metadata, and incorporated into the searchable knowledge index. The application is explicitly designed as an educational demonstration rather than a diagnostic or treatment system, and its interface emphasizes that outputs should not replace local EMS protocols, medical direction, scope of practice, or clinical judgment. No formal evaluation of student learning outcomes, diagnostic performance, or clinical safety has yet been conducted. This paper presents the tool's design and educational rationale and provides a foundation for future evaluation of AI-supported learning in paramedic education.</p>
+<p>artificial intelligence; machine learning; emergency medical services; paramedic education; clinical reasoning; decision support; EMS education; generative AI; medical education; e-learning; knowledge retrieval; patient assessment</p>
+<h5>Introduction</h5>
+<p>Paramedics are required to synthesize multiple sources of information rapidly, including patient history, physical examination findings, vital signs, clinical presentation, protocols, and medical direction. Traditional EMS education provides learners with structured clinical knowledge and hands-on skills practice, but the increasing availability of artificial intelligence creates additional possibilities for learners to interact with clinical information and practice reasoning in a more dynamic environment.</p>
+<p>Machine-learning systems and generative AI systems represent two different but potentially complementary approaches to educational support. Machine-learning models can identify patterns in structured data and produce classifications or probability estimates, while generative AI systems can interact with users through natural language and retrieve or synthesize information from reference materials. In paramedic education, these capabilities may provide opportunities for learners to explore the relationship between patient assessment data and predicted risk while simultaneously practicing clinical questioning and evidence evaluation.</p>
+<p>The educational value of these technologies depends heavily on how they are implemented. A system that simply produces an answer risks encouraging automation bias, in which users place excessive confidence in an automated recommendation. This is particularly important in EMS, where patient presentations are often incomplete, information can change rapidly, and treatment decisions are governed by local protocols, medical direction, scope of practice, and regulatory requirements.</p>
+<p>Paramedic AI was therefore designed as an educational demonstration rather than as an autonomous clinical decision-making system. The application combines structured patient-vital input, a demonstration ML risk model, a retrieval-supported AI Copilot, voice interaction, text-to-speech, and a source-management system. The design intentionally places the learner in the role of evaluator rather than passive recipient of an automated answer.</p>
+<p>This paper describes the development and functionality of Paramedic AI, its potential applications in paramedic education, its limitations, and potential directions for future evaluation.</p>
+<h5>Tool Description</h5>
+<p>Paramedic AI is a browser-based Streamlit application developed as an EMS education and decision-support demonstration. The application presents a single interface through which users can enter patient vital signs, run a machine-learning risk assessment, interact with an AI Copilot, access retrieved reference information, and manage authorized EMS reference documents.</p>
+<p>The application collects seven structured patient variables:</p>
+<ul>
+<li>Age</li>
+<li>Heart rate</li>
+<li>Systolic blood pressure</li>
+<li>Diastolic blood pressure</li>
+<li>Respiratory rate</li>
+<li>SpO₂</li>
+<li>Temperature</li>
+</ul>
+<p>These variables are displayed in a patient-vital-sign summary before the learner runs the ML assessment.</p>
+<p>The application then passes the entered values to a machine-learning model that generates an estimated risk probability and assigns the result to one of three categories: <strong>LOWER RISK, INTERMEDIATE RISK, or HIGHER RISK</strong>. The interface explicitly identifies this as a demonstration prediction and states that it is not a clinical diagnosis.</p>
+<p>The second major component is the Paramedic Copilot. Users can ask questions using either typed text or speech recognition. Speech input is transcribed and presented to the learner for review before submission, allowing the user to correct transcription errors. The submitted question is then processed through a knowledge-search function before being provided to the Copilot. The application limits both the retrieved context and conversation history before generating the response.</p>
+<p>The Copilot response may include references to the sources retrieved from the knowledge base. This design provides an opportunity for learners to evaluate not only the AI-generated answer but also the evidence supporting it.</p>
+<h5>Core Features</h5>
+<p><strong>Structured patient assessment:</strong> Users enter age and vital-sign information through dedicated assessment fields. The values are then displayed in a standardized patient-vital-sign summary, providing a consistent starting point for ML assessment activities.</p>
+<p><strong>Machine-learning risk assessment:</strong> The application uses a demonstration ML model to process the seven entered patient variables. The output includes an estimated probability and a categorical risk classification. The system is designed to demonstrate how structured clinical information can be processed by a predictive model rather than to provide a diagnosis.</p>
+<p><strong>Risk classification:</strong> The model output is translated into three categories: lower risk, intermediate risk, and higher risk. This gives learners an opportunity to examine how continuous probability estimates can be translated into categorical outputs.</p>
+<p><strong>Patient-data review:</strong> After an assessment is run, the application provides an expandable view of the patient data submitted to the model. This allows learners to verify that the intended values were actually entered and used.</p>
+<p><strong>Paramedic Copilot:</strong> The Copilot provides a conversational interface through which users can ask EMS-related questions. Rather than functioning solely as a general-purpose chatbot, the implementation first searches the application's knowledge base and supplies retrieved context to the AI response system.</p>
+<p><strong>Medication dosing and pharmacology support:</strong> The Paramedic Copilot can retrieve medication-related information from the application's authorized EMS knowledge base. Learners can ask questions about medication dosing and related pharmacological information and receive an AI-generated response based on retrieved reference material. This feature is intended to support medication knowledge review and clinical reasoning practice rather than replace agency-specific medication protocols, medical direction, or independent dose verification. Because medication dosing can vary according to patient characteristics, medication formulation, route, jurisdiction, and local protocol, users should verify any dosing information against the current authoritative source before applying it in practice.</p>
+<p><strong>Medication-related clinical reasoning:</strong> Medication questions can be incorporated into broader patient scenarios, allowing learners to connect patient presentation, vital signs, clinical considerations, and medication information. Rather than treating medication dosing as an isolated memorization exercise, the Copilot can be used to prompt learners to consider why a medication may be indicated, what patient-specific factors could affect its use, and what information should be verified before administration.</p>
+<p><strong>Reference-supported medication information:</strong> When the Copilot retrieves medication information from the application's knowledge base, associated references can be displayed with the response. This provides an opportunity for learners to compare AI-generated dosing information against the underlying source and reinforces the importance of source verification in medication administration.</p>
+<p><strong>Knowledge-grounded responses:</strong> The Copilot searches the application's authorized knowledge base before generating an answer. Retrieved material is formatted as context and supplied to the Copilot, creating a mechanism for grounding responses in designated reference material.</p>
+<p><strong>Reference display:</strong> When available, references associated with retrieved knowledge are appended to the Copilot response. This allows learners to examine the source material behind an AI-generated answer rather than treating the generated response as an independent authority.</p>
+<p><strong>Voice input:</strong> Users can speak questions through the application's speech-to-text interface. The resulting transcription is displayed for review before submission, allowing users to identify and correct transcription errors.</p>
+<p><strong>Response review:</strong> The application preserves Copilot conversation history within the current session. This allows learners to review previous questions and answers and observe how conversational context influences subsequent interactions.</p>
+<p><strong>Text-to-speech:</strong> The application can convert the latest Copilot response into audio. This provides an additional interaction modality and may support accessibility and alternative learning preferences.</p>
+<p><strong>Knowledge Manager:</strong> Authorized users can upload PDF and Word reference documents. Each source can be associated with metadata including title, jurisdiction, document type, effective date, version, authority, status, and review requirements.</p>
+<p><strong>Source-status management:</strong> Registered sources can be categorized as active, draft, inactive, retired, or superseded. Sources can also be flagged as requiring review, providing a basic mechanism for communicating the review status of educational material.</p>
+<p><strong>Knowledge-index rebuilding:</strong> Uploaded documents can be processed through an ingestion and indexing workflow. This allows newly authorized reference material to become available to the knowledge-search component used by the Copilot.</p>
+<h5>Educational Use Cases</h5>
+<p>Paramedic AI is designed to support several forms of formative learning.</p>
+<p>The first is <strong>structured vital-sign reasoning</strong>. Learners can enter patient data and observe the output of a predictive model. By changing individual variables while holding others constant, students can explore how structured inputs influence model predictions.</p>
+<p>The second is <strong>clinical-question formulation</strong>. The Copilot provides learners with an opportunity to formulate questions about patient assessment, clinical concepts, and EMS practice using natural language rather than selecting information from a predetermined menu.</p>
+<p>The third is <strong>evidence evaluation</strong>. Because the Copilot retrieves reference material and can display associated sources, learners can be encouraged to distinguish between an AI-generated statement and the authoritative evidence supporting that statement.</p>
+<p>The fourth is <strong>AI literacy</strong>. Students can explore situations in which an AI response may appear plausible while still requiring verification. This can support instruction on hallucination, incomplete information, automation bias, source quality, and appropriate human oversight.</p>
+<p>The fifth is <strong>repeated low-stakes practice</strong>. Unlike a single classroom demonstration, a browser-based application can be accessed repeatedly, allowing students to experiment with patient presentations, questions, and source material without requiring a full simulation-lab setup.</p>
+<h5>Potential Benefits for Paramedic Education</h5>
+<p>One potential benefit of Paramedic AI is the integration of multiple learning activities within a single environment. Patient assessment, predictive modeling, natural-language questioning, evidence retrieval, and source evaluation are presented as connected activities rather than isolated topics.</p>
+<p>The ML assessment may provide an accessible introduction to predictive modeling by allowing students to observe the relationship between structured patient data and model output. Importantly, the application can also be used to demonstrate why model output should not be equated with clinical diagnosis. Students can compare the information available to the model with the substantially larger information set considered during a complete paramedic assessment.</p>
+<p>The Copilot component provides a different educational opportunity. Instead of requiring students to search a static reference manually, the system allows them to formulate questions conversationally and receive an answer grounded in the application's designated knowledge sources. This may support exploratory learning and encourage students to ask follow-up questions.</p>
+<p>The reference component is particularly important from an educational perspective. Students can be taught that the quality of an AI answer depends not only on the language-generation system but also on the information supplied to it. Reviewing source metadata can reinforce the importance of jurisdiction, effective dates, document versions, issuing authorities, and source status.</p>
+<p>Voice interaction and text-to-speech further expand the possible educational uses of the system. These features may allow learners to interact with educational content using modalities other than conventional keyboard input and written output.</p>
+<h5>Formative Learning Activities</h5>
+<p>The application can be incorporated into structured formative exercises.</p>
+<p><strong>Vital-sign manipulation:</strong> Students can establish a baseline patient assessment and then alter one vital sign at a time. They can record changes in the model's probability and classification and discuss why predictive output should not be interpreted independently of the broader patient presentation.</p>
+<p><strong>Clinical reasoning comparison:</strong> Students can compare their own initial assessment with the information considered by the ML model. This encourages discussion of the difference between structured numerical prediction and comprehensive clinical reasoning.</p>
+<p><strong>AI question formulation:</strong> Students can ask the Copilot questions related to an assigned EMS scenario and evaluate whether the response addresses the clinical question appropriately.</p>
+<p><strong>Reference verification:</strong> Students can identify the sources returned with a Copilot response and determine whether those sources are current, authoritative, and applicable to the relevant jurisdiction.</p>
+<p><strong>AI error recognition:</strong> Instructors can provide scenarios in which students must identify information in an AI response that requires independent verification.</p>
+<p><strong>Source-management exercise:</strong> Students can upload an authorized educational reference, enter its metadata, and discuss why document status, version, jurisdiction, and issuing authority matter when constructing an EMS knowledge base.</p>
+<h5>Safety and Clinical Boundaries</h5>
+<p>Because the application addresses clinical information, clear boundaries are necessary.</p>
+<p>The application's ML prediction is explicitly labeled as a demonstration and not a clinical diagnosis. The Copilot likewise should not be treated as an independent clinical authority. AI-generated information may be incomplete, inaccurate, outdated, or inappropriate for a particular patient or jurisdiction.</p>
+<p>The application therefore directs users to follow current local EMS protocols, medical direction, scope of practice, manufacturer instructions, and applicable regulations.</p>
+<p>The educational design should emphasize that technology can support learning and information retrieval without transferring clinical responsibility from the practitioner to the software.</p>
+<p>The system should also be used without unnecessary patient-identifying information. Educational demonstrations should use simulated or appropriately de-identified cases rather than sensitive patient information unless the environment has been specifically approved for such use.</p>
+<h5>Limitations</h5>
+<p>Paramedic AI has several limitations.</p>
+<p>First, the machine-learning model is a demonstration model rather than a clinically validated prediction instrument. The interface does not establish that its probability estimates are calibrated for a specific EMS population, nor does it establish diagnostic or prognostic validity.</p>
+<p>Second, the model receives only seven structured variables. Important clinical information such as chief complaint, medical history, medications, allergies, physical examination findings, mental status, mechanism of injury, clinical trajectory, and response to treatment is not represented in the ML input shown in the application. Consequently, the model cannot reproduce the full reasoning process of a paramedic.</p>
+<p>Third, the Copilot is dependent on the quality and relevance of the knowledge retrieved from the application's source library. A reference-grounded response is not necessarily a correct response, and the presence of references does not eliminate the need for verification.</p>
+<p>Fourth, the application depends on the accuracy of speech recognition when voice input is used. Errors in transcription may change the meaning of a clinical question and consequently affect the generated response.</p>
+<p>Fifth, the knowledge-management system requires appropriate human oversight. Uploading a document does not by itself establish that the document is current, authoritative, applicable to a particular jurisdiction, or appropriate for clinical use.</p>
+<p>Sixth, the current implementation does not constitute a substitute for hands-on paramedic education. It cannot reproduce physical assessment, medication preparation, airway management, patient movement, communication with other healthcare professionals, or the operational complexity of an actual EMS response.</p>
+<p>Most importantly, no formal evaluation of student learning outcomes, clinical reasoning performance, model accuracy, usability, or patient-safety impact has been conducted as part of the development described here. Any educational benefits should therefore be regarded as proposed benefits rather than demonstrated outcomes.</p>
+<h5>Future Directions</h5>
+<p>Future development could include formal evaluation of Paramedic AI with paramedic and EMT students. Potential study designs could compare student performance before and after structured use of the application and examine outcomes such as clinical reasoning, knowledge retention, ability to identify unreliable AI output, and confidence in interpreting predictive models.</p>
+<p>A further direction would be development of structured scenario-based learning. Instead of entering isolated vital signs, learners could be presented with complete simulated patient encounters and asked to make an initial clinical assessment before interacting with the AI system. This would allow researchers to investigate whether AI improves reasoning or instead encourages premature reliance on automated output.</p>
+<p>Additional work could evaluate the ML model itself, including calibration, sensitivity, specificity, generalizability, and performance across relevant patient populations. Such evaluation would be necessary before any consideration of clinical deployment.</p>
+<p>The knowledge-management component could also be expanded with more sophisticated source governance, including automated identification of outdated documents, explicit version control, jurisdiction filtering, and administrator review workflows.</p>
+<p>Future iterations could incorporate instructor dashboards or learner-performance tracking. This could allow educators to identify recurring misconceptions, frequently asked questions, and areas in which learners have difficulty evaluating AI-generated information.</p>
+<p>Additional accessibility features and alternative interaction modalities could also be explored.</p>
+<h5>Conclusion</h5>
+<p>Paramedic AI was developed as a browser-based educational demonstration combining machine learning, generative artificial intelligence, knowledge retrieval, voice interaction, and reference management within a single EMS-focused interface. The application allows learners to enter patient vital signs and explore a demonstration risk prediction, interact with an AI Copilot, review retrieved references, and examine how authorized source material can be incorporated into an AI-supported knowledge system.</p>
+<p>The primary educational opportunity offered by the application is not the automation of paramedic decision-making, but the opportunity to teach learners how to interact critically with emerging technologies. Students can examine the relationship between structured data and predictive output, practice asking clinically relevant questions, evaluate AI-generated responses, inspect supporting references, and recognize the limitations of automated systems.</p>
+<p>Paramedic AI is therefore best understood as a <strong>formative educational and AI-literacy tool</strong>, rather than a clinical decision-making system. Its outputs should never supersede current EMS protocols, medical direction, scope of practice, manufacturer instructions, applicable regulations, or professional clinical judgment. Formal evaluation is still required to determine whether use of the system produces measurable improvements in paramedic education and whether its design effectively reduces rather than reinforces inappropriate reliance on AI.</p>
+<h5>Conflicts of Interest</h5>
+<p>None declared.</p>
+<h5>Funding</h5>
+<p>The authors received no specific funding for development of this educational demonstration.</p>
+<h5>References</h5>
+<p><em>References should be finalized based on the literature actually used to support the claims in the completed manuscript. The references below are recommended starting points for the AI/EMS/medical-education literature review rather than claims that they were sources used during development.</em></p>
+<ul>
+<li>National Highway Traffic Safety Administration. <em>National EMS Scope of Practice Model</em>. U.S. Department of Transportation.</li>
+<li>American Heart Association. <em>Guidelines for CPR and ECC</em>. American Heart Association.</li>
+<li>World Health Organization. <em>Ethics and Governance of Artificial Intelligence for Health</em>. Geneva: World Health Organization.</li>
+<li>U.S. Food and Drug Administration. <em>Artificial Intelligence and Machine Learning (AI/ML)-Enabled Medical Devices</em>. U.S. Food and Drug Administration.</li>
+<li>Topol EJ. High-performance medicine: the convergence of human and artificial intelligence. <em>Nature Medicine</em>. 2019;25:44-56.</li>
+<li>Masters K. Artificial intelligence in medical education. <em>Medical Teacher</em>. 2019;41(9):976-980.</li>
+<li>Wartman SA, Combs CD. Medical education must move from the information age to the age of artificial intelligence. <em>Academic Medicine</em>. 2018;93(8):1107-1109.</li>
+</ul>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Development and Preliminary Evaluation of a Locally Deployed Python-Based Retrieval-Augmented Language AI Model for Educational and EMS Decision Support</span>
+          <span class="report-meta">Preliminary evaluation</span>
+        </summary>
+        <div class="report-body">
+<p><strong>Development and Preliminary Evaluation of a Locally Deployed Python-based Retrieval-Augmented Language AI Model for Educational and EMS Decision Support </strong></p>
+<p><strong>Abstract</strong></p>
+<p>Emergency medical services (EMS) associates regularly make time-sensitive clinical decisions applying knowledge obtained from patient history, symptoms, vital signs, electrocardiographic findings, medications, and environmental or situational factors. With recent advancements in large language models (LLMs), artificial intelligence (AI)-based decision-support systems gain the opportunity to be utilized. Recently, concerns regarding hallucination, inaccurate clinical solutions, outdated information and education, and lack of source traceability limit their direct application to medical environments. </p>
+<p><strong>Objective </strong></p>
+<p>This study aims to advance and preliminarily evaluate a locally deployed, retrieval-augmented artificial intelligence system engineered to provide educational and decision-support responses to simulated paramedic scenarios.</p>
+<p class='rep-subhead'>Methods</p>
+<p>A prototype application was developed using Python and a locally hosted large language model using Ollama. The system accepts clinical scenarios containing symptoms, vital signs, electrocardiographic information, patient’s characteristics (age, height, weight, sex, and age), medication-related questions, and situational descriptions. A retrieval-augmented generation (RAG) system searches a deeply curated knowledge base for relevant EMS reference material. The retrieved documentations are supplied to the language model as contextual information before response generation begins. The artificial intelligence system additionally provides retrieved references with generated responses and instructs the model not to fabricate protocols or medication doses and to defer to current local EMS protocols and medical direction. The AI LLM prototype has been evaluated using  standardized datasets of simulated EMS scenarios. The AI-generated feedback will be assessed for clinical correctness, protocol consistency, medication accuracy, ECG interpretation, source consistency, recognition of potentially life-threatening conditions, completeness, and unsafe recommendations. </p>
+<p><strong>Results </strong></p>
+<p>Results were recorded and assessed following the completion of the experimental evaluation. Planned measured assessments include overall clinical performance, medication accuracy, protocol compliance, documentation retrieval performance,  and frequency of unsafe or unsupported conclusions and solutions. </p>
+<p><strong>Conclusion</strong></p>
+<p>This study will investigate the practical application of using a locally deployed retrieval-augmented AI LLM as an educational and EMS decision-support prototype. The study is to deliberately characterize system performance, identify failure, and analyze whether retrieval of relevant EMS reference material improves response quality. The prototype has no intended place to replace paramedics, physicians, medical direction, or established EMS protocols. </p>
+<h6>1.1 Background</h6>
+<p>Emergency medical services demand clinicians exercise rapid decision-making under conditions of ambiguity and limited information. Paramedics may be obligated to analyze patient symptoms, vital signs, electrocardiographic findings, medication histories, cardiac murmurs, and environmental or situational elements while simultaneously determining appropriate assessment and treatment interventions.</p>
+<p>Artificial intelligence and retrieval-augmented generation have increasingly been evaluated as a method for supporting clinical decision-making. Large language models are competent at processing natural-language information and generating responses to complex situational inquiries. However, general-purpose language models may generate inaccurate or unsupported documented information, notably in specialized clinical environments. </p>
+<p>One potential methodology to reduce the limitations is retrieval-augmented generation. RAG systems extract relevant information from an external knowledge base and provide that contextual information to a language model for pre-generation of an evidence-based response. This framework may improve source grounding and reduce reliance on information contained solely within the model's parameters. </p>
+<p><strong>1.2 Research Problem </strong></p>
+<p>Although LLMs demonstrate ample language and reasoning capabilities, their use in EMS decision support illustrates several costly considerations. These include inaccurate clinical reasoning, medication errors, hallucinated protocols, failure to recognize uncertainty, and the possibility of providing recommendations that conflict with local EMS procedures. </p>
+<p>Clinical correctness, protocol consistency, source traceability, and potentially harmful recommendations must be examined independently. </p>
+<p><strong>1.3 Study Objective </strong></p>
+<p>The primary objective of this study is to establish and preliminarily analyze and research a locally deployed retrieval-augmented AI system coherent with responding to simulated paramedic scenarios.</p>
+<p>Secondary objectives are to:</p>
+<ul>
+<li>Evaluate the clinical correctness of generated responses.</li>
+<li>Evaluate medication-related recommendations.</li>
+<li>Evaluate responses to vital-sign and symptom-based scenarios.</li>
+<li>Evaluate responses to ECG-related questions.</li>
+<li>Determine whether retrieved reference material improves response quality.</li>
+<li>Evaluate the frequency and characteristics of unsafe recommendations.</li>
+<li>Evaluate the ability of the system to identify uncertainty and defer to appropriate clinical authority.</li>
+<li>Evaluate the accuracy of retrieved reference material.</li>
+</ul>
+<p><strong>1.4 Hypothesis </strong></p>
+<p class='rep-subhead'>Primary Hypothesis</p>
+<p>The retrieval-augmented configuration will demonstrate higher clinical and protocol-consistency scores than the non-retrieval configuration </p>
+<p class='rep-subhead'>Null Hypothesis</p>
+<p>There will be no statistically significant difference in clinical and protocol-consistency assessments between the retrieval-augmented system and the non-retrieval language-model condition.</p>
+<h6>2.1 System Design</h6>
+<p>The prototype was engineered using the Python programming language. A graphical user interface was developed using the Tkinter model. The system application provides an interface with which users can enter clinical questions and simulate in-field patient scenarios. \</p>
+<p>The application system was developed to process:</p>
+<ul>
+<li>Patient symptoms</li>
+<li>Vital signs</li>
+<li>ECG-related information </li>
+<li>Medication-related questions</li>
+<li>Clinical scenarios</li>
+<li>Situational EMS questions</li>
+<li>General paramedic decision-support questions</li>
+</ul>
+<p>The overall system consists of four primary components:</p>
+<ul>
+<li>User interface</li>
+<li>Knowledge retrieval system</li>
+<li>Locally hosted language model</li>
+<li>Session and response management</li>
+</ul>
+<p>The application system documentation contains:</p>
+<table class='rep-table'><tr><th>Area</th><th>Approx. page references</th></tr><tr><td>EMS clinical decision-making</td><td>3–5</td></tr><tr><td>LLMs in medicine</td><td>4–6</td></tr><tr><td>LLM hallucination/reliability</td><td>3–5</td></tr><tr><td>RAG methodology</td><td>3–5</td></tr><tr><td>RAG in healthcare/clinical settings</td><td>3–6</td></tr><tr><td>AI clinical decision support</td><td>3–5</td></tr><tr><td>ECG/clinical evaluation methodology</td><td>2–4</td></tr><tr><td>Signs and Symptoms Assessment Reference</td><td>37</td></tr><tr><td>AI reporting guidelines</td><td>35</td></tr><tr><td>Clinical thinking tree</td><td>26</td></tr><tr><td>Airway Assessment and Initial Management</td><td>47</td></tr><tr><td>Cardiology Assessment and Initial Management</td><td>21</td></tr><tr><td>Prehospital Medication Management</td><td>22</td></tr><tr><td>Pediatric Assessment and Initial Management</td><td>30</td></tr><tr><td>Protocol Management and Clinical Decision Reference</td><td>25</td></tr><tr><td>EMS Training and Education Reference</td><td>30</td></tr><tr><td>EMS Trauma — Clinical Reference &amp; Decision Support</td><td>31</td></tr><tr><td>ECG / EKG Interpretation Reference</td><td>42</td></tr><tr><td>EMS Reference</td><td>70</td></tr><tr><td>Prehospital Medications and Oxygen Reference</td><td>35
+</td></tr><tr><td>PARAMEDIC MEDICATION CLINICAL DECISION SUPPORT</td><td>51</td></tr><tr><td>PARAMEDIC TRIAGE REFERENCE DOCUMENT</td><td>54</td></tr><tr><td>Total </td><td>592</td></tr></table>
+<h6>2.2 Large Language Model</h6>
+<p>The prototype uses a locally hosted language model through the Ollama application. The model is accessed programmatically through the Python Ollama interface. Local model implementation was designated to allow the prototype to operate without requiring transmission of clinical scenario information to an external cloud-based language model service. The exact model identifier, model version, hardware configuration, and inference parameters will be recorded to facilitate reproducibility. </p>
+<h6>2.3 Retrieval-Augmented Generation</h6>
+<p>The programmed system integrates a retrieval-augmented generation architecture. When a user submits a question, the question is passed to the knowledge-retrieval component. Relevant documents are returned and implemented into the context allocated to the language model. </p>
+<p>Retrieved information uses metadata, including: </p>
+<ul>
+<li>Document title</li>
+<li>Source</li>
+<li>Jurisdiction</li>
+<li>Document type</li>
+<li>Effective date</li>
+<li>Status</li>
+<li>Retrieved text</li>
+</ul>
+<p>The retrieved resources are presented to the language model as reference information. The system instructs the model to use relevant retrieved findings, avoid fabrication of protocol information and medication doses, and recognize that current local EMS protocols and medical direction take precedence during patient care. </p>
+<h6>2.4 Knowledge Base</h6>
+<p>The knowledge base consists of EMS-related reference material used to contribute contextual information to the language model. Each document is correlated with metadata describing its source, jurisdiction, document type, effective date, and status. The knowledge base is reviewed before experimental evaluation to identify duplicate, outdated, or incompatible material.</p>
+<h6>2.5 Experimental Dataset</h6>
+<p>A standardized dataset of simulated EMS scenarios was produced for evaluation.</p>
+<p>Scenarios will represent multiple clinical categories, including:</p>
+<ul>
+<li>Cardiovascular emergencies</li>
+<li>Respiratory emergencies</li>
+<li>Neurological emergencies</li>
+<li>Trauma</li>
+<li>Medication-related scenarios</li>
+<li>ECG interpretation</li>
+<li>Shock and hemodynamic instability</li>
+<li>Pediatric emergencies</li>
+<li>Environmental emergencies</li>
+<li>Complex or mixed presentations</li>
+</ul>
+<p>Each scenario will contain standardized patient information and one or more questions requiring the AI system to generate a response.</p>
+<h6>2.6 Reference Standards</h6>
+<p>Each scenario will have a reference standard from appropriate authoritative EMS or medical sources. The reference standard will identify clinically important aspects expected in an appropriate feedback, including relevant assessment considerations, treatment considerations, medication requirements where applicable, contraindications, and appropriate escalation or medical-direction considerations. Reference standards will be established before evaluation of the AI system.</p>
+<h6>2.7 Experimental Conditions</h6>
+<p>Two experimental conditions will be evaluated.</p>
+<p class='rep-subhead'>Condition A: Language Model Without Retrieval</p>
+<p>The scenario will be provided directly to the language model without retrieved reference material.</p>
+<p class='rep-subhead'>Condition B: Retrieval-Augmented Paramedic AI</p>
+<p>The same scenario will be processed through the retrieval system. Relevant reference material will then be supplied to the language model before the response generation system. Both conditions will receive identical scenario information. This experimental design will allow evaluation of whether retrieval augmentation improves system performance relative to the non-retrieval condition </p>
+<h6>2.8 Evaluation Criteria</h6>
+<p>Responses will be evaluated using a previously determined scoring rubric. </p>
+<p>Primary evaluation categories will include:</p>
+<ul>
+<li>Clinical correctness</li>
+<li>Completeness</li>
+<li>Protocol consistency</li>
+<li>Medication accuracy</li>
+<li>ECG interpretation</li>
+<li>Recognition of life-threatening conditions</li>
+<li>Appropriate handling of uncertainty</li>
+<li>Reference/source consistency</li>
+</ul>
+<p>Each response will additionally be evaluated for potentially unsafe recommendations. Clinical correctness (100 questions) Completeness (100 questions) Protocol consistency (100 questions) Medication accuracy (50 questions) ECG interpretation (25 questions) Recognition of life-threatening conditions (10 questions) Appropriate handling of uncertainty (100 questions) Reference/source consistency (100 questions).</p>
+<h6>2.9 Safety Evaluation</h6>
+<p>A separate safety analysis will be determined to identify high-risk errors.</p>
+<p>Potential error categories will include:</p>
+<ul>
+<li>Incorrect medication</li>
+<li>Incorrect medication dose</li>
+<li>Contraindicated intervention</li>
+<li>Failure to recognize a life-threatening condition</li>
+<li>Incorrect ECG interpretation</li>
+<li>Fabricated protocol information</li>
+<li>Unsupported clinical claims</li>
+<li>Failure to acknowledge insufficient information</li>
+<li>Inappropriate confidence</li>
+<li>Incorrect interpretation of retrieved material</li>
+</ul>
+<p>The unsafe-response rate will be calculated as the number of responses containing a predefined unsafe recommendation divided by the total number of evaluated responses.</p>
+<h6>2.10 Retrieval Evaluation</h6>
+<p>The retrieval component will be evaluated independently of the language model. For each scenario, evaluators will determine whether an appropriate citation was retrieved amid the highest-ranked results. Retrieval performance may be reported using measures such as recall at K (Recall@K), where K represents the number of retrieved documents evaluated.</p>
+<h6>2.11 Statistical Analysis</h6>
+<p>Descriptive statistics will be calculated for all evaluation results. Based on the final study design and data distribution, comparative statistical tests will be selected to evaluate differences between the retrieval and non-retrieval conditions. Continuous variables may be summarized using means and standard deviations or medians and interquartile ranges, as appropriate. Categorical outcomes will be reported as frequencies and percentages.</p>
+<p>Statistical significance will be assessed using a predefined significance threshold.</p>
+<h6>2.12 Reproducibility</h6>
+<p>The following technical characteristics will be documented:</p>
+<ul>
+<li>Python version</li>
+<li>Operating system</li>
+<li>Hardware configuration</li>
+<li>Ollama version</li>
+<li>Language-model version</li>
+<li>Retrieval implementation</li>
+<li>Knowledge-base contents</li>
+<li>Prompt configuration</li>
+<li>Model inference parameters</li>
+<li>Number and type of evaluation scenarios</li>
+<li>Evaluation rubric</li>
+<li>Statistical methodology</li>
+</ul>
+<h5>3. Results</h5>
+<h6>3.1 Overall Performance</h6>
+<p>The prototype was evaluated using 100 standardized test scenarios. The retrieval-augmented generation (RAG) configuration produced correct responses in 92 of 100 cases, corresponding to an overall accuracy of <strong>92%</strong>. In comparison, the language model operating without retrieval produced correct responses in 71 of 100 cases, corresponding to an overall accuracy of <strong>71%</strong>.</p>
+<p>The retrieval-augmented configuration therefore demonstrated a <strong>21-percentage-point improvement</strong> in overall accuracy compared with the non-RAG configuration. In relative terms, the RAG configuration produced approximately <strong>29.6% more correct responses</strong> than the non-RAG configuration.</p>
+<table class='rep-table'><tr><th>Evaluation condition</th><th>Correct responses</th><th>Accuracy</th></tr><tr><td>RAG</td><td>92/100</td><td>92%</td></tr><tr><td>No RAG</td><td>71/100</td><td>71%</td></tr><tr><td>Difference</td><td>21 cases</td><td>+21 percentage points</td></tr></table>
+<h6>3.2 Medication Performance</h6>
+<p>The system achieved <strong>100% accuracy</strong> on the medication-related test cases included in the evaluation dataset.</p>
+<p>No incorrect medication recommendations were identified within the evaluated medication cases. This result indicates that the system successfully generated responses consistent with the reference standards used for the medication evaluation.</p>
+<p>Because medication errors can have significant clinical consequences, the absence of medication errors in this test set represents a positive finding. However, the result should be interpreted within the limits of the test dataset and should not be considered evidence of universal medication safety or clinical readiness. In all results the AI system reminds the user to refer to the local protocol and the local medical director. </p>
+<h6>3.3 ECG Performance</h6>
+<p>The system achieved an ECG-related accuracy of <strong>91%</strong> on the evaluated ECG scenarios.</p>
+<p>This result indicates that the prototype correctly addressed the large majority of ECG-related test cases. However, approximately 9% of ECG cases were not scored as fully correct, demonstrating that ECG-related reasoning remains an area requiring further investigation and error analysis.</p>
+<h6>3.4 Safety Performance</h6>
+<p>No unsafe responses were identified during the evaluation. The system produced <strong>0 identified unsafe responses across the 100 evaluated scenarios</strong>, corresponding to an observed unsafe-response rate of <strong>0%</strong>. The prototype started every directional simulation with the standard BSI PPE scene safety procedure. </p>
+<p>Although this finding is encouraging, a zero observed unsafe-response rate does not establish that the system is inherently safe for clinical deployment. The result reflects performance within the specific scenarios and evaluation criteria used in this study. Additional testing using larger and more challenging datasets would be required to determine the robustness of this finding.</p>
+<h6>3.5 Error Analysis</h6>
+<p>The RAG configuration produced 8 incorrect responses out of the 100 evaluated scenarios, while the non-RAG configuration produced 29 incorrect responses.</p>
+<p>The difference in error frequency was therefore substantial. The RAG configuration reduced the number of incorrect responses by <strong>21 cases</strong>, representing a reduction of approximately <strong>72.4% in observed errors</strong> compared with the non-RAG configuration.</p>
+<p>Further analysis of the eight incorrect RAG responses should be conducted to determine whether the errors resulted from language-model reasoning, incomplete information, retrieval failure, interpretation of retrieved material, or other factors.</p>
+<h6>3.6 Summary of Findings</h6>
+<p>The preliminary evaluation exhibited a higher overall performance when the language model was supplemented with retrieved referenced material. The RAG configuration achieved 92% accuracy compared with 71% without retrieval. Medication-related scenarios achieved 100% accuracy, while ECG-related scenarios achieved 91% accuracy. No unsafe responses were identified in the evaluated test set.</p>
+<p>Overall, these findings support further evaluation and analysis of retrieval-augmented language models for paramedic-oriented educational and decision-support application systems. However, the results reflect a prototype evaluation and do not establish clinical efficacy, clinical safety, or readiness for independent use in patient care.</p>
+<h5>4. Discussion</h5>
+<h6>4.1 Principal Findings</h6>
+<p>The primary finding of this study was that the retrieval-augmented generation (RAG) configuration substantially outperformed the non-RAG configuration in the evaluated paramedic scenarios. The RAG system achieved an overall accuracy of 92%, compared with 71% for the language model without retrieved reference material. This represents a 21-percentage-point difference in accuracy.</p>
+<p>These findings suggest that providing the language model with relevant external reference material may improve its ability to generate responses that are consistent with the information contained within the knowledge base. The improvement observed in this prototype supports the hypothesis that retrieval augmentation can contribute to improved performance in paramedic-oriented decision-support scenarios.</p>
+<h6>4.2 Medication-Related Performance</h6>
+<p>The system achieved 100% accuracy on the medication-related scenarios included in the evaluation. This was an important finding because medication recommendations represent a potentially high-risk component of clinical decision support.</p>
+<p>The absence of inconsistent medication responses in the measured dataset suggests that the prototype was able to provide responses that accurately reflected the standards used in the study. The results are not to be interpreted as evidence that the system will always provide correct medication information.</p>
+<p>Medication recommendations can depend on patient factors such as patient age, weight, allergies, contraindications, medical history, local protocols, and available medications. Future assessments, therefore, should include a larger variety of medication scenarios, including contraindications, incomplete patient information, pediatric cases, and situations involving conflicting or outdated information.</p>
+<h6>4.3 ECG Performance</h6>
+<p>The prototype achieved 91% accuracy on ECG-related scenarios. This assessment of relatively strong performance identified ECG interpretation as an area requiring additional investigation. The 9% of ECG cases that were not fully correct are particularly important because fault in ECG interpretation will eventually have significant consequences in emergency medical decision-making. Future research should therefore examine these inconsistencies individually to identify whether they originated from incorrect interpretation, insufficient contextual information, retrieval limitations, or language-model reasoning. Additional evaluation using standardized ECG datasets and expert-reviewed interpretations would provide a stronger assessment of the system's ECG capabilities.</p>
+<h6>4.4 Safety Considerations</h6>
+<p>No unsafe responses were identified among the 100 evaluated scenarios. This represents an observed unsafe-response rate of 0% within the study dataset.</p>
+<p>Although this result is encouraging, it should be interpreted cautiously. A zero observed error rate does not demonstrate that the system is clinically safe. The number and design of test scenarios determine the types of errors that can be detected. Based on how the system was engineered, the AI prompt always assesses the BSI scene safely in any scenario-based question. Rare but serious errors may not appear during a relatively small evaluation. Future testing should therefore include specifically designed safety and adversarial scenarios that try to push the RAG limitations. These could include incomplete patient information, contradictory vital signs, medication contraindications, unusual presentations, ambiguous questions, and scenarios in which the safest response is to acknowledge uncertainty or defer to medical direction.</p>
+<h6>4.5 Effect of Retrieval-Augmented Generation</h6>
+<p>The difference between the two experimental conditions provides preliminary evidence that retrieval augmentation improved the performance of the language model for paramedic-oriented questions.</p>
+<p>Without retrieval, the model achieved 71% accuracy. With retrieval, accuracy increased to 92%. The reduction in incorrect responses from 29 to 8 suggests that access to external reference is one possible explanation: retrieval provides the model with information that is more directly relevant to the specific clinical question. This may reduce reliance on information encoded within the model and provide additional context for protocol-related questions.</p>
+<p>However, retrieval augmentation does not exclude the possibility of inaccurate responses. The RAG system still produced eight unacceptable responses in the assessed dataset. This demonstrates that providing reference material alone is deficient in guaranteeing absolute clinical reasoning.</p>
+<h6>4.6 Clinical Implications</h6>
+<p>The findings suggest that a locally deployed AI system could potentially serve as an educational or decision-support tool for simulated paramedic scenarios. The local engineered architecture also provides advantages for research environments where control over the software, model, and knowledge base is desirable.</p>
+<p>The AI system's ability to retrieve and display supporting referencing documents may also provide an advantage over an unrestricted conversational model because users can examine the sources used to generate an answer when referred to documentations come from the nationally accredited protocol. However, source retrieval does not guarantee that the generated interpretation of a source is correct.</p>
+<p>Importantly, the prototype should be viewed as an <strong>assistive system rather than an autonomous clinical decision-maker</strong>. Current EMS protocols, qualified clinicians, and medical direction should remain the authoritative sources for actual patient care.</p>
+<h6>4.7 Future Research</h6>
+<p>Future research should expand the evaluated dataset and include a broader range of numbers of autonomously developed EMS scenarios. Additional research should also introspect the eight incorrect RAG responses in detail to identify recurring failure modes.</p>
+<p>A larger study could evaluate:</p>
+<ul>
+<li>Performance across additional EMS specialties.</li>
+<li>More complex and ambiguous scenarios.</li>
+<li>Pediatric and weight-based medication scenarios.</li>
+<li>Contraindication and adverse-event scenarios.</li>
+<li>Additional ECG datasets.</li>
+<li>Retrieval accuracy and source ranking.</li>
+<li>Performance using different language models.</li>
+<li>Performance across different EMS jurisdictions.</li>
+<li>Adversarial and safety-focused testing.</li>
+<li>Inter-rater agreement among clinical evaluators.</li>
+</ul>
+<h5>5. Limitations</h5>
+<p>Several limitations are anticipated. First, the system represents a prototype rather than a clinically approved validated medical device. Second, simulated scenarios may not reproduce the complexity and uncertainty of real patient contacts. Third, language-model outputs may vary depending on model configuration and prompt conditions. The quality of the retrieval system is also dependent on the completeness, accuracy, and currency of its knowledge base. Personnel question adequacy also plays a part in the AI system's ability to regurgitate a precise result. Additionally, performance on a controlled research dataset may not generalize to real-world EMS environments. Finally, this study does not establish that the system can independently diagnose or treat patients and should not be interpreted as evidence that AI can replace paramedics, physicians, or medical direction.</p>
+<h5>6. Ethical and Safety Considerations</h5>
+<p>The initial evaluation will use simulated patient scenarios rather than identifiable patient information.</p>
+<p>The system will be evaluated as an educational and research decision-support prototype rather than an autonomous clinical system.</p>
+<p>During development and evaluation, particular emphasis will be placed on identifying potentially harmful recommendations and determining whether the system appropriately communicates uncertainty.</p>
+<p>Any future evaluation involving real patient data or clinical deployment would require appropriate privacy protections, institutional oversight, and applicable regulatory and ethical review.</p>
+<h5>7. Conclusion</h5>
+<p>This study proposes the development and preliminary evaluation of a locally Python-based deployed retrieval-augmented artificial intelligence system for paramedic-oriented decision support. The prototype combines a Python-based interface, a knowledge-retrieval system, and a locally hosted large language model to generate responses to simulated EMS scenarios.</p>
+<p>The proposed evaluation assessed clinical correctness, protocol consistency, medication-related performance, ECG interpretation, retrieval quality, response time, and safety-related failure modes. Comparison between retrieval-augmented and non-retrieval conditions determined that access to external EMS-referenced documentation from national protocol improved the quality and reliability of generated responses.</p>
+<p>The primary purpose of the system is research and evaluation. Successful prototype performance justified that further investigation would be an advancement into the use of AI systems in the medical field but would not, by itself, establish clinical safety, efficacy, or suitability for autonomous patient care.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Machine Learning Patient Risk Prediction Report</span>
+          <span class="report-meta">Model report</span>
+        </summary>
+        <div class="report-body">
+<h6>1. Abstract</h6>
+<p>This project developed a machine learning-based system for estimating patient risk from commonly recorded clinical measurements. The prediction system uses seven features: age, heart rate, systolic blood pressure, diastolic blood pressure, respiratory rate, oxygen saturation (SpO₂), and body temperature.</p>
+<p>The project uses the <strong>MIMIC-IV Clinical Database Demo 2.2</strong> as a reference dataset for the clinical data and modeling approach. A trained machine learning model was saved as a .joblib file and used to generate risk probabilities for new patient observations.</p>
+<p>For the test case presented in this report, the model produced a risk probability of <strong>19%</strong>, which corresponds to the <strong>LOWER RISK</strong> category according to the classification thresholds implemented in the system.</p>
+<h6>2. Dataset Reference</h6>
+<p>The project uses the <strong>MIMIC-IV Clinical Database Demo 2.2</strong> as a reference for the clinical data used in the development of the machine learning approach.</p>
+<p>MIMIC-IV is a critical care database containing de-identified health information from patients admitted to intensive care and emergency department settings. The demonstration version provides a smaller, publicly available sample intended to help users understand the structure and contents of the full MIMIC-IV database.</p>
+<p>The dataset provides a useful reference for working with real-world clinical measurements and developing machine learning workflows involving patient information.</p>
+<p>For this project, the following measurements were selected as model features:</p>
+<ul>
+<li>Age</li>
+<li>Heart rate</li>
+<li>Systolic blood pressure</li>
+<li>Diastolic blood pressure</li>
+<li>Respiratory rate</li>
+<li>SpO₂</li>
+<li>Temperature</li>
+</ul>
+<p>The MIMIC-IV Clinical Database Demo 2.2 should be regarded as a reference for the project's data and development process. It should not, by itself, be interpreted as validation that the resulting model is clinically accurate.</p>
+<h6>3. Methodology</h6>
+<p>The trained machine learning model is stored in the project directory as model.joblib. Python's joblib library is used to load the trained model.</p>
+<p>When a new patient is evaluated, the seven required measurements are placed into a Pandas DataFrame. The features are then arranged into the same order used during model training.</p>
+<p>The model generates a probability using the predict_proba() function. The probability associated with class 1 is selected as the predicted risk probability.</p>
+<p>The resulting probability is then passed to a classification function.</p>
+<h6>4. Risk Classification</h6>
+<p>The system uses the following thresholds:</p>
+<table class='rep-table'><tr><th>Predicted Probability</th><th>Risk Category</th></tr><tr><td>70% or higher</td><td>HIGHER RISK</td></tr><tr><td>40% to less than 70%</td><td>INTERMEDIATE RISK</td></tr><tr><td>Less than 40%</td><td>LOWER RISK</td></tr></table>
+<p>These thresholds are implemented in the Python prediction code and provide a simple way of converting the model's numerical output into an understandable category.</p>
+<h6>5. Test Case</h6>
+<p>A test was performed using the following patient measurements:</p>
+<table class='rep-table'><tr><th>Feature</th><th>Test Value</th></tr><tr><td>Age</td><td>70 years</td></tr><tr><td>Heart Rate</td><td>80 bpm</td></tr><tr><td>Systolic BP</td><td>110 mmHg</td></tr><tr><td>Diastolic BP</td><td>70 mmHg</td></tr><tr><td>Respiratory Rate</td><td>8 breaths/min</td></tr><tr><td>SpO₂</td><td>82%</td></tr><tr><td>Temperature</td><td>98.60°F</td></tr></table>
+<p>The model returned a:</p>
+<p><strong>Risk Probability: 19%</strong></p>
+<p>According to the classification thresholds, a probability below 40% is classified as:</p>
+<p><strong>Risk Classification: LOWER RISK</strong></p>
+<h6>6. Results</h6>
+<p>The model produced a predicted risk probability of <strong>0.19</strong>, equivalent to <strong>19%</strong>.</p>
+<p>Since the probability is below the 0.40 threshold, the system classified the patient as <strong>LOWER RISK</strong>.</p>
+<table class='rep-table'><tr><th>Test Result</th><th>Output</th></tr><tr><td>Risk Probability</td><td>19%</td></tr><tr><td>Risk Category</td><td>LOWER RISK</td></tr></table>
+<p>This demonstrates that the prediction pipeline successfully accepted the seven clinical inputs, processed them through the trained model, generated a probability, and converted the probability into the corresponding risk category.</p>
+<h6>7. Interpretation</h6>
+<p>The 19% result represents the probability assigned by the trained machine learning model to the positive/risk class for this particular input. It does not mean that there is a definitive 19% medical likelihood of a specific condition unless the model has been appropriately validated and calibrated for that interpretation.</p>
+<p>It is also important to note that some of the test measurements, particularly the SpO₂ and respiratory-rate values, may warrant clinical attention in an actual patient. Therefore, the model's classification should not be used as a standalone medical decision or diagnosis.</p>
+<p>The purpose of this test is to demonstrate the functionality of the machine learning prediction pipeline rather than to provide clinical advice.</p>
+<h6>8. Limitations</h6>
+<p>Several limitations should be considered when evaluating this model.</p>
+<p>First, the MIMIC-IV Clinical Database Demo 2.2 is a demonstration dataset and is much smaller than the full MIMIC-IV database. Therefore, it may not represent the full diversity of patients or clinical situations.</p>
+<p>Second, a single test case cannot establish the accuracy or reliability of a machine learning model. The model should be evaluated using an independent test dataset containing many patient observations.</p>
+<p>Third, the risk thresholds of 40% and 70% were defined in the application code. These thresholds should be justified using appropriate model evaluation methods and, if the system is intended for clinical use, clinical expertise and validation.</p>
+<p>Finally, the predicted probability should not automatically be considered a calibrated clinical probability. Calibration, discrimination, sensitivity, specificity, and other performance measures should be evaluated before drawing conclusions about clinical usefulness.</p>
+<h6>9. Future Work</h6>
+<p>Future development could include evaluating the model on a larger independent dataset and calculating performance metrics such as:</p>
+<ul>
+<li>Accuracy</li>
+<li>Precision</li>
+<li>Recall/sensitivity</li>
+<li>Specificity</li>
+<li>F1-score</li>
+<li>ROC-AUC</li>
+<li>Confusion matrix</li>
+<li>Calibration performance</li>
+</ul>
+<p>Additional work could also investigate whether the selected risk thresholds provide an appropriate balance between false-positive and false-negative predictions.</p>
+<h6>10. Conclusion</h6>
+<p>The test successfully demonstrated the complete machine learning risk-prediction workflow. Patient information was entered using seven clinical features, processed by the trained model, and converted into a risk probability.</p>
+<p>For the test patient, the model produced a <strong>19% risk probability</strong>, resulting in a <strong>LOWER RISK</strong> classification under the project's predefined thresholds.</p>
+<p>The <strong>MIMIC-IV Clinical Database Demo 2.2</strong> provides an important reference for the clinical data and development of this project. However, further validation using larger and independent datasets would be required before the model could be considered reliable for real-world clinical decision-making.</p>
+<h6>11. Reference</h6>
+<p>Johnson, A. E. W., Bulgarelli, L., Shen, L., Gayles, A., Shammout, A., Horng, S., Pollard, T. J., Hao, S., Moody, B., Gow, B., et al. <em>MIMIC-IV, a freely accessible electronic health record dataset</em>. Scientific Data, 8, 1 (2021).</p>
+<p>The project specifically references <strong>MIMIC-IV Clinical Database Demo 2.2</strong> for the demonstration clinical data and dataset structure.</p>
+        </div>
+      </details>
+      <details class="report-entry">
+        <summary>
+          <span class="report-title">Machine Learning Model Testing and Risk Prediction</span>
+          <span class="report-meta">Functional test</span>
+        </summary>
+        <div class="report-body">
+<h6>1. Introduction</h6>
+<p>The purpose of this test was to evaluate the functionality of a trained machine learning model that predicts a patient's risk level based on a set of physiological and demographic measurements. The model is stored as a serialized .joblib file and is loaded into the Python environment using the joblib library.</p>
+<p>The prediction system uses seven patient features: age, heart rate, systolic blood pressure, diastolic blood pressure, respiratory rate, oxygen saturation (SpO₂), and temperature. The model produces a probability representing the predicted risk, which is then converted into one of three risk categories: Lower Risk, Intermediate Risk, or Higher Risk.</p>
+<h6>2. Model Loading</h6>
+<p>The model is stored in the project's models directory as model.joblib. The program uses Python's pathlib library to construct the path to the model relative to the project directory.</p>
+<p>Before loading the model, the program checks whether the model file exists. If the file cannot be found, a FileNotFoundError is raised with the expected file location. This provides a basic safeguard against attempting to run predictions without a trained model being available.</p>
+<p>The model is loaded using:</p>
+<p>joblib.load(MODEL_PATH)</p>
+<p>This allows the previously trained machine learning model to be reused for making predictions on new patient data.</p>
+<h6>3. Input Features</h6>
+<p>The prediction function accepts seven input variables:</p>
+<table class='rep-table'><tr><th>Feature</th><th>Description</th></tr><tr><td>Age</td><td>Patient's age</td></tr><tr><td>Heart Rate</td><td>Patient's heart rate</td></tr><tr><td>Systolic BP</td><td>Systolic blood pressure</td></tr><tr><td>Diastolic BP</td><td>Diastolic blood pressure</td></tr><tr><td>Respiratory Rate</td><td>Patient's respiratory rate</td></tr><tr><td>SpO₂</td><td>Blood oxygen saturation</td></tr><tr><td>Temperature</td><td>Patient's body temperature</td></tr></table>
+<p>These variables are placed into a Pandas DataFrame. The DataFrame columns are then explicitly reordered according to the predefined FEATURES list.</p>
+<p>This ordering is important because the machine learning model expects the input variables to correspond to the same feature structure used during model training.</p>
+<h6>4. Prediction Process</h6>
+<p>Once the patient data has been prepared, the model's predict_proba() method is used to generate probability estimates.</p>
+<p>The code retrieves the probability associated with class 1:</p>
+<p>probability = model.predict_proba(patient)[0][1]</p>
+<p>The resulting value is converted to a Python floating-point number and returned by the predict_risk() function.</p>
+<p>For example, if the model produces a probability of 0.82, this means that the model assigns an estimated probability of 82% to the positive/risk class, assuming that class 1 was defined as the positive risk outcome during model training.</p>
+<h6>5. Risk Classification</h6>
+<p>The predicted probability is converted into a risk category using three predefined thresholds:</p>
+<ul>
+<li><strong>Probability ≥ 0.70:</strong> Higher Risk</li>
+<li><strong>Probability ≥ 0.40 and &lt; 0.70:</strong> Intermediate Risk</li>
+<li><strong>Probability &lt; 0.40:</strong> Lower Risk</li>
+</ul>
+<p>The classification logic is implemented as follows:</p>
+<p>if probability &gt;= 0.70:</p>
+<p>    return "HIGHER RISK"</p>
+<p>if probability &gt;= 0.40:</p>
+<p>    return "INTERMEDIATE RISK"</p>
+<p>return "LOWER RISK"</p>
+<p>This approach provides an easy-to-understand interpretation of the model's numerical output.</p>
+<h6>6. Example Test</h6>
+<p>A test patient can be passed to the predict_risk() function using values for all seven required features. The model then returns a probability between 0 and 1.</p>
+<p>For example, if the model returns:</p>
+<p><strong>Predicted probability = 0.76</strong></p>
+<p>the classification function will assign:</p>
+<p><strong>Risk classification = HIGHER RISK</strong></p>
+<p>Similarly, a probability of 0.55 would result in <strong>INTERMEDIATE RISK</strong>, while a probability of 0.25 would result in <strong>LOWER RISK</strong>.</p>
+<h6>7. Results and Interpretation</h6>
+<p>The test demonstrates that the prediction pipeline can successfully:</p>
+<ul>
+<li>Locate and load the trained machine learning model.</li>
+<li>Accept the required patient measurements.</li>
+<li>Organize the measurements into the expected feature format.</li>
+<li>Generate a probability using the trained model.</li>
+<li>Convert the probability into an interpretable risk category.</li>
+</ul>
+<p>The output of the system should be interpreted as a <strong>model prediction rather than a medical diagnosis</strong>. The reliability of the prediction depends on the quality and representativeness of the training data, the model's performance, and whether the test inputs fall within the range of data used during training.</p>
+<h6>8. Limitations</h6>
+<p>There are several limitations that should be considered when evaluating the test.</p>
+<p>First, the code assumes that the model was trained using the same seven features and in the same format. A mismatch between training and prediction features could produce incorrect results.</p>
+<p>Second, the thresholds of 0.40 and 0.70 are manually defined. These thresholds should ideally be supported by model evaluation and the intended application rather than being selected arbitrarily.</p>
+<p>Third, the probability produced by predict_proba() should not automatically be interpreted as a clinically accurate probability unless the model has been appropriately calibrated and validated.</p>
+<p>Finally, a single test prediction is not sufficient to establish model performance. A more complete evaluation should include a separate test dataset and metrics such as accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix results, and, where appropriate, probability calibration.</p>
+<h6>9. Conclusion</h6>
+<p>The implemented testing pipeline provides a straightforward method for using a trained machine learning model to estimate patient risk. It successfully prepares the patient information in the expected format, generates a probability using the trained model, and translates that probability into three understandable risk categories.</p>
+<p>However, further testing and validation are required before the system could be considered reliable for real-world use. In particular, the model should be evaluated on unseen data, its classification thresholds should be justified, and its probability estimates should be assessed for calibration. The system should therefore be considered a machine learning risk-estimation tool rather than a standalone diagnostic system.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="tinted" id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tab-label">Written reports</span>
+        <h2>Read the full technical write-ups</h2>
+        <p>The complete reports behind Paramedic AI Copilot, in full — tap a title to expand it.</p>
+      </div>
+<span class="reports-label">Written reports on Paramedic AI Copilot</span>
+
+      
+      
+      
+      
+    </div>
+  </section>
+
   <section class="navy">
     <div class="wrap grid grid-2" style="align-items:center;">
       <div>
-        <span class="tab-label">Want the technical details?</span>
-        <h2>Read the full write-up</h2>
-        <p>Paramedic AI Copilot has four written reports on the AI &amp; Innovation page: the RAG copilot's development &amp; local deployment, a browser-based build overview, and two reports on the ML patient-risk-prediction model.</p>
+        <span class="tab-label">Keep exploring</span>
+        <h2>More from AI &amp; Innovation</h2>
+        <p>See Paramedic AI Copilot alongside the site's other prototypes, or head back to the AI &amp; Innovation overview for the full picture.</p>
       </div>
       <div style="text-align:center;">
-        <a class="btn btn-primary" href="ai-innovation.html#app-paramedic">View reports on AI &amp; Innovation &rarr;</a>
+        <a class="btn btn-primary" href="ai-innovation.html#app-paramedic">Back to AI &amp; Innovation &rarr;</a>
       </div>
     </div>
   </section>
