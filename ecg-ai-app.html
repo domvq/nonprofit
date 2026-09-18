@@ -104,6 +104,39 @@ footer.site-footer a:hover{color:var(--accent-deep);}
 footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
 .footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .small{font-size:.9rem;color:var(--ink-soft);}
+
+.apps-nav{
+  background:var(--tint);
+  border-bottom:1px solid var(--line);
+}
+.apps-nav .wrap{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+.apps-nav-label{
+  color:var(--accent-deep);
+  font-size:.78rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  margin-right:8px;
+}
+.apps-nav a{
+  color:var(--ink);
+  font-size:.85rem;
+  font-weight:700;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(33,29,23,.06);
+  display:inline-block;
+}
+.apps-nav a:hover{ background:rgba(33,29,23,.12); text-decoration:none; }
+.apps-nav a[aria-current="page"]{ background:var(--ink); color:#fff; }
+
 </style>
 </head>
 <body>
@@ -140,6 +173,17 @@ footer.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
     <a href="education.html">Education</a>
     <a href="cases.html">Real EMS Cases</a>
     <a href="team.html">Team</a>
+  </div>
+</nav>
+
+<nav class="apps-nav" aria-label="AI applications">
+  <div class="wrap">
+    <span class="apps-nav-label">Apps</span>
+    <a href="runsheet-app.html">RUNSHEET</a>
+    <a href="paramedic-copilot-app.html">Paramedic AI Copilot</a>
+    <a href="ecg-ai-app.html" aria-current="page">ECG AI</a>
+    <a href="monitor-vitals-app.html">ML Monitor Vitals</a>
+    <a href="trauma-ml-app.html">ML Trauma Assessment</a>
   </div>
 </nav>
 
