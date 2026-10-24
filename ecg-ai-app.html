@@ -255,6 +255,31 @@ table.rep-table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-
 table.rep-table th, table.rep-table td{ border:1px solid var(--line); padding:7px 11px; text-align:left; }
 table.rep-table th{ background:var(--tint); }
 
+
+/* ===== OpenAI partner badge (follows OpenAI Partner Badge guidelines) =====
+   - Landscape badge (preferred format), never recolored, stretched or restyled
+   - Clear space around the badge = half the blossom height (blossom ~59% of badge height -> 0.3 x badge height)
+   - No other element sits inside that clear space */
+.oai-clear{--oai-h:56px;display:inline-block;padding:calc(var(--oai-h)*.3);line-height:0;flex:none}
+.oai-clear a{display:block;line-height:0}
+.oai-clear a:hover{text-decoration:none}
+.oai-clear .oai-badge,.oai-badge{height:var(--oai-h)!important;width:auto!important;display:block;max-width:none!important}
+.oai-band{background:#fdf6ec;border-top:1px solid #ece3d2;padding:18px 0}
+.oai-band-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.oai-band-text strong{display:block;font-size:1.05rem;color:#211d17;line-height:1.3}
+.oai-band-text a{font-size:.9rem;font-weight:700;color:#b9650f}
+.oai-tag-top a{font-weight:700}
+.oai-lockup{margin-top:14px;background:#fff;border-radius:12px;padding:16px 14px 8px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.oai-lockup-brand{display:flex;align-items:center;gap:12px;color:#211d17;font-weight:800;line-height:1.2;text-align:left}
+.oai-lockup-brand img{width:48px;height:48px;flex:none;object-fit:contain}
+.oai-lockup-brand small{display:block;color:#6b6459;font-size:.66rem;font-weight:600;letter-spacing:.01em;margin-top:2px;max-width:190px}
+.oai-lockup-cap{display:flex;align-items:center;gap:12px;width:100%;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#b9650f;white-space:nowrap}
+.oai-lockup-cap::before,.oai-lockup-cap::after{content:"";flex:1;height:1px;background:#ece3d2}
+.oai-lockup .oai-clear{padding-top:calc(var(--oai-h)*.3 - 4px)}
+.oai-hero-fig{background:#fdf6ec;border-radius:16px;padding:28px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.oai-hero-fig .cap{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b9650f}
+.oai-note{background:#fdf6ec;border-left:4px solid #e2811e;border-radius:6px;padding:18px 22px}
+.oai-note p{margin:0 0 .6em}.oai-note p:last-child{margin:0}
 </style>
 </head>
 <body>
@@ -262,6 +287,7 @@ table.rep-table th{ background:var(--tint); }
 <div class="topbar">
   <div class="wrap">
     <span>Having a medical emergency? Call 911 — this site is al only.</span>
+<span class="oai-tag-top"><a href="partnership.html">Partnered with OpenAI</a></span>
     <span><a href="contact.html">Contact us →</a></span>
   </div>
 </div>
@@ -278,6 +304,7 @@ table.rep-table th{ background:var(--tint); }
         <li><a href=".html"></a></li>
         <li><a href="ai-innovation.html" aria-current="page">AI &amp; Innovation</a></li>
 <li><a href="future-innovation.html">Future Innovation</a></li>
+<li><a href="partnership.html">Partnership</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -289,6 +316,7 @@ table.rep-table th{ background:var(--tint); }
     <span class="resource-nav-label">Explore</span>
     <a href="ai-innovation.html" aria-current="page">AI &amp; Innovation</a>
     <a href="future-innovation.html">Future Innovation</a>
+<a href="partnership.html">OpenAI Partnership</a>
     <a href="education.html">Education</a>
     <a href="team.html">Team</a>
   </div>
@@ -1497,6 +1525,7 @@ table.rep-table th{ background:var(--tint); }
   </section>
 </main>
 
+<div class="oai-band" id="openai-partner"><div class="oai-band-inner"><div class="oai-band-text"><strong>Partnered with OpenAI</strong><a href="partnership.html">Learn about our partnership →</a></div><div class="oai-clear" style="--oai-h:56px"><a href="partnership.html" aria-label="Partnered with OpenAI — view our partnership"><svg class="oai-badge" viewBox="0 0 245 115" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OpenAI Select Partner"><rect x="1.5" y="1.5" width="242" height="112" rx="12" fill="#fff" stroke="#000" stroke-width="2.5"/><g transform="translate(20 23.5) scale(2.833)" fill="#000"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></g><g font-family="'OpenAI Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="23" letter-spacing="-0.4" fill="#000"><text x="119" y="40">OpenAI</text><text x="119" y="65.5">Select</text><text x="119" y="91">Partner</text></g></svg></a></div></div></div>
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
