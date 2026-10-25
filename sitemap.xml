@@ -23,6 +23,30 @@
   </url>
 
   <url>
+    <loc>https://emari.it.com/teaching-resources.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://emari.it.com/current-projects.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://emari.it.com/ai-research.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://emari.it.com/datasets-demos.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://emari.it.com/team.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
