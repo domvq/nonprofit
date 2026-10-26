@@ -400,6 +400,16 @@ nav.primary a[aria-current]{background:#211d17;color:#fff;border-color:#211d17}
 }
 .apps-nav-label{align-self:center;white-space:nowrap}
 .apps-nav a{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;min-height:34px;padding:6px 10px}
+
+/* Explore bar: all pages, equal cells, same look everywhere */
+nav.resource-nav{background:#fdf6ec;border-top:0;border-bottom:1px solid #ece3d2}
+nav.resource-nav .wrap{display:grid;gap:6px;align-items:stretch;padding-top:10px;padding-bottom:10px}
+nav.resource-nav .resource-nav-label{align-self:center;color:#b9650f;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
+nav.resource-nav a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;min-height:36px;padding:6px 8px;border-radius:999px;background:#fff;border:1px solid #ece3d2;color:#211d17;font-size:.82rem;font-weight:700;line-height:1.15;text-decoration:none;transform:none}
+nav.resource-nav a:hover{background:#fdf6ec;border-color:#b9650f;color:#211d17;transform:none}
+nav.resource-nav a[aria-current]{background:#211d17;border-color:#211d17;color:#fff}
+@media (min-width:881px){nav.resource-nav .wrap{grid-template-columns:auto repeat(6,minmax(0,1fr));grid-auto-rows:1fr}nav.resource-nav .resource-nav-label{grid-row:span 2;padding-right:8px}}
+@media (max-width:880px){nav.resource-nav .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}nav.resource-nav .resource-nav-label{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -426,8 +436,12 @@ nav.primary a[aria-current]{background:#211d17;color:#fff;border-color:#211d17}
       </ul>
     </nav>
 </div></header>
-<nav class="resource-nav" aria-label="Explore"><div class="wrap"><span class="resource-nav-label">Explore</span><a href="ai-innovation.html">AI &amp; Innovation</a><a href="future-innovation.html" aria-current="page">Future Innovation</a>
-<a href="partnership.html">OpenAI Partnership</a><a href="education.html">Education</a><a href="team.html">Team</a></div></nav>
+<nav class="resource-nav" aria-label="Explore">
+    <div class="wrap">
+      <span class="resource-nav-label">Explore</span>
+      <a href="index.html">Home</a><a href="ai-innovation.html">AI &amp; Innovation</a><a href="future-innovation.html" aria-current="page">Future Innovation</a><a href="current-projects.html">Current Projects</a><a href="ai-research.html">AI Research</a><a href="datasets-demos.html">Datasets &amp; Demos</a><a href="education.html">Education</a><a href="teaching-resources.html">Teaching Resources</a><a href="cases.html">Case Studies</a><a href="partnership.html">Partnership</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+    </div>
+  </nav>
 <nav class="apps-nav" aria-label="AI applications"><div class="wrap"><span class="apps-nav-label">Project Prototypes</span>
 <a href="runsheet-app.html">RUNSHEET</a><a href="paramedic-copilot-app.html">Paramedic AI Copilot</a><a href="ecg-ai-app.html">ECG AI</a><a href="monitor-vitals-app.html">ML Monitor Vitals</a><a href="trauma-ml-app.html">ML Trauma Assessment</a><a href="paramedic-scientist-app.html">Paramedic AI Scientist</a></div></nav>
 
