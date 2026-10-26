@@ -1049,6 +1049,29 @@ section.navy{
 .oai-note{background:#fdf6ec;border-left:4px solid #e2811e;border-radius:6px;padding:18px 22px}
 .oai-note p{margin:0 0 .6em}.oai-note p:last-child{margin:0}
 </style>
+<style id="emari-nav-css">
+/* Unified navigation: identical on every page, equal-width cells */
+nav.primary{background:none;border:0;box-shadow:none;border-radius:0;padding:0;color:inherit}
+nav.primary ul{list-style:none;margin:0;padding:6px 0;gap:4px}
+nav.primary li{margin:0;padding:0;min-width:0;display:flex}
+nav.primary a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:36px;padding:6px 8px;border-radius:999px;border:1px solid transparent;background:none;color:#211d17;font-size:.82rem;font-weight:600;line-height:1.15;text-decoration:none}
+nav.primary a:hover{background:#fdf6ec;border-color:#ece3d2;text-decoration:none}
+nav.primary a[aria-current]{background:#211d17;color:#fff;border-color:#211d17}
+@media (min-width:881px){
+ header .nav-row,header .wrap.nav{flex-wrap:wrap;justify-content:space-between;align-items:center}
+ nav.primary{display:block!important;flex:0 1 600px;width:auto}
+ nav.primary ul{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+ .apps-nav .wrap{display:grid;grid-template-columns:auto repeat(6,minmax(0,1fr));gap:6px;align-items:stretch}
+}
+@media (max-width:880px){
+ nav.primary ul{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:8px 0 12px}
+ nav.primary a{min-height:42px;font-size:.9rem}
+ .apps-nav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .apps-nav-label{grid-column:1/-1}
+}
+.apps-nav-label{align-self:center;white-space:nowrap}
+.apps-nav a{display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.15;min-height:34px;padding:6px 10px}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -1067,21 +1090,20 @@ section.navy{
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu ☰</button>
     <nav class="primary" id="primary-nav" aria-label="Primary">
-
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="ai-innovation.html">AI &amp; Innovation</a></li>
-<li><a href="future-innovation.html">Future Innovation</a></li>
-<li><a href="partnership.html">Partnership</a></li>
-        <li><a href="education.html#education" aria-current="page">Education</a></li>
-        <li><a href="teaching-resources.html">Teaching Resources</a></li>
+        <li><a href="future-innovation.html">Future Innovation</a></li>
         <li><a href="current-projects.html">Current Projects</a></li>
         <li><a href="ai-research.html" aria-current="page">AI Research</a></li>
         <li><a href="datasets-demos.html">Datasets &amp; Demos</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="teaching-resources.html">Teaching Resources</a></li>
+        <li><a href="cases.html">Case Studies</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
     </nav>
   </div>
 
