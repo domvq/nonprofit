@@ -634,12 +634,12 @@
         display: block;
       }
 
-      nav {
+      nav.primary {
         display: none;
         width: 100%;
       }
 
-      nav.open {
+      nav.primary.open {
         display: block;
       }
 
@@ -648,13 +648,13 @@
         padding: 15px 0;
       }
 
-      nav ul {
+      nav.primary ul {
         flex-direction: column;
         align-items: stretch;
         padding-bottom: 10px;
       }
 
-      nav a {
+      nav.primary a {
         width: 100%;
       }
 
@@ -858,6 +858,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
 /* AI Education Tools bar */
 @media (min-width:881px){.apps-nav.tools-nav .wrap{grid-template-columns:auto repeat(5,minmax(0,1fr))}}
 .apps-nav.tools-nav{border-top:1px solid var(--line)}
+@media (max-width:880px){.apps-nav a{min-height:42px}.apps-nav .wrap{row-gap:6px}.brand{min-width:0}.brand-text{min-width:0;overflow-wrap:anywhere}.brand-text,.brand-text small{white-space:normal!important;max-width:100%}.brand{flex:1 1 0;overflow:hidden}}
 </style>
 </head>
 
@@ -926,7 +927,18 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
 
       <nav class="primary" id="navigation" aria-label="Primary">
       <ul>
-       
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="ai-innovation.html">AI &amp; Innovation</a></li>
+        <li><a href="future-innovation.html">Future Innovation</a></li>
+        <li><a href="current-projects.html">Current Projects</a></li>
+        <li><a href="ai-research.html">AI Research</a></li>
+        <li><a href="datasets-demos.html">Datasets &amp; Demos</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="teaching-resources.html">AI Education Resources</a></li>
+        <li><a href="cases.html">Case Studies</a></li>
+        <li><a href="partnership.html">Partnership</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
@@ -942,7 +954,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
   <nav class="resource-nav" aria-label="Explore">
     <div class="wrap">
       <span class="resource-nav-label">Explore</span>
-      <a href="index.html" aria-current="page">Home</a><a href="ai-innovation.html">AI &amp; Innovation</a><a href="future-innovation.html">Future Innovation</a><a href="current-projects.html">Current Projects</a><a href="ai-research.html">AI Research</a><a href="datasets-demos.html">Datasets &amp; Demos</a><a href="education.html">Education</a><a href="teaching-resources.html">Teaching Resources</a><a href="cases.html">Case Studies</a><a href="partnership.html">Partnership</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
+      <a href="index.html" aria-current="page">Home</a><a href="ai-innovation.html">AI &amp; Innovation</a><a href="future-innovation.html">Future Innovation</a><a href="current-projects.html">Current Projects</a><a href="ai-research.html">AI Research</a><a href="datasets-demos.html">Datasets &amp; Demos</a><a href="education.html">Education</a><a href="teaching-resources.html">AI Education Resources</a><a href="cases.html">Case Studies</a><a href="partnership.html">Partnership</a><a href="team.html">Team</a><a href="contact.html">Contact</a>
     </div>
   </nav>
 
@@ -1709,7 +1721,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
 
 
             <h3>
-              AI Teaching Resources
+              AI Education Resources
             </h3>
 
 
@@ -1726,7 +1738,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
               rel="noopener noreferrer">
 
               Open AI 
-              Teaching Resources →
+              AI Education Resources →
 
             </a>
 
