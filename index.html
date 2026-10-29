@@ -854,6 +854,10 @@ nav.resource-nav a:hover{background:rgba(255,255,255,.14);border-color:transpare
 nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17}
 @media (min-width:881px){nav.resource-nav .wrap{grid-template-columns:auto repeat(6,minmax(0,1fr));grid-auto-rows:1fr}nav.resource-nav .resource-nav-label{grid-row:span 2;padding-right:8px}}
 @media (max-width:880px){nav.resource-nav .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}nav.resource-nav .resource-nav-label{grid-column:1/-1}}
+
+/* AI Education Tools bar */
+@media (min-width:881px){.apps-nav.tools-nav .wrap{grid-template-columns:auto repeat(5,minmax(0,1fr))}}
+.apps-nav.tools-nav{border-top:1px solid var(--line)}
 </style>
 </head>
 
@@ -951,6 +955,16 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#211d17
     <a href="monitor-vitals-app.html">ML Monitor Vitals</a>
     <a href="trauma-ml-app.html">ML Trauma Assessment</a>
     <a href="paramedic-scientist-app.html">Paramedic AI Scientist</a>
+  </div>
+</nav>
+<nav class="apps-nav tools-nav" aria-label="AI education tools">
+  <div class="wrap">
+    <span class="apps-nav-label">AI Education Tools</span>
+    <a href="adaptive-ai-tutor.html">Adaptive Tutor</a>
+    <a href="adaptive-ai-tutor-pluggin.html">Tutor (any AI)</a>
+    <a href="research-lab.html">Research Lab</a>
+    <a href="research-lab-pluggin.html">Lab (any AI)</a>
+    <a href="study-ai.html">Study AI</a>
   </div>
 </nav>
 

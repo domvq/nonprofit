@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f4f6f9;--sf:#fff;--ink:#14263a;--mut:#5b6b7d;--ln:#d6dde6;--ac:#1f4e79;--hl:#ffd84d;--ok:#1d7a4a;--bad:#b3261e;--r:10px}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1a26;--sf:#16263a;--ink:#e8eef5;--mut:#9fb0c3;--ln:#2a3e56;--ac:#7db4e6;--hl:#ffd84d;--ok:#5fd394;--bad:#ff8a80}}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Public Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;line-height:1.2}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--ln);background:var(--sf)}
+header h1{margin:0;font-size:1.3rem}
+header h1 span{background:linear-gradient(transparent 55%,var(--hl) 55%);padding:0 3px;color:var(--ink)}
+main{max-width:920px;margin:0 auto;padding:20px}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--ln);background:var(--sf);border-radius:8px;padding:8px 14px}
+button:hover{border-color:var(--ac)}
+button.pri{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media(prefers-color-scheme:dark){button.pri{color:#0f1a26}}
+button:disabled{opacity:.55;cursor:wait}
+:focus-visible{outline:3px solid var(--hl);outline-offset:2px}
+textarea,input[type=text],input[type=password]{width:100%;border:1px solid var(--ln);background:var(--sf);border-radius:8px;padding:10px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:var(--r);padding:16px;margin-bottom:16px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 16px}
+.tabs button{border-radius:20px}
+.tabs button[aria-selected=true]{background:var(--hl);color:#14263a;border-color:var(--hl);font-weight:600}
+.mut{color:var(--mut);font-size:.9rem}
+.chip{display:inline-flex;gap:6px;align-items:center;background:var(--bg);border:1px solid var(--ln);border-radius:20px;padding:2px 10px;font-size:.85rem}
+.chip b{cursor:pointer}
+.err{color:var(--bad);margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.fc{min-height:150px;text-align:left;padding:14px;display:flex;flex-direction:column;justify-content:space-between}
+.fc.flip{background:var(--hl);color:#14263a;border-color:var(--hl)}
+.fc small{opacity:.7}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--sf))}
+.opt.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--sf))}
+.slide{min-height:300px;padding:28px}
+.slide h2{margin-top:0}
+.md h1,.md h2,.md h3{margin:1.2em 0 .4em}
+.md li{margin:.25em 0}
+.md a,.src a{color:var(--ac)}
+.src li{margin:4px 0;font-size:.92rem}
+details{border:1px solid var(--ln);border-radius:8px;padding:10px 14px;margin:8px 0;background:var(--sf)}
+summary{cursor:pointer;font-weight:600}
+dialog{border:1px solid var(--ln);border-radius:var(--r);background:var(--sf);color:var(--ink);max-width:460px;width:92%}
+.msg{padding:10px 14px;border-radius:10px;margin:8px 0;background:var(--bg);border:1px solid var(--ln)}
+.msg.u{background:var(--hl);color:#14263a;border-color:var(--hl)}
+@media(prefers-reduced-motion:no-preference){.fc{transition:background .2s}}
+</style>
+</head>
+<body>
+<header>
+  <h1><span>Study</span> AI</h1>
+</header>
+<main>
+  <section class="card">
+    <h2 style="margin-top:0">What do you want to study?</h2>
+    <textarea id="topic" rows="3" placeholder="Type a topic, a question, or paste notes. Example: Cardiac action potentials and arrhythmias"></textarea>
+    <div class="row" style="margin-top:10px">
+      <label class="mut">Upload documents (PDF, DOCX, TXT, MD, CSV)
+        <input type="file" id="files" multiple accept=".pdf,.docx,.txt,.md,.csv,.json">
+      </label>
+    </div>
+    <div id="docs" class="row" style="margin-top:8px"></div>
+    <div class="row" style="margin-top:10px">
+      <label class="mut"><input type="checkbox" id="useSearch" checked> Search credible sources on the web</label>
+    </div>
+  </section>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <section id="panel"></section>
+  <section class="card src" id="srcBox" hidden><h3 style="margin-top:0">Sources used</h3><ul id="srcList"></ul></section>
+  <p class="mut" style="text-align:center">AI-generated study material can contain errors. Check the linked sources before you rely on it, and never use it as a substitute for your textbook, instructor, or local protocols. Uploaded documents and questions are sent to an AI service to produce your results.</p>
+</main>
+
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store = {
+  get(k, d){ try { return localStorage.getItem(k) ?? d; } catch { return d; } },
+  set(k, v){ try { localStorage.setItem(k, v); } catch {} }
+};
+const API_URL = 'https://study-ai-proxy.domhasaball.workers.dev'; // set to your deployed Worker URL
+const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+const S = { docs: [], sources: [], flash: [], quiz: [], slides: [], expert: [], guide: '', spark: '', chat: [], tab: 'flash', idx: 0, busy: false, err: '' };
+
+const TOOLS = [
+  ['flash','Flashcards'],['quiz','Quizzes'],['slides','Slide show'],
+  ['guide','Study guide'],['expert','Expert solutions'],['spark','SparkNotes'],['ask','Ask a question']
+];
+
+/* ---------- documents ---------- */
+$('#files').onchange = async ev => {
+  for (const f of ev.target.files) {
+    try {
+      const ext = f.name.split('.').pop().toLowerCase();
+      if (ext === 'pdf') {
+        if (f.size > 25e6) throw new Error('PDF is over 25 MB');
+        S.docs.push({ name: f.name, text: await readPdf(f) });
+      } else if (ext === 'docx') {
+        await loadMammoth();
+        const out = await mammoth.extractRawText({ arrayBuffer: await f.arrayBuffer() });
+        S.docs.push({ name: f.name, text: out.value });
+      } else {
+        S.docs.push({ name: f.name, text: await f.text() });
+      }
+    } catch (e) { S.err = 'Could not read ' + f.name + ': ' + e.message; render(); }
+  }
+  ev.target.value = ''; drawDocs();
+};
+async function readPdf(f){
+  if (!window.pdfjsLib) {
+    await new Promise((res, rej) => { const t = document.createElement('script'); t.src = PDFJS + 'pdf.min.js'; t.onload = res; t.onerror = () => rej(new Error('PDF reader failed to load')); document.head.appendChild(t); });
+    const w = await (await fetch(PDFJS + 'pdf.worker.min.js')).text();
+    pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(new Blob([w], { type: 'text/javascript' }));
+  }
+  const pdf = await pdfjsLib.getDocument({ data: await f.arrayBuffer() }).promise;
+  let out = '';
+  for (let i = 1; i <= Math.min(pdf.numPages, 80); i++) out += (await (await pdf.getPage(i)).getTextContent()).items.map(x => x.str).join(' ') + '\n';
+  if (out.trim().length < 50) throw new Error('no readable text (scanned PDFs are not supported)');
+  return out;
+}
+function loadMammoth(){
+  if (window.mammoth) return Promise.resolve();
+  return new Promise((res, rej) => { const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js'; s.onload = res; s.onerror = () => rej(new Error('DOCX reader failed to load')); document.head.appendChild(s); });
+}
+function drawDocs(){
+  $('#docs').innerHTML = S.docs.map((d, i) => `<span class="chip">${esc(d.name)} <b data-i="${i}" role="button" aria-label="Remove ${esc(d.name)}">×</b></span>`).join('');
+  document.querySelectorAll('#docs b').forEach(b => b.onclick = () => { S.docs.splice(+b.dataset.i, 1); drawDocs(); });
+}
+
+/* ---------- Claude call ---------- */
+const SYSTEM = `You are an expert tutor inside a study app. Use credible sources only: peer-reviewed research, textbooks, government and university sites, and established professional organizations. Never invent facts, statistics, quotes, or citations. If sources disagree or evidence is weak, say so. If the student uploaded documents, treat them as primary material and note any conflict with outside sources. Write for a student: clear, accurate, and specific.`;
+
+const DOC_CHARS = 24000; // free Groq limits are small, so uploaded text is trimmed
+async function call(prompt, { search = true, max = 4000, system = SYSTEM, history = [] } = {}) {
+  if (API_URL.includes('YOUR-WORKER')) throw new Error('This app is not connected to its AI service yet.');
+  const topic = $('#topic').value.trim();
+  if (!topic && !S.docs.length) throw new Error('Type a topic or upload a document first.');
+  let left = DOC_CHARS, lead = '';
+  for (const d of S.docs) { const t = d.text.slice(0, Math.max(left, 0)); left -= t.length; if (t) lead += `Uploaded document "${d.name}":\n${t}\n\n`; }
+  lead += `Study topic: ${topic || '(use the uploaded documents)'}`;
+  const messages = [{ role: 'user', content: lead }, ...history.map(h => ({ role: h.role, content: h.text })), { role: 'user', content: prompt }];
+  const merged = [];
+  for (const m of messages) { const l = merged[merged.length - 1]; if (l && l.role === m.role) l.content += '\n\n' + m.content; else merged.push({ ...m }); }
+  const r = await fetch(API_URL, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ search: search && $('#useSearch').checked, max_tokens: max, system, messages: merged })
+  });
+  const data = await r.json().catch(() => ({}));
+  if (r.status === 429) throw new Error('The free AI service is busy right now. Wait a minute and try again. If it keeps happening, the daily limit may be used up.');
+  if (!r.ok) throw new Error(data?.error?.message || 'Request failed (' + r.status + ')');
+  const m = data.choices?.[0]?.message || {};
+  (m.executed_tools || []).forEach(t => (t.search_results?.results || []).forEach(x => x.url && addSource(x.url, x.title)));
+  drawSources();
+  return String(m.content || '').trim();
+}
+function addSource(url, title){ if (!S.sources.some(s => s.url === url)) S.sources.push({ url, title: title || url }); }
+function drawSources(){
+  $('#srcBox').hidden = !S.sources.length;
+  $('#srcList').innerHTML = S.sources.map(s => { let h = ''; try { h = new URL(s.url).hostname; } catch {} return /^https?:/.test(s.url) ? `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> <span class="mut">${esc(h)}</span></li>` : ''; }).join('');
+}
+function parseJSON(t){
+  const a = t.indexOf('{'), b = t.lastIndexOf('}');
+  if (a < 0 || b < 0) throw new Error('The AI did not return usable content. Try again.');
+  return JSON.parse(t.slice(a, b + 1));
+}
+
+/* ---------- generators ---------- */
+const JSONRULE = 'Respond with one JSON object only, no markdown fences and no commentary.';
+async function generate(kind){
+  S.busy = true; S.err = ''; render();
+  try {
+    if (kind === 'flash') {
+      const have = S.flash.map(c => c.q).slice(-80).join(' | ');
+      const d = parseJSON(await call(`Create 12 new flashcards on this material. ${have ? 'Do not repeat these existing fronts: ' + have + '.' : ''} Cover different subtopics, from basics to advanced. ${JSONRULE} Shape: {"cards":[{"q":"front","a":"back","src":"source name"}]}`));
+      S.flash.push(...(d.cards || []));
+    } else if (kind === 'quiz') {
+      const have = S.quiz.map(c => c.q).slice(-60).join(' | ');
+      const d = parseJSON(await call(`Create 8 new multiple-choice questions with 4 options each. Mix recall, application, and analysis. ${have ? 'Do not repeat: ' + have + '.' : ''} ${JSONRULE} Shape: {"questions":[{"q":"","options":["","","",""],"answer":0,"why":"explanation citing the source","src":"source name"}]} where answer is the zero-based index of the correct option.`));
+      S.quiz.push(...(d.questions || []).map(q => ({ ...q, pick: null })));
+    } else if (kind === 'slides') {
+      const have = S.slides.map(c => c.title).join(' | ');
+      const d = parseJSON(await call(`Create 8 new slides for a study presentation. ${have ? 'Continue after these existing slides without repeating them: ' + have + '.' : 'Start with an overview slide.'} ${JSONRULE} Shape: {"slides":[{"title":"","bullets":["","",""],"notes":"speaker notes with source names"}]}`));
+      S.slides.push(...(d.slides || []));
+    } else if (kind === 'expert') {
+      const have = S.expert.map(c => c.problem).slice(-40).join(' | ');
+      const d = parseJSON(await call(`Create 4 new expert-level worked problems or case scenarios with full step-by-step solutions. ${have ? 'Do not repeat: ' + have + '.' : ''} Explain the reasoning behind each step and common mistakes. ${JSONRULE} Shape: {"problems":[{"problem":"","steps":["",""],"answer":"","pitfall":"","src":"source name"}]}`, { max: 4500 }));
+      S.expert.push(...(d.problems || []));
+    } else if (kind === 'guide') {
+      const t = await call(`Write a new, thorough study guide in Markdown. ${S.guide ? 'It must take a fresh angle and cover different depth than this earlier guide (first 600 characters): ' + S.guide.slice(0, 600) : ''} Include: learning objectives, core concepts with explanations, key terms, worked examples, common misconceptions, a self-check list, and a short "Sources" section naming the sources used.`, { max: 4500 });
+      S.guide = t;
+    } else if (kind === 'spark') {
+      const t = await call(`Write SparkNotes-style notes in Markdown: a short overview, the main ideas broken into sections, key terms, "why it matters", and 5 quick takeaways. Keep it fast to read. ${S.spark ? 'Use a different structure than this earlier version: ' + S.spark.slice(0, 400) : ''}`, { max: 4500 });
+      S.spark = t;
+    }
+    if (kind === 'slides' && S.slides.length > 8) S.idx = S.slides.length - 8;
+  } catch (e) { S.err = e.message; }
+  S.busy = false; render();
+}
+async function ask(){
+  const q = $('#q').value.trim(); if (!q) return;
+  S.busy = true; S.err = ''; S.chat.push({ role: 'user', text: q }); render();
+  try {
+    const hist = S.chat.slice(0, -1).map(m => ({ role: m.role === 'ai' ? 'assistant' : 'user', text: m.text }));
+    const a = await call(q, { max: 3000, system: SYSTEM + ' Answer the student\'s question directly, cite source names, and say plainly when you are unsure.', history: hist });
+    S.chat.push({ role: 'ai', text: a });
+  } catch (e) { S.err = e.message; S.chat.pop(); }
+  S.busy = false; render();
+}
+
+/* ---------- rendering ---------- */
+function md(t){
+  const lines = esc(t).split('\n'); let out = '', inList = false;
+  const inline = s => s.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<i>$1</i>').replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+  for (const l of lines) {
+    const h = l.match(/^(#{1,3})\s+(.*)/), li = l.match(/^\s*[-*•]\s+(.*)/);
+    if (li) { if (!inList) { out += '<ul>'; inList = true; } out += '<li>' + inline(li[1]) + '</li>'; continue; }
+    if (inList) { out += '</ul>'; inList = false; }
+    if (h) out += `<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`;
+    else if (l.trim()) out += '<p>' + inline(l) + '</p>';
+  }
+  return out + (inList ? '</ul>' : '');
+}
+function render(){
+  $('#tabs').innerHTML = TOOLS.map(([k, n]) => `<button role="tab" aria-selected="${S.tab === k}" data-k="${k}">${n}</button>`).join('');
+  document.querySelectorAll('#tabs button').forEach(b => b.onclick = () => { S.tab = b.dataset.k; S.err = ''; render(); });
+  const k = S.tab, p = $('#panel');
+  const bar = (label, n) => `<div class="row" style="margin-bottom:12px"><button class="pri" id="gen" ${S.busy ? 'disabled' : ''}>${S.busy ? 'Working…' : n ? 'Generate more' : label}</button>${n ? `<span class="mut">${n} so far</span>` : ''}</div>${S.err ? `<p class="err" role="alert">${esc(S.err)}</p>` : ''}`;
+  const src = x => x ? `<small>${esc(x)}</small>` : '';
+  let h = '';
+  if (k === 'flash') {
+    h = bar('Create flashcards', S.flash.length) + `<div class="grid">${S.flash.map((c, i) => `<button class="fc ${c.flip ? 'flip' : ''}" data-i="${i}" aria-label="Flashcard ${i + 1}, tap to flip"><span>${esc(c.flip ? c.a : c.q)}</span>${src(c.flip ? c.src : 'Tap to flip')}</button>`).join('')}</div>`;
+  } else if (k === 'quiz') {
+    const done = S.quiz.filter(q => q.pick !== null), right = done.filter(q => q.pick === q.answer).length;
+    h = bar('Create a quiz', S.quiz.length) + (done.length ? `<p class="mut">Score: ${right} of ${done.length} answered</p>` : '') +
+      S.quiz.map((q, i) => `<div class="card"><b>${i + 1}. ${esc(q.q)}</b>${q.options.map((o, j) => `<button class="opt ${q.pick === null ? '' : j === q.answer ? 'right' : j === q.pick ? 'wrong' : ''}" data-i="${i}" data-j="${j}" ${q.pick !== null ? 'disabled' : ''}>${esc(o)}</button>`).join('')}${q.pick !== null ? `<p>${esc(q.why)} ${src(q.src)}</p>` : ''}</div>`).join('');
+  } else if (k === 'slides') {
+    const s = S.slides[S.idx];
+    h = bar('Create a slide show', S.slides.length) + (s ? `<div class="card slide"><h2>${esc(s.title)}</h2><ul>${(s.bullets || []).map(b => `<li>${esc(b)}</li>`).join('')}</ul></div>
+      <div class="row"><button id="prev" ${S.idx === 0 ? 'disabled' : ''}>Previous</button><span class="mut">Slide ${S.idx + 1} of ${S.slides.length}</span><button id="next" ${S.idx >= S.slides.length - 1 ? 'disabled' : ''}>Next</button></div>
+      <details><summary>Speaker notes</summary><p>${esc(s.notes)}</p></details>` : '');
+  } else if (k === 'expert') {
+    h = bar('Create expert solutions', S.expert.length) + S.expert.map((x, i) => `<details ${i === S.expert.length - 1 ? 'open' : ''}><summary>${esc(x.problem)}</summary><ol>${(x.steps || []).map(t => `<li>${esc(t)}</li>`).join('')}</ol><p><b>Answer:</b> ${esc(x.answer)}</p>${x.pitfall ? `<p><b>Common mistake:</b> ${esc(x.pitfall)}</p>` : ''}${src(x.src)}</details>`).join('');
+  } else if (k === 'guide' || k === 'spark') {
+    const t = S[k];
+    h = bar(k === 'guide' ? 'Create a study guide' : 'Create SparkNotes', t ? 1 : 0).replace('1 so far', 'Make a fresh version') + (t ? `<div class="card md">${md(t)}</div>` : '');
+  } else {
+    h = `<div>${S.chat.map(m => `<div class="msg ${m.role === 'user' ? 'u' : ''} ${m.role === 'ai' ? 'md' : ''}">${m.role === 'ai' ? md(m.text) : esc(m.text)}</div>`).join('')}</div>${S.err ? `<p class="err" role="alert">${esc(S.err)}</p>` : ''}
+      <div class="row" style="margin-top:10px"><input type="text" id="q" placeholder="Ask anything about your topic" style="flex:1" aria-label="Your question"><button class="pri" id="send" ${S.busy ? 'disabled' : ''}>${S.busy ? 'Thinking…' : 'Ask'}</button></div>`;
+  }
+  p.innerHTML = h;
+  const g = $('#gen'); if (g) g.onclick = () => generate(k);
+  p.querySelectorAll('.fc').forEach(b => b.onclick = () => { const c = S.flash[+b.dataset.i]; c.flip = !c.flip; render(); });
+  p.querySelectorAll('.opt').forEach(b => b.onclick = () => { S.quiz[+b.dataset.i].pick = +b.dataset.j; render(); });
+  const pv = $('#prev'), nx = $('#next');
+  if (pv) pv.onclick = () => { S.idx--; render(); };
+  if (nx) nx.onclick = () => { S.idx++; render(); };
+  if ($('#send')) { $('#send').onclick = ask; $('#q').onkeydown = e => { if (e.key === 'Enter') ask(); }; }
+}
+document.addEventListener('keydown', e => {
+  if (S.tab !== 'slides' || /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+  if (e.key === 'ArrowRight' && S.idx < S.slides.length - 1) { S.idx++; render(); }
+  if (e.key === 'ArrowLeft' && S.idx > 0) { S.idx--; render(); }
+});
+render();
+</script>
+</body>
+</html>
