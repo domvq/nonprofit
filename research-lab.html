@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research Lab Tutor</title>
+<style>
+:root{--bg:#f2f5f4;--fg:#10231f;--mut:#566963;--card:#fff;--bd:#cfdad6;--ac:#0f766e;--hi:#fde68a;--red:#b91c1c;--grn:#15803d}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1613;--fg:#e4f0ec;--mut:#92aaa3;--card:#122320;--bd:#25413b;--ac:#5eead4;--hi:#713f12;--red:#f87171;--grn:#4ade80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+h1,h2,h3,h4{font-family:Georgia,serif;margin:.3em 0}h1{font-size:2rem}
+.mut{color:var(--mut)}.err{color:var(--red);font-weight:600}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:16px;margin:14px 0}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+input,select,button,textarea{font:inherit;color:inherit;background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:8px 10px}
+textarea,.fw{width:100%}textarea{min-height:120px;resize:vertical;margin:6px 0}
+button{cursor:pointer}button:hover:not(:disabled){border-color:var(--ac)}
+button.pri{background:var(--ac);color:var(--card);border-color:var(--ac);font-weight:600}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:2px solid var(--bd)}
+.tabs button{border:0;border-radius:6px 6px 0 0;background:none;padding:10px 14px}
+.tabs button[aria-selected=true]{background:var(--ac);color:var(--card);font-weight:600}
+.cfg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+.cite{border:1px solid var(--ac);border-radius:4px;padding:0 6px;font-size:.8rem;margin-left:4px}
+.ok{color:var(--grn)}.bad{color:var(--red)}
+.src{max-height:320px;overflow:auto;border:1px solid var(--bd);border-radius:6px;padding:8px;margin-top:8px}
+.src p{margin:0 0 8px;padding:4px 6px;border-radius:4px}.src p.on{background:var(--hi)}
+.msg{padding:8px 12px;border-radius:8px;margin:8px 0;max-width:90%}
+.msg.u{background:var(--ac);color:var(--card);margin-left:auto}.msg.a{background:var(--bg);border:1px solid var(--bd)}
+.bar{height:10px;background:var(--bd);border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+.sc{display:grid;grid-template-columns:120px 1fr 30px;gap:8px;align-items:center;margin:4px 0}
+pre{overflow:auto;background:var(--bg);padding:10px;border-radius:6px}
+</style></head><body><div class="wrap">
+<h1>Research Lab Tutor</h1>
+<p class="mut">Learn to read papers, test ideas, plan experiments and write them up. Works with any major AI model. Your key stays in this browser.</p>
+
+<details class="card" id="cfg" open><summary>AI model settings</summary>
+<div class="cfg">
+<label>Provider<br><select id="prov" class="fw"></select></label>
+<label>Model<br><input id="model" class="fw"></label>
+<label>API key<br><input id="key" type="password" autocomplete="off" class="fw"></label>
+<label>Base URL (optional)<br><input id="base" class="fw"></label>
+<label>Learner level<br><select id="lvl" class="fw"><option>High school</option><option selected>Undergraduate</option><option>Graduate</option><option>Early-career researcher</option></select></label>
+</div><p class="mut" id="hint"></p></details>
+
+<div class="tabs" role="tablist" id="tabs"></div>
+
+<div class="card" id="t0" role="tabpanel">
+<h2>Read a paper</h2>
+<p class="mut">Paste the paper's text (abstract through discussion). Every claim in the summary must point to a paragraph and an exact quote, and the quote is checked against your text.</p>
+<input id="ptitle" class="fw" placeholder="Paper title (optional)">
+<textarea id="ptext" aria-label="Paper text" style="min-height:200px" placeholder="Paste paper text here…"></textarea>
+<div class="row"><input type="file" id="pfile" accept=".txt,.md,.html" aria-label="Load a text file"><button class="pri" id="sum">Summarize with citations</button></div>
+<div id="o0" aria-live="polite" style="margin-top:12px"></div><div class="src" id="src" hidden></div></div>
+
+<div class="card" id="t1" role="tabpanel" hidden>
+<h2>Methodology tutor</h2>
+<div class="row"><select id="cmode" aria-label="Mode"><option value="explain">Explain it to me</option><option value="socratic">Quiz me Socratically</option></select>
+<button class="chip">What is a confounding variable?</button><button class="chip">RCT vs cohort study?</button><button class="chip">p-value vs effect size</button><button class="chip">How do I pick a sample size?</button></div>
+<div id="chat" aria-live="polite"></div>
+<div class="row"><input id="cin" class="fw" style="flex:1" aria-label="Your question" placeholder="Ask about study design, bias, statistics, ethics…"><button class="pri" id="csend">Send</button></div></div>
+
+<div class="card" id="t2" role="tabpanel" hidden>
+<h2>Hypothesis and experiment planner</h2>
+<p class="mut">Write your own draft first. The tutor critiques it, or helps you build one from just a question.</p>
+<label>Research question<input id="hq" class="fw" placeholder="Does X affect Y in Z?"></label>
+<label>Your hypothesis<textarea id="hh" style="min-height:70px"></textarea></label>
+<label>Your experiment plan (design, variables, sample, analysis)<textarea id="hp"></textarea></label>
+<div class="row"><button class="pri" id="crit">Critique my plan</button><button id="draft">Help me draft one</button></div>
+<div id="o2" aria-live="polite" style="margin-top:12px"></div></div>
+
+<div class="card" id="t3" role="tabpanel" hidden>
+<h2>Scientific writing practice</h2>
+<div class="row"><select id="wsec" aria-label="Section"><option>Abstract</option><option>Introduction</option><option>Methods</option><option>Results</option><option>Discussion</option><option>Limitations</option></select>
+<button id="wprompt">Give me a practice scenario</button></div>
+<div id="wscen" class="mut" style="margin-top:8px"></div>
+<textarea id="wtext" aria-label="Your writing" style="min-height:180px" placeholder="Write your section here…"></textarea>
+<button class="pri" id="wscore">Score my writing</button>
+<div id="o3" aria-live="polite" style="margin-top:12px"></div><div id="prog" class="mut"></div></div>
+</div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const P={
+openai:{n:'OpenAI (ChatGPT)',u:'https://api.openai.com/v1',m:'gpt-4o-mini',h:'Key from platform.openai.com.'},
+anthropic:{n:'Anthropic (Claude)',m:'claude-sonnet-5-5',h:'Key from console.anthropic.com.'},
+gemini:{n:'Google (Gemini)',m:'gemini-2.5-flash',h:'Free key from aistudio.google.com.'},
+openrouter:{n:'OpenRouter (hundreds of models)',u:'https://openrouter.ai/api/v1',m:'openai/gpt-4o-mini',h:'One key, many models, some free: openrouter.ai.'},
+groq:{n:'Groq (Llama and others)',u:'https://api.groq.com/openai/v1',m:'llama-3.3-70b-versatile',h:'Free tier at console.groq.com.'},
+mistral:{n:'Mistral',u:'https://api.mistral.ai/v1',m:'mistral-small-latest',h:'Key from console.mistral.ai.'},
+ollama:{n:'Ollama (local, free, no key)',u:'http://localhost:11434/v1',m:'llama3.2',h:'Start Ollama with OLLAMA_ORIGINS=* so the browser can connect. No key needed.'},
+custom:{n:'Custom (any OpenAI-compatible API)',u:'',m:'',h:'Enter the base URL, e.g. LM Studio, vLLM, Together, DeepSeek.'}};
+let S;try{S=JSON.parse(localStorage.getItem('rlab'))}catch(e){}
+S=Object.assign({cfg:{p:'openai',m:'gpt-4o-mini',k:'',u:''},lvl:'Undergraduate',hist:[]},S||{});
+const save=()=>{try{localStorage.setItem('rlab',JSON.stringify(S))}catch(e){}};
+
+/* ---- model layer: one ask() for every provider ---- */
+async function ask(sys,user){
+ const c=S.cfg,p=P[c.p];let r,j;
+ try{
+  if(c.p=='anthropic'){
+   r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':c.k,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:c.m,max_tokens:4096,system:sys,messages:[{role:'user',content:user}]})});
+   j=await r.json();if(!r.ok)throw j.error?.message||r.status;return j.content.map(x=>x.text||'').join('')}
+  if(c.p=='gemini'){
+   r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(c.m)+':generateContent',{method:'POST',headers:{'content-type':'application/json','x-goog-api-key':c.k},body:JSON.stringify({systemInstruction:{parts:[{text:sys}]},contents:[{role:'user',parts:[{text:user}]}]})});
+   j=await r.json();if(!r.ok)throw j.error?.message||r.status;return j.candidates[0].content.parts.map(x=>x.text||'').join('')}
+  const h={'content-type':'application/json'};if(c.k)h.authorization='Bearer '+c.k;
+  r=await fetch((c.u||p.u).replace(/\/$/,'')+'/chat/completions',{method:'POST',headers:h,body:JSON.stringify({model:c.m,messages:[{role:'system',content:sys},{role:'user',content:user}]})});
+  j=await r.json();if(!r.ok)throw j.error?.message||r.status;return j.choices[0].message.content;
+ }catch(e){throw new Error((typeof e=='string'?e:e.message||'Request failed')+'. Check your key, model name, and connection.')}}
+async function ja(sys,user){
+ const t=await ask(sys+' Respond with ONLY valid JSON, no markdown fences.',user),m=t.match(/[\[{][\s\S]*[\]}]/);
+ if(!m)throw new Error('The model did not return usable JSON. Try again or pick a stronger model.');
+ return JSON.parse(m[0])}
+const SYS=()=>`You are a rigorous, encouraging research-methods teacher. The learner is at the "${S.lvl}" level: define jargon, use concrete examples, and never invent facts or sources. If you are unsure, say so.`;
+function md(t){return esc(t).replace(/```[\s\S]*?```/g,m=>'<pre>'+m.replace(/```\w*\n?/g,'')+'</pre>').replace(/^### (.*)$/gm,'<h4>$1</h4>').replace(/^## (.*)$/gm,'<h3>$1</h3>').replace(/^# (.*)$/gm,'<h2>$1</h2>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/^\s*[-*] (.*)$/gm,'<li>$1</li>').replace(/(<li>.*<\/li>\n?)+/g,m=>'<ul>'+m+'</ul>').replace(/\n{2,}/g,'<br><br>')}
+async function run(el,msg,fn){el.innerHTML='<p class="mut">'+msg+'…</p>';try{await fn()}catch(e){el.innerHTML='<p class="err">'+esc(e.message)+'</p>'}}
+
+/* ---- tabs ---- */
+const TABS=['Read a paper','Methodology tutor','Plan an experiment','Writing practice'];
+$('#tabs').innerHTML=TABS.map((t,i)=>`<button role="tab" aria-selected="${i==0}" data-i="${i}">${t}</button>`).join('');
+$$('#tabs button').forEach(b=>b.onclick=()=>$$('#tabs button').forEach(x=>{const on=x==b;x.setAttribute('aria-selected',on);$('#t'+x.dataset.i).hidden=!on}));
+
+/* ---- 1. paper summaries with verified citations ---- */
+let paras=[];
+const norm=s=>s.toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();
+function split(t){let a=t.split(/\n\s*\n/).map(s=>s.trim()).filter(s=>s.length>40);
+ if(a.length<4){a=[];const s=t.replace(/\s+/g,' ').match(/[^.!?]+[.!?]+/g)||[t];for(let i=0;i<s.length;i+=4)a.push(s.slice(i,i+4).join(' ').trim())}return a}
+$('#pfile').onchange=async e=>{const f=e.target.files[0];if(f){$('#ptext').value=await f.text();if(!$('#ptitle').value)$('#ptitle').value=f.name.replace(/\.\w+$/,'')}};
+$('#sum').onclick=()=>{
+ const t=$('#ptext').value.trim().slice(0,60000);if(t.length<200){$('#ptext').focus();return}
+ paras=split(t);
+ run($('#o0'),'Reading the paper',async()=>{
+  const r=await ja(SYS()+' Use ONLY the supplied paper. Every claim must cite one paragraph id and an exact verbatim quote (at most 25 words) copied character-for-character from that paragraph. If the paper does not say something, do not claim it.',
+  `Paper${$('#ptitle').value?' "'+$('#ptitle').value+'"':''}:\n`+paras.map((p,i)=>`[P${i+1}] ${p}`).join('\n\n')+
+  `\n\nSummarize for the learner. JSON: {"sections":[{"h":"Research question","claims":[{"t":"plain-language claim","p":"P3","q":"exact quote"}]},{"h":"Methods","claims":[]},{"h":"Key findings","claims":[]},{"h":"Limitations the authors state","claims":[]}],"ask":["3 critical questions a careful reader should ask that the paper does not fully answer"]}`);
+  let ok=0,n=0;
+  const html=r.sections.map(s=>`<h3>${esc(s.h)}</h3><ul>`+(s.claims||[]).map(c=>{
+   const i=parseInt(String(c.p).replace(/\D/g,''))-1,q=norm(c.q||'');n++;
+   let st,k=i;if(paras[i]&&q&&norm(paras[i]).includes(q)){st='<span class="ok">✓ quote verified</span>';ok++}
+   else{k=paras.findIndex(p=>q&&norm(p).includes(q));st=k>=0?'<span class="ok">✓ verified in P'+(k+1)+'</span>':'<span class="bad">⚠ quote not found in paper. Check this claim yourself.</span>';if(k>=0)ok++}
+   return `<li>${esc(c.t)} <button class="cite" data-k="${k}">P${(k>=0?k:i)+1}</button> <small>${st}</small></li>`}).join('')+'</ul>').join('');
+  $('#o0').innerHTML=`<p><b>${ok} of ${n} citations verified</b> against your text. Unverified ones may be wrong, so check them.</p>`+html+'<h3>Questions to ask as you read</h3><ul>'+(r.ask||[]).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+  const s=$('#src');s.hidden=false;s.innerHTML='<b>Source text</b>'+paras.map((p,i)=>`<p id="sp${i}"><b>[P${i+1}]</b> ${esc(p)}</p>`).join('');
+  $$('#o0 .cite').forEach(b=>b.onclick=()=>{$$('#src p').forEach(p=>p.classList.remove('on'));const e=$('#sp'+b.dataset.k);if(e){e.classList.add('on');e.scrollIntoView({block:'center',behavior:'smooth'})}})})};
+
+/* ---- 2. methodology tutor ---- */
+let chat=[];
+function paint(){$('#chat').innerHTML=chat.map(m=>`<div class="msg ${m.r}">${m.r=='a'?md(m.t):esc(m.t)}</div>`).join('')}
+async function send(q){
+ q=(q||$('#cin').value).trim();if(!q)return;$('#cin').value='';chat.push({r:'u',t:q});paint();
+ const soc=$('#cmode').value=='socratic',hist=chat.slice(-10).map(m=>(m.r=='u'?'Learner: ':'Tutor: ')+m.t).join('\n');
+ try{const a=await ask(SYS()+(soc?' Teach Socratically: ask ONE probing question at a time, wait for the answer, then give brief feedback before the next question.':' Explain clearly with a concrete example, then offer one check question.'),'Conversation so far:\n'+hist+'\n\nReply as the tutor.');chat.push({r:'a',t:a})}
+ catch(e){chat.push({r:'a',t:'**Error:** '+e.message})}paint()}
+$('#csend').onclick=()=>send();$('#cin').onkeydown=e=>{if(e.key=='Enter')send()};
+$$('.chip').forEach(b=>b.onclick=()=>send(b.textContent));
+
+/* ---- 3. hypothesis and experiment planning ---- */
+const plan=(mode)=>{const q=$('#hq').value.trim(),h=$('#hh').value.trim(),p=$('#hp').value.trim();if(!q&&!h){$('#hq').focus();return}
+ run($('#o2'),mode=='crit'?'Reviewing your plan':'Drafting a plan',async()=>{
+  const body=`Research question: ${q||'(none)'}\nHypothesis: ${h||'(none)'}\nPlan: ${p||'(none)'}`;
+  $('#o2').innerHTML=md(await ask(SYS(),mode=='crit'?
+  `Critique this learner's work like a thesis advisor. Check: is the hypothesis falsifiable and specific; are variables operationalized (independent, dependent, controls, likely confounders); is the design able to support the claim (randomization, blinding, comparison group); sample size and power; the planned statistics; threats to validity; ethics. Give strengths first, then numbered fixes, then a revised hypothesis. Do not rewrite the whole plan.\n\n${body}`:
+  `Help the learner build a plan. Explain the reasoning at each step. Give: refined question, null and alternative hypotheses, variables table, design options with a recommended one and why, sample and power considerations, measurement, analysis plan, threats to validity, ethics. Label each part with why it matters.\n\n${body}`))})};
+$('#crit').onclick=()=>plan('crit');$('#draft').onclick=()=>plan('draft');
+
+/* ---- 4. writing practice ---- */
+const CR=['Clarity','Precision','Evidence','Structure','Concision'];
+$('#wprompt').onclick=()=>run($('#wscen'),'Creating a scenario',async()=>{
+ $('#wscen').innerHTML=md(await ask(SYS(),`Invent a short, clearly fictional mini-study with a few concrete numbers (design, sample, outcome) suitable for writing the ${$('#wsec').value} section. Label it "Practice data (fictional)". 6 lines max.`))});
+$('#wscore').onclick=()=>{const t=$('#wtext').value.trim();if(t.length<40){$('#wtext').focus();return}
+ run($('#o3'),'Scoring',async()=>{
+  const r=await ja(SYS(),`Score this ${$('#wsec').value} section of a research report from 1 to 5 on ${CR.join(', ')}. Be honest and specific. ${$('#wscen').textContent?'Practice scenario it should reflect: '+$('#wscen').textContent:''}\n\nText:\n${t}\n\nJSON: {"scores":{${CR.map(c=>'"'+c+'":3').join(',')}},"feedback":["3 specific, actionable points quoting the learner's words"],"rewrite":"improved version of the weakest sentence","next":"one exercise to practice next"}`);
+  const sc=r.scores;S.hist.push({t:Date.now(),s:$('#wsec').value,sc});S.hist=S.hist.slice(-50);save();
+  $('#o3').innerHTML=CR.map(c=>`<div class="sc"><span>${c}</span><div class="bar"><i style="width:${(sc[c]||0)*20}%"></i></div><b>${sc[c]||0}</b></div>`).join('')+'<h4>Feedback</h4><ul>'+(r.feedback||[]).map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul><h4>Stronger version of your weakest sentence</h4><p>'+esc(r.rewrite||'')+'</p><h4>Try next</h4><p>'+esc(r.next||'')+'</p>';progress()})};
+function progress(){const h=S.hist;$('#prog').innerHTML=h.length>1?'<hr>Progress over '+h.length+' attempts: '+CR.map(c=>{const a=h.slice(0,Math.ceil(h.length/2)),b=h.slice(Math.ceil(h.length/2)),m=x=>x.reduce((s,y)=>s+(y.sc[c]||0),0)/x.length,d=m(b)-m(a);return c+' '+m(b).toFixed(1)+(d>.2?' ↑':d<-.2?' ↓':'')}).join(', '):h.length?'Complete one more attempt to see your trend.':''}
+
+/* ---- settings ---- */
+$('#prov').innerHTML=Object.entries(P).map(([k,v])=>`<option value="${k}">${v.n}</option>`).join('');
+function cfgUI(){const c=S.cfg,p=P[c.p];$('#prov').value=c.p;$('#model').value=c.m;$('#key').value=c.k;$('#base').value=c.u;$('#base').placeholder=p.u||'https://…/v1';$('#hint').textContent=p.h;$('#lvl').value=S.lvl}
+$('#prov').onchange=e=>{S.cfg.p=e.target.value;S.cfg.m=P[S.cfg.p].m;S.cfg.u='';save();cfgUI()};
+[['model','m'],['key','k'],['base','u']].forEach(([id,k])=>$('#'+id).oninput=e=>{S.cfg[k]=e.target.value.trim();save()});
+$('#lvl').onchange=e=>{S.lvl=e.target.value;save()};
+cfgUI();progress();
+</script></body></html>
