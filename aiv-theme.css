@@ -1,0 +1,133 @@
+/* =========================================================
+   EMARI x AI Verse theme
+   Matches aiverse.it.com and aiv-x.com: Geist, black on white,
+   warm-grey cards, hairline borders, black pill buttons, blue accent.
+   ========================================================= */
+:root{
+  --aiv-ink:#111111;
+  --aiv-muted:#6e6c68;
+  --aiv-card:#f6f5f3;
+  --aiv-line:#e7e5e1;
+  --aiv-blue:#2563eb;
+  --aiv-glow:#3b82f6;
+  --aiv-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+body{
+  font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.03em}
+h1{letter-spacing:-.04em}
+::selection{background:#111;color:#fff}
+
+/* mono micro-labels, as on AI Verse */
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type,
+.apps-nav-label,.resource-nav-label,.oai-lockup-cap{
+  font-family:var(--aiv-mono);
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type{color:var(--aiv-muted)}
+.hero .wrap{row-gap:14px}
+.hero .eyebrow-tab{font-size:.78rem}
+
+/* buttons: black pills */
+.btn-primary,.button.primary{
+  background:#111;color:#fff;border-color:#111;font-weight:500;
+}
+.btn-primary:hover,.button.primary:hover{background:#333;border-color:#333;color:#fff;text-decoration:none}
+.btn-outline,.button.secondary{border-color:#d4d2ce;color:#111;font-weight:500;background:transparent}
+.btn-outline:hover,.button.secondary:hover{background:var(--aiv-card);color:#111}
+
+/* cards: hairline, no heavy shadows */
+.card,.tool-card,.team-card,.tool,.chart{border-color:var(--aiv-line)}
+.tool{background:var(--aiv-card)}
+.tool-card{background:#fff;border:1px solid var(--aiv-line)}
+
+/* dark call-to-action / panel sections */
+.navy,.research-panel{background:#111}
+
+/* ---------- AI Verse branch bar (top of every page) ---------- */
+.topbar{
+  background:#111 !important;
+  color:#a3a09a !important;
+  border-bottom:0 !important;
+  font-size:.8rem;
+  padding:9px 0;
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 22px;flex-wrap:wrap}
+.topbar a{color:#fff !important;font-weight:500}
+.topbar .aiv-branch{display:inline-flex;align-items:center;gap:12px;color:#fff !important}
+.topbar .aiv-branch:hover{text-decoration:none;opacity:.85}
+.topbar .aiv-branch span{color:#c9c7c2}
+.topbar .aiv-branch strong{color:#fff;font-weight:600}
+.aiv-mark{height:13px;width:auto;display:block;flex:none;color:#fff}
+@media (max-width:600px){
+  .topbar .wrap{display:flex !important;flex-direction:column;align-items:flex-start}
+  .topbar span{display:block;margin:0 !important}
+}
+
+/* ---------- Footer AI Verse strip ---------- */
+.aiv-footer{
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+  border-top:1px solid var(--aiv-line);margin-top:34px;padding-top:22px;padding-bottom:6px;
+}
+footer li a,footer .footer-grid a{color:#111}
+footer li a:hover,footer .footer-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+.aiv-footer p{margin:0;font-size:.88rem;color:var(--aiv-muted);max-width:44em}
+.aiv-footer a{color:#111;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.aiv-footer-logo{display:block;flex:none;color:#111;text-decoration:none !important}
+.aiv-footer .aiv-mark-lg{height:26px;width:auto;display:block}
+
+/* ---------- Home page: branch lockup ---------- */
+.branch-lockup{
+  background:#fff;border-radius:12px;padding:22px 20px 20px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+}
+.bl-row{display:flex;align-items:center;gap:14px;color:#111;text-decoration:none}
+.bl-row:hover{text-decoration:none}
+.bl-row img{width:56px;height:56px;flex:none;object-fit:contain}
+.bl-name{display:block;font-weight:600;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}
+.bl-name small{display:block;font-weight:400;font-size:.72rem;letter-spacing:0;color:var(--aiv-muted);margin-top:3px;max-width:230px}
+.bl-link{
+  display:flex;align-items:center;gap:10px;width:100%;
+  font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aiv-muted);
+}
+.bl-link::before,.bl-link::after{content:"";flex:1;height:1px;background:var(--aiv-line)}
+.hero-art .aiv-mark-lg,.branch-lockup .aiv-mark-lg{width:auto;height:30px;display:block;flex:none;color:#111}
+.bl-aiv{padding-left:4px}
+.bl-aiv .bl-name{font-size:1.15rem}
+
+/* neutral focus ring */
+:focus-visible{outline:3px solid #3b82f6 !important;outline-offset:2px}
+
+footer .aiv-footer a,footer .aiv-footer-logo{color:#111 !important}
+
+/* =========================================================
+   Gradient graphics theme (lavender -> periwinkle -> sky)
+   ========================================================= */
+:root{
+  --aiv-lav:#e8e6fb; --aiv-violet:#dcd8fb; --aiv-peri:#b9cafb; --aiv-sky:#81cbfb;
+  --aiv-grad:linear-gradient(135deg,#e8e6fb 0%,#dcd8fb 24%,#b9cafb 58%,#81cbfb 100%);
+  --aiv-wash:linear-gradient(180deg,rgba(220,216,251,.55) 0%,rgba(185,202,251,.22) 45%,#fff 100%);
+}
+.hero-art,.cta{background:var(--aiv-grad)}
+main > section.hero,main .hero{background:var(--aiv-wash)}
+.team-avatar{background:var(--aiv-grad) !important;color:#111 !important}
+.bl-link::before,.bl-link::after{background:var(--aiv-peri)}
+.av-fig{
+  background:var(--aiv-grad);border-radius:16px;padding:34px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#111;
+}
+.av-fig img{width:72px;height:72px}
+.av-fig .cap{font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3b4a7a}
+.av-fig .aiv-mark-lg{height:34px;width:auto;color:#111}
+.av-fig .small{color:#3b4a7a}
+.stat,.card,.audience-item{border-top-color:#111}
+.card.accent{border-top-color:var(--aiv-sky)}
+
+/* home page: empty primary nav would wrap the header onto two rows */
+header .wrap.nav > nav.primary,header .wrap.nav > .menu{display:none !important}
+.av-fig img{background:transparent !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important}
