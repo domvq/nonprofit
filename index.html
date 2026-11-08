@@ -8,12 +8,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>EMARI | Emergency Medicine AI Research Initiative By AI Verse</title>
+  <title>Emergency Medicine AI Research Initiative | Emergency Medicine AI Research Initiative By AI Verse</title>
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ResearchOrganization","name":"EMARI","alternateName":"Emergency Medicine AI Research Initiative","url":"https://emari.it.com/","email":"team@aiverse.it.com","description":"The EMS medical AI research team of AI Verse.","parentOrganization":{"@type":"Organization","name":"AI Verse","url":"https://aiverse.it.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ResearchOrganization","name":"Emergency Medicine AI Research Initiative","alternateName":"EMARI","url":"https://emari.it.com/","email":"team@aiverse.it.com","parentOrganization":{"@type":"Organization","name":"AI Verse","url":"https://aiverse.it.com/"}}</script>
 
   <meta property="og:site_name" content="EMARI">
-  <meta name="description" content="EMARI is the EMS medical AI research team of AI Verse. We build, evaluate and publish AI systems for emergency and prehospital medicine.">
+  <meta name="description" content="Emergency Medicine AI Research Initiative (EMARI), the EMS medical AI research team of AI Verse. Advancing medicine through AI engineering, AI research and AI education.">
 
   <style>
 
@@ -23,7 +23,7 @@
       --ink: #111111;
       --soft: #6e6c68;
       --accent: #111111;
-      --accent-dark: #2563eb;
+      --accent-dark: #111111;
       --red: #dc2626;
       --line: #e7e5e1;
       --max: 1100px;
@@ -819,7 +819,7 @@ nav.primary a[aria-current]{background:#111111;color:#fff;border-color:#111111}
 /* Explore bar: all pages, equal cells, dark brown */
 nav.resource-nav{background:#111111;border-top:0;border-bottom:0}
 nav.resource-nav .wrap{display:grid;gap:6px;align-items:stretch;padding-top:10px;padding-bottom:10px}
-nav.resource-nav .resource-nav-label{align-self:center;color:#93b4ff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
+nav.resource-nav .resource-nav-label{align-self:center;color:#b9cafb;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
 nav.resource-nav a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;min-height:36px;padding:6px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:#fff;font-size:.82rem;font-weight:700;line-height:1.15;text-decoration:none;transform:none}
 nav.resource-nav a:hover{background:rgba(255,255,255,.14);border-color:transparent;color:#fff;transform:none}
 nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111}
@@ -831,7 +831,132 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 .apps-nav.tools-nav{border-top:1px solid var(--line)}
 @media (max-width:880px){.apps-nav a{min-height:42px}.apps-nav .wrap{row-gap:6px}.brand{min-width:0}.brand-text{min-width:0;overflow-wrap:anywhere}.brand-text,.brand-text small{white-space:normal!important;max-width:100%}.brand{flex:1 1 0;overflow:hidden}}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="aiv-theme.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style id="aiv-theme">/* =========================================================
+   EMARI x AI Verse theme
+   Matches aiverse.it.com and aiv-x.com: Geist, black on white,
+   warm-grey cards, hairline borders, black pill buttons, blue accent.
+   ========================================================= */
+:root{
+  --aiv-ink:#111111;
+  --aiv-muted:#6e6c68;
+  --aiv-card:#f6f5f3;
+  --aiv-line:#e7e5e1;
+  --aiv-blue:#b9cafb;
+  --aiv-glow:#81cbfb;
+  --aiv-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+body{
+  font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.03em}
+h1{letter-spacing:-.04em}
+::selection{background:#111;color:#fff}
+
+/* mono micro-labels, as on AI Verse */
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type,
+.apps-nav-label,.resource-nav-label,.oai-lockup-cap{
+  font-family:var(--aiv-mono);
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type{color:var(--aiv-muted)}
+.hero .wrap{row-gap:14px}
+.hero .eyebrow-tab{font-size:.78rem}
+
+/* buttons: black pills */
+.btn-primary,.button.primary{
+  background:#111;color:#fff;border-color:#111;font-weight:500;
+}
+.btn-primary:hover,.button.primary:hover{background:#333;border-color:#333;color:#fff;text-decoration:none}
+.btn-outline,.button.secondary{border-color:#d4d2ce;color:#111;font-weight:500;background:transparent}
+.btn-outline:hover,.button.secondary:hover{background:var(--aiv-card);color:#111}
+
+/* cards: hairline, no heavy shadows */
+.card,.tool-card,.team-card,.tool,.chart{border-color:var(--aiv-line)}
+.tool{background:var(--aiv-card)}
+.tool-card{background:#fff;border:1px solid var(--aiv-line)}
+
+/* dark call-to-action / panel sections */
+.navy,.research-panel{background:#111}
+
+/* ---------- Footer AI Verse strip ---------- */
+.aiv-footer{
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+  border-top:1px solid var(--aiv-line);margin-top:34px;padding-top:22px;padding-bottom:6px;
+}
+footer li a,footer .footer-grid a{color:#111}
+footer li a:hover,footer .footer-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+.aiv-footer p{margin:0;font-size:.88rem;color:var(--aiv-muted);max-width:44em}
+.aiv-footer a{color:#111;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.aiv-footer-logo{display:block;flex:none;color:#111;text-decoration:none !important}
+.aiv-footer .aiv-mark-lg{height:26px;width:auto;display:block}
+
+/* ---------- Home page: branch lockup ---------- */
+.branch-lockup{
+  background:#fff;border-radius:12px;padding:22px 20px 20px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+}
+.bl-row{display:flex;align-items:center;gap:14px;color:#111;text-decoration:none}
+.bl-row:hover{text-decoration:none}
+.bl-row img{width:56px;height:56px;flex:none;object-fit:contain}
+.bl-name{display:block;font-weight:600;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}
+.bl-name small{display:block;font-weight:400;font-size:.72rem;letter-spacing:0;color:var(--aiv-muted);margin-top:3px;max-width:230px}
+.bl-link{
+  display:flex;align-items:center;gap:10px;width:100%;
+  font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aiv-muted);
+}
+.bl-link::before,.bl-link::after{content:"";flex:1;height:1px;background:var(--aiv-line)}
+.hero-art .aiv-mark-lg,.branch-lockup .aiv-mark-lg{width:auto;height:30px;display:block;flex:none;color:#111}
+.bl-aiv{padding-left:4px}
+.bl-aiv .bl-name{font-size:1.15rem}
+
+/* neutral focus ring */
+:focus-visible{outline:3px solid #81cbfb !important;outline-offset:2px}
+
+footer .aiv-footer a,footer .aiv-footer-logo{color:#111 !important}
+
+/* =========================================================
+   Gradient graphics theme (lavender -> periwinkle -> sky)
+   ========================================================= */
+:root{
+  --aiv-lav:#e8e6fb; --aiv-violet:#dcd8fb; --aiv-peri:#b9cafb; --aiv-sky:#81cbfb;
+  --aiv-grad:linear-gradient(135deg,#e8e6fb 0%,#dcd8fb 24%,#b9cafb 58%,#81cbfb 100%);
+  --aiv-wash:linear-gradient(180deg,rgba(220,216,251,.55) 0%,rgba(185,202,251,.22) 45%,#fff 100%);
+}
+.hero-art,.cta{background:var(--aiv-grad)}
+main > section.hero,main .hero{background:var(--aiv-wash)}
+.team-avatar{background:var(--aiv-grad) !important;color:#111 !important}
+.bl-link::before,.bl-link::after{background:var(--aiv-peri)}
+.av-fig{
+  background:var(--aiv-grad);border-radius:16px;padding:34px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#111;
+}
+.av-fig img{width:72px;height:72px}
+.av-fig .cap{font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3b4a7a}
+.av-fig .aiv-mark-lg{height:34px;width:auto;color:#111}
+.av-fig .small{color:#3b4a7a}
+.stat,.card,.audience-item{border-top-color:#111}
+.card.accent{border-top-color:var(--aiv-sky)}
+
+.av-fig img{background:transparent !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important}
+
+/* gradient link underline (replaces the old blue link colour) */
+main p a:not(.button),main li a:not(.button),.tool-link,.card a:not(.button),.small a,.disclaimer a,.cta p a,.section-intro a{
+  color:#111;font-weight:600;text-decoration:none;
+  background-image:var(--aiv-grad);background-repeat:no-repeat;background-size:100% 4px;background-position:0 100%;
+  padding-bottom:1px;
+}
+main p a:not(.button):hover,.tool-link:hover{background-size:100% 100%}
+.topbar{display:none !important}
+.aiv-band{padding:30px 0 6px}
+.aiv-band-inner{background:var(--aiv-grad);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.aiv-band-inner p{margin:0;color:#111;max-width:48em}
+.aiv-band-inner .aiv-footer-logo{color:#111}
+.aiv-band-inner .aiv-mark-lg{height:30px;width:auto}
+</style>
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 
@@ -842,8 +967,6 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
   <!-- =========================
        TOP BAR
   ========================= -->
-
-  <div class="topbar"><div class="wrap"><a class="aiv-branch" href="https://aiverse.it.com" target="_blank" rel="noopener" aria-label="EMARI is a research team of AI Verse"><svg class="aiv-mark" viewBox="168 188 1044 394" role="img" aria-label="AI Verse" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg><span>EMARI is the EMS medical AI research team of <strong>AI Verse</strong></span></a><span class="topbar-note">Emergency? Call 911. Research and education only.</span><span><a href="contact.html">Contact us &rarr;</a></span></div></div>
 
 
   <!-- =========================
@@ -860,9 +983,11 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 
         <span class="brand-text">
 
-          Emergency Medicine AI Research Initiative By AI Verse
+          Emergency Medicine AI Research Initiative
 
-          <small>EMS Medical AI Research Team · AI Verse</small>
+          <small>
+            Emergency Medicine • AI Engineering • Research
+          </small>
 
         </span>
 
@@ -927,186 +1052,895 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 
   <div class="wrap" style="padding:10px 28px; font-size:.85rem; color:var(--soft);">
     <strong style="color:var(--ink);">On this page:</strong>
-    <a href="#about">What we do</a> ·
-    <a href="#research">Research program</a> ·
-    <a href="#areas">Research areas</a> ·
-    <a href="#aiverse">AI Verse</a> ·
-    <a href="#tools">Education tools</a> ·
-    <a href="#contact">Collaborate</a>
+    <a href="#about">About</a> ·
+    <a href="#mission">Mission</a> ·
+    <a href="#research">Research</a> ·
+    <a href="#education">Education overview</a> ·
+    <a href="#tools">Tools</a> ·
+    <a href="#contact">Contact form</a>
   </div>
 
 
   <main id="top">
 
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
     <section class="hero">
+
       <div class="wrap hero-grid">
+
+
         <div>
-          <span class="eyebrow">EMS Medical AI Research Team · AI Verse</span>
-          <h1>Research on AI systems for emergency medical services.</h1>
-          <p class="lede">EMARI is the emergency medicine and EMS research team of AI Verse. We design, build and scientifically evaluate AI systems for prehospital care, and publish our prototypes, datasets, methods and results so they can be examined.</p>
+
+          <span class="eyebrow">
+            Emergency Medicine • AI Engineering • Research
+          </span>
+
+
+          <h1>
+            Advancing Medicine Through AI Engineering, AI Research, and AI Education.
+          </h1>
+
+
+          <p class="lede">
+
+            We engineer, test, and scientifically evaluate artificial
+            intelligence systems for healthcare while making deploying AI 
+            educational tools and research  accessible to clinicians, students, 
+            and the public.
+
+          </p>
+
+
           <div class="buttons">
-            <a class="button primary" href="current-projects.html">Current projects</a>
-            <a class="button secondary" href="#research">Research program</a>
+
+            <a
+              class="button primary"
+              href="#mission">
+
+              Our mission
+
+            </a>
+
+
+            <a
+              class="button secondary"
+              href="#research">
+
+              Explore our research
+
+            </a>
+
           </div>
+
         </div>
+
+
+        <!-- HERO ART -->
+
         <div class="hero-art">
+
           <div class="branch-lockup">
-            <div class="bl-row"><img src="data:image/png;base64,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" alt="EMARI logo" width="56" height="56"><span class="bl-name">EMARI<small>Emergency Medicine AI Research Initiative By AI Verse</small></span></div>
-            <div class="bl-link"><span>A research branch of</span></div>
-            <a class="bl-row bl-aiv" href="https://aiverse.it.com" target="_blank" rel="noopener"><svg class="aiv-mark-lg" viewBox="168 188 1044 394" role="img" aria-label="AI Verse logo" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg><span class="bl-name">AI Verse<small>AI tools for everyday tasks · AIV X</small></span></a>
+            <div class="bl-row"><img src="data:image/png;base64,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" alt="EMARI logo" width="56" height="56"><span class="bl-name">EMARI<small>Emergency Medicine AI Research Initiative</small></span></div>
+            <div class="bl-link"><span>A branch of</span></div>
+            <a class="bl-row bl-aiv" href="https://aiverse.it.com" target="_blank" rel="noopener"><svg class="aiv-mark-lg" viewBox="168 188 1044 394" role="img" aria-label="AI Verse logo" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg><span class="bl-name">AI Verse<small>EMARI is the EMS medical AI research team of AI Verse</small></span></a>
           </div>
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================
+         TRACK RECORD
+    ========================= -->
 
     <section style="padding:0;">
+
       <div class="wrap">
-        <div class="stats">
-          <div class="stat"><strong>6</strong><span>Working prototypes: ECG, vitals, trauma, copilot, field reference, research assistant</span></div>
-          <div class="stat"><strong>4</strong><span>Research projects in development</span></div>
-          <div class="stat"><strong>5</strong><span>AI education and study tools</span></div>
-          <div class="stat"><strong>Public</strong><span>Prototypes, datasets, demos and reports</span></div>
+
+        <div class="stats" style="grid-template-columns: repeat(3, 1fr);">
+
+          <div class="stat">
+
+            <strong>200+</strong>
+
+            <span>
+              Doctors and physicians reached
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>200+</strong>
+
+            <span>
+              Manual script downloads
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>50+</strong>
+
+            <span>
+              Science publishing companies
+            </span>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <section style="padding:0;">
+
+      <div class="wrap">
+
+        <div class="stats">
+
+          <div class="stat">
+
+            <strong>AI</strong>
+
+            <span>
+              Healthcare research and evaluation
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>EMS</strong>
+
+            <span>
+              Emergency and prehospital medicine
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>OPEN</strong>
+
+            <span>
+              Accessible education and research tools
+            </span>
+
+          </div>
+
+
+          <div class="stat">
+
+            <strong>RIGOR</strong>
+
+            <span>
+              Scientific evaluation and responsible innovation
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
     <section class="tinted" id="about">
+
       <div class="wrap">
+
+
         <div class="section-intro">
-          <span class="label">What we do</span>
-          <h2>Engineering and evaluating AI for emergency medicine.</h2>
-          <p>EMARI works at the intersection of emergency medicine, healthcare and artificial intelligence. We study where AI can support prehospital care, build prototypes to test those ideas, and report honestly on how they perform.</p>
+
+          <span class="label">
+            What we're about
+          </span>
+
+
+          <h2>
+            Engineering & Deploying AI Solutions for Emergency Medicine.
+          </h2>
+
+
+          <p>
+            We are an organization focused on the intersection of emergency
+            medicine, healthcare, artificial intelligence, research, and
+            education.
+          </p>
+
+
+          <p>
+            We engineer and work to deploy production-ready AI solutions 
+            combining rigorous scientific evaluation with secure, accessible 
+            delivery to EMS organizations, students, and the public.
+          </p>
+
         </div>
+
+
         <div class="cards">
+
+
           <div class="card">
-            <span class="number">01 — RESEARCH</span>
-            <h3>Study what works</h3>
-            <p class="small">We investigate where AI can help in emergency and prehospital medicine, and where it fails, using defined tasks and simulated or de-identified data.</p>
+
+            <span class="number">
+              01 — RESEARCH
+            </span>
+
+            <h3>
+              Study what works
+            </h3>
+
+            <p class="small">
+              We explore and scientifically evaluate artificial intelligence
+              systems and their potential applications in healthcare.
+            </p>
+
           </div>
+
+
           <div class="card accent">
-            <span class="number">02 — ENGINEERING</span>
-            <h3>Build to a defined task</h3>
-            <p class="small">We engineer prototypes for ECG interpretation, vital-sign monitoring, trauma assessment and clinical documentation against explicit requirements, not demos.</p>
+
+            <span class="number">
+              02 — EDUCATION
+            </span>
+
+            <h3>
+              We use AI to educate
+            </h3>
+
+            <p class="small">
+              We create AI educational resources that help clinicians, students,
+              and the public understand, test their knowledge, and teach others
+              emergency medicine and emerging technology.
+            </p>
+
           </div>
+
+
           <div class="card">
-            <span class="number">03 — EVALUATION</span>
-            <h3>Test before deploying</h3>
-            <p class="small">We measure performance, document limitations, and publish code, test sets and written reports so others can reproduce and challenge the work.</p>
+
+            <span class="number">
+              03 — INNOVATION
+            </span>
+
+            <h3>
+              Engineer responsibly
+            </h3>
+
+            <p class="small">
+              We believe healthcare AI should be developed with transparency,
+              clinical context, scientific integrity, and patient safety in mind.
+            </p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="research">
-      <div class="wrap research">
-        <div>
-          <span class="label">Research program</span>
-          <h2>From promising technology to evidence.</h2>
-          <p>Artificial intelligence is changing healthcare quickly. The next step is determining which systems are useful, reliable, safe, and worth using.</p>
-          <div class="research-list">
-            <div><strong>Development</strong><span>Developing AI systems for emergency medicine and prehospital care.</span></div>
-            <div><strong>Engineering</strong><span>Building systems to defined tasks and real-world requirements.</span></div>
-            <div><strong>Scientific evaluation</strong><span>Measuring whether a system provides meaningful value, and documenting how it fails.</span></div>
-            <div><strong>Publication</strong><span>Releasing code, prototypes, datasets and reports. <a href="ai-research.html">Read our methods →</a></span></div>
-          </div>
-        </div>
-        <div class="research-panel">
-          <span class="label" style="color:#93b4ff;">Responsible AI</span>
-          <h2>Build it. Test it. Question it. Then deploy it.</h2>
-          <p>Healthcare AI cannot be judged by how impressive a demonstration looks.</p>
-          <p>We prioritize transparency, scientific evaluation and clinical context before anything reaches production.</p>
-          <p>Our goal is to show what AI <strong>can do</strong> in emergency medicine, and where it cannot yet be trusted.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="tinted" id="areas">
-      <div class="wrap">
-        <div class="section-intro">
-          <span class="label">Research areas</span>
-          <h2>Where the team is working.</h2>
-          <p>Our active work spans computer vision, language models, predictive modeling and clinical decision-support prototypes.</p>
-        </div>
-        <div class="audience">
-          <div class="audience-item"><strong>Vision and signals</strong><span>AI CPR Analyzer: video processing, signal analysis and model integration.</span></div>
-          <div class="audience-item"><strong>Language models</strong><span>Patient Care Report Analyzer and Dispatch-to-Patient Needs Analyzer.</span></div>
-          <div class="audience-item"><strong>Predictive models</strong><span>Arrival Time to Hospital: transport-time prediction from historical EMS data.</span></div>
-          <div class="audience-item"><strong>Decision support</strong><span>Paramedic AI Copilot, ECG AI, vital-sign monitoring and trauma assessment prototypes.</span></div>
-        </div>
-        <p style="margin-top:28px"><a href="current-projects.html"><strong>See current projects →</strong></a> &nbsp;·&nbsp; <a href="future-innovation.html"><strong>Future innovation roadmap →</strong></a></p>
-      </div>
-    </section>
+    <!-- =========================
+         MISSION
+    ========================= -->
 
-    <section id="aiverse">
+    <section id="mission">
+
       <div class="wrap mission">
+
+
         <div>
-          <span class="label">AI Verse</span>
-          <h2>A research branch of AI Verse.</h2>
-          <p>AI Verse builds AI tools for everyday tasks, and AIV X is the platform for AI Verse's AI models. EMARI is AI Verse's EMS medical AI research team, focused on one domain: AI for emergency and prehospital medicine.</p>
-          <div class="buttons">
-            <a class="button primary" href="https://aiverse.it.com" target="_blank" rel="noopener">Visit AI Verse</a>
-            <a class="button secondary" href="https://aiv-x.com" target="_blank" rel="noopener">Visit AIV X</a>
-          </div>
+
+          <span class="label">
+            Our mission
+          </span>
+
+
+          <h2>
+            Research Driven. Production Deployed.
+          </h2>
+
+
+          <p>
+            Our mission is to advance emergency medicine and healthcare by
+            engineering, deploying, and integrating how artificial intelligence 
+            solutions can be production-ready AI tools for healthcare organizations,
+            education, and emergency medical services.
+          </p>
+
+
+          <p>
+            We build accessible, evidence-based AI tools and educational
+            resources for frontline healthcare providers and students.
+          </p>
+
         </div>
+
+
         <div class="mission-box">
-          <p>EMARI keeps its own identity and research agenda, and works as part of the AI Verse team.</p>
+
+          <p>
+            To advance emergency medicine and healthcare by engineering, evaluating, 
+            and deploying artificial intelligence systems, while delivering accessible 
+            research, implementation frameworks, and AI educational tools to clinicians, 
+            emergency agencies, and students."
+          </p>
+
+
           <br>
-          <p>Questions about EMARI or AI Verse: <a href="mailto:team@aiverse.it.com">team@aiverse.it.com</a></p>
+
+
+          <p>
+            We advance artificial intelligence in medicine through engineering,
+            testing, education, and responsible innovation.
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="tinted" id="tools">
-      <div class="wrap">
-        <div class="section-intro">
-          <span class="label">Education tools</span>
-          <h2>Learning tools built from our research.</h2>
-          <p>We use what we learn building medical AI to make AI-assisted EMS study and reference tools.</p>
+
+    <!-- =========================
+         RESEARCH
+    ========================= -->
+
+    <section class="tinted" id="research">
+
+      <div class="wrap research">
+
+
+        <div>
+
+          <span class="label">
+            AI &amp; Research
+          </span>
+
+
+          <h2>
+            From Promising Technology to Evidence.
+          </h2>
+
+
+          <p>
+            Artificial intelligence is changing healthcare rapidly. We believe
+            the next step is determining which systems are actually useful,
+            reliable, safe, and worth using.
+          </p>
+
+
+          <div class="research-list">
+
+
+            <div>
+
+              <strong>
+                Development
+              </strong>
+
+              <span>
+                Developing AI systems for healthcare education and the future.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Engineering
+              </strong>
+
+              <span>
+                Engineering systems to defined tasks and real-world requirements.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Scientific Evaluation
+              </strong>
+
+              <span>
+                Measuring whether technology actually provides meaningful value.
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Education
+              </strong>
+
+              <span>
+                Building AI educational tools and making AI EMS education accessible.
+              </span>
+
+            </div>
+
+          </div>
+
         </div>
+
+
+        <div class="research-panel">
+
+          <span
+            class="label"
+            style="color:#b9cafb;">
+
+            Responsible AI
+
+          </span>
+
+
+          <h2>
+            Build it. Test it. Question it. Deploy it
+          </h2>
+
+
+          <p>
+            Healthcare AI cannot be evaluated simply by how impressive a
+            demonstration looks.
+          </p>
+
+
+          <p>
+            We prioritize transparency, scientific evaluation, clinical
+            context, before production.
+          </p>
+
+
+          <p>
+            Our goal is to help demonstrate what AI
+            <strong>can do</strong>
+            and what AI could do 
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHO WE SERVE
+    ========================= -->
+
+    <section>
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            Who We Serve
+          </span>
+
+
+          <h2>
+            Knowledge Should Be Accessible To Everyone.
+          </h2>
+
+
+          <p>
+            Our work is intended for people learning medicine, practicing
+            medicine, researching healthcare, developing technology, or simply
+            trying to understand where healthcare is headed.
+          </p>
+
+        </div>
+
+
+        <div class="audience">
+
+
+          <div class="audience-item">
+
+            <strong>
+              EMS Students
+            </strong>
+
+            <span>
+              Educational resources and clinical concepts for building
+              a strong foundation.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              Clinicians
+            </strong>
+
+            <span>
+              Practical references and research relevant to emergency
+              and prehospital medicine.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              Researchers
+            </strong>
+
+            <span>
+              Opportunities to explore, test, publish, and discuss
+              emerging healthcare AI.
+            </span>
+
+          </div>
+
+
+          <div class="audience-item">
+
+            <strong>
+              The Public
+            </strong>
+
+            <span>
+              Accessible explanations of medicine, AI, healthcare,
+              and emerging research.
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section class="tinted" id="education">
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            AI EMS Education
+          </span>
+
+
+          <h2>
+            Education Is Where Our Work Begins.
+          </h2>
+
+
+          <p>
+            Our AI EMS education resources are built to deploy AI solutions to 
+            learners throughout their journey from the fundamentals of 
+            emergency care through advanced clinical concepts.
+          </p>
+
+        </div>
+
+
         <div class="cards">
-          <div class="tool" style="background:#fff">
-            <span class="tool-type">Study tool</span>
-            <h3>Fisdap Guide</h3>
-            <p class="small">A companion guide that helps EMS students navigate coursework and prepare for exams.</p>
-            <a class="tool-link" href="https://domvq.github.io/fisdap-guide-/" target="_blank" rel="noopener noreferrer">Open Fisdap Guide →</a>
+
+
+          <div class="card">
+
+            <span class="number">
+              EMR
+            </span>
+
+            <h3>
+              Emergency Medical Responder
+            </h3>
+
+            <p class="small">
+              Foundational emergency care concepts and preparation for
+              entering EMS.
+            </p>
+
           </div>
-          <div class="tool" style="background:#fff">
-            <span class="tool-type">AI education</span>
-            <h3>AI Education Resources</h3>
-            <p class="small">AI-powered teaching resources, tutors, a research lab and Study AI.</p>
-            <a class="tool-link" href="teaching-resources.html">Open AI Education Resources →</a>
+
+
+          <div class="card accent">
+
+            <span class="number">
+              EMT
+            </span>
+
+            <h3>
+              Emergency Medical Technician
+            </h3>
+
+            <p class="small">
+              Patient assessment, treatment, anatomy, physiology,
+              operations, and exam preparation.
+            </p>
+
           </div>
-          <div class="tool" style="background:#fff">
-            <span class="tool-type">Reference</span>
-            <h3>Standard EMS Education</h3>
-            <p class="small">Standard EMS reference material and education across provider levels.</p>
-            <a class="tool-link" href="education.html">Open Education →</a>
+
+
+          <div class="card">
+
+            <span class="number">
+              AEMT
+            </span>
+
+            <h3>
+              Advanced EMT
+            </h3>
+
+            <p class="small">
+              Advanced assessment, pharmacology, procedures, and
+              clinical decision-making concepts.
+            </p>
+
           </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================= -->
+
+    <section id="tools">
+
+      <div class="wrap">
+
+
+        <div class="section-intro">
+
+          <span class="label">
+            AI Education Deployments
+          </span>
+
+
+          <h2>
+            AI Technology Built Around Learning and Access.
+          </h2>
+
+
+          <p>
+            These AI tools represent how exploring how AI and digital
+            tools with artificial intelligence can make healthcare education
+            and reference more accessible.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              Study Tool
+            </span>
+
+
+            <h3>
+              Fisdap Guide
+            </h3>
+
+
+            <p class="small">
+              A companion educational guide designed to help EMS students
+              navigate coursework and prepare for exams.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://domvq.github.io/fisdap-guide-/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Open Fisdap Guide →
+
+            </a>
+
+          </div>
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              AI Education
+            </span>
+
+
+            <h3>
+              AI Education Resources
+            </h3>
+
+
+            <p class="small">
+              AI powered education and teaching
+              resources.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://emari.it.com/teaching-resources.html"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Open AI 
+              AI Education Resources →
+
+            </a>
+
+          </div>
+
+
+          <div class="tool">
+
+            <span class="tool-type">
+              Education
+            </span>
+
+
+            <h3>
+              Standard EMS Education
+            </h3>
+
+
+            <p class="small">
+              An standard EMS refernce tools and 
+              education.
+            </p>
+
+
+            <a
+              class="tool-link"
+              href="https://emari.it.com/education.html"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Open Education →
+
+            </a>
+            
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DISCLAIMER
+    ========================= -->
+
+    
+    <section class="aiv-band">
+      <div class="wrap">
+        <div class="aiv-band-inner">
+          <a class="aiv-footer-logo" href="https://aiverse.it.com" target="_blank" rel="noopener" aria-label="AI Verse"><svg class="aiv-mark-lg" viewBox="168 188 1044 394" role="img" aria-label="AI Verse" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg></a>
+          <p><strong>EMARI is the EMS medical AI research team of AI Verse.</strong> Explore <a href="https://aiverse.it.com" target="_blank" rel="noopener">AI Verse</a> and <a href="https://aiv-x.com" target="_blank" rel="noopener">AIV X</a>, the home of our AI models.</p>
         </div>
       </div>
     </section>
 
     <div class="disclaimer">
+
       <div class="wrap">
-        <p><strong>Important:</strong> The information and tools provided by this research team are intended for education, research, and general reference. They are not a substitute for professional medical direction, local protocols, certification training, clinical judgment, or emergency medical care. AI-generated information may contain errors and should be independently verified before being relied upon.</p>
+
+        <p>
+
+          <strong>Important:</strong>
+
+          The information and tools provided by this organization are intended
+          for education, research, and general reference. They are not a
+          substitute for professional medical direction, local protocols,
+          certification training, clinical judgment, or emergency medical care.
+          AI-generated information may contain errors and should be independently
+          verified before being relied upon.
+
+        </p>
+
       </div>
+
     </div>
 
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
     <section id="contact">
+
       <div class="wrap">
+
+
         <div class="cta">
+
+
           <div>
-            <span class="label">Collaborate</span>
-            <h2>Work with the research team.</h2>
-            <p>We welcome collaboration with EMS agencies, clinicians, researchers and engineers. Reach us at <a href="mailto:team@aiverse.it.com">team@aiverse.it.com</a>.</p>
+
+            <span class="label">
+              Get involved
+            </span>
+
+
+            <h2>
+              Help Us Advance Medicine Responsibly.
+            </h2>
+
+
+            <p>
+              We are building an organization around research, education,
+              healthcare technology, and responsible innovation.
+            </p>
+
           </div>
-          <div class="buttons" style="margin:0">
-            <a class="button primary" href="collaborate.html">Collaborate</a>
-            <a class="button secondary" href="contact.html">Contact us</a>
+
+
+          <div>
+
+            <a
+              class="button primary"
+              href="contact.html">
+
+              Contact us
+
+            </a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
 
   </main>
 
@@ -1122,30 +1956,104 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 
 
       <div class="footer-grid">
+
+
         <div>
-          <h4>Emergency Medicine AI Research Initiative</h4>
-          <p class="small">The EMS medical AI research team of AI Verse, building, evaluating and publishing AI systems for emergency and prehospital medicine.</p>
+
+          <h4>
+            Emergency Medicine AI Research Initiative By AI Verse
+          </h4>
+
+
+          <p class="small">
+            Advancing emergency medicine and healthcare through artificial
+            intelligence research, education, scientific evaluation, and
+            responsible innovation.
+          </p>
+
         </div>
+
+
         <div>
-          <h4>Explore</h4>
+
+          <h4>
+            Explore
+          </h4>
+
+
           <ul>
-            <li><a href="#about">What we do</a></li>
-            <li><a href="#research">Research program</a></li>
-            <li><a href="#areas">Research areas</a></li>
-            <li><a href="#tools">Education tools</a></li>
+
+            <li>
+              <a href="#about">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#mission">
+                Mission
+              </a>
+            </li>
+
+            <li>
+              <a href="#research">
+                Research
+              </a>
+            </li>
+
+            <li>
+              <a href="#tools">
+                Tools
+              </a>
+            </li>
+
           </ul>
+
         </div>
+
+
         <div>
-          <h4>Team</h4>
+
+          <h4>
+            Projects
+          </h4>
+
+
           <ul>
-            <li><a href="current-projects.html">Current projects</a></li>
-            <li><a href="ai-research.html">AI research</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="collaborate.html">Collaborate</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+              <a href="education.html">
+                Education
+              </a>
+            </li>
+
+            <li>
+              <a href="ai-innovation.html">
+                AI &amp; Innovation
+              </a>
+            </li>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="team.html">
+                Team
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+
           </ul>
+
         </div>
+
       </div>
+
 
       <div class="copyright">
 

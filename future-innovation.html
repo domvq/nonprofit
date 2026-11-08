@@ -17,7 +17,7 @@
   --ink:        #111111;
   --ink-soft:   #6e6c68;
   --accent:     #111111;
-  --accent-deep:#2563eb;
+  --accent-deep:#111111;
   --rescue:     #dc2626;
   --line:       #e7e5e1;
   --line-soft:  #efeeeb;
@@ -145,7 +145,7 @@ nav.primary a[aria-current="page"]{
   padding-bottom:8px;
 }
 .resource-nav-label{
-  color:#93b4ff;
+  color:#b9cafb;
   font-size:.78rem;
   font-weight:800;
   text-transform:uppercase;
@@ -372,7 +372,7 @@ nav.primary a[aria-current]{background:#111111;color:#fff;border-color:#111111}
 /* Explore bar: all pages, equal cells, dark brown */
 nav.resource-nav{background:#111111;border-top:0;border-bottom:0}
 nav.resource-nav .wrap{display:grid;gap:6px;align-items:stretch;padding-top:10px;padding-bottom:10px}
-nav.resource-nav .resource-nav-label{align-self:center;color:#93b4ff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
+nav.resource-nav .resource-nav-label{align-self:center;color:#b9cafb;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
 nav.resource-nav a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;min-height:36px;padding:6px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:#fff;font-size:.82rem;font-weight:700;line-height:1.15;text-decoration:none;transform:none}
 nav.resource-nav a:hover{background:rgba(255,255,255,.14);border-color:transparent;color:#fff;transform:none}
 nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111}
@@ -383,12 +383,136 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 @media (min-width:881px){.apps-nav.tools-nav .wrap{grid-template-columns:auto repeat(5,minmax(0,1fr))}}
 .apps-nav.tools-nav{border-top:1px solid var(--line)}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="aiv-theme.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style id="aiv-theme">/* =========================================================
+   EMARI x AI Verse theme
+   Matches aiverse.it.com and aiv-x.com: Geist, black on white,
+   warm-grey cards, hairline borders, black pill buttons, blue accent.
+   ========================================================= */
+:root{
+  --aiv-ink:#111111;
+  --aiv-muted:#6e6c68;
+  --aiv-card:#f6f5f3;
+  --aiv-line:#e7e5e1;
+  --aiv-blue:#b9cafb;
+  --aiv-glow:#81cbfb;
+  --aiv-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+body{
+  font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.03em}
+h1{letter-spacing:-.04em}
+::selection{background:#111;color:#fff}
+
+/* mono micro-labels, as on AI Verse */
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type,
+.apps-nav-label,.resource-nav-label,.oai-lockup-cap{
+  font-family:var(--aiv-mono);
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type{color:var(--aiv-muted)}
+.hero .wrap{row-gap:14px}
+.hero .eyebrow-tab{font-size:.78rem}
+
+/* buttons: black pills */
+.btn-primary,.button.primary{
+  background:#111;color:#fff;border-color:#111;font-weight:500;
+}
+.btn-primary:hover,.button.primary:hover{background:#333;border-color:#333;color:#fff;text-decoration:none}
+.btn-outline,.button.secondary{border-color:#d4d2ce;color:#111;font-weight:500;background:transparent}
+.btn-outline:hover,.button.secondary:hover{background:var(--aiv-card);color:#111}
+
+/* cards: hairline, no heavy shadows */
+.card,.tool-card,.team-card,.tool,.chart{border-color:var(--aiv-line)}
+.tool{background:var(--aiv-card)}
+.tool-card{background:#fff;border:1px solid var(--aiv-line)}
+
+/* dark call-to-action / panel sections */
+.navy,.research-panel{background:#111}
+
+/* ---------- Footer AI Verse strip ---------- */
+.aiv-footer{
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+  border-top:1px solid var(--aiv-line);margin-top:34px;padding-top:22px;padding-bottom:6px;
+}
+footer li a,footer .footer-grid a{color:#111}
+footer li a:hover,footer .footer-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+.aiv-footer p{margin:0;font-size:.88rem;color:var(--aiv-muted);max-width:44em}
+.aiv-footer a{color:#111;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.aiv-footer-logo{display:block;flex:none;color:#111;text-decoration:none !important}
+.aiv-footer .aiv-mark-lg{height:26px;width:auto;display:block}
+
+/* ---------- Home page: branch lockup ---------- */
+.branch-lockup{
+  background:#fff;border-radius:12px;padding:22px 20px 20px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+}
+.bl-row{display:flex;align-items:center;gap:14px;color:#111;text-decoration:none}
+.bl-row:hover{text-decoration:none}
+.bl-row img{width:56px;height:56px;flex:none;object-fit:contain}
+.bl-name{display:block;font-weight:600;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}
+.bl-name small{display:block;font-weight:400;font-size:.72rem;letter-spacing:0;color:var(--aiv-muted);margin-top:3px;max-width:230px}
+.bl-link{
+  display:flex;align-items:center;gap:10px;width:100%;
+  font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aiv-muted);
+}
+.bl-link::before,.bl-link::after{content:"";flex:1;height:1px;background:var(--aiv-line)}
+.hero-art .aiv-mark-lg,.branch-lockup .aiv-mark-lg{width:auto;height:30px;display:block;flex:none;color:#111}
+.bl-aiv{padding-left:4px}
+.bl-aiv .bl-name{font-size:1.15rem}
+
+/* neutral focus ring */
+:focus-visible{outline:3px solid #81cbfb !important;outline-offset:2px}
+
+footer .aiv-footer a,footer .aiv-footer-logo{color:#111 !important}
+
+/* =========================================================
+   Gradient graphics theme (lavender -> periwinkle -> sky)
+   ========================================================= */
+:root{
+  --aiv-lav:#e8e6fb; --aiv-violet:#dcd8fb; --aiv-peri:#b9cafb; --aiv-sky:#81cbfb;
+  --aiv-grad:linear-gradient(135deg,#e8e6fb 0%,#dcd8fb 24%,#b9cafb 58%,#81cbfb 100%);
+  --aiv-wash:linear-gradient(180deg,rgba(220,216,251,.55) 0%,rgba(185,202,251,.22) 45%,#fff 100%);
+}
+.hero-art,.cta{background:var(--aiv-grad)}
+main > section.hero,main .hero{background:var(--aiv-wash)}
+.team-avatar{background:var(--aiv-grad) !important;color:#111 !important}
+.bl-link::before,.bl-link::after{background:var(--aiv-peri)}
+.av-fig{
+  background:var(--aiv-grad);border-radius:16px;padding:34px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#111;
+}
+.av-fig img{width:72px;height:72px}
+.av-fig .cap{font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3b4a7a}
+.av-fig .aiv-mark-lg{height:34px;width:auto;color:#111}
+.av-fig .small{color:#3b4a7a}
+.stat,.card,.audience-item{border-top-color:#111}
+.card.accent{border-top-color:var(--aiv-sky)}
+
+.av-fig img{background:transparent !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important}
+
+/* gradient link underline (replaces the old blue link colour) */
+main p a:not(.button),main li a:not(.button),.tool-link,.card a:not(.button),.small a,.disclaimer a,.cta p a,.section-intro a{
+  color:#111;font-weight:600;text-decoration:none;
+  background-image:var(--aiv-grad);background-repeat:no-repeat;background-size:100% 4px;background-position:0 100%;
+  padding-bottom:1px;
+}
+main p a:not(.button):hover,.tool-link:hover{background-size:100% 100%}
+.topbar{display:none !important}
+.aiv-band{padding:30px 0 6px}
+.aiv-band-inner{background:var(--aiv-grad);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.aiv-band-inner p{margin:0;color:#111;max-width:48em}
+.aiv-band-inner .aiv-footer-logo{color:#111}
+.aiv-band-inner .aiv-mark-lg{height:30px;width:auto}
+</style>
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="topbar"><div class="wrap"><a class="aiv-branch" href="https://aiverse.it.com" target="_blank" rel="noopener" aria-label="EMARI is a research team of AI Verse"><svg class="aiv-mark" viewBox="168 188 1044 394" role="img" aria-label="AI Verse" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg><span>EMARI is the EMS medical AI research team of <strong>AI Verse</strong></span></a><span class="topbar-note">Emergency? Call 911. Research and education only.</span><span><a href="contact.html">Contact us &rarr;</a></span></div></div>
 <header class="site-header"><div class="wrap nav-row">
 <a class="brand" href="index.html"><img class="mark" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAPeUlEQVR4Xu1dzY8cRxV/1TM767W9duLssjuzH3jtYMsRCEsxHCBESlDELTf4AzjCJeIf4oCQuHJDOSBEjpEiJSiKjIOC7Oyu98MIcIx356Mbvfroru6umqme6Z5+tdO/aG2nt2emut7vfdarGhZFETRYXASL++gNEA0BFhwNARYcbZ+e/8sv+9EnjyN4cZ6M2hTBGKMaBs732qIi42ex9Ay+ucXgB9/tZK7SBfMgCIzCs2/gd39ZglCTwCxCQhR6vUF+WcErqHvfvxfA1u4SXiZNBvIE2H88iD78PEyJgJrW2wj1s+8wuHWrQ5oEpGOAKApTwkfBuwofNTR7b6HXGz6Lv6dBn21j+tOjCAlM1/5TzwI+/myYM606jAItKCSb8LKwCX7S6//4Rdp6UQNpC/D5QVRMawlovcnqPP5n3xZy1A6yBEDfb9Ou3HViWp8NCB8+q13OVniVBrpG41VH+Fk3lHMXmQv/etkQYCbUmdfbInzbdSNJyToAoG8BfNX62A0wlqpfUANpF2D09YYZdL1m1VrH1K6Q1rPkTQkbANoESPnaSoRk1kdXQlljDU341EHaAnDMqYZfiq+3CJ4yH0gTwHetp2z6FUgTYFJ6VVhrK3EjZj/ig/ARXhCAWl6vR/izkJQCyBPANSCrK8JPBaoGidoWoKiANAFche9aK7CSxCI4E0yBXpHXUwNpAkzSLspa7wu8IICrhk3q0plEqCJ5veuYqIM0AQoFfzVH+OMIQTkjIE0Apwh7jtW8Ilqv32sZIgl4QwDXQM90X6Hgr0Be70wIwgwgTwBXwRcSskX3Zo3wi4yVCkgTwHVCqWq9Gpfezk4NpAmQito98PUKtrFShBcEoBzhp2BZuWxWA6eE71pvc02U4IUFiE2rLXgzXDfHD+4rd67vWaRfgSK8IYCrQOqO8F3HSQXkCeC71lN3A6QJ4KpNFLXeVpegBqIEMHfSOxOiZl9vISReJlcTJLc1LAqxbJKeJ5y57KSarnGtMwi/0OtNAWUJew4R4XBAziM4WYDPvuhHD48i+M+ZmB1XTbTeS3jlziWvL/r86v6g1YLR4Cx6etiaiyfY2l2aaHHGESD6+G99+HQ/edzZAzLzc7tOqE++Xh+r7tDwRBb8YRVXh/AzcIMtznhvp42fZ5z9HAHQBOO9v/9zH15qZxu4CqnR+ryFDOTUR9y7scqFj1DyRiIcPBlCd4tFQaudI0EqBojCUcSCAH77YSJ8q6+1FF9yvnrGrdt1+PrdVYAP3uvABz8NSnn+BBFY4tvKgERAEhzuo+XJL0vFBAhHw4gFLfjokz6MpBRdhVxU612tiTkgYzMt2xoJlSHpg01U4xAgaMNrK2nZFFIIpW/x3xNdciVQJDh4MsqJihMAzX4QtPh5Ng+PC57KUcJZOtQi/O3eUI4pgruvpvQ3B5fnTyW19XAgJsHg/AW3Q+pBgogj5L7pkRR+FlOxPm34yGu9Aj5r0LkM0QhJwGB7lc38/LnUokYcH3U4B5U74BZABQyPTvNG19UN+OjrTSTduiqvormOIuht51XWRet1QtWl9VkoOYchuoIAY4Mo4LrJWhAO+8YJMVmD3DVLXm8jj9t7Vu/rU0KSuHVd/YthUAwsSCdKtkLROKuZcgEEjgtBWYtwJEIXwK0/HB6MP9CgMOszML7eVlSqsZrXvSrngY9BiHt7Vfxr2gzHVr+oA5gRhGFy/J4IAuVIFs3Xm0ja3RQBION2W5DhdmwVEsxq9WqFxsh8ZUB/SMMoL2qXjnrWoLPCfSSDQJIAYPNKYg2mef6aAn8j0gVBfErLEpWr8AtZDSOh6vH1uv9X43plWVxFgYVhH8Io5C672xOnfXqt9crKp+vS+dXAWXydcifU8npXku5ekwRgATw9CGA0POehQNBedm5MNX0W3cNipQXQtSHnFy9QhG/Seh29K+L/YgJjfURqzNql5E5XQqn3ouQCUkBy5ySuTIWHNXwdRYWE919fZiltPTlZicmwJ62Dc10kE1yTQsxIgwsow9dR9/VZoij0tkTxx4QdmQrmLKThZvM7IJJgsi6kgsAoYwEuotZ3WvYydFZQrNXG+hhEWp6slGW5NX2Xko1wtYNlYgATu10ZTlHrVzsAv363A795j39rRwzTWK/JDAC1dDTEDEDcpYom8utfhIV01HqlUKm6lsXCzAvZrwiyxwCWh/Qpwn9nB1c6R9ys370xvpq3o9YAAPiCSSClhmSIQhHHL4nCeY5MrikzPfAYID38osFTzmoQyutv3UzKutjkkR9rckUtAmUVFMmg5ihbEbQJPps5KQtQUzuA4cHVJe4CplgDIFjDz5pmbORgwRK3ADjeG5e05zRkOPh7Pi/GnE0YSkUi+/Ob51pdrtn6c2RbA8e2hbv7OjrVPIUHGwnLsROqty0e1VbX6HbRVYw30muKJFk34JwyT/iAOSC7MhmI/p80TAz3QesVcKz3doei+zbANACXdVtjq3nBElZ6sFfGVLcTc9TtGeaqQKGMRhqYtnKqYTU1eSZC5FlPT+u5hmOw1gIIli+LAFDrwt3Q+vt0Ql+SbfroBMJRslSqMBr1eSAZtJNswl3rIe6xJBMDaH5ubAzgm9Yr/fyhNP96azQiDvQybP62DBDRPHJha+Dr58Pku2q3r7ovCqn5u3NdeRdsMsEFprpdgfh8/NOQ2AiYI1y6Wq9jR/bxIQZnz2MiYK3f9FwquEPCnBxrRX+Jk5PL8dvvmbKJnH1Mf87bbzAsKPAeQywvV70pZCLkgNEi5TeGWF49rxO0TJ+PZdj1ywCqGKcXVM9GAJ+eJING04xFG9Q0LOLghPe2xe9X+Xc6J5+g/rW+oncBobVPdu7EVkS6zi25YKSUBN3K/dfE+6twgC8nA8DVNsDrt5b45+Bkh7KeQAcMCTAhDaxxp+331wHeuS+6WMfh3uMB/OFhxIV/f00KgzGxpBtGMBoNoMVaIhP4O++NTxFNdAEtxRdNGsq3dGGXcLcP8I+OMJ8M4Jc/EnGBIkgWXOh8cwaDw6/z8UWtwLgGh15U67P3W2MFk2l03GmLmzPevd+BaDjggRmvxinficJADcfrwz70UOMlS+7dyGgzBmGDAX8tzwRMW7c6K8JE825ZM/j6QBRCa/lq/Pw/3hCVxnBwxl+vfsF9vBxrEAQwGpzDwRNC3yEca5S0AFkNq1PrlTb95Hsd3psftJdg2D+Do6f5HbXf2uhDu7PCo/e3ewB/PZDmXxJEmeXT00uwtSMEu74CcKJ9keOydILiNaih5tIIdtIuyZsxa0DXs4exRtACbCAZnj+H4+PMNqIY89kNXBimfoA6O3KV8O+8mtilcDTgwle7anGRRv3wTQ4M1+8YPHh9CO/vJca9f/acv18rk+gqH64sQU/Gd9xHj8xaip99fIyrRUJVtmUwiZaH8d2+IRe+GqOK8uuP9ichsxYwS6BndAPOFbL0Qg1G67wrl7XgcD8JytA34yKN+kH0X/5X9O92LsOd2x1peRk8e3YlJQDhw4Ev+uiuaVMRIAikkPPQYwJ8LZLm9jVBB/zBTANJifepH2596CT+aagJyPYD6DAJtApfn+hscaBQMcrnk8373WWAJ/82CeAazwQSdOMMT1wfp7XqdzdXGby1IXbdovU5Pb0Srx56BVtL2KS8VqFMrc+ST2iQuGrTJHV9OMBCjdBH/C8cJYUbJTTR6g2prV4YOK605SKQ6aEzwC5hfA9MM3ngKc2/d9B0IH0+QJGzeAxP7Rrh27RefX4Ry4lCODoU+/i5/WcAR0+X4tGprdFhiJkArhCKqE9lDXzvH48rxBrAOLMdyioh+ny+bYwF8TVfkF4M4iGvPcu2WYLc9Sl9vUnrlRxdkWx4HPAzeEzFFrwHo/hItnwm3T8aIcakgGJMWBIWZWIxiejvAY4ORYDqC1LKJVxAfvDz9PU2q1MUT/cBzv/3bzj8emQUCPpp9ag3ZffPFVUH5Sng+DwdScTfQ4JsgFcAyNtc0luX1iugac7VJRw1TAkoK5zk9cLf35T1fL2si9VCF0gvI6yKfI2vZMB4yakjKIuyfH3KBWhuRMtSSkEiIIzZgWcC+BkqA0Bffqot+IwDri8oq9U//6aU8c0TWV0auxpYta/Xtd4Ee3QyHaJIpIndDZEl6P0BrkACIGFwbM9OtU5SH8HwfADDwKuM8G1aPw+oZg+2LASnev3VaoiLqzk+xNIv8H2DPoLvdQzawophDIB+gJvDzUHleX1W+Fko01q2C0CgcHmLtzwh6Y1Xkk8fVzgyAQ/TwpVGXxG0xMonWrFAFsH5wUg5gTiu3PEJtliS7HWXVir1mrJdwOmpeEZ83wfrLO7xM7WBXWQELUx/QmBBwAI8QlSZvrdk40TZeb2CawOlY9A/FfjZT2HIq3kMNUHb/bMIWFsXS6GMiVUybsfwCFGclDfviXX1nNaO0XCbGdfhovUxSVAgcgDZcZQFXh3UevNO+ErfYmB5hW9zjo1r7MjQHOCE//xu2vC6mnarGzDY8UmEqsIFxK1dvC0Liw1lOxj62OwJ5ddHmopk0B2gaUQSTBJSSsNnOEFLEacqbc+CF294+b/6E7spYaM7hFY7f3y8KZTlJPjFXQbLWiNLIUJMofVZQtksyqzgx75ob6KWkC8yulsM2kuq8zUN2/cFcBL8ahfgq6/60Uf7AKdaG1URc2+91zDj6hruwq0Cqn9ga1faQb5IhCVgoi1bM2LWL4zg2NvrsD3eaiWgvoSgSnS7uHki5BW3yiDXHERBJ58ClwV1EGdvpwXhKIRWe+zJfHOHzQJY4cKqMhDyL64o453Gw3UNYFYgmVvt3E682lGhis2GIEgmq6wAUc8EjHtAK4BG4jnQuTjIEkCCT1rZMxeOxKZRl9r/RQd1AnCUZQH4e0URDAcvAA0M7jeoGhgDrK29qPpjpkbhGMB3JJ09GP0v3OPn4IUFKNsFKEswD2AMoLeSUYMXBCjTBcTBxTxSDA/gBQHUkW0+osqVzTLgBQGaaL06eEGABtWhIcCCwwsC+BywUY81vSCAz2iCwBLQBIHVwQsL4LMLoA4vCNBYgOrgBQEaVIeGAAuOhgALjoYAC46GAAuOhgALjoYAC46GAAuOhgALjoYACw5PCFBFW2gDhBcEoL6m7jO8IIDvmNd+ymnQEKBiULde5AlAWXsmgXo3kDcxAMKHycwCtZ86gclbAERvp03elOpQZN00fNcwNcRnBFIHHvB58NjtRG8KwHN58Pg9CmMZB28IoGMex9RMC+omP+emmn67xYYXMUCD6tAQYMHREGDB8X+pM5Ft9oZwtwAAAABJRU5ErkJggg==" alt="" width="32" height="32"><span class="name">EMARI Future Innovation<em>Emergency Medicine AI Research Initiative By AI Verse</em></span></a>
 <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu ☰</button>
@@ -614,7 +738,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 <p>Phase 1 unifies the established prototypes. Phase 2 expands devices, vision, and ePCR integration. Phase 3 completes the multimodal operating system.</p></div>
 <div class="chart"><h3>Planned workstreams by phase</h3><p class="small">Conceptual plan. Bar shading shows initial build versus continued expansion.</p>
 <svg id="road" viewBox="0 0 820 400" role="img" aria-label="Chart of planned workstreams across three development phases"></svg>
-<div class="legend"><span><i style="background:#3b82f6"></i>Phase work begins</span><span><i style="background:#dcd8fb"></i>Continued build and expansion</span></div></div>
+<div class="legend"><span><i style="background:#81cbfb"></i>Phase work begins</span><span><i style="background:#dcd8fb"></i>Continued build and expansion</span></div></div>
 </div></section>
 
 <section class="tinted" id="collaborate"><div class="wrap">
@@ -651,11 +775,11 @@ function el(p,n,a,t){var e=document.createElementNS(NS,n);for(var k in a)e.setAt
 (function(){var s=document.getElementById('hub'),cx=280,cy=220;
 var nodes=[["RUNSHEET","runsheet-app.html",20,40],["ECG AI","ecg-ai-app.html",20,185],["ML Monitor Vitals","monitor-vitals-app.html",20,330],["ML Trauma Assessment","trauma-ml-app.html",400,40],["Paramedic AI Scientist","paramedic-scientist-app.html",400,185],["Paramedic AI Copilot","paramedic-copilot-app.html",400,330]];
 var plan=[["EMS devices and ePCR",190,4,180],["Computer vision and voice",190,396,180]];
-nodes.forEach(function(n){var nx=n[2]<200?n[2]+140:n[2];el(s,'line',{x1:nx,y1:n[3]+30,x2:cx,y2:cy,stroke:'#3b82f6','stroke-width':2})});
+nodes.forEach(function(n){var nx=n[2]<200?n[2]+140:n[2];el(s,'line',{x1:nx,y1:n[3]+30,x2:cx,y2:cy,stroke:'#81cbfb','stroke-width':2})});
 plan.forEach(function(p){el(s,'line',{x1:cx,y1:p[2]<100?p[2]+36:p[2],x2:cx,y2:cy,stroke:'#6e6c68','stroke-width':2,'stroke-dasharray':'5 5'})});
-el(s,'circle',{cx:cx,cy:cy,r:62,fill:'#111111'});el(s,'circle',{cx:cx,cy:cy,r:50,fill:'none',stroke:'#3b82f6','stroke-dasharray':'4 6'});
+el(s,'circle',{cx:cx,cy:cy,r:62,fill:'#111111'});el(s,'circle',{cx:cx,cy:cy,r:50,fill:'none',stroke:'#81cbfb','stroke-dasharray':'4 6'});
 ['Unified Paramedic','AI Operating','System'].forEach(function(l,i){el(s,'text',{x:cx,y:cy-8+i*17,'text-anchor':'middle',fill:'#fff','font-size':13,'font-weight':800},l)});
-nodes.forEach(function(n){var a=el(s,'a',{href:n[1]});el(a,'rect',{x:n[2],y:n[3],width:140,height:60,rx:10,fill:'#f6f5f3',stroke:'#3b82f6','stroke-width':1.5});
+nodes.forEach(function(n){var a=el(s,'a',{href:n[1]});el(a,'rect',{x:n[2],y:n[3],width:140,height:60,rx:10,fill:'#f6f5f3',stroke:'#81cbfb','stroke-width':1.5});
 var w=n[0].split(' ');var m=Math.ceil(w.length/2);var L=w.length>2?[w.slice(0,m).join(' '),w.slice(m).join(' ')]:[n[0]];
 L.forEach(function(l,i){el(a,'text',{x:n[2]+70,y:n[3]+(L.length>1?26:35)+i*16,'text-anchor':'middle','font-size':12.5,'font-weight':700,fill:'#111111'},l)})});
 plan.forEach(function(p){el(s,'rect',{x:p[1],y:p[2],width:p[3],height:36,rx:10,fill:'#fff',stroke:'#6e6c68','stroke-dasharray':'5 4'});el(s,'text',{x:p[1]+p[3]/2,y:p[2]+23,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'#6e6c68'},p[0])})
@@ -664,13 +788,13 @@ plan.forEach(function(p){el(s,'rect',{x:p[1],y:p[2],width:p[3],height:36,rx:10,f
 /* roadmap chart */
 (function(){var s=document.getElementById('road'),x0=230,cw=195,top=64,rh=36;
 var ph=[["Phase 1","Foundation and integration"],["Phase 2","Device and data expansion"],["Phase 3","Full operating system"]];
-ph.forEach(function(p,i){el(s,'rect',{x:x0+i*cw+2,y:6,width:cw-4,height:46,rx:8,fill:i==0?'#3b82f6':i==1?'#2563eb':'#111111'});
+ph.forEach(function(p,i){el(s,'rect',{x:x0+i*cw+2,y:6,width:cw-4,height:46,rx:8,fill:i==0?'#111111':i==1?'#111111':'#111111'});
 el(s,'text',{x:x0+i*cw+cw/2,y:25,'text-anchor':'middle',fill:'#fff','font-size':14,'font-weight':800},p[0]);
 el(s,'text',{x:x0+i*cw+cw/2,y:42,'text-anchor':'middle',fill:'#fff','font-size':11},p[1])});
 var rows=[["Unify existing prototypes",0,0],["Model orchestration layer",0,2],["Secure data handling",0,2],["Multimodal reasoning",0,2],["EMS device integration",1,2],["Computer vision expansion",1,2],["ePCR integration",1,1],["Predictive analytics",1,2],["Full clinical decision support",2,2]];
 rows.forEach(function(r,i){var y=top+i*rh;if(i%2==0)el(s,'rect',{x:0,y:y-4,width:820,height:rh,fill:'#f6f5f3'});
 el(s,'text',{x:12,y:y+rh/2+1,'font-size':13,'font-weight':600,fill:'#111111'},r[0]);
-for(var c=r[1];c<=r[2];c++)el(s,'rect',{x:x0+c*cw+6,y:y+3,width:cw-12,height:rh-14,rx:6,fill:c==r[1]?'#3b82f6':'#dcd8fb'})})
+for(var c=r[1];c<=r[2];c++)el(s,'rect',{x:x0+c*cw+6,y:y+3,width:cw-12,height:rh-14,rx:6,fill:c==r[1]?'#111111':'#dcd8fb'})})
 })();
 
 /* lightbox + nav */

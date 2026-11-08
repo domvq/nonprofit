@@ -21,7 +21,7 @@
   --ink:        #111111;   /* body text */
   --ink-soft:   #6e6c68;   /* secondary text */
   --accent:     #111111;   /* single primary accent — warm amber/orange */
-  --accent-deep:#2563eb;
+  --accent-deep:#111111;
   --rescue:     #dc2626;   /* used only for the emergency / urgent CTA */
   --line:       #e7e5e1;   /* hairline borders */
   --line-soft:  #efeeeb;
@@ -291,7 +291,7 @@ footer.site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:8
   --ink:#111111;
   --ink-soft:#6e6c68;
   --accent:#111111;
-  --accent-deep:#2563eb;
+  --accent-deep:#111111;
   --rescue:#dc2626;
   --line:#e7e5e1;
   --sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -531,7 +531,7 @@ p{
 }
 
 .resource-nav-label{
-  color:#93b4ff;
+  color:#b9cafb;
   font-size:.78rem;
   font-weight:800;
   text-transform:uppercase;
@@ -1054,7 +1054,7 @@ nav.primary a[aria-current]{background:#111111;color:#fff;border-color:#111111}
 /* Explore bar: all pages, equal cells, dark brown */
 nav.resource-nav{background:#111111;border-top:0;border-bottom:0}
 nav.resource-nav .wrap{display:grid;gap:6px;align-items:stretch;padding-top:10px;padding-bottom:10px}
-nav.resource-nav .resource-nav-label{align-self:center;color:#93b4ff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
+nav.resource-nav .resource-nav-label{align-self:center;color:#b9cafb;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0;width:auto}
 nav.resource-nav a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;min-height:36px;padding:6px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:#fff;font-size:.82rem;font-weight:700;line-height:1.15;text-decoration:none;transform:none}
 nav.resource-nav a:hover{background:rgba(255,255,255,.14);border-color:transparent;color:#fff;transform:none}
 nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111}
@@ -1065,12 +1065,136 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
 @media (min-width:881px){.apps-nav.tools-nav .wrap{grid-template-columns:auto repeat(5,minmax(0,1fr))}}
 .apps-nav.tools-nav{border-top:1px solid var(--line)}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="aiv-theme.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style id="aiv-theme">/* =========================================================
+   EMARI x AI Verse theme
+   Matches aiverse.it.com and aiv-x.com: Geist, black on white,
+   warm-grey cards, hairline borders, black pill buttons, blue accent.
+   ========================================================= */
+:root{
+  --aiv-ink:#111111;
+  --aiv-muted:#6e6c68;
+  --aiv-card:#f6f5f3;
+  --aiv-line:#e7e5e1;
+  --aiv-blue:#b9cafb;
+  --aiv-glow:#81cbfb;
+  --aiv-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+body{
+  font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.03em}
+h1{letter-spacing:-.04em}
+::selection{background:#111;color:#fff}
+
+/* mono micro-labels, as on AI Verse */
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type,
+.apps-nav-label,.resource-nav-label,.oai-lockup-cap{
+  font-family:var(--aiv-mono);
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.tab-label,.eyebrow,.eyebrow-tab,.label,.number,.tool-kicker,.tool-type{color:var(--aiv-muted)}
+.hero .wrap{row-gap:14px}
+.hero .eyebrow-tab{font-size:.78rem}
+
+/* buttons: black pills */
+.btn-primary,.button.primary{
+  background:#111;color:#fff;border-color:#111;font-weight:500;
+}
+.btn-primary:hover,.button.primary:hover{background:#333;border-color:#333;color:#fff;text-decoration:none}
+.btn-outline,.button.secondary{border-color:#d4d2ce;color:#111;font-weight:500;background:transparent}
+.btn-outline:hover,.button.secondary:hover{background:var(--aiv-card);color:#111}
+
+/* cards: hairline, no heavy shadows */
+.card,.tool-card,.team-card,.tool,.chart{border-color:var(--aiv-line)}
+.tool{background:var(--aiv-card)}
+.tool-card{background:#fff;border:1px solid var(--aiv-line)}
+
+/* dark call-to-action / panel sections */
+.navy,.research-panel{background:#111}
+
+/* ---------- Footer AI Verse strip ---------- */
+.aiv-footer{
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+  border-top:1px solid var(--aiv-line);margin-top:34px;padding-top:22px;padding-bottom:6px;
+}
+footer li a,footer .footer-grid a{color:#111}
+footer li a:hover,footer .footer-grid a:hover{text-decoration:underline;text-underline-offset:3px}
+.aiv-footer p{margin:0;font-size:.88rem;color:var(--aiv-muted);max-width:44em}
+.aiv-footer a{color:#111;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.aiv-footer-logo{display:block;flex:none;color:#111;text-decoration:none !important}
+.aiv-footer .aiv-mark-lg{height:26px;width:auto;display:block}
+
+/* ---------- Home page: branch lockup ---------- */
+.branch-lockup{
+  background:#fff;border-radius:12px;padding:22px 20px 20px;
+  display:flex;flex-direction:column;align-items:flex-start;gap:12px;
+}
+.bl-row{display:flex;align-items:center;gap:14px;color:#111;text-decoration:none}
+.bl-row:hover{text-decoration:none}
+.bl-row img{width:56px;height:56px;flex:none;object-fit:contain}
+.bl-name{display:block;font-weight:600;font-size:1.25rem;line-height:1.15;letter-spacing:-.02em}
+.bl-name small{display:block;font-weight:400;font-size:.72rem;letter-spacing:0;color:var(--aiv-muted);margin-top:3px;max-width:230px}
+.bl-link{
+  display:flex;align-items:center;gap:10px;width:100%;
+  font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aiv-muted);
+}
+.bl-link::before,.bl-link::after{content:"";flex:1;height:1px;background:var(--aiv-line)}
+.hero-art .aiv-mark-lg,.branch-lockup .aiv-mark-lg{width:auto;height:30px;display:block;flex:none;color:#111}
+.bl-aiv{padding-left:4px}
+.bl-aiv .bl-name{font-size:1.15rem}
+
+/* neutral focus ring */
+:focus-visible{outline:3px solid #81cbfb !important;outline-offset:2px}
+
+footer .aiv-footer a,footer .aiv-footer-logo{color:#111 !important}
+
+/* =========================================================
+   Gradient graphics theme (lavender -> periwinkle -> sky)
+   ========================================================= */
+:root{
+  --aiv-lav:#e8e6fb; --aiv-violet:#dcd8fb; --aiv-peri:#b9cafb; --aiv-sky:#81cbfb;
+  --aiv-grad:linear-gradient(135deg,#e8e6fb 0%,#dcd8fb 24%,#b9cafb 58%,#81cbfb 100%);
+  --aiv-wash:linear-gradient(180deg,rgba(220,216,251,.55) 0%,rgba(185,202,251,.22) 45%,#fff 100%);
+}
+.hero-art,.cta{background:var(--aiv-grad)}
+main > section.hero,main .hero{background:var(--aiv-wash)}
+.team-avatar{background:var(--aiv-grad) !important;color:#111 !important}
+.bl-link::before,.bl-link::after{background:var(--aiv-peri)}
+.av-fig{
+  background:var(--aiv-grad);border-radius:16px;padding:34px 24px;
+  display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;color:#111;
+}
+.av-fig img{width:72px;height:72px}
+.av-fig .cap{font-family:var(--aiv-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#3b4a7a}
+.av-fig .aiv-mark-lg{height:34px;width:auto;color:#111}
+.av-fig .small{color:#3b4a7a}
+.stat,.card,.audience-item{border-top-color:#111}
+.card.accent{border-top-color:var(--aiv-sky)}
+
+.av-fig img{background:transparent !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important}
+
+/* gradient link underline (replaces the old blue link colour) */
+main p a:not(.button),main li a:not(.button),.tool-link,.card a:not(.button),.small a,.disclaimer a,.cta p a,.section-intro a{
+  color:#111;font-weight:600;text-decoration:none;
+  background-image:var(--aiv-grad);background-repeat:no-repeat;background-size:100% 4px;background-position:0 100%;
+  padding-bottom:1px;
+}
+main p a:not(.button):hover,.tool-link:hover{background-size:100% 100%}
+.topbar{display:none !important}
+.aiv-band{padding:30px 0 6px}
+.aiv-band-inner{background:var(--aiv-grad);border-radius:16px;padding:22px 26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.aiv-band-inner p{margin:0;color:#111;max-width:48em}
+.aiv-band-inner .aiv-footer-logo{color:#111}
+.aiv-band-inner .aiv-mark-lg{height:30px;width:auto}
+</style>
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="topbar"><div class="wrap"><a class="aiv-branch" href="https://aiverse.it.com" target="_blank" rel="noopener" aria-label="EMARI is a research team of AI Verse"><svg class="aiv-mark" viewBox="168 188 1044 394" role="img" aria-label="AI Verse" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"><path d="M210 538 L402 232 L582 538"/><path d="M372 432 L428 432"/><path d="M700 232 L700 538"/><path d="M822 232 L992 536 L1164 232"/></g></svg><span>EMARI is the EMS medical AI research team of <strong>AI Verse</strong></span></a><span class="topbar-note">Emergency? Call 911. Research and education only.</span><span><a href="contact.html">Contact us &rarr;</a></span></div></div>
 <header class="site-header">
   <div class="wrap nav-row">
     <a class="brand" href="index.html">
@@ -2058,7 +2182,7 @@ nav.resource-nav a[aria-current]{background:#fff;border-color:#fff;color:#111111
             <line x1="110" y1="190" x2="165" y2="190" stroke="#4F7A6C" stroke-width="1.5"/>
             <text x="112" y="205" font-family="Karla, sans-serif" font-size="11" fill="#4F7A6C">PR interval</text>
             <line x1="132" y1="200" x2="280" y2="200" stroke="#111111" stroke-width="1.5"/>
-            <text x="175" y="215" font-family="Karla, sans-serif" font-size="11" fill="#2563eb">QT interval</text>
+            <text x="175" y="215" font-family="Karla, sans-serif" font-size="11" fill="#111111">QT interval</text>
           </svg>
         </div>
       </div>
